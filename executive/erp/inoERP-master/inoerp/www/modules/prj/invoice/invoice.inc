@@ -1,0 +1,1 @@
+<?phpif(empty($$class->status)){ $$class->status = 'WORKING';}if(in_array($$class->status, ['COSTED','REVERSED' ,'RELEASED'])){ $readonly = true; $mode =2;}?>
