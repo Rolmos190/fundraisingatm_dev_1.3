@@ -1480,6 +1480,7 @@ display: block;
 	img#logo2 {
 		max-width : 250px;
 		max-height: 250px;
+		margin: 5px 10px;
 	}
 }
 @media screen and (max-width: 1024px) {
@@ -1496,8 +1497,8 @@ display: block;
 	img#logo { max-height: 120px; }
 	img#logo2{
 	    	max-width: 180px;
-   		max-height: 320px;
-    		margin: 0px 2px;
+   		    max-height: 320px;
+    		margin: 5px 10px;
 	}
 
 	#menuWrapper{
