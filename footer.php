@@ -8,7 +8,8 @@
         <div class="row-centered" id="imageAndInfo">
             <div class ="col-lg-1 col-md-4 col-sm-12 col-xs-12">
               <a href="index.php">
-                  <img class="img-responsive" src="newdeal/images/fundatm_logo.png" alt="FATMlogo" id="logo" height="600" width="800">
+            <!--    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+                  <img class="img-responsive" src="newdeal/images/fundatm_logo.png" alt="FATMlogo" id="logo2">
 
              </div>
                 <ul id="infoList" class="row-centered col-lg-push-3 col-lg-8 col-md-7 col-md-push-1 col-sm-12 col-xs-12 list-inline">
