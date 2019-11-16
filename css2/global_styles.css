@@ -1474,6 +1474,12 @@ display: block;
   line-height:1.5;
 }
 
+/* Tab Button Modifications */
+
+#tab-Button {
+	margin-top: 5%;
+	height: 100%;
+}
 
 /*** RESPONSIVE CODE ***/
 @media screen and (min-width: 1025px){
@@ -1482,11 +1488,29 @@ display: block;
 		max-height: 250px;
 		margin: 5px 10px;
 	}
+
+	#tab-Button { /* For desktop; have the button for each tab be on the right */
+		float: right;
+	}
+	#panel-tab { /* make text white on desktop version for panel text */
+		color: white;
+	}
 }
 @media screen and (max-width: 1024px) {
 	/*body { max-width: 1024px; }*/
 	/*	html#ecwid_html body#ecwid_body { width: 874px; }*/
 	/*#container { max-width: 1024px; }*/
+
+	/* Account Infomation Button (tool tip)*/
+
+	.tooltip {
+		display: inline-block !important;
+	}
+	/*** Panel Modification */
+	#panel-tab { /* make text black and visible for mobile devices and smaller screens */
+		color: black;
+	}
+
 
    	/***HEADER***/
 	#headerMain{
@@ -1495,10 +1519,13 @@ display: block;
 	}
 
 	img#logo { max-height: 120px; }
+
 	img#logo2{
-	    	max-width: 180px;
-   		    max-height: 320px;
-    		margin: 5px 10px;
+			position: relative;
+
+	    max-width: 180px;
+   		max-height: 320px;
+    	margin: auto;/*5px 10px;*/
 	}
 
 	#menuWrapper{

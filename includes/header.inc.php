@@ -1,21 +1,21 @@
-<?php 
+<?php
 if(isset($_POST['login'])){
     session_start();
     ob_start();
     require_once('logInUser.inc.php');
-	
+
 }
 ?>
 
 <head>
   <meta charset="UTF-8">
-  <meta name="wot-verification" content="afd275378407e34df6ec"/> 
+  <meta name="wot-verification" content="afd275378407e34df6ec"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--paypal checkout-->
   <script src="https://www.paypalobjects.com/api/checkout.js"></script>
   <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'" crossorigin="anonymous"> <!-- asynch css load -->
   <noscript> <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></noscript> <!-- load styles for browsers with JS disabled -->
-  <!--sidebar navigation dropdown plugin -->  
+  <!--sidebar navigation dropdown plugin -->
   <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link  rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css"></noscript><!-- load styles for browsers with JS disabled -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -24,14 +24,14 @@ if(isset($_POST['login'])){
   <!-- bootstrap file, avoid editing if possible, find the classes you need and then override them in global styles -->
   <link rel="preload" href="css2/bootstrap.css"  as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link rel="stylesheet" href="css2/bootstrap.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
+
   <link rel="preload" href="css2/content_styles.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><linkrel="stylesheet" href="css2/content_styles.css"></noscript><!-- load styles for browsers with JS disabled -->
   <!-- top navigation styles -->
   <link rel="preload" href="css2/main_nav.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link rel="stylesheet" href="css2/main_nav.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
-	<!-- jQuery (required) 
+
+	<!-- jQuery (required)
 	**ALL OTHER CDNS LOCATED IN FOOTER, AS FOOTERS ARE ALWAYS LOCATED BEFORE BODY CLOSING TAG - the ideal spot of JS/jQuery**
 	*For some reason jasny needs jquery listed in header as well to allow for sidenav dropdowns to collapse correctly ? -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -39,7 +39,7 @@ if(isset($_POST['login'])){
     <link href="lity/dist/lity.css" rel="stylesheet">
     <script src="lity/vendor/jquery.js"></script>
     <script src="lity/dist/lity.js"></script>
-    
+
     <!--Search Bar JS-->
     <script type="text/javascript" src="js/script.js"></script>
 
@@ -50,7 +50,7 @@ if(isset($_POST['login'])){
 	/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
 	!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
 	</script>
-	
+
 	<!--google analytics-->
 	<script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -74,15 +74,15 @@ $("#modal-carousel").on("slid.bs.carousel", function () {
 $(".row .thumbnail").click(function(){
     var content = $(".carousel-inner");
     var title = $(".modal-title");
-  
-    content.empty();  
+
+    content.empty();
     title.empty();
-  
-  	var id = this.id;  
+
+  	var id = this.id;
     var repo = $("#img-repo .item");
     var repoCopy = repo.filter("#" + id).clone();
     var active = repoCopy.first();
-  
+
     active.addClass("active");
     title.html(active.find("img").attr("title"));
   	content.append(repoCopy);
@@ -93,7 +93,7 @@ $(".row .thumbnail").click(function(){
 </script>
 	<script>
 		function calculateSchool(orgType) {
-		        var price = 35; 
+		        var price = 35;
 		        var commission = .35;
 			//elementary schools
 			//var num7 = Number(document.getElementById("Enum").value);
@@ -107,13 +107,13 @@ $(".row .thumbnail").click(function(){
 			var numPerYear7 = Number(document.getElementById("EnumPerYear").value);
 			var total7 = baskets7 * numPerYear7 * price * commission * active7;
 			var result7 =  format(total7,2);
-			document.getElementById("Etotal").innerHTML = result7;			
+			document.getElementById("Etotal").innerHTML = result7;
 		}
 		function format(num, dec) {
 	        	return Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
 	        }
 	</script>
-	
+
 	<script>
 		function getUrlVars() {
 		    var vars = {};
@@ -124,15 +124,15 @@ $(".row .thumbnail").click(function(){
 		}
 		var group = getUrlVars()["group"];
 	</script>
-	
+
 	<script src="http://app.ecwid.com/script.js?" charset="utf-8"></script>
 	<script>xAffiliate('24503');</script>
 	<script> xProductBrowser("categoriesPerRow=3","views=grid(5,4) list(10) table(20)","categoryView=grid","searchView=list","style="); </script>
 
-	
+
 
   <!-- jequery for validation -- ensures fields at least have text -->
-  <script> 
+  <script>
     var $formLogin = $('#loginform');
     var $formLost = $('#lost-form');
     var $modalAnimateTime = 300;
@@ -177,11 +177,11 @@ $(".row .thumbnail").click(function(){
                 setTimeout(function() {
                     $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
                 }, 0);
-            }); $('[data-toggle="tooltip"]').tooltip(); 
+            }); $('[data-toggle="tooltip"]').tooltip();
     });
-   
+
   </script>
-  
+
     <script>/* remove containers so dropdowns are consistant inside sidenavigation */
         $(function () {
         $(window).on('load, resize', function () {
@@ -197,7 +197,7 @@ $(".row .thumbnail").click(function(){
         .resize();
         });
      </script>
-     
+
      <script> //pause play carousel, switch active classes depedning on button clicked */
         $(function () {
             $('#carousel-presentation').carousel({
@@ -266,18 +266,18 @@ $(".row .thumbnail").click(function(){
      </script>
 </head>
 <header>
-    
+
     <div class ="container-fluid"> <!-- START above nav elements content container -->
        <div class="row-fluid" id="aboveNavElements">
-          <a href="#" class="hidden-lg hidden-md pull-right" id="accountIcon" role="button" data-toggle="modal" data-target="#login-modal"><i data-toggle="tooltip" data-placement="left" title="Account Login and Information" class="fa fa-user fa-3x" aria-hidden="true"></i></a>
+          <a href="#" class="hidden-lg hidden-md pull-right" id="accountIcon" role="button" data-toggle="modal" data-target="#login-modal"><i data-toggle="tooltip" data-placement="left" title="Account Login and Information" class="fa fa-user fa-3x " aria-hidden="true"></i></a>
 
           <div id="headerImage" class="col-lg-3 col-md-1 col-sm-1" style="">
               <a href="index.php"><img class="img-responsive" src="newdeal/images/fundatm_logo.png" alt="FATMlogo" id="logo" class="img-responsive animated swing"></img></a>
           </div>
 
           <div id="bannerHeader" class="col-lg-7 col-lg-push-1 col-md-7 col-xs-12">
-  	        <img class="img-responsive" src="images/main_2.jpg" alt="Main Banner Image. Achieve Great Goals!"/>   
-          </div>    
+  	        <img class="img-responsive" src="images/main_2.jpg" alt="Main Banner Image. Achieve Great Goals!"/>
+          </div>
 
           <a href="#"  id="accountIcon" class="pull-right  hidden-sm hidden-xs" role="button" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user fa-4x" aria-hidden="true" style="text-indent: 5px;"></i>Account</a>
 
@@ -299,7 +299,7 @@ $(".row .thumbnail").click(function(){
         </button>
       </div>
     <div class ="container-fluid">
-      <div class="collapse navbar-collapse"> 
+      <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav" id="navCats"  id="mainCategoryType"> <!-- navbar list items -->
 
 
@@ -307,7 +307,7 @@ $(".row .thumbnail").click(function(){
             <a href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Womens/c/18159169/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Women<span class="sr-only"></span></a>
             <?php include 'menu/menu_women.php'; ?>
          </li> <!-- end nav dropdown for multi columns -->
-          
+
          <li class="dropdown"  id="mainCategoryType">
             <a  href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Accessories/c/18195523/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="sr-only"></span></a>
               <?php include 'menu/menu_accessories.php'; ?>
@@ -316,51 +316,51 @@ $(".row .thumbnail").click(function(){
           <li class="dropdown"  id="mainCategoryType">
             <a href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Mens/c/18159150/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Men <span class="sr-only"></span></a>
             <?php include 'menu/menu_men.php'; ?>
-          </li> 
-          
+          </li>
+
           <li class="dropdown"  id="mainCategoryType">
             <a href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Juniors/c/18195671/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Juniors <span class="sr-only"></span></a>
             <?php include 'menu/menu_juniors.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Kids/c/18209039/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Kids <span class="sr-only"></span></a>
               <?php include 'menu/menu_kids.php'; ?>
-          </li>  
+          </li>
           <li class="dropdown"  id="mainCategoryType">
             <a "greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Fitness/c/18209624/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Fitness <span class="sr-only"></span> </a>
             <?php include 'menu/menu_fitness.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Food/c/18209702/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Gifts <span class="sr-only"></span> </a>
              <?php include 'menu/menu_food.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Entertainment/c/18209743/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Entertainment<span class="sr-only"></span> </a>
              <?php include 'menu/menu_entertainment.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown" id="mainCategoryType">
             <a  href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Houseware/c/18209794/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="sr-only"></span></a>
             <?php include 'menu/menu_housewares.php'; ?>
-          </li>         
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Health/c/18209818/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Health<span class="sr-only"></span> </a>
             <?php include 'menu/menu_health.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Inspirational/c/18209845/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true">Inspirational<span class="sr-only"></span> </a>
             <?php include 'menu/menu_inspirational.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Holiday/c/18209901/offset=0&sort=priceAsc"  class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true">Holiday<span class="sr-only"></span> </a>
               <?php include 'menu/menu_holiday.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Business/c/18209939/offset=0&sort=priceAsc"  class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true">Business<span class="sr-only"></span> </a>
@@ -389,12 +389,12 @@ $(".row .thumbnail").click(function(){
           <li id="fund-border" class="divider-vertical" style="border-right: 1px solid transparent !important;border-left: 1px solid white !important"></li>
 
         <!--<li id="login-button" role="button" data-toggle="modal" data-target="#login-modal" aria-hidden="true"><a href="#"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Login</a></li>-->
-      </div> 
+      </div>
     </div><!-- end container -->
   </nav> <!-- end nav -->
 
     <!-- Code for navbar collapse to SIDEBAR on MOBILE screens -->
-  <div class="navmenu navmenu-default navmenu-fixed-left offcanvas" >                
+  <div class="navmenu navmenu-default navmenu-fixed-left offcanvas" >
     <ul class="nav navmenu-nav">
       <!--<span role="button" data-toggle="modal" data-target="#login-modal" aria-hidden="true">Login</span>-->
       <li class="dropdown">
@@ -408,43 +408,43 @@ $(".row .thumbnail").click(function(){
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Men <span class="sr-only"></span></a>
             <?php include 'menu/menu_men.php'; ?>
-      </li> 
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button"aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Juniors <span class="sr-only"></span></a>
             <?php include 'menu/menu_juniors.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Kids <span class="sr-only"></span> </a>
         <?php include 'menu/menu_kids.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false" id="mainCategoryType">Fitness <span class="sr-only"></span> </a>             
+        <a href="#" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false" id="mainCategoryType">Fitness <span class="sr-only"></span> </a>
           <?php include 'menu/menu_fitness.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Gifts <span class="sr-only"></span></a>
           <?php include 'menu/menu_food.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Entertainment <span class="sr-only"></span></a>
          <?php include 'menu/menu_entertainment.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Home <span class="sr-only"></span></a>
             <?php include 'menu/menu_housewares.php'; ?>
-      </li>         
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Health <span class="sr-only"></span> </a>
         <?php include 'menu/menu_health.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown" >
         <a href="#"  id="mainCategoryType" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Inspirational <span class="sr-only"></span></a>
           <?php include 'menu/menu_inspirational.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#"  id="mainCategoryType" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Holiday <span class="sr-only"></span></a>
         <?php include 'menu/menu_holiday.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#"  id="mainCategoryType" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Business <span class="sr-only"></span></a>
         <?php include 'menu/menu_business.php'; ?>
@@ -464,9 +464,9 @@ $(".row .thumbnail").click(function(){
         <li class="divider"></li>
       </ul> <!-- end navmenu -->
     </div> <!--end side nav -->
-    
-    
-<!-- Login/logged in/change pw modal elements -->    
+
+
+<!-- Login/logged in/change pw modal elements -->
 <!-- START MODAL LOGIN -  pops up box for login -->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -504,15 +504,15 @@ $(".row .thumbnail").click(function(){
             	         	echo '<div class="modal-footer">';
 			         	    include('menu/logout.inc.php');
 			         	    echo '</div>'; /*modal body end */
-                } 
+                }
            ?>
           </div>
-      </div>    <!-- end modal content -->   
+      </div>    <!-- end modal content -->
     </div> <!-- end modal-dialogue -->
   </div> <!-- END MODAL LOGIN -->
-    
-          <!-- Reset PW Modal  
-          || WHILE ALL FUNCTIONS WORKED FINE FOR THIS, IT DOES NOT PROPERLY STORE PWs || 
+
+          <!-- Reset PW Modal
+          || WHILE ALL FUNCTIONS WORKED FINE FOR THIS, IT DOES NOT PROPERLY STORE PWs ||
           || Saving so I can look into utilizing PHP for reset inside this modal - have used it to show messages based on button submit, but pws still did not change ||
         <div class="modal fade" id="change-pw">
             <div class="modal-dialog">
@@ -520,7 +520,7 @@ $(".row .thumbnail").click(function(){
                     <div class="modal-header" align="center">
                       <img class="img-rounded" id="img_logo" src="images/GMlogo.png">
                     </div>
-                	<!-- change pw modal2 form 
+                	<!-- change pw modal2 form
                   </?php
                         if($_SESSION['LOGIN'] == "TRUE") {
                                 echo '<div class="modal-body">';
@@ -536,8 +536,8 @@ $(".row .thumbnail").click(function(){
                                 echo '</div>'; /* end modal footer */
                         }
                 	  ?>
-                </div>    <!-- end modal content  
-            </div> <!-- end modal-dialogue 
+                </div>    <!-- end modal content
+            </div> <!-- end modal-dialogue
         </div>  END MODAL CHANGEPW -->
 
 </header>
@@ -545,5 +545,3 @@ $(".row .thumbnail").click(function(){
     <a href="#">GreatMoods<br>Mall Directory</a>
     <php include 'menu/menu_mall_directory_site.php'; ?>
 </li> -->
-
-
