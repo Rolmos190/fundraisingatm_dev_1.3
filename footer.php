@@ -3,16 +3,29 @@
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
  <!-- jsany bootstrap latest, creates more bootstrap elements, currently in use for collapsible navigation -->
 <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>-->
+
+<!-- Enable to refresh constantly while editing every 15 seconds; for debugging purposes.
+<head>
+  <meta http-equiv="refresh" content="15">
+</head>
+
+-->
+<style>
+<?php include 'css2/global_styles.css'; ?>
+</style>
+
 <footer class = "footer">
     <div  class="container-fluid">
         <div class="row-centered" id="imageAndInfo">
             <div class ="col-lg-1 col-md-4 col-sm-12 col-xs-12">
               <a href="index.php">
+                  <img class="img-responsive" src="newdeal/images/fundatm_logo.png" alt="FATMlogo" id="logo2"> <!-- style="position: relative; margin: auto;" -->
             <!--    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-                  <img class="img-responsive" src="newdeal/images/fundatm_logo.png" alt="FATMlogo" id="logo2">
+
 
              </div>
-                <ul id="infoList" class="row-centered col-lg-push-3 col-lg-8 col-md-7 col-md-push-1 col-sm-12 col-xs-12 list-inline">
+             <div class="row-centered col-lg-push-3 col-lg-8 col-md-7 col-md-push-1 col-sm-12 col-xs-12 list-inline">
+                <ul id="infoList">
                     <li id="homelink" class="btn btn-md btn-link"><a href="index.php">FundraisingATM Homepage</a></li><span class="divider-vertical hidden-xs"></span>
                     <li class="btn btn-md btn-link"><a href="gm_programoverview.php">FundraisingATM Program Overview</a></li><span class="divider-vertical hidden-xs"></span>
                     <li id="getstarted" class="btn btn-md btn-link"><a href="gettingstarted_sendemail.php">Getting Started</a></li><span class="divider-vertical hidden-xs"></span>
