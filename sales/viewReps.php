@@ -15,9 +15,9 @@
        {
           // echo "Account Frozen";
            header('Location: accountEdit.php');
-       } 
+       }
      $userID = $_SESSION['userId'];
-    
+
      $table = "representatives";
      $user_email = $_SESSION['email'];
      $query = "SELECT * FROM user_info 	WHERE userInfoID='$userID'";
@@ -26,35 +26,35 @@
      $cn = $row['companyName'];
      $fn = $row['FName'];
      $myPic = $row['picPath'];
-   
+
 ?>
 
 <!DOCTYPE html>
 <head>
-	<title>Representative Accounts</title>
+	<title>FundraisingATM | Sales Coordinator</title>
 </head>
 
 <body>
 <div id="container">
-      
+
 	<?php include 'header.inc.php' ; ?>
 	<?php include 'sidenav.php' ;?>
-      
+
     <div id="content">
 	<h2 align="center">Account Home</h2>
-	
+
 	<h3>Select Representative Account Below</h3>
-	
+
           	<form>
 			<?
-			
+
 			$query = "SELECT * FROM distributors WHERE setupID ='$userID' AND role = 'RP'";
-		        $result = mysqli_query($link, $query)or die ("couldn't execute  pages query.".mysqli_error($link)); 
-		       
-                       
+		        $result = mysqli_query($link, $query)or die ("couldn't execute  pages query.".mysqli_error($link));
+
+
 				echo "<select name='users' style='width: 220px;' onchange='showUser(this.value)'><option>Select Representative Account</option>";
-			
-						
+
+
                         while ($row = mysqli_fetch_assoc($result))
                         {
                             $fn = $row['FName'];
@@ -62,7 +62,7 @@
                             $rep = $fn.'&nbsp;'.$ln;
                             echo "<option value='".$row['loginid']."'>$rep</option>";
                         }
-						
+
                         echo "";
 			?>
 			</select><br>
@@ -71,10 +71,10 @@
 	<div id="">
 		<div id="txtHint"><b>Selected Representative Account Information will display here.<b></div>
 	</div>
-		
+
 	<p>&nbsp;</p>
 	</div> <!--end content-->
-  
+
 <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 

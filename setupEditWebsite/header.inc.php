@@ -1,4 +1,4 @@
-<?php 
+<?php
 if(isset($_POST['login'])){
     session_start();
     ob_start();
@@ -8,35 +8,35 @@ if(isset($_POST['login'])){
 
 <head>
   <meta charset="UTF-8">
-  <meta name="wot-verification" content="afd275378407e34df6ec"/> 
+  <meta name="wot-verification" content="afd275378407e34df6ec"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'" crossorigin="anonymous"> <!-- asynch css load -->
   <noscript> <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></noscript> <!-- load styles for browsers with JS disabled -->
-  
+
   <link rel="preload" href="../css2/global_styles.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link rel="stylesheet" href="../css2/global_styles.css"></noscript><!-- load styles for browsers with JS disabled -->
   <!-- bootstrap file, avoid editing if possible, find the classes you need and then override them in global styles -->
-  
+
   <link rel="preload" href="../css2/bootstrap.css"  as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link rel="stylesheet" href="../css2/bootstrap.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
-   
+
+
   <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link  rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
+
   <link rel="preload" href="../css2/content_styles.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><linkrel="stylesheet" href="../css2/content_styles.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
+
   <!-- top navigation styles -->
   <link rel="preload" href="../css2/main_nav.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link rel="stylesheet" href="../css2/main_nav.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
+
   		<!-- jQuery (required) before bootstrap JS -->
   		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  		    
+
 	<!--<link rel="stylesheet" href="../jquery-ui-1.7.2/css/base/ui.accordion.css">-->
-	
+
 	<!--<script src="../js/js-image-slider.js" type="text/javascript"></script>-->
     <script src="../js/jquery.maskedinput.min.js" type="text/javascript"></script>
     <script src="../js/simpletabs_1.3.js"></script>
@@ -49,7 +49,7 @@ if(isset($_POST['login'])){
 	/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
 	!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
 	</script>
-	
+
 	<!--google analytics-->
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -113,7 +113,7 @@ if(isset($_POST['login'])){
        heightStyle: "Content",
        collapsible: true,
        active: 0,
-       autoHeight: true   
+       autoHeight: true
     });
   } );
   </script>
@@ -121,7 +121,7 @@ if(isset($_POST['login'])){
 
   function checkForm(form)
   {
- 
+
 
     if(form.pass1.value != "" && form.pass1.value == form.pass2.value) {
       if(form.pass1.value.length < 6) {
@@ -180,12 +180,12 @@ if(isset($_POST['login'])){
     //Set the colors we will be using ...
     var goodColor = "#66cc66";
     var badColor = "#ff6666";
-    //Compare the values in the password field 
+    //Compare the values in the password field
     //and the confirmation field
     if(pass1.value == pass2.value){
-        //The passwords match. 
+        //The passwords match.
         //Set the color to the good color and inform
-        //the user that they have entered the correct password 
+        //the user that they have entered the correct password
         pass2.style.backgroundColor = goodColor;
         message.style.color = goodColor;
         message.innerHTML = "Passwords Match!"
@@ -197,7 +197,7 @@ if(isset($_POST['login'])){
         message.style.color = badColor;
         message.innerHTML = "Passwords Do Not Match!"
     }
-}  
+}
   </script>
        <script>
        $(document).ready(function() {
@@ -226,17 +226,17 @@ if(isset($_POST['login'])){
 	var error = document.getElementById("error");
         if ($("input[type=checkbox]:checked").length === 0) {
         if(other == "")
-       { 
+       {
              e.preventDefault();
              document.getElementById("error").innerHTML="You must select a checkbox or fill in club name.";
              return false;
        }
        }
-       return true; 
+       return true;
       }
       </script>
-    
-     
+
+
 <script type="text/javascript">
         function ValidateRadios() {
          var radios = document.getElementsByName('fundtype')
@@ -273,7 +273,7 @@ if(isset($_POST['login'])){
 {
 alert("Do something radio button was checked");
 }
-$("#fundraisingType").click(function(e){ 
+$("#fundraisingType").click(function(e){
 
     $.ajax( {
         type: "POST",
@@ -281,7 +281,7 @@ $("#fundraisingType").click(function(e){
         data: $('#fundraisingType').serialize(),
         success: function( response ) {
         document.getElementById("selection").innerHTML=response;
-        
+
         }
     });
 
@@ -292,12 +292,12 @@ $("#fundraisingType").click(function(e){
       $("input:radio").change(function(){
          $.post('fetch_orgs.php', { "fundSelect": $(this).val() }, function(data) {
            // do whatever with data result.
-           document.getElementById("selection").innerHTML=data; 
+           document.getElementById("selection").innerHTML=data;
          });
       });
     });
-    
-  
+
+
 </script>
 <script>
 function getOrg(int) {
@@ -318,7 +318,7 @@ function getOrg(int) {
 </script>
 </script>
    <script type="text/javascript">
-    
+
     function CheckForm(){
 	var checked=false;
 	var elements = document.getElementsByName("clubs[]");
@@ -329,16 +329,16 @@ function getOrg(int) {
 		}
 		else
 		{
-		   
+
 		   alert('You Must Select At Least One Club Type');
 		   return false;
-	
+
 		}
 	}
 
 }
 </script>
-	
+
 	<script> //select-deselect all recipients in emails
 		function setCheckboxes1(act) {
 		  var e = document.getElementsByClassName('leaders');
@@ -371,11 +371,11 @@ function getOrg(int) {
 		  }
 		}
 	</script>
-	
+
 	<script>
-	
+
 		function fetch_select(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_group.php',
@@ -383,15 +383,15 @@ function getOrg(int) {
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("new_select").innerHTML=response; 
+		       			document.getElementById("new_select").innerHTML=response;
 		     		}
 		   	});
 		  }
-	</script> 
-	
+	</script>
+
 	<script>
 		function fetch_select2(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_members.php',
@@ -400,11 +400,11 @@ function getOrg(int) {
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("memberid").innerHTML=response;
-		       			
-		       			
+
+
 		     		}
 		   	});
-		   	
+
                         $.ajax({
                                 type: 'post',
                                 url: 'getGroupContacts.php',
@@ -412,14 +412,14 @@ function getOrg(int) {
                                 get_option:val
                                  },
                                  success: function (response) {
-                                 document.getElementById("memberContacts").innerHTML=response; 
+                                 document.getElementById("memberContacts").innerHTML=response;
                                  }
                            });
 		}
-	</script> 
-	
+	</script>
+
 	<script>
-	
+
 	function fetch_select4(val) {
 		var group = document.getElementById("groupid").value;
 		   	$.ajax({
@@ -429,14 +429,14 @@ function getOrg(int) {
 		       			get_option:val, get_option2:group
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("goalreport").innerHTML=response; 
+		       			document.getElementById("goalreport").innerHTML=response;
 		     		}
 		   	});
-		   
-		} 
-	
+
+		}
+
 		function fetch_select3(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_contact_datax.php',
@@ -444,7 +444,7 @@ function getOrg(int) {
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("memberContacts").innerHTML=response; 
+		       			document.getElementById("memberContacts").innerHTML=response;
 		     		}
 		   	});
 		   	$.ajax({
@@ -456,15 +456,15 @@ function getOrg(int) {
 		     		success: function (response) {
 		       			document.getElementById("logdropdown").innerHTML=response;
 		       			var mem = document.getElementById("memberid").value;
-		       			 document.getElementById("memid").value = mem;    
+		       			 document.getElementById("memid").value = mem;
 		     		}
 		   	});
-		   
-		} 
-		
-		
+
+		}
+
+
 		function fetch_select5(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'getGroupSales.php',
@@ -472,14 +472,14 @@ function getOrg(int) {
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("goalreport").innerHTML=response; 
+		       			document.getElementById("goalreport").innerHTML=response;
 		     		}
 		   	});
 		}
-		
-		
+
+
 		function fetch_select7(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_members.php',
@@ -487,11 +487,11 @@ function getOrg(int) {
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("memberid").innerHTML=response; 
-		       			
+		       			document.getElementById("memberid").innerHTML=response;
+
 		     		}
 		   	});
-		   	
+
                         $.ajax({
                                 type: 'post',
                                 url: 'getGroupContacts.php',
@@ -499,14 +499,14 @@ function getOrg(int) {
                                 get_option:val
                                         },
                                 success: function (response) {
-                                document.getElementById("memberContacts").innerHTML=response; 
+                                document.getElementById("memberContacts").innerHTML=response;
                                  }
                          });
-		
+
 		}
-		
+
 		function fetch_select8(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetchEmails.php',
@@ -514,44 +514,44 @@ function getOrg(int) {
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("recipients").innerHTML=response; 
+		       			document.getElementById("recipients").innerHTML=response;
 		       			document.getElementById("memid").value=val;
 		       			document.getElementById("typef").value=val;
-		       			
+
 		     		}
 		   	});
 		}
 		function fetch_select9(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetchEmails2.php',
 		     		data: {
 		       			get_option:val
-		       			
+
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("recipients").innerHTML=response; 
-		       			
+		       			document.getElementById("recipients").innerHTML=response;
+
 		     		}
 		   	});
 		}
 		function fetch_select10(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'getMemberSales.php',
 		     		data: {
 		       			get_option:val
-		       			
+
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("goalreport").innerHTML=response; 
-		       			
+		       			document.getElementById("goalreport").innerHTML=response;
+
 		     		}
 		   	});
 		}
-		
+
 		function fetch_select11(val) {
 		var group = document.getElementById("memberid").value;
 		   	$.ajax({
@@ -561,12 +561,12 @@ function getOrg(int) {
 		       			get_option:val, get_option2:group
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("goalreport").innerHTML=response; 
+		       			document.getElementById("goalreport").innerHTML=response;
 		     		}
 		   	});
-		   
+
 		}
-		
+
 		function fetch_select12(val) {
 		var group = document.getElementById("groupid").value;
 		   	$.ajax({
@@ -576,21 +576,21 @@ function getOrg(int) {
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("clubs").innerHTML=response; 
+		       			document.getElementById("clubs").innerHTML=response;
 		     		}
 		   	});
-		   
-		}  
+
+		}
 	</script>
 	<script>
 	function fetch_select13(val) {
-		
+
 		   	$.ajax({
-		   	   
+
 		     		type: 'post',
 		     		url: 'fetch_orgs.php',
 		     		data: {
-		       			
+
 		       			 get_option : val
 		     		},
 		     		success: function (response) {
@@ -598,18 +598,18 @@ function getOrg(int) {
 		       			document.getElementById("selection2").innerHTML=response;
 		       			 console.log('success',response);
 		       			//document.getElementById("kind").innerHTML=val;
-		       			
+
 		     		}
-		   	}); 
-		 
-		   }   
+		   	});
+
+		   }
 	 </script>
 	 <script>
 	 function fetch_select14(val) {
-		
+
                  document.getElementById("selection2").innerHTML='';
-		       
-		   }    
+
+		   }
 	 </script>
 	<script>
 		function showUser(str) {
@@ -617,7 +617,7 @@ function getOrg(int) {
 	  			document.getElementById("txtHint").innerHTML="";
 	  			//var z = $(this).find(':selected').data('year');
 	  			return;
-	  		} 
+	  		}
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 	  			xmlhttp=new XMLHttpRequest();
 	  		}
@@ -637,14 +637,14 @@ function getOrg(int) {
 			xmlhttp.send();
 		}
 	</script>
-	
+
 	<script>
 		function showUser2(str) {
 			if (str=="") {
 	  			document.getElementById("clubs").innerHTML="";
 	  			//var z = $(this).find(':selected').data('year');
 	  			return;
-	  		} 
+	  		}
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 	  			xmlhttp=new XMLHttpRequest();
 	  		}
@@ -665,18 +665,18 @@ function getOrg(int) {
 			xmlhttp.send();
 		}
 	</script>
-	
-	
-	
+
+
+
 	<script>
-		function getSelectedValue() { 
+		function getSelectedValue() {
 	 		var val = document.getElementById("fundraisingType").value;
 	 		//alert("You selected : " + val);
 	 		document.getElementById("choice").value = val;
-		} 
+		}
 	</script>
-	
-	
+
+
 	<script> $(document).ready(function(){ $("#button1").click(function(){ $("show").toggle(); }); }); </script>
 	<script> $(document).ready(function(){ $("button2").click(function(){ $("show2").toggle(); }); }); </script>
 	<script>
@@ -684,7 +684,7 @@ function getOrg(int) {
         var x = document.getElementById('example1');
         var y = document.getElementById('example2');
         if (x.style.display === 'none') {
-        x.style.display = 'block'; 
+        x.style.display = 'block';
         y.style.display = 'none';
         } else {
           x.style.display = 'none';
@@ -696,14 +696,14 @@ function getOrg(int) {
         var x = document.getElementById('example2');
         var y = document.getElementById('example1');
         if (x.style.display === 'none') {
-        x.style.display = 'block'; 
+        x.style.display = 'block';
         y.style.display = 'none';
         } else {
           x.style.display = 'none';
         }
        }
        </script>
-	
+
 	<script>
 		var LHtotal;
 		var AHtotal;
@@ -732,7 +732,7 @@ function getOrg(int) {
 			document.getElementById("LHtotal").innerHTML = result1;
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//average high schools
 			var num2 = Number(document.getElementById("AHnum").value);
 			var fund2 = Number(document.getElementById("AHfund").value);
@@ -751,7 +751,7 @@ function getOrg(int) {
 			schoolTotal = format(schoolTotal,2);
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//large middle schools
 			var num3 = Number(document.getElementById("LMnum").value);
 			var fund = Number(document.getElementById("LMfund").value);
@@ -771,7 +771,7 @@ function getOrg(int) {
 			schoolTotal = format(schoolTotal,2);
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//average middle schools
 			var num4 = Number(document.getElementById("AMnum").value);
 			var fund4 = Number(document.getElementById("AMfund").value);
@@ -789,7 +789,7 @@ function getOrg(int) {
 			schoolTotal += result4;
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//elementary schools
 			var num7 = Number(document.getElementById("Enum").value);
 			var fund7 = Number(document.getElementById("Efund").value);
@@ -807,8 +807,8 @@ function getOrg(int) {
 			document.getElementById("Etotal").innerHTML = result7;
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
-			
+
+
 			//large churches
 			var num5 = Number(document.getElementById("LCnum").value);
 			var fund5 = Number(document.getElementById("LCfund").value);
@@ -826,7 +826,7 @@ function getOrg(int) {
 			churchTotal = result5;
 			document.getElementById("churchTotal").innerHTML = churchTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//average churches
 			var num6 = Number(document.getElementById("ACnum").value);
 			var fund6 = Number(document.getElementById("ACfund").value);
@@ -844,9 +844,9 @@ function getOrg(int) {
 			churchTotal += result6;
 			document.getElementById("churchTotal").innerHTML = churchTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
-			
-			
+
+
+
 			//organizations
 			var num8 = Number(document.getElementById("Onum").value);
 			var fund8 = Number(document.getElementById("Ofund").value);
@@ -864,49 +864,49 @@ function getOrg(int) {
 			orgTotal = result8;
 			document.getElementById("Ototal").innerHTML = result8;
 			document.getElementById("orgTotal").innerHTML = orgTotal;
-			document.getElementById("grandTotal").value = grandTotal1;	
+			document.getElementById("grandTotal").value = grandTotal1;
 		}
 		function format(num, dec) {
 	        	return Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
 	        }
 	</script>
-	
-	
+
+
 	<script>
 		function toggle(source) {
 	  		checkboxes = document.getElementsByName('clubs[]');
 	  		for(var i in checkboxes)
 	  		checkboxes[i].checked = source.checked;
-	  		
+
 	  		checkboxes1 = document.getElementsByName('general[]');
 	  		for(var e in checkboxes1)
 	  		checkboxes1[e].checked = source.checked;
-	  		
+
 	  		checkboxes2 = document.getElementsByName('athletics[]');
 	  		for(var f in checkboxes2)
 	  		checkboxes2[f].checked = source.checked;
-	  		
+
 		}
-		
-		
+
+
 		$(document).ready(function(){
 	  		$('input[name="all"],input[name="clubs[]"]').bind('click', function(){
 	  			var status = $(this).is(':checked');
 	  			$('input[type="checkbox"]', $(this).parent('li')).attr('checked', status);
 	  		});
 	  		});
-	  		
-	  		
+
+
 	</script>
-	
-	
+
+
 	<script>
 		function toggle2(source) {
 	  		checkboxes = document.getElementsByName('recipents[]');
 	  		for(var i in checkboxes)
 	  		checkboxes[i].checked = source.checked;
 		}
-		
+
 		$(document).ready(function(){
 	  		$('input[name="all"],input[name="recipents[]"]').bind('click', function(){
 	  			var status = $(this).is(':checked');
@@ -914,10 +914,10 @@ function getOrg(int) {
 	  		});
 	  	});
 	</script>
-	
+
 	<script>
 	     	// Form validation code will come here.
-	      	function validate() { 
+	      	function validate() {
 
                       var a = document.getElementById("groupid");
                         var strUser4 = a.options[a.selectedIndex].value;
@@ -927,7 +927,7 @@ function getOrg(int) {
                        {  document.getElementById("groupid").style.border="3px solid red";
 	            	  document.myForm.groupid.focus() ;
                           alert("Please select a Group");
-                        } 
+                        }
 
 
 
@@ -939,17 +939,17 @@ function getOrg(int) {
                        {  document.getElementById("memberid").style.border="3px solid red";
 	            	  document.myForm.memberid.focus() ;
                           alert("Please select a member");
-                        } 
-	      	     
+                        }
+
 			if( document.myForm.fname.value == "" ) {
 	            		document.getElementById("fname").style.border="3px solid red";
 	            		document.myForm.fname.focus() ;
 	            		return false;
-	         	} 
+	         	}
 	         	else {
 				 document.getElementById("fname").style.border="1px solid black";
 			}
-	         
+
 	          	if( document.myForm.lname.value == "" ) {
 	            		document.getElementById("lname").style.border="3px solid red";
 	            		document.myForm.lname.focus() ;
@@ -958,7 +958,7 @@ function getOrg(int) {
 	         	else {
 				document.getElementById("lname").style.border="1px solid black";
 			}
-	         
+
 	          	if( document.myForm.address1.value == "" ) {
 	            		document.getElementById("address1").style.border="3px solid red";
 	            		document.myForm.address1.focus() ;
@@ -967,7 +967,7 @@ function getOrg(int) {
 	         	else {
 				document.getElementById("address1").style.border="1px solid black";
 			}
-			 
+
 	         	if( document.myForm.city.value == "" ) {
 	            		document.getElementById("city").style.border="3px solid red";
 	            		document.myForm.city.focus() ;
@@ -976,7 +976,7 @@ function getOrg(int) {
 	         	else {
 				document.getElementById("city").style.border="1px solid black";
 			}
-			 
+
 	         	if( document.myForm.state.value == "" ) {
 	            		document.getElementById("state").style.border="3px solid red";
 	            		document.myForm.state.focus() ;
@@ -985,7 +985,7 @@ function getOrg(int) {
 	         	else {
 				document.getElementById("state").style.border="1px solid black";
 			}
-			 
+
 	         	if( document.myForm.zip.value == "" ) {
 	            		document.getElementById("zip").style.border="3px solid red";
 	            		document.myForm.zip.focus() ;
@@ -994,7 +994,7 @@ function getOrg(int) {
 	         	else {
 				document.getElementById("zip").style.border="1px solid black";
 			}
-	         
+
 	         	if( document.myForm.email.value == "" ) {
 	            		document.getElementById("email").style.border="3px solid red";
 	            		document.myForm.email.focus() ;
@@ -1003,7 +1003,7 @@ function getOrg(int) {
 	         	else {
 				document.getElementById("email").style.border="1px solid black";
 			}
-	         
+
 	         	if( document.myForm.zip.value == "" ||
 	         	isNaN( document.myForm.zip.value ) ||
 	         	document.myForm.Zip.value.length != 5 ) {
@@ -1014,9 +1014,9 @@ function getOrg(int) {
 	        	else {
 				document.getElementById("zip").style.border="1px solid black";
 			}
-	         
-	        
-			 
+
+
+
 			if(document.myForm.password.value == "" ||
 			document.myForm.cpassword.value == "" ||
 			document.myForm.password.value != document.myForm.cpassword.value ) {
@@ -1029,7 +1029,7 @@ function getOrg(int) {
 			 	document.getElementById("password").style.border="1px solid black";
 			 	document.getElementById("cpassword").style.border="1px solid black";
 			}
-			 
+
 			if(document.myForm.vpid.value == "Select VP Account") {
 				document.getElementById("vpid").style.border="3px solid red";
 	            		document.myForm.vpid.focus();
@@ -1038,9 +1038,9 @@ function getOrg(int) {
 			else {
 				document.getElementById("vpid").style.border="1px solid black";
 			}
-	         
+
 			//return( true );
-			 
+
 			if(document.myForm.description.value == "") {
 				document.getElementById("description").style.border="3px solid red";
 	            		document.myForm.description.focus();
@@ -1049,9 +1049,9 @@ function getOrg(int) {
 			else {
 				document.getElementById("description").style.border="1px solid black";
 			}
-	         
+
 			// return( true );
-			
+
 			if(document.myForm.phone.value == "") {
 				document.getElementById("phone").style.border="3px solid red";
 	            		document.myForm.vpid.focus();
@@ -1076,21 +1076,21 @@ function getOrg(int) {
 			else {
 				document.getElementById("cname").style.border="1px solid black";
 			}
-			
+
 			var card = document.getElementById("groupid")[0].value;
                        if (card.value == 'None')
                         {
                            alert("Please select a card type");
                         }
-                        
+
                         var member = document.getElementById("memberid").selectedIndex;
                         //var selectedValue = memberid.options[memberid.selectedIndex].value;
 
                         if (member == 0) {
                         alert("Please pick member");
-                        
+
                         }
-                        
+
                         var e = document.getElementById("memberid");
                         var strUser = e.options[e.selectedIndex].value;
 
@@ -1099,7 +1099,7 @@ function getOrg(int) {
                        {
                           alert("Please select a user");
                         }
-                        
+
                         if(document.myForm.frname.value == "") {
 				document.getElementById("frname").style.border="3px solid red";
 	            		document.myForm.frname.focus();
@@ -1108,7 +1108,7 @@ function getOrg(int) {
 			else {
 				document.getElementById("frname").style.border="1px solid black";
 			}
-			
+
 			 if(document.myForm.url.value == "") {
 				document.getElementById("url").style.border="3px solid red";
 	            		document.myForm.url.focus();
@@ -1117,7 +1117,7 @@ function getOrg(int) {
 			else {
 				document.getElementById("url").style.border="1px solid black";
 			}
-			
+
 			 if(document.myForm.paypalemail.value == "") {
 				document.getElementById("paypalemail").style.border="3px solid red";
 	            		document.myForm.paypalemail.focus();
@@ -1127,12 +1127,12 @@ function getOrg(int) {
 				document.getElementById("paypalemail").style.border="1px solid black";
 			}
 		}
-	
+
 	</script>
 	<script>
 		var slideIndex = 0;
 		carousel();
-		
+
 		function carousel() {
 		    var i;
 		    var x = document.getElementsByClassName("mainSlides");
@@ -1158,7 +1158,7 @@ function getOrg(int) {
 		   .anythingSlider() // add any non-default options here
 		});
 	</script>
-	
+
 	<script src="../js/jquery.maskedinput.min.js" type="text/javascript"></script>
 	<script>
 		jQuery(function($){
@@ -1180,15 +1180,15 @@ function getOrg(int) {
         var sent = getParameterByName('cs');
          if(sent == 1)
          {
-           
+
            document.getElementById("emessage").innerHTML="email sent";
            $("#emessage").html("Email(s) Sent").fadeIn(5000).fadeOut(5000);
 
          }
         }
        </script>
-       
-	
+
+
 	<script>
 		function getUrlVars() {
 		    var vars = {};
@@ -1199,15 +1199,15 @@ function getOrg(int) {
 		}
 		var group = getUrlVars()["group"];
 	</script>
-	
+
 	<script src="http://app.ecwid.com/script.js?" charset="utf-8"></script>
 	<script>xAffiliate('24503');</script>
 	<script> xProductBrowser("categoriesPerRow=3","views=grid(5,4) list(10) table(20)","categoryView=grid","searchView=list","style="); </script>
 
-	
+
 
   <!-- jequery for validation -- ensures fields at least have text -->
-  <script> 
+  <script>
     var $formLogin = $('#loginform');
     var $formLost = $('#lost-form');
     var $modalAnimateTime = 300;
@@ -1252,11 +1252,11 @@ function getOrg(int) {
                 setTimeout(function() {
                     $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
                 }, 0);
-            }); $('[data-toggle="tooltip"]').tooltip(); 
+            }); $('[data-toggle="tooltip"]').tooltip();
     });
-   
+
   </script>
-  
+
     <script>/* remove containers so dropdowns are consistant inside sidenavigation */
         $(function () {
         $(window).on('load, resize', function () {
@@ -1272,7 +1272,7 @@ function getOrg(int) {
         .resize();
         });
      </script>
-     
+
      <script> //pause play carousel, switch active classes depedning on button clicked */
         $(function () {
             $('#carousel-presentation').carousel({
@@ -1293,7 +1293,7 @@ function getOrg(int) {
 
 </head>
 <header>
-    
+
     <div class ="container-fluid"> <!-- START above nav elements content container -->
        <div class="row-fluid" id="aboveNavElements">
           <a href="#" class="hidden-lg hidden-md pull-right" id="accountIcon" role="button" data-toggle="modal" data-target="#login-modal"><i data-toggle="tooltip" data-placement="left" title="Account Login and Information" class="fa fa-user fa-3x" aria-hidden="true"></i></a>
@@ -1304,7 +1304,7 @@ function getOrg(int) {
 
           <div id="bannerHeader" class="col-lg-7 col-lg-push-1 col-md-7 col-xs-12">
   	        <img class="img-responsive" src="../images/main_2.jpg" alt="Main Banner Image. Achieve Great Goals!"/>   
-          </div>    
+          </div>
 
           <a href="#"  id="accountIcon" class="pull-right  hidden-sm hidden-xs" role="button" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user fa-4x" aria-hidden="true" style="text-indent: 5px;"></i>Account</a>
 
@@ -1326,7 +1326,7 @@ function getOrg(int) {
         </button>
       </div>
     <div class ="container-fluid">
-      <div class="collapse navbar-collapse"> 
+      <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav" id="navCats"  id="mainCategoryType"> <!-- navbar list items -->
 
 
@@ -1334,7 +1334,7 @@ function getOrg(int) {
             <a href="../greatmoodsMall.php?group=16444&storeid=900#!/Womens/c/18159169/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Women<span class="sr-only"></span></a>
             <?php include '../menu/menu_women.php'; ?>
          </li> <!-- end nav dropdown for multi columns -->
-          
+
          <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Accessories/c/18195523/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="sr-only"></span></a>
               <?php include '../menu/menu_accessories.php'; ?>
@@ -1343,51 +1343,51 @@ function getOrg(int) {
           <li class="dropdown"  id="mainCategoryType">
             <a href="../greatmoodsMall.php?group=16444&storeid=900#!/Mens/c/18159150/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Men <span class="sr-only"></span></a>
             <?php include '../menu/menu_men.php'; ?>
-          </li> 
-          
+          </li>
+
           <li class="dropdown"  id="mainCategoryType">
             <a href="../greatmoodsMall.php?group=16444&storeid=900#!/Juniors/c/18195671/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Juniors <span class="sr-only"></span></a>
             <?php include '../menu/menu_juniors.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Kids/c/18209039/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Kids <span class="sr-only"></span></a>
               <?php include '../menu/menu_kids.php'; ?>
-          </li>  
+          </li>
           <li class="dropdown"  id="mainCategoryType">
             <a "../greatmoodsMall.php?group=16444&storeid=900#!/Fitness/c/18209624/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Fitness <span class="sr-only"></span> </a>
             <?php include '../menu/menu_fitness.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Food/c/18209702/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Gifts <span class="sr-only"></span> </a>
              <?php include '../menu/menu_food.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Entertainment/c/18209743/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Entertainment<span class="sr-only"></span> </a>
              <?php include '../menu/menu_entertainment.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown" id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Houseware/c/18209794/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="sr-only"></span></a>
             <?php include '../menu/menu_housewares.php'; ?>
-          </li>         
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Health/c/18209818/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Health<span class="sr-only"></span> </a>
             <?php include '../menu/menu_health.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Inspirational/c/18209845/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true">Inspirational<span class="sr-only"></span> </a>
             <?php include '../menu/menu_inspirational.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Holiday/c/18209901/offset=0&sort=priceAsc"  class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true">Holiday<span class="sr-only"></span> </a>
               <?php include '../menu/menu_holiday.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Business/c/18209939/offset=0&sort=priceAsc"  class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true">Business<span class="sr-only"></span> </a>
@@ -1416,12 +1416,12 @@ function getOrg(int) {
           <li id="fund-border" class="divider-vertical" style="border-right: 1px solid transparent !important;border-left: 1px solid white !important"></li>
 
         <!--<li id="login-button" role="button" data-toggle="modal" data-target="#login-modal" aria-hidden="true"><a href="#"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Login</a></li>-->
-      </div> 
+      </div>
     </div><!-- end container -->
   </nav> <!-- end nav -->
 
     <!-- Code for navbar collapse to SIDEBAR on MOBILE screens -->
-  <div class="navmenu navmenu-default navmenu-fixed-left offcanvas" >                
+  <div class="navmenu navmenu-default navmenu-fixed-left offcanvas" >
     <ul class="nav navmenu-nav">
       <!--<span role="button" data-toggle="modal" data-target="#login-modal" aria-hidden="true">Login</span>-->
       <li class="dropdown">
@@ -1435,43 +1435,43 @@ function getOrg(int) {
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Men <span class="sr-only"></span></a>
             <?php include '../menu/menu_men.php'; ?>
-      </li> 
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button"aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Juniors <span class="sr-only"></span></a>
             <?php include '../menu/menu_juniors.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Kids <span class="sr-only"></span> </a>
         <?php include '../menu/menu_kids.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false" id="mainCategoryType">Fitness <span class="sr-only"></span> </a>             
+        <a href="#" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false" id="mainCategoryType">Fitness <span class="sr-only"></span> </a>
           <?php include '../menu/menu_fitness.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Gifts <span class="sr-only"></span></a>
           <?php include '../menu/menu_food.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Entertainment <span class="sr-only"></span></a>
          <?php include '../menu/menu_entertainment.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Home <span class="sr-only"></span></a>
             <?php include '../menu/menu_housewares.php'; ?>
-      </li>         
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Health <span class="sr-only"></span> </a>
         <?php include '../menu/menu_health.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown" >
         <a href="#"  id="mainCategoryType" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Inspirational <span class="sr-only"></span></a>
           <?php include '../menu/menu_inspirational.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#"  id="mainCategoryType" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Holiday <span class="sr-only"></span></a>
         <?php include '../menu/menu_holiday.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#"  id="mainCategoryType" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Business <span class="sr-only"></span></a>
         <?php include '../menu/menu_business.php'; ?>
@@ -1491,9 +1491,9 @@ function getOrg(int) {
         <li class="divider"></li>
       </ul> <!-- end navmenu -->
     </div> <!--end side nav -->
-    
-    
-<!-- Login/logged in/change pw modal elements -->    
+
+
+<!-- Login/logged in/change pw modal elements -->
 <!-- START MODAL LOGIN -  pops up box for login -->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -1524,22 +1524,22 @@ function getOrg(int) {
                elseif ($_SESSION['LOGIN'] == "TRUE") {
                         echo '<div class="modal-body">';
                             echo '<div class="mallmenu">';
-            	            echo '<h4><a href="../index.php">GreatMoods Homepage</a></h4>';
+            	            echo '<h4><a href="../index.php">FundraisingATM Homepage</a></h4>';
             	         	echo '<h4><a href="editClub.php"/>Account Home</a></h4>';
                 	        echo '<h4><a href="../reset.php">Change My Password</a></h4>';
             	         	echo '</div>'; /*modal body end */
             	         	echo '<div class="modal-footer">';
 			         	    include('../menu/logout.inc.php');
 			         	    echo '</div>'; /*modal body end */
-                } 
+                }
            ?>
           </div>
-      </div>    <!-- end modal content -->   
+      </div>    <!-- end modal content -->
     </div> <!-- end modal-dialogue -->
   </div> <!-- END MODAL LOGIN -->
-    
-          <!-- Reset PW Modal  
-          || WHILE ALL FUNCTIONS WORKED FINE FOR THIS, IT DOES NOT PROPERLY STORE PWs || 
+
+          <!-- Reset PW Modal
+          || WHILE ALL FUNCTIONS WORKED FINE FOR THIS, IT DOES NOT PROPERLY STORE PWs ||
           || Saving so I can look into utilizing PHP for reset inside this modal - have used it to show messages based on button submit, but pws still did not change ||
         <div class="modal fade" id="change-pw">
             <div class="modal-dialog">
@@ -1547,7 +1547,7 @@ function getOrg(int) {
                     <div class="modal-header" align="center">
                       <img class="img-rounded" id="img_logo" src="../images/GMlogo.png">
                     </div>
-                	<!-- change pw modal2 form 
+                	<!-- change pw modal2 form
                   </?php
                         if($_SESSION['LOGIN'] == "TRUE") {
                                 echo '<div class="modal-body">';
@@ -1563,8 +1563,8 @@ function getOrg(int) {
                                 echo '</div>'; /* end modal footer */
                         }
                 	  ?>
-                </div>    <!-- end modal content  
-            </div> <!-- end modal-dialogue 
+                </div>    <!-- end modal content
+            </div> <!-- end modal-dialogue
         </div>  END MODAL CHANGEPW -->
 
 </header>
@@ -1572,5 +1572,3 @@ function getOrg(int) {
     <a href="#">GreatMoods<br>Mall Directory</a>
     <php include '../menu/menu_mall_directory_site.php'; ?>
 </li> -->
-
-

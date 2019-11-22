@@ -50,47 +50,47 @@
    $stxin = $row['statetin'];
    $nonp = $row['threec'];
    $pic = $row['picPath'];
-       
+
 ?>
 
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods | Representative</title>
+	<title>FundraisingATM | Representative</title>
 </head>
 
 <body>
 <div id="container">
-      
+
 	<?php include 'header.inc.php' ; ?>
 	<?php include 'sideLeftNav.php' ; ?>
-	
-      
+
+
     <div id="content">
-   
+
 	<h2 align="center">View Accounts</h2>
 	<h3>Select An Account Below</h3>
-	
+
           	<form>
-          	
+
           	<select name='users' style='width: 220px;' onchange='showUser(this.value)'><option>Select Account Name</option>
 			<?
 			//$query = "SELECT DISTINCT  Dealer, Zip FROM $table WHERE setuppersonid ='$userID' ORDER BY Dealer";
 			$query = "SELECT * FROM $table WHERE setuppersonid ='$userID' AND isMainGroup = 1 ORDER BY Dealer asc";
-		        $result = mysqli_query($link, $query)or die ("couldn't execute  pages query.".mysqli_error($link)); 
-		    			
+		        $result = mysqli_query($link, $query)or die ("couldn't execute  pages query.".mysqli_error($link));
+
                         while ($row = mysqli_fetch_assoc($result)){
                             $dealer = $row['Dealer'];
                            $idDealer = $row['loginid'];
-                           /* 
+                           /*
                  echo '<option value="'.$idDealer.'">'.stripslashes($row[Dealer]) .' '.$row[City].' '.$row[State].'</option>';
                  */
                  echo '<option value="'.$dealer.','.$row['Zip'].','.$idDealer.'">'.stripslashes($row['Dealer']) .' '.$row['City'].' '.$row['State'].'</option>';
-                 
-                 
+
+
                         }
-						
+
                         echo "</select>";
-                       
+
 			?>
 			<br>
 		</form>
@@ -98,10 +98,10 @@
 		<div id="">
 			<div id="txtHint"><b>Account Groups will display here.<b></div>
 		</div>
-		
+
 	<p>&nbsp;</p>
 	</div> <!--end content-->
-  
+
 <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
