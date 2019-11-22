@@ -38,7 +38,7 @@
               <div class="imgcard-info">
                   <h3 class="hvr-underline-from-center text-center"><span style="color:black;">Find a Fundraiser to Support!</span></h3>
               </a><!-- end link wrap | card information will not be clickable -->
-                  <div class="cardbody">Show your support by shopping at the FundraisingATM which contains over 100 different stores with a variety of over 20,000 different products.  This means that there is something for everyone! <br><br> There are even name-brand products, in-style and seasonal goods, and new items being added regularly.  A total of 35% of each purchase you make goes directly to the fundraiser you are supporting! </div>
+                  <div class="cardbody">Show your support by shopping at the FundraisingATM Mall which contains over 100 different stores with a variety of over 20,000 different products.  This means that there is something for everyone! <br><br> There are even name-brand products, in-style and seasonal goods, and new items being added regularly.  A total of 35% of each purchase you make goes directly to the fundraiser you are supporting! </div>
               	  <a href="search.php" ><button class="access btn btn-primary">Support a Fundraiser</button></a>
               </div> <!-- end image card info -->
           </div> <!-- end image card -->
@@ -100,13 +100,13 @@
                     </div>
 
                     <div class="tab-pane" id="calc" role="tabpanel">
-                        <p class="card-text">A simple to use calculator that will allow you to find out how much money you can raise using the GreatMoods Program.</p>
+                        <p class="card-text">A simple to use calculator that will allow you to find out how much money you can raise using the FundraisingATM Program.</p>
 												<div class="text-center">
                         <a id="tab-Button"  href="calculator.php" class="btn btn-primary">Use Calculator</a>
 											</div>
                     </div>
                     <div class="tab-pane" id="steps" role="tabpanel">
-                        <p class="card-text">The GreatMoods Program allows all of the Fundraising to take place online with our Simple 3 Step Setup.</p>
+                        <p class="card-text">The FundraisingATM Program allows all of the Fundraising to take place online with our Simple 3 Step Setup.</p>
                         <blockquote class="card-text">Step 1) Setup Website Example</blockquote>
                         <blockquote class="card-text">Step 2) Setup Members Example</blockquote>
                         <blockquote class="card-text">Step 3) Setup E-Mails Example</blockquote>
