@@ -1,4 +1,4 @@
-<?php 
+<?php
 if(isset($_POST['login'])){
     session_start();
     ob_start();
@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
   <img id="collage" src="../images/Header-Banner_Homepage-Collage.png" width="1024" height="150" alt="Photo Collage" />
     <div id="menuWrapper"> </div>
     <!--end menuWrapper-->
-    
+
         <div id="login">
         <?php
             if(!isset($_SESSION['LOGIN']) || $_SESSION['LOGIN'] == "FALSE") {
@@ -30,23 +30,22 @@ if(isset($_POST['login'])){
                 echo '<p class="forgotpw"><a href="../recover.php">Forgot Password?</a><br />';
                 echo '<a href="">Register Now</a></p>';
                 echo '</div>';
-                
+
             } elseif($_SESSION['LOGIN'] == "TRUE") {
                 include('logout.inc.php');
               }
          ?>
       </div>
-    <!--end login--> 
-    
+    <!--end login-->
+
     <div id="mainNav">
       <ul id="menu">
-        <?if($_SESSION['LOGIN'] == "TRUE"){ echo '<li><a href="'.$_SESSION['home'].'" />My Account</a></li>';}?>
+        <?php if($_SESSION['LOGIN'] == "TRUE"){ echo '<li><a href="'.$_SESSION['home'].'" />My Account</a></li>';}?>
         <li><a href="../index.php">GreatMoods <br/>Homepage</a></li>
 	<li><a href="../gettingstarted.php">Getting <br/>Started</a>
 	<li><a href="../help.php">Help </a>
       </ul>
     </div><!--end mainNav-->
-    
+
 
   </div><!--end headerMain-->
-  

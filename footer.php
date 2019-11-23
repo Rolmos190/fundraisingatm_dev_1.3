@@ -28,7 +28,7 @@
                 <ul id="infoList">
                     <li id="homelink" class="btn btn-md btn-link"><a href="index.php">FundraisingATM Homepage</a></li><span class="divider-vertical hidden-xs"></span>
                     <li class="btn btn-md btn-link"><a href="gm_programoverview.php">FundraisingATM Program Overview</a></li><span class="divider-vertical hidden-xs"></span>
-                    <li id="getstarted" class="btn btn-md btn-link"><a href="gettingstarted_sendemail.php">Getting Started</a></li><span class="divider-vertical hidden-xs"></span>
+                    <li id="getstarted" class="btn btn-md btn-link"><a href="gettingstarted_sendemail.php">aaaGetting Started</a></li><span class="divider-vertical hidden-xs"></span>
                     <li class="btn btn-md btn-link"><a href="">Privacy &amp; Warranties</a></li>
                 </ul>
             </div><!--end row-->
@@ -38,6 +38,7 @@
             </div>
         </div><!--end row 2 -->
     </div><!--end container -->
+  </div>
 </footer>
 
 <!-- jQuery library -->

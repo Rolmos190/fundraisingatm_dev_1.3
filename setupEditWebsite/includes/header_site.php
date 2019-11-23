@@ -12,22 +12,19 @@
                 echo '<ul><li>&nbsp;<a href="">Forgot Password?</a></li>';
                 echo '<li>&nbsp;<a href="">Register Now</a></li></ul>';
                 echo '</div>';
-                
+
             } elseif($_SESSION['LOGIN'] == "TRUE") {
                 include('includes/logout.inc.php');
               }
          ?>
       </div> <!--end login-->
-    
+
     <ul class="nav">
     <li><a href="index.php">GreatMoods<br>Homepage</a></li>
     <li>
         <a href="#">GreatMoods<br>Mall Directory</a>
         <?php include 'includes/menu_mall_directory_site.php'; ?>
     </li>
-    <?if($_SESSION['LOGIN'] == "TRUE"){ echo '<li><a href="'.$_SESSION['home'].'" />Account<br>Home</a></li>';}?>
+    <?php if($_SESSION['LOGIN'] == "TRUE"){ echo '<li><a href="'.$_SESSION['home'].'" />Account<br>Home</a></li>';}?>
 </ul>
 </div> <!--end headerMain-->
-      
-    
-    
