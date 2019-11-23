@@ -73,7 +73,7 @@
           	<form>
 
           	<select name='users' style='width: 220px;' onchange='showUser(this.value)'><option>Select Account Name</option>
-			<?
+			<?php
 			//$query = "SELECT DISTINCT  Dealer, Zip FROM $table WHERE setuppersonid ='$userID' ORDER BY Dealer";
 			$query = "SELECT * FROM $table WHERE setuppersonid ='$userID' AND isMainGroup = 1 ORDER BY Dealer asc";
 		        $result = mysqli_query($link, $query)or die ("couldn't execute  pages query.".mysqli_error($link));

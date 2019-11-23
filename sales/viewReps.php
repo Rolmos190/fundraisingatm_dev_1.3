@@ -45,7 +45,7 @@
 
 	<h3>Select Representative Account Below</h3>
 
-          	<form>
+    <form>
 			<?
 
 			$query = "SELECT * FROM distributors WHERE setupID ='$userID' AND role = 'RP'";

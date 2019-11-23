@@ -1,18 +1,28 @@
-FundraisingATM<?php
+<?php
 session_start(); // session start
 ob_start();
-ini_set('display_errors', '1'); // errors reporting on
+ini_set('display_errors', '0'); // errors reporting on
 error_reporting(E_ALL); // all errors
 require_once('../includes/functions.php');
 require_once('../includes/connection.inc.php');
 require_once('../includes/imageFunctions.inc.php');
 $link = connectTo();
-
-  if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "RP")
+if(isset($_POST['submit1']))
+    {
+       $_SESSION['role'] = "RP";
+       $_SESSION['home'] = "setupEditWebsite/editClub.php";
+    }
+if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "RP")
        {
             header('Location: ../index.php');
             exit;
        }
+if($_SESSION['freeze'] == "TRUE")
+       {
+          // echo "Account Frozen";
+           header('Location: accountEdit.php');
+       }
+       $table = "Dealers";
 
    $userID = $_SESSION['userId'];
    $query = "SELECT * FROM user_info WHERE userInfoID='$userID'";
@@ -99,12 +109,7 @@ $link = connectTo();
 
 </body>
 </html>
-<pre>
-<?php if ($_POST && $mailSent){
-	echo htmlentities($message, ENT_COMPAT, 'UTF-8')."\n";
-	echo 'Headers: '.htmlentities($headers, ENT_COMPAT, 'UTF-8');
-} ?>
-</pre>
+
 <?php
    ob_end_flush();
 ?>

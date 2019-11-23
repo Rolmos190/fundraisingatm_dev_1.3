@@ -1,39 +1,59 @@
 <?php
-session_start();
-
-/*if(!isset($_SESSION['authenticated']))
+       include '../includes/autoload.php';
+       if(isset($_POST['submit1']))
+       {
+          $_SESSION['role'] = "SC";
+          $_SESSION['home'] = "sales/viewReps.php";
+       }
+       // if session variable not set, redirect to login page
+       if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "SC")
        {
             header('Location: ../index.php');
             exit;
-       }*/
+       }
+     if($_SESSION['freeze'] == "TRUE")
+       {
+          // echo "Account Frozen";
+           header('Location: accountEdit.php');
+       }
+     $userID = $_SESSION['userId'];
+
+     $table = "representatives";
+     $user_email = $_SESSION['email'];
+     $query = "SELECT * FROM user_info 	WHERE userInfoID='$userID'";
+     $result = mysqli_query($link, $query)or die ("couldn't execute query.".mysql_error($link));
+     $row = mysqli_fetch_assoc($result);
+     $cn = $row['companyName'];
+     $fn = $row['FName'];
+     $myPic = $row['picPath'];
 
 ?>
 <!DOCTYPE html>
+<html>
 <head>
 	<meta charset="UTF-8" />
 	<title>GreatMoods | Admin</title>
 	<link rel="shortcut icon" href="../images/favicon.ico">
-	
-	<link href="../css/layout_styles.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="../css/addnew_form_styles.css" />
+
+	<link href="../css/allforms_styles.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
 	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
-	
+
 	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
 </head>
 
 <body>
 <div id="container">
       <?php include 'header.inc.php' ; ?>
-      <br><br>
       <?php include 'sidenav.php' ; ?>
 
       <div id="content">
           <h1>Add Fundraiser Leader</h1>
           <h3></h3>
-		
+
 		<div class="table">
 			<form class="graybackground" action="">
-				<!--<h3>--Option 1: Add One Leader--</h3>-->
+				<h3>--Option 1: Add One Leader--</h3>
 				<div class="tablerow">
 					<span id="hd_vp2">Vice President:</span>
 					<span id="hd_sc2">Sales Coordinator:</span>
@@ -41,7 +61,7 @@ session_start();
 					<span id="hd_gmfr2">Fundraiser Account:</span>
 					<span id="hd_fg2">Group:</span>
 				</div> <!-- end row -->
-					
+
 				<div class="tablerow">
 					<select class="role2">
 						<option>Select VP Account</option>
@@ -79,44 +99,44 @@ session_start();
 						<option></option>
 					</select>
 				</div> <!-- end row -->
-					
+
 
 				<div class="simpleTabs">
-					<!--<ul class="simpleTabsNavigation">
+					<ul class="simpleTabsNavigation">
 						<li><a href="#">Information</a></li>
 						<li><a href="#">Account Login</a></li>
 						<li><a href="#">Social Media</a></li>
 						<li><a href="#">Profile Photo</a></li>
-					</ul>-->
-					
+					</ul>
+
 					<div class="interim-form">
 						<div class="tablerow">
 							<div class="interim-header"><h2>[Leader Type]'s Contact Information</h2></div>
-							<!--<span>[Group] Leader Type: </span>--> <!-- [Group] = same as the selected group above -->
-							<!--<select name="">
+							<span>[Group] Leader Type: </span><!-- [Group] = same as the selected group above -->
+							<select name="">
 								<option value="" selected>Select Leader</option>
 								<option value="">-depends on group-</option>
 								<option value=""></option>
 								<option value=""></option>
 								<option value=""></option>
 								<option value="">Other/Custom (Specify)</option>--> <!-- If Other/Custom is selected, then display input field below -->
-							<!--</select>
+							</select>
 							<span>Other/Custom:</span>
 							<input id="fltype" type="text" name="" value="">-->
 						</div> <!-- end row -->
-						
-						<div class="tablerow"> <!-- titles -->									
+
+						<div class="tablerow"> <!-- titles -->
 							<span id="hd_fname">First</span>
 							<span id="hd_mname">Middle</span>
 							<span id="hd_lname">Last</span>
-							<!--<span id="hd_pname" title="Preferred First Name">Preferred</span>
-							<span id="hd_title">Title</span>-->
+							<span id="hd_pname" title="Preferred First Name">Preferred</span>
+							<span id="hd_title">Title</span>
 						</div> <!-- end row -->
 						<div class="tablerow"> <!-- inputs -->
 							<input id="fname" type="text" name="">
 							<input id="mname" type="text" name="">
 							<input id="lname" type="text" name="">
-							<!--<input id="pname" type="text" name="">
+							<input id="pname" type="text" name="">
 							<select name="">
 								<option value="">---</option>
 								<option value="">Mr.</option>
@@ -124,32 +144,32 @@ session_start();
 								<option value="">Mrs.</option>
 								<option value="">Miss</option>
 								<option value="">Dr.</option>
-							</select>-->
+							</select>
 						</div> <!-- end row -->
-					
+
 						<table>
 							<tr>
 								<td id="td_1">
 									<div class="tablerow">
 										<br>
 										<input type="checkbox" name="" value="" checked>Use Fundraiser Account Address<br>
-										<input type="checkbox" name="" value="">Use Alternate Address:							
+										<input type="checkbox" name="" value="">Use Alternate Address:
 									</div> <!-- end row -->
-									
+
 									<div class="tablerow"> <!-- title -->
 										<span id="hd_address1">Address 1</span>
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- input -->
 										<input id="address1" type="text" name="">
 									</div> <!-- end row -->
-									
+
 									<div class="tablerow"> <!-- title -->
 										<span id="hd_address2">Address 2</span>
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- input -->
 										<input id="address2" type="text" name="">
 									</div> <!-- end row -->
-													
+
 									<div class="tablerow"> <!-- titles -->
 										<span id="hd_city">City</span>
 										<span id="hd_state">State</span>
@@ -214,13 +234,13 @@ session_start();
 										<input id="zip" type="text" name="">
 									</div> <!-- end row -->
 								</td>
-							
+
 								<td id="td_2">
-									<!--<div class="tablerow"> <!-- titles -->
-										<!--<span id="hd_mphone">Mobile Phone</span>
+									<div class="tablerow"> <!-- titles -->
+										<span id="hd_mphone">Mobile Phone</span>
 									</div> <!-- end row -->
-									<!--<div class="tablerow"> <!-- inputs -->
-										<!--<input id="mphone1" type="text" name=""><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
+									<div class="tablerow"> <!-- inputs -->
+										<input id="mphone1" type="text" name=""><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
 										<select id="mcarrier" title="Needed To Receive Texts From Computer">
 											<option>Select Carrier</option>
 											<option>Verizon</option>
@@ -231,10 +251,10 @@ session_start();
 											<option>Other</option>
 										</select>
 									</div> <!-- end row -->
-									<!--<div class="tablerow">
+									<div class="tablerow">
 										<span id="hd_hphone">Home Phone</span>
 									</div> <!-- end row -->
-									<!--<div class="tablerow">
+									<div class="tablerow">
 										<input id="hphone1" type="text" name=""><input id="hphone2" type="text" name=""><input id="hphone3" type="text" name="">
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- titles -->
@@ -242,19 +262,20 @@ session_start();
 										<span id="ext">Ext</span>
 									</div> <!-- end row -->
 									<div class="tablerow">
-										<input id="wphone1" type="text" name=""><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
+										<input id="wphone1" type="text" name="">
+										<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">
 										<input id="ext" type="text" name="">
 									</div> <!-- end row -->
 								</td>
 							</tr>
 						</table>
-										
-						<!--<div class="tablerow"> <!-- titles -->
-							<!--<span id="hd_bday">Birthday</span>
+
+						<div class="tablerow"> <!-- titles -->
+							<span id="hd_bday">Birthday</span>
 							<span id="hd_gender">Gender</span>
 						</div> <!-- end row -->
-						<!--<div class="tablerow"> <!-- inputs -->
-							<!--<select id="month" name="">
+						<div class="tablerow"> <!-- inputs -->
+							<select id="month" name="">
 								<option value="na">Month</option>
 								<option value="1">January</option>
 								<option value="2">February</option>
@@ -412,9 +433,9 @@ session_start();
 								<option value="female">Female</option>
 								<option value="male">Male</option>
 							</select>
-						</div> <!-- end row -->	
+						</div> <!-- end row -->
 					</div> <!-- end tab 1 -->
-					
+
 					<div class="interim-form">
 						<div class="interim-header"><h2>Account Login</h2></div>
 						<div id="row"> <!-- titles -->
@@ -423,7 +444,7 @@ session_start();
 						<div id="row"> <!-- inputs -->
 							<input id="loginemail" type="text" name="" value="">
 						</div> <!-- end row -->
-						
+
 						<div id="row"> <!-- titles -->
 						<span id="hd_password">Password</span>
 						<span id="hd_cpassword">Confirm Password</span>
@@ -433,34 +454,34 @@ session_start();
 							<input id="cpassword" type="text" name="" value="">
 						</div> <!-- end row -->
 					</div> <!-- end tab 2 -->
-					
+
 					<div class="interim-form">
 						<div class="interim-header"><h2>Social Media Connections</h2></div>
-						<div id="row"> 
+						<div id="row">
 							<span id="hd_fb">Facebook</span>
 							<input id="fb" type="text" name="" value="www.facebook.com">
 						</div> <!-- end row -->
-						<div id="row"> 
+						<div id="row">
 							<span id="hd_tw">Twitter</span>
 							<input id="tw" type="text" name="" value="www.twitter.com">
 						</div> <!-- end row -->
-						<div id="row"> 
+						<div id="row">
 							<span id="hd_li">LinkedIn</span>
 							<input id="li" type="text" name="" value="www.linkedin.com">
 						</div> <!-- end row -->
-						<!--<div id="row"> 
+						<div id="row">
 							<span id="hd_pn">Pinterest</span>
 							<input id="pn" type="text" name="" value="www.pinterest.com">
 						</div> <!-- end row -->
-						<!--<div id="row">
+						<div id="row">
 							<span id="hd_gp">Google+</span>
 							<input id="gp" type="text" name="" value="plus.google.com">
 						</div> <!-- end row -->
 					</div> <!-- end tab 3 -->
-					
+
 					<div class="interim-form"> <!-- profile pic tab4 -->
 						<div class="interim-header"><h2>Profile Photo</h2></div>
-						<div class="tablerow"> 
+						<div class="tablerow">
 							<span id="">Upload Profile Photo:</span>
 							<input type="file" id="" name="">
 							<input type="submit" class="redbutton" value="Upload Photo">
@@ -470,7 +491,7 @@ session_start();
 						</div> <!-- end row -->
 					</div> <!-- end tab4 content (profile pic) -->
 				</div> <!-- end simple tabs -->
-			
+
 				<div class="tablerow">
 						<input type="submit" class="redbutton" value="Add New Fundraiser Leader">
 						<input type="submit" class="redbutton" value="Save & Add Another Leader">
@@ -478,8 +499,8 @@ session_start();
 			</form>
 
 			<br>
-			
-			<!--<form class="graybackground">
+
+			<form class="graybackground">
 				<h3>--Option 2: Add Multiple Leaders--</h3>
 				<h2>How To Add Multiple Leaders</h2><br>
 				<ol>
@@ -488,13 +509,13 @@ session_start();
 					<li>Upload the Completed Spreadsheet Below...</li>
 				</ol>
 				<input type="file" name="">
-				<input class="redbutton" type="submit" name="" value="Upload File">		
+				<input class="redbutton" type="submit" name="" value="Upload File">
 			</form>
 		</div>--> <!-- end table -->
 
   </div> <!--end content -->
-  
-      <?php include 'footer.php' ; ?>   
+
+<?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>
