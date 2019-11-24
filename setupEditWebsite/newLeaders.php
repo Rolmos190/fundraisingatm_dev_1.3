@@ -29,10 +29,10 @@
 <!DOCTYPE html>
 <head>
 	<title>Add New Leaders</title>
-  <link href="../css/allforms_styles.css" rel="stylesheet" type="text/css" />
+
   <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
   <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
-
+  
   <script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
 
 </head>

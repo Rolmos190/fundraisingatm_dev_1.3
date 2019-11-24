@@ -55,7 +55,7 @@ td#td_2 				{ width: 50%; }
 span#hd_id				{ width: 3em; }
 span#hd_title				{ width: 4.8em; }
 span#hd_fname, span.hd_fname		{ width: 6.5em; }
-span#hd_mname				{ width: 3.9em; }
+span#hd_mname				{ width: 3em; }
 span#hd_lname, span.hd_lname		{ width: 8.5em; }
 span#hd_pname				{ width: 5.2em; }
 span#hd_cname				{ width: 10.5em; }

@@ -70,6 +70,7 @@ ul.tab li a:focus, .active {
 /* Style the tab content */
 .tabcontent {
     display: none;
+    width: 100%;
     padding: 2px 12px;
     border: 1px solid #ccc;
     border-top: none;
@@ -98,9 +99,9 @@ label{
       <?php include 'sideLeftNav.php' ; ?>
 
 	<br>
-    <div class="container" id="getStartedContent" >
-        <div class="row-fluid">
-     <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
+    <div class="container" id="getStartedContent" style="width: 85%; border: solid magenta 1px">
+    <div class="row-fluid">
+    <div class=" col-md-7 col-md-push-2" id="newLeaderWrap" >
 <ul class="tab">
   <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen">Information</a></li>
   <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')">Upload Multiple Members</a></li>
@@ -113,7 +114,7 @@ label{
     </div>-->
 
 		<form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data">
-			<div class="table">
+			<div class="table" style="width:100%">
 			    <br>
 			<div class="row">
 					<select class="role5" name="groupid" id="groupid" onchange="fetch_select(this.value);" required>
@@ -159,8 +160,11 @@ label{
 
 						<div class="tablerow"> <!-- titles -->
 							<span id="hd_fname">First</span>
+              <span></span>
 							<span id="hd_mname">Middle</span>
+              <span></span>
 							<span id="hd_lname">Last</span>
+              <span></span>
 							<span id="hd_pname" title="Preferred First Name">Preferred</span>
 							<span id="hd_title">Title</span>
 						</div> <!-- end row -->
@@ -204,6 +208,7 @@ label{
 
 									<div class="tablerow"> <!-- titles -->
 										<span id="hd_city">City</span>
+                    <span></span>
 										<span id="hd_state">State</span>
 										<span id="hd_zip">Zip</span>
 									</div> <!-- end row -->
@@ -269,10 +274,10 @@ label{
 
 								<td id="td_2">
 									<div class="tablerow"> <!-- titles -->
-										<span id="hd_mphone">Mobile Phone</span>
+										<span id="hd_mphone">Cell Phone</span>
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- inputs -->
-										<input id="mphone1" type="text" name=""><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
+										<input id="mphone1" type="text" name="" maxlength="3"><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
 										<select id="mcarrier" title="Needed To Receive Texts From Computer">
 											<option>Select Carrier</option>
 											<option>Verizon</option>
@@ -304,6 +309,7 @@ label{
 
 						<div class="tablerow"> <!-- titles -->
 							<span id="hd_bday">Birthday</span>
+              <span id="hd_gender"></span>
 							<span id="hd_gender">Gender</span>
 						</div> <!-- end row -->
 						<div class="tablerow"> <!-- inputs -->
