@@ -21,8 +21,8 @@ select, input { margin: 0 .4em 0 0; padding: 0; border: 1px solid #A9A9A9; curso
 /* Dropdown Selections */
 #labels.row { line-height: .9em; }
 select#group { width: 48%; height: 12em; }
-span#hd_vp, span#hd_sc, span#hd_rp, span#hd_gmfr, span#hd_fg, span#hd_fl, span#hd_fm, 
-span#hd_ff, span#hd_bb, span#hd_ba, span#hd_cc { 
+span#hd_vp, span#hd_sc, span#hd_rp, span#hd_gmfr, span#hd_fg, span#hd_fl, span#hd_fm,
+span#hd_ff, span#hd_bb, span#hd_ba, span#hd_cc {
 	font-size: .6em;
     	width: 9.9%;
     	margin: 0;
@@ -30,8 +30,8 @@ span#hd_ff, span#hd_bb, span#hd_ba, span#hd_cc {
 }
 select.role { width: 9.9%; margin: 0 .1% 0 0; font-size: .7em; }
 
-span#hd_vp2, span#hd_sc2, span#hd_rp2, span#hd_gmfr2, span#hd_fg2, span#hd_fl2, span#hd_fm2, 
-span#hd_ff2, span#hd_bb2, span#hd_ba2, span#hd_cc2 { 
+span#hd_vp2, span#hd_sc2, span#hd_rp2, span#hd_gmfr2, span#hd_fg2, span#hd_fl2, span#hd_fm2,
+span#hd_ff2, span#hd_bb2, span#hd_ba2, span#hd_cc2 {
 	font-size: .95em;
     	width: 15.5%;
     	margin: 0 0 .2em 0;
@@ -39,8 +39,8 @@ span#hd_ff2, span#hd_bb2, span#hd_ba2, span#hd_cc2 {
 }
 select.role2 { width: 15.5%; margin: 0 .1% 0 0; font-size: .8em; }
 
-span#hd_vp3, span#hd_sc3, span#hd_rp3, span#hd_gmfr3, span#hd_fg3, span#hd_fl3, span#hd_fm3, 
-span#hd_ff3, span#hd_bb3, span#hd_ba3, span#hd_cc3 { 
+span#hd_vp3, span#hd_sc3, span#hd_rp3, span#hd_gmfr3, span#hd_fg3, span#hd_fl3, span#hd_fm3,
+span#hd_ff3, span#hd_bb3, span#hd_ba3, span#hd_cc3 {
 	font-size: .84em;
     	width: 13.8%;
     	margin: 0;
@@ -122,10 +122,10 @@ input#cpassword, input#username, input#accountno{ width: 10em; }
 	input#cpassword{ height: 1.4em; }
 input#password[type=password]{ width: 12.5em; height: 1.65em; vertical-align: top; }
 
-input#password2[type=password], 
-input#cpassword2[type=password], 
+input#password2[type=password],
+input#cpassword2[type=password],
 input#opassword2[type=password] { width: 15.15em; height: 1.35em; vertical-align: top; }
-	
+
 
 
 /* Payment */
@@ -176,28 +176,28 @@ img#leaderPreview, img#fmleaderPreview{
 	-webkit-column-count: 4; /* Chrome, Safari, Opera */
     	-moz-column-count: 4; /* Firefox */
     	column-count: 4;
-    	
+
     	-webkit-column-gap: 10px; /* Chrome, Safari, Opera */
     	-moz-column-gap: 10px; /* Firefox */
     	column-gap: 10px;
-    	
+
     	-webkit-column-width: 233px; /* Chrome, Safari, Opera */
     	column-width: 233px;
 }
 	.groupcolumns span { margin: 0; font-size: .9em; }
-	
+
 	.groupcolumns h6{
 		font-size: 1.1em;
 		font-weight: bold;
 		padding: 0px 0px 0px 0px;
 	}
-	
+
 	.groupcolumns h7{
 		font-size: 1em;
 		font-weight: bold;
 		margin: .3em 0 0 0;
 	}
-	
+
 .groupsection{
 	-webkit-column-break-inside: avoid;
          page-break-inside: avoid;
@@ -229,6 +229,7 @@ img#leaderPreview, img#fmleaderPreview{
 	background: #eee;
 	padding: 0 20px 20px 20px;
 	font-size: .9em;
+	width: 100%;
 }
 
 .interim-header{
@@ -236,7 +237,7 @@ img#leaderPreview, img#fmleaderPreview{
 	padding: 10px 0 5px 10px;
 	margin: 0 -20px 10px -20px;
 
-	
+
 }
 .interim-header h2{ color: #fff; font-size: 1.4em; }
 
@@ -253,19 +254,19 @@ input#startdate, input#enddate { width: 6em; }
 	-webkit-column-count: 3; /* Chrome, Safari, Opera */
     	-moz-column-count: 3; /* Firefox */
     	column-count: 3;
-    	
+
     	-webkit-column-gap: 12px; /* Chrome, Safari, Opera */
     	-moz-column-gap: 12px; /* Firefox */
     	column-gap: 12px;
-    	
+
     	-webkit-column-width: 321px; /* Chrome, Safari, Opera */
     	column-width: 321px;
 }
 	.reasonscolumns label{
 		display: inline-block;
 	}
-	
-	
+
+
 /* Send Email */
 .emailform table, th{
 	margin: 6px 6px 6px 6px;
@@ -277,7 +278,7 @@ input#startdate, input#enddate { width: 6em; }
 }
 .emailform input[type=submit]{
 	margin-left: 6px;
-	border:thin solid #777;	
+	border:thin solid #777;
 	-moz-border-radius: 7px 7px 7px 7px;
 	-webkit-border-radius: 7px 7px 7px 7px;
 	border-radius: 7px 7px 7px 7px;
@@ -309,7 +310,7 @@ table#contactus{
 /* Warnings */
 .warning {
 	background-color: #ccc;
-	padding: 6px; 
+	padding: 6px;
 	border: 5px solid#CC0000;
 	font-size: 1.2em;
 	margin-left:auto;

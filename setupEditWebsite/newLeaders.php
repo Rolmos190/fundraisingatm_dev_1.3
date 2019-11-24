@@ -23,268 +23,218 @@
    $result = mysqli_query($link, $query)or die ("couldn't execute query.".mysqli_error($link));
    $row = mysqli_fetch_assoc($result);
    $pic = $row['picPath'];
-       
+
 ?>
 
 <!DOCTYPE html>
 <head>
-	<title>Add New Leaders</title>  
-	<style>
-ul.tab {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #FFF;
-    background-color: #cc0000;
-}
+	<title>Add New Leaders</title>
+  <link href="../css/allforms_styles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
+  <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
 
-/* Float the list items side by side */
-ul.tab li {float: left;}
+  <script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
 
-/* Style the links inside the list items */
-ul.tab li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-/* Change background color of links on hover */
-ul.tab li a:hover {
-    background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-ul.tab li a:focus, .active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 2px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-.tabcontent{
-padding-right:4em;
-padding-left:4em;
-}
-#newLeader{
-    margin-top:2em;
-}
-.form-control{
-    margin-bottom:1rem;
-}
-label{
-    margin-top:1rem;
-}
-.interim-header{
-    margin: -2rem 0 -2rem 0;
-}
-</style>
 </head>
-	
+
 <body>
       <?php include 'header.inc.php' ; ?>
       <?php include 'sideLeftNav.php' ; ?>
-	
-	<br>
-    <div class="container" id="getStartedContent" >
-        <div class="row-fluid">
-     <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
-      <ul class="tab">
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen">Add Single Leader</a></li>
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')">Upload Multiple Leaders</a></li>
-</ul>
 
-    <div id="Single" class="tabcontent">
-    
-    <!--<div class="page-header col-md-12">
-        <h1>Add Fundraiser Leader</h1>
-    </div>-->
-        
-		<form class="" action="addFundLeader.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data">
-			<div class="table">
-			    <br>
-			<div class="row">
-					<select class="role5" name="groupid" id="groupid" onchange="fetch_select(this.value);" required>
-							<option value="">Select Fundraiser Account</option>
-							<?php 
-						$getAccount = "SELECT * FROM Dealers WHERE setuppersonid = '$userID' AND isMainGroup = 0 ORDER BY Dealer asc";
-						$result = mysqli_query($link, $getAccount)
-						or die("MySQL ERROR om query 1: ".mysqli_error($link));
-						while($row = mysqli_fetch_assoc($result))
-						{
-						  $dealerName = $row['Dealer'];
-						  echo '
-						  <option value="'.$row['loginid'].'">'.$dealerName.' '.$row[DealerDir].'</option>
-						  ';
-					        }
-						?>
-						</select>
+      <div id="content">
+          <h1>Add Fundraiser Leader</h1>
+          <h3></h3>
+
+		<div class="table">
+			<form class="graybackground" action="">
+				<h3>--Option 1: Add One Leader--</h3>
+				<div class="tablerow">
+					<span id="hd_vp2">Vice President:</span>
+					<span id="hd_sc2">Sales Coordinator:</span>
+					<span id="hd_rp2">Representive:</span>
+					<span id="hd_gmfr2">Fundraiser Account:</span>
+					<span id="hd_fg2">Group:</span>
 				</div> <!-- end row -->
-					
+
+				<div class="tablerow">
+					<select class="role2">
+						<option>Select VP Account</option>
+						<option></option>
+						<option></option>
+						<option></option>
+						<option></option>
+					</select>
+					<select class="role2">
+						<option>Select SC Account</option>
+						<option></option>
+						<option></option>
+						<option></option>
+						<option></option>
+					</select>
+					<select class="role2">
+						<option>Select RP Account</option>
+						<option></option>
+						<option></option>
+						<option></option>
+						<option></option>
+					</select>
+					<select class="role2">
+						<option>Select FR Account</option>
+						<option></option>
+						<option></option>
+						<option></option>
+						<option></option>
+					</select>
+					<select class="role2">
+						<option>Select Group</option>
+						<option></option>
+						<option></option>
+						<option></option>
+						<option></option>
+					</select>
+				</div> <!-- end row -->
+
 
 				<div class="simpleTabs">
-					<!--<ul class="simpleTabsNavigation">
+					<ul class="simpleTabsNavigation">
 						<li><a href="#">Information</a></li>
 						<li><a href="#">Account Login</a></li>
 						<li><a href="#">Social Media</a></li>
 						<li><a href="#">Profile Photo</a></li>
-					</ul>-->
-					
+					</ul>
+
 					<div class="interim-form">
-					    <div class="page-header interim-header"><h2>Contact Information</h2></div>
-					    </div>
-						<div class="row">
-							<!--<span>[Group] Leader Type: </span>--> <!-- [Group] = same as the selected group above -->
-							<!--<select name="">
+						<div class="tablerow">
+							<div class="interim-header"><h2>[Leader Type]'s Contact Information</h2></div>
+							<span>[Group] Leader Type: </span><!-- [Group] = same as the selected group above -->
+							<select name="">
 								<option value="" selected>Select Leader</option>
 								<option value="">-depends on group-</option>
 								<option value=""></option>
 								<option value=""></option>
 								<option value=""></option>
 								<option value="">Other/Custom (Specify)</option>--> <!-- If Other/Custom is selected, then display input field below -->
-							<!--</select>
+							</select>
 							<span>Other/Custom:</span>
 							<input id="fltype" type="text" name="" value="">-->
 						</div> <!-- end row -->
 
-						<div class="row"> <!-- inputs -->
-							<label for="fname" id="hd_fname">First</label>
-							<input class="form-control" id="fname" type="text" name="fname" required>
-							
-							<label for="lname" id="hd_lname">Last</label>
-							<input class="form-control" id="lname" type="text" name="lname" required>
-							<!--<input id="pname" type="text" name="">-->
-						
-							<label for="title" id="hd_title">Title</label>
-							<select class="form-control" name="title">
+						<div class="tablerow"> <!-- titles -->
+							<span id="hd_fname">First</span>
+							<span id="hd_mname">Middle</span>
+							<span id="hd_lname">Last</span>
+							<span id="hd_pname" title="Preferred First Name">Preferred</span>
+							<span id="hd_title">Title</span>
+						</div> <!-- end row -->
+						<div class="tablerow"> <!-- inputs -->
+							<input id="fname" type="text" name="">
+							<input id="mname" type="text" name="">
+							<input id="lname" type="text" name="">
+							<input id="pname" type="text" name="">
+							<select name="">
 								<option value="">---</option>
-								<option value="Mr.">Mr.</option>
-								<option value="Ms.">Ms.</option>
-								<option value="Mrs.">Mrs.</option>
-								<option value="Miss">Miss</option>
-								<option value="Dr.">Dr.</option>
-								<option value="Rev.">Rev.</option>
-							</select>
-							
-							<label for="gender" id="hd_gender">Gender</label>
-							<select class="form-control" name="gender">
-								<option value="">---</option>
-								<option value="Male">Male</option>
-								<option value="Female">Female</option>
+								<option value="">Mr.</option>
+								<option value="">Ms.</option>
+								<option value="">Mrs.</option>
+								<option value="">Miss</option>
+								<option value="">Dr.</option>
 							</select>
 						</div> <!-- end row -->
-					
+
 						<table>
 							<tr>
 								<td id="td_1">
-								<div class="row"> <!-- input -->
-								    <label for="address1" id="hd_address1">Address 1</label>
-									<input class="form-control" id="address1" type="text" name="address1">
+									<div class="tablerow">
+										<br>
+										<input type="checkbox" name="" value="" checked>Use Fundraiser Account Address<br>
+										<input type="checkbox" name="" value="">Use Alternate Address:
 									</div> <!-- end row -->
-									
-									<div class="row"> <!-- input -->
-										<label for="address2" id="hd_address2">Address 2</label>
-										<input class="form-control" id="address2" type="text" name="address2">
+
+									<div class="tablerow"> <!-- title -->
+										<span id="hd_address1">Address 1</span>
 									</div> <!-- end row -->
-													
-                					<div class="row"> <!-- INFORMATION ROW FOUR -->
-                    					<div class="col-md-12 col-lg-5">
-                    						<label for="city" id="hd_city">City</label>
-                    						<input class="form-control" id="city" type="text" name="city" required>
-                    				    </div>
-                									
-                						<div class="col-md-3">
-                							<label for="state" id="hd_state">State</label>
-                							<select class="form-control" id="state" name="state" required>
-                								<option value="" selected="selected">--</option>
-                								<option value="AL">AL</option>
-                								<option value="AK">AK</option>
-                								<option value="AZ">AZ</option>
-                								<option value="AR">AR</option>
-                								<option value="CA">CA</option>
-                								<option value="CO">CO</option>
-                								<option value="CT">CT</option>
-                								<option value="DE">DE</option>
-                								<option value="DC">DC</option>
-                								<option value="FL">FL</option>
-                								<option value="GA">GA</option>
-                								<option value="HI">HI</option>
-                								<option value="ID">ID</option>
-                								<option value="IL">IL</option>
-                								<option value="IN">IN</option>
-                								<option value="IA">IA</option>
-                								<option value="KS">KS</option>
-                								<option value="KY">KY</option>
-                								<option value="LA">LA</option>
-                								<option value="ME">ME</option>
-                								<option value="MD">MD</option>
-                								<option value="MA">MA</option>
-                								<option value="MI">MI</option>
-                								<option value="MN">MN</option>
-                								<option value="MS">MS</option>
-                								<option value="MO">MO</option>
-                								<option value="MT">MT</option>
-                								<option value="NE">NE</option>
-                								<option value="NV">NV</option>
-                								<option value="NH">NH</option>
-                								<option value="NJ">NJ</option>
-                								<option value="NM">NM</option>
-                								<option value="NY">NY</option>
-                								<option value="NC">NC</option>
-                								<option value="ND">ND</option>
-                								<option value="OH">OH</option>
-                								<option value="OK">OK</option>
-                								<option value="OR">OR</option>
-                								<option value="PA">PA</option>
-                								<option value="RI">RI</option>
-                								<option value="SC">SC</option>
-                								<option value="SD">SD</option>
-                								<option value="TN">TN</option>
-                								<option value="TX">TX</option>
-                								<option value="UT">UT</option>
-                								<option value="VT">VT</option>
-                								<option value="VA">VA</option>
-                								<option value="WA">WA</option>
-                								<option value="WV">WV</option>
-                								<option value="WI">WI</option>
-                								<option value="WY">WY</option>
-                							</select>
-                						</div>
-                    									
-                    					<div class="col-md-4">
-                    						<label for="zip" id="hd_zip">Zip</label>
-                    						<input class="form-control" id="zip" type="text" name="zip" maxlength="5" required>
-                    					</div>
-                				    </div> 
-                				    
-                        			<div class="row">
-                        			    <div class="col-md-8">
-                        					<label for="phone" id="hd_wphone">Primary Phone</label>
-                        					<input class="form-control" id="phone" type="text" name="phone" maxlength="14"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
-                        				</div>
-                        				
-                        			    <div class="col-md-4">
-                        					<label for="ext" id="hd_ext">Ext</label>
-                        					<input class="form-control" id="ext" type="text" name="ext" maxlength="5">
-                        				</div>
-                        			</div> 
-									
+									<div class="tablerow"> <!-- input -->
+										<input id="address1" type="text" name="">
+									</div> <!-- end row -->
+
+									<div class="tablerow"> <!-- title -->
+										<span id="hd_address2">Address 2</span>
+									</div> <!-- end row -->
+									<div class="tablerow"> <!-- input -->
+										<input id="address2" type="text" name="">
+									</div> <!-- end row -->
+
+									<div class="tablerow"> <!-- titles -->
+										<span id="hd_city">City</span>
+										<span id="hd_state">State</span>
+										<span id="hd_zip">Zip</span>
+									</div> <!-- end row -->
+									<div class="tablerow"> <!-- inputs -->
+										<input id="city" type="text" name="">
+										<select id="state" name="State">
+											<option value="" selected="selected">--</option>
+											<option value="AL">AL</option>
+											<option value="AK">AK</option>
+											<option value="AZ">AZ</option>
+											<option value="AR">AR</option>
+											<option value="CA">CA</option>
+											<option value="CO">CO</option>
+											<option value="CT">CT</option>
+											<option value="DE">DE</option>
+											<option value="DC">DC</option>
+											<option value="FL">FL</option>
+											<option value="GA">GA</option>
+											<option value="HI">HI</option>
+											<option value="ID">ID</option>
+											<option value="IL">IL</option>
+											<option value="IN">IN</option>
+											<option value="IA">IA</option>
+											<option value="KS">KS</option>
+											<option value="KY">KY</option>
+											<option value="LA">LA</option>
+											<option value="ME">ME</option>
+											<option value="MD">MD</option>
+											<option value="MA">MA</option>
+											<option value="MI">MI</option>
+											<option value="MN">MN</option>
+											<option value="MS">MS</option>
+											<option value="MO">MO</option>
+											<option value="MT">MT</option>
+											<option value="NE">NE</option>
+											<option value="NV">NV</option>
+											<option value="NH">NH</option>
+											<option value="NJ">NJ</option>
+											<option value="NM">NM</option>
+											<option value="NY">NY</option>
+											<option value="NC">NC</option>
+											<option value="ND">ND</option>
+											<option value="OH">OH</option>
+											<option value="OK">OK</option>
+											<option value="OR">OR</option>
+											<option value="PA">PA</option>
+											<option value="RI">RI</option>
+											<option value="SC">SC</option>
+											<option value="SD">SD</option>
+											<option value="TN">TN</option>
+											<option value="TX">TX</option>
+											<option value="UT">UT</option>
+											<option value="VT">VT</option>
+											<option value="VA">VA</option>
+											<option value="WA">WA</option>
+											<option value="WV">WV</option>
+											<option value="WI">WI</option>
+											<option value="WY">WY</option>
+										</select>
+										<input id="zip" type="text" name="">
+									</div> <!-- end row -->
 								</td>
-							
+
 								<td id="td_2">
-									<!--<div class="row"> <!-- titles -->
-										<!--<span id="hd_mphone">Mobile Phone</span>
+									<div class="tablerow"> <!-- titles -->
+										<span id="hd_mphone">Mobile Phone</span>
 									</div> <!-- end row -->
-									<!--<div class="row"> <!-- inputs -->
-										<!--<input id="mphone1" type="text" name=""><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
+									<div class="tablerow"> <!-- inputs -->
+										<input id="mphone1" type="text" name=""><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
 										<select id="mcarrier" title="Needed To Receive Texts From Computer">
 											<option>Select Carrier</option>
 											<option>Verizon</option>
@@ -295,23 +245,31 @@ label{
 											<option>Other</option>
 										</select>
 									</div> <!-- end row -->
-									<!--<div class="row">
+									<div class="tablerow">
 										<span id="hd_hphone">Home Phone</span>
 									</div> <!-- end row -->
-									<!--<div class="row">
+									<div class="tablerow">
 										<input id="hphone1" type="text" name=""><input id="hphone2" type="text" name=""><input id="hphone3" type="text" name="">
 									</div> <!-- end row -->
-									
+									<div class="tablerow"> <!-- titles -->
+										<span id="hd_wphone">Primary Phone</span>
+										<span id="ext">Ext</span>
+									</div> <!-- end row -->
+									<div class="tablerow">
+										<input id="wphone1" type="text" name="">
+										<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">
+										<input id="ext" type="text" name="">
+									</div> <!-- end row -->
 								</td>
 							</tr>
 						</table>
-										
-						<!--<div class="row"> <!-- titles -->
-							<!--<span id="hd_bday">Birthday</span>
+
+						<div class="tablerow"> <!-- titles -->
+							<span id="hd_bday">Birthday</span>
 							<span id="hd_gender">Gender</span>
 						</div> <!-- end row -->
-						<!--<div class="row"> <!-- inputs -->
-							<!--<select id="month" name="">
+						<div class="tablerow"> <!-- inputs -->
+							<select id="month" name="">
 								<option value="na">Month</option>
 								<option value="1">January</option>
 								<option value="2">February</option>
@@ -469,168 +427,98 @@ label{
 								<option value="female">Female</option>
 								<option value="male">Male</option>
 							</select>
-						</div> <!-- end row -->	
-					</div> <!-- end tab 1 -->
-					
-					<div class="interim-form">
-						<div class="interim-header page-header"><h2>Account Login</h2></div>
-						<div id="row"> <!-- inputs -->
-							<label for="email" id="hd_loginemail">Email Address</label>
-							<input class="form-control" id="email" type="text" name="email" value="" required>
 						</div> <!-- end row -->
-						
+					</div> <!-- end tab 1 -->
+
+					<div class="interim-form">
+						<div class="interim-header"><h2>Account Login</h2></div>
+						<div id="row"> <!-- titles -->
+							<span id="hd_loginemail">Email Address</span>
+						</div> <!-- end row -->
 						<div id="row"> <!-- inputs -->
-    							<label for="pass1" id="hd_password">Password</label>
-    							<input class="form-control" id="pass1" type="password" name="password" value="" required>
-    							<label for="pass2" id="hd_cpassword">Confirm Password</label>
-    							<input class="form-control" id="pass2" type="password" name="cpassword" value="" onkeyup="checkPass(); return false;" required>
-    						<span id="error"></span>
+							<input id="loginemail" type="text" name="" value="">
+						</div> <!-- end row -->
+
+						<div id="row"> <!-- titles -->
+						<span id="hd_password">Password</span>
+						<span id="hd_cpassword">Confirm Password</span>
+						</div> <!-- end row -->
+						<div id="row"> <!-- inputs -->
+							<input id="password" type="text" name="" value="">
+							<input id="cpassword" type="text" name="" value="">
 						</div> <!-- end row -->
 					</div> <!-- end tab 2 -->
-					
-					<div class="interim-form"><!-- SOCIAL MEDIA FORMS -->
-						<div class="interim-header page-header"><h2>Social Media Connections</h2></div>
-						<div id="row"> 
-							<label for="fb" id="hd_fb">Facebook</label>
-							<input class="form-control" id="fb" type="text" name="fb" value="" placeholder="www.facebook.com">
+
+					<div class="interim-form">
+						<div class="interim-header"><h2>Social Media Connections</h2></div>
+						<div id="row">
+							<span id="hd_fb">Facebook</span>
+							<input id="fb" type="text" name="" value="www.facebook.com">
 						</div> <!-- end row -->
-						<div id="row"> 
-							<label for="tw" id="hd_tw">Twitter</label>
-							<input class="form-control" id="tw" type="text" name="tw" value="" placeholder="www.twitter.com">
+						<div id="row">
+							<span id="hd_tw">Twitter</span>
+							<input id="tw" type="text" name="" value="www.twitter.com">
 						</div> <!-- end row -->
-						<div id="row"> 
-							<label for="li" id="hd_li">LinkedIn</label>
-							<input class="form-control" id="li" type="text" name="" value="" placeholder="www.linkedin.com">
+						<div id="row">
+							<span id="hd_li">LinkedIn</span>
+							<input id="li" type="text" name="" value="www.linkedin.com">
 						</div> <!-- end row -->
-						<!--<div id="row"> 
+						<div id="row">
 							<span id="hd_pn">Pinterest</span>
-							<input id="pn" type="text" name="" value="" placeholder="www.pinterest.com">
+							<input id="pn" type="text" name="" value="www.pinterest.com">
 						</div> <!-- end row -->
-						<!--<div id="row">
+						<div id="row">
 							<span id="hd_gp">Google+</span>
-							<input id="gp" type="text" name="" value="" placeholder="plus.google.com">
+							<input id="gp" type="text" name="" value="plus.google.com">
 						</div> <!-- end row -->
-					</div> <!-- end social media forms -->
-					
-					<div class="interim-form"> <!-- profile pic  -->
-						<div class="interim-header page-header"><h2>Profile Photo</h2></div>
-						<div class="row"> 
-						<div class="col-md-6 col-md-push-2">
-							<label for="uploaded_file" id="">Upload Profile Photo:</label>
-							<input class="btn btn-default" type="file" id="" name="uploaded_file">
-						</div>	
+					</div> <!-- end tab 3 -->
+
+					<div class="interim-form"> <!-- profile pic tab4 -->
+						<div class="interim-header"><h2>Profile Photo</h2></div>
+						<div class="tablerow">
+							<span id="">Upload Profile Photo:</span>
+							<input type="file" id="" name="">
+							<input type="submit" class="redbutton" value="Upload Photo">
+							<br><br>
+							<span id="">Preview Photo:</span>
+							<img src="" alt="uploaded profile photo">
 						</div> <!-- end row -->
 					</div> <!-- end tab4 content (profile pic) -->
 				</div> <!-- end simple tabs -->
-				
-					<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-        				<div class="pull-right">
-    						<input type="submit" name="submit" class="redbutton" value="Add New Leader">
-		        		</div>
-				    </section> <!-- end SUBMIT BUTTON SECTION ROW -->
-			
+
+				<div class="tablerow">
+						<input type="submit" class="redbutton" value="Add New Fundraiser Leader">
+						<input type="submit" class="redbutton" value="Save & Add Another Leader">
 				</div> <!-- end row -->
-			</div> <!-- end table -->
-		</form>
-    </div>
+			</form>
 
+			<br>
 
-<div class="row-fluid">
-    <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
-    <div id="Multiple" class="tabcontent">
-     <div class="page-header"><h1>Upload Leaders</h1></div>
-   
-          <form name="import" method="post" action="uploadLeaders.php" enctype="multipart/form-data">
-				
-				<h3>How To Add Multiple Leaders</h3><br>
+			<form class="graybackground">
+				<h3>--Option 2: Add Multiple Leaders--</h3>
+				<h2>How To Add Multiple Leaders</h2><br>
 				<ol>
-					<li><a href="download.php">Download</a> Our Member Setup Spreadsheet</li>
-					<li>Input the Data for Each Member You want to Add.</li>
-					<li>Enter a 6 character password for each leader.</li>
-					<li>Select Fundraiser Account from Drop Down Menu</li>
-					<li>Upload the Completed Spreadsheet...</li>
+					<li><a href="">Download</a> Our Fundraiser Leader Setup Spreadsheet</li>
+					<li>Input the Data for Each Fundraiser Leader Account you Want to Add</li>
+					<li>Upload the Completed Spreadsheet Below...</li>
 				</ol>
-				<br>
-			
-			<p class="nospace">Label your spreadsheet columns from left to right as follows:</p>
-		          <table>
-		          	<tr>
-			          <th>Title</th>
-			          <th>First Name</th>
-			          <th>Last Name</th>
-			          <th>Phone Number</th>
-			          <th>Email Address</th>
-			          <th>Password</th>
-			          </tr>
-		          </table>
-          
-          		<br>
-			
-          <div class="table">
+				<input type="file" name="">
+				<input class="redbutton" type="submit" name="" value="Upload File">
+			</form>
+		</div>--> <!-- end table -->
 
-				<div class="row">
-					<select class="role5" name="groupid" id="groupid" onchange="fetch_select(this.value);" required>
-							<option value="">Select Fundraiser Account</option>
-							<?php 
-						$getAccount = "SELECT * FROM Dealers WHERE setuppersonid = '$userID' AND isMainGroup = 0 ORDER BY Dealer asc";
-						$result = mysqli_query($link, $getAccount)
-						or die("MySQL ERROR om query 1: ".mysqli_error($link));
-						while($row = mysqli_fetch_assoc($result))
-						{
-						  $dealerName = $row['Dealer'];
-						  echo '
-						  <option value="'.$row['loginid'].'">'.$dealerName.' '.$row[DealerDir].'</option>
-						  ';
-					        }
-						?>
-						</select>
-				</div> <!-- end row -->
-			</div> <!-- end table -->
+  </div> <!--end content -->
 
-      
-                <label for="file">Upload File</label>
-                <input type="file" name="file" required>
-            <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-    			<div class="pull-right">  
-                    <input type="submit" name="submit" value="Submit" class="redbutton" />
-                </div>
-            </section> <!-- end SUBMIT BUTTON SECTION ROW -->
-</form>
-
-    </div>
-</div>
-</div>
-
-<script>
-function openCity(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-</div> <!--end container-->	
-      
-	<?php include 'footer.php' ; ?>
+<?php include 'footer.php' ; ?>
+</div> <!--end container-->
 
 </body>
 </html>
-<!--<pre>
 <?php if ($_POST && $mailSent){
 	echo htmlentities($message, ENT_COMPAT, 'UTF-8')."\n";
 	echo 'Headers: '.htmlentities($headers, ENT_COMPAT, 'UTF-8');
 } ?>
-</pre>-->
+
 <?php
    ob_end_flush();
 ?>

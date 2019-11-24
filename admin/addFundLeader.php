@@ -1,39 +1,35 @@
 <?php
-       include '../includes/autoload.php';
-       if(isset($_POST['submit1']))
-       {
-          $_SESSION['role'] = "SC";
-          $_SESSION['home'] = "sales/viewReps.php";
-       }
-       // if session variable not set, redirect to login page
-       if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "SC")
+    session_start(); // session start
+    ob_start();
+    ini_set('display_errors', '0'); // errors reporting on
+    error_reporting(E_ALL); // all errors
+    require_once('../includes/functions.php');
+    require_once('../includes/connection.inc.php');
+    require_once('../includes/imageFunctions.inc.php');
+    $link = connectTo();
+
+  if(!isset($_SESSION['authenticated']))
        {
             header('Location: ../index.php');
             exit;
        }
-     if($_SESSION['freeze'] == "TRUE")
+   if($_SESSION['freeze'] == "TRUE")
        {
           // echo "Account Frozen";
-           header('Location: accountEdit.php');
+           header('Location: ../setupEditWebsite/accountEdit.php');
        }
-     $userID = $_SESSION['userId'];
-
-     $table = "representatives";
-     $user_email = $_SESSION['email'];
-     $query = "SELECT * FROM user_info 	WHERE userInfoID='$userID'";
-     $result = mysqli_query($link, $query)or die ("couldn't execute query.".mysql_error($link));
-     $row = mysqli_fetch_assoc($result);
-     $cn = $row['companyName'];
-     $fn = $row['FName'];
-     $myPic = $row['picPath'];
+   $userID = $_SESSION['userId'];
+   $query = "SELECT * FROM user_info WHERE userInfoID='$userID'";
+   $result = mysqli_query($link, $query)or die ("couldn't execute query.".mysqli_error($link));
+   $row = mysqli_fetch_assoc($result);
+   $pic = $row['picPath'];
 
 ?>
 <!DOCTYPE html>
-<html>
 <head>
-	<meta charset="UTF-8" />
+
 	<title>GreatMoods | Admin</title>
-	<link rel="shortcut icon" href="../images/favicon.ico">
+
 
 	<link href="../css/allforms_styles.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
@@ -43,9 +39,8 @@
 </head>
 
 <body>
-<div id="container">
       <?php include 'header.inc.php' ; ?>
-      <?php include 'sidenav.php' ; ?>
+      <?php include 'sideLeftNav.php' ; ?>
 
       <div id="content">
           <h1>Add Fundraiser Leader</h1>
@@ -520,6 +515,10 @@
 
 </body>
 </html>
+<?php if ($_POST && $mailSent){
+	echo htmlentities($message, ENT_COMPAT, 'UTF-8')."\n";
+	echo 'Headers: '.htmlentities($headers, ENT_COMPAT, 'UTF-8');
+} ?>
 
 <?php
    ob_end_flush();
