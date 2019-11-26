@@ -1,4 +1,4 @@
-<?php 
+<?php
 if(isset($_POST['login'])){
     session_start();
     ob_start();
@@ -8,35 +8,35 @@ if(isset($_POST['login'])){
 
 <head>
   <meta charset="UTF-8">
-  <meta name="wot-verification" content="afd275378407e34df6ec"/> 
+  <meta name="wot-verification" content="afd275378407e34df6ec"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'" crossorigin="anonymous"> <!-- asynch css load -->
   <noscript> <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></noscript> <!-- load styles for browsers with JS disabled -->
-  
+
   <link rel="preload" href="../css2/global_styles.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link rel="stylesheet" href="../css2/global_styles.css"></noscript><!-- load styles for browsers with JS disabled -->
   <!-- bootstrap file, avoid editing if possible, find the classes you need and then override them in global styles -->
-  
+
   <link rel="preload" href="../css2/bootstrap.css"  as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link rel="stylesheet" href="../css2/bootstrap.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
-   
+
+
   <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link  rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
+
   <link rel="preload" href="../css2/content_styles.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><linkrel="stylesheet" href="../css2/content_styles.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
+
   <!-- top navigation styles -->
   <link rel="preload" href="../css2/main_nav.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
   <noscript><link rel="stylesheet" href="../css2/main_nav.css"></noscript><!-- load styles for browsers with JS disabled -->
-  
+
   		<!-- jQuery (required) before bootstrap JS -->
   		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  		    
+
 	<!--<link rel="stylesheet" href="../jquery-ui-1.7.2/css/base/ui.accordion.css">-->
-	
+
 	<!--<script src="../js/js-image-slider.js" type="text/javascript"></script>-->
     <script src="../js/jquery.maskedinput.min.js" type="text/javascript"></script>
     <!--<script src="../js/simpletabs_1.3.js"></script>-->
@@ -50,7 +50,7 @@ if(isset($_POST['login'])){
 	/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
 	!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
 	</script>
-	
+
 	<!--google analytics-->
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -76,7 +76,7 @@ if(isset($_POST['login'])){
         <script>
 		var slideIndex = 0;
 		carousel();
-		
+
 		function carousel() {
 		    var i;
 		    var x = document.getElementsByClassName("mainSlides");
@@ -106,7 +106,7 @@ if(isset($_POST['login'])){
 	<script> $(document).ready(function(){ $("button14").click(function(){ $("show14").toggle(); }); }); </script>
 	<script> $(document).ready(function(){ $("button15").click(function(){ $("show15").toggle(); }); }); </script>
 	<script> $(document).ready(function(){ $("button16").click(function(){ $("show16").toggle(); }); }); </script>
-	
+
 	<script> //select-deselect all recipients in emails
 		function setCheckboxes1(act) {
 		  var e = document.getElementsByClassName('leaders');
@@ -161,7 +161,7 @@ if(isset($_POST['login'])){
         var x = document.getElementById('example1');
         var y = document.getElementById('example2');
         if (x.style.display === 'none') {
-        x.style.display = 'block'; 
+        x.style.display = 'block';
         y.style.display = 'none';
         } else {
           x.style.display = 'none';
@@ -173,7 +173,7 @@ if(isset($_POST['login'])){
         var x = document.getElementById('example2');
         var y = document.getElementById('example1');
         if (x.style.display === 'none') {
-        x.style.display = 'block'; 
+        x.style.display = 'block';
         y.style.display = 'none';
         } else {
           x.style.display = 'none';
@@ -188,7 +188,7 @@ if(isset($_POST['login'])){
        heightStyle: "Content",
        collapsible: true,
        active: 0,
-       autoHeight: true   
+       autoHeight: true
     });
   } );
   </script>
@@ -208,7 +208,7 @@ if(isset($_POST['login'])){
     return false;
      }
 </script>
-	
+
 	<!-- Google Tag Manager -->
 	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N7BS27"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -218,21 +218,21 @@ if(isset($_POST['login'])){
 	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-N7BS27');</script>
 	<!-- End Google Tag Manager -->
-	
+
 	<script>
-		function getSelectedValue() { 
+		function getSelectedValue() {
 	 		var val = document.getElementById("fundraisingType").value;
 	 		//alert("You selected : " + val);
          		document.getElementById("choice").value = val;
-        	} 
+        	}
 	</script>
-	
-	
+
+
 <script type="text/javascript">
 
   function checkForm(form)
   {
- 
+
 
     if(form.pass1.value != "" && form.pass1.value == form.pass2.value) {
       if(form.pass1.value.length < 6) {
@@ -291,12 +291,12 @@ if(isset($_POST['login'])){
     //Set the colors we will be using ...
     var goodColor = "#66cc66";
     var badColor = "#ff6666";
-    //Compare the values in the password field 
+    //Compare the values in the password field
     //and the confirmation field
     if(pass1.value == pass2.value){
-        //The passwords match. 
+        //The passwords match.
         //Set the color to the good color and inform
-        //the user that they have entered the correct password 
+        //the user that they have entered the correct password
         pass2.style.backgroundColor = goodColor;
         message.style.color = goodColor;
         message.innerHTML = "Passwords Match!"
@@ -308,7 +308,7 @@ if(isset($_POST['login'])){
         message.style.color = badColor;
         message.innerHTML = "Passwords Do Not Match!"
     }
-}  
+}
   </script>
 <script>
 		function showUser(str) {
@@ -316,7 +316,7 @@ if(isset($_POST['login'])){
 	  			document.getElementById("txtHint").innerHTML="";
 	  			//var z = $(this).find(':selected').data('year');
 	  			return;
-	  		} 
+	  		}
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 	  			xmlhttp=new XMLHttpRequest();
 	  		}
@@ -335,14 +335,14 @@ if(isset($_POST['login'])){
 			xmlhttp.send();
 		}
 	</script>
-	
+
 	<script>
 		function showUser2(str) {
 			if (str=="") {
 	  			document.getElementById("clubs").innerHTML="";
 	  			//var z = $(this).find(':selected').data('year');
 	  			return;
-	  		} 
+	  		}
 			if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
 	  			xmlhttp=new XMLHttpRequest();
 	  		}
@@ -372,50 +372,50 @@ if(isset($_POST['login'])){
 	var error = document.getElementById("error");
         if ($("input[type=checkbox]:checked").length === 0) {
         if(myForm.clubs1.value == "")
-        {  
+        {
              e.preventDefault();
              document.getElementById("error").innerHTML="You must select a checkbox or fill in club name.";
              return false;
         }
        }
-       return true; 
+       return true;
       }
       </script>
-     
+
 	<script>
 		function toggle(source) {
 	  		checkboxes = document.getElementsByName('clubs[]');
 	  		for(var i in checkboxes)
 	  		checkboxes[i].checked = source.checked;
-	  		
+
 	  		checkboxes1 = document.getElementsByName('general[]');
 	  		for(var e in checkboxes1)
 	  		checkboxes1[e].checked = source.checked;
-	  		
+
 	  		checkboxes2 = document.getElementsByName('athletics[]');
 	  		for(var f in checkboxes2)
 	  		checkboxes2[f].checked = source.checked;
-	  		
+
 		}
-		
-		
+
+
 		$(document).ready(function(){
 	  		$('input[name="all"],input[name="clubs[]"]').bind('click', function(){
 	  			var status = $(this).is(':checked');
 	  			$('input[type="checkbox"]', $(this).parent('li')).attr('checked', status);
 	  		});
 	  		});
-	  		
-	  		
+
+
 	</script>
-	
+
 	<script>
 		function toggle2(source) {
 	  		checkboxes = document.getElementsByName('recipents[]');
 	  		for(var i in checkboxes)
 	  		checkboxes[i].checked = source.checked;
 		}
-		
+
 		$(document).ready(function(){
 	  		$('input[name="all"],input[name="recipents[]"]').bind('click', function(){
 	  			var status = $(this).is(':checked');
@@ -423,7 +423,7 @@ if(isset($_POST['login'])){
 	  		});
 	  	});
 	</script>
-	
+
 	<script>
 		$(document).ready(function() {
 			$(“.nav li:has(ul)”).hover(function(){
@@ -433,7 +433,7 @@ if(isset($_POST['login'])){
 			});
 		});
 	</script>
-	
+
 	<script>
 		$(document).ready(function(){
 	  		$("button1").click(function(){
@@ -441,7 +441,7 @@ if(isset($_POST['login'])){
 	  		});
 		});
 	</script>
-	
+
 	<script>
 		$(document).ready(function(){
 	  		$("button2").click(function(){
@@ -449,7 +449,7 @@ if(isset($_POST['login'])){
 	  		});
 		});
 	</script>
-	
+
 	<script>
 		var LHtotal;
 		var AHtotal;
@@ -478,7 +478,7 @@ if(isset($_POST['login'])){
 			document.getElementById("LHtotal").innerHTML = result1;
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//average high schools
 			var num2 = Number(document.getElementById("AHnum").value);
 			var fund2 = Number(document.getElementById("AHfund").value);
@@ -497,7 +497,7 @@ if(isset($_POST['login'])){
 			schoolTotal = format(schoolTotal,2);
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//large middle schools
 			var num3 = Number(document.getElementById("LMnum").value);
 			var fund = Number(document.getElementById("LMfund").value);
@@ -517,7 +517,7 @@ if(isset($_POST['login'])){
 			schoolTotal = format(schoolTotal,2);
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//average middle schools
 			var num4 = Number(document.getElementById("AMnum").value);
 			var fund4 = Number(document.getElementById("AMfund").value);
@@ -535,7 +535,7 @@ if(isset($_POST['login'])){
 			schoolTotal += result4;
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//elementary schools
 			var num7 = Number(document.getElementById("Enum").value);
 			var fund7 = Number(document.getElementById("Efund").value);
@@ -553,8 +553,8 @@ if(isset($_POST['login'])){
 			document.getElementById("Etotal").innerHTML = result7;
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
-			
+
+
 			//large churches
 			var num5 = Number(document.getElementById("LCnum").value);
 			var fund5 = Number(document.getElementById("LCfund").value);
@@ -572,7 +572,7 @@ if(isset($_POST['login'])){
 			churchTotal = result5;
 			document.getElementById("churchTotal").innerHTML = churchTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//average churches
 			var num6 = Number(document.getElementById("ACnum").value);
 			var fund6 = Number(document.getElementById("ACfund").value);
@@ -590,9 +590,9 @@ if(isset($_POST['login'])){
 			churchTotal += result6;
 			document.getElementById("churchTotal").innerHTML = churchTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
-			
-			
+
+
+
 			//organizations
 			var num8 = Number(document.getElementById("Onum").value);
 			var fund8 = Number(document.getElementById("Ofund").value);
@@ -610,16 +610,16 @@ if(isset($_POST['login'])){
 			orgTotal = result8;
 			document.getElementById("Ototal").innerHTML = result8;
 			document.getElementById("orgTotal").innerHTML = orgTotal;
-			document.getElementById("grandTotal").value = grandTotal1;	
+			document.getElementById("grandTotal").value = grandTotal1;
 		}
 		function format(num, dec) {
 	        	return Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
 	        }
 	</script>
 	<script>
-	
+
 		function fetch_select(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_group.php',
@@ -627,12 +627,12 @@ if(isset($_POST['login'])){
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("new_select").innerHTML=response; 
+		       			document.getElementById("new_select").innerHTML=response;
 		       			document.getElementById("new_select2").innerHTML='';
-		       			
+
 		     		}
 		   	});
-		   	
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'getRepContacts.php',
@@ -641,15 +641,15 @@ if(isset($_POST['login'])){
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("memberContacts").innerHTML=response;
-		       			
+
 		     		}
 		   	});
 		  }
 	</script>
 	<script>
-	
+
 		function fetch_select2(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_members.php',
@@ -658,16 +658,16 @@ if(isset($_POST['login'])){
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("new_select2").innerHTML=response;
-		       			
+
 		     		}
 		   	});
 		  }
-	</script> 
-	
+	</script>
+
 	<script>
-	
+
 		function fetch_select3(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_contact_datax.php',
@@ -675,7 +675,7 @@ if(isset($_POST['login'])){
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("new_select2").innerHTML=response; 
+		       			document.getElementById("new_select2").innerHTML=response;
 		     		}
 		   	});
 		   	$.ajax({
@@ -685,13 +685,13 @@ if(isset($_POST['login'])){
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("memberContacts").innerHTML=response; 
+		       			document.getElementById("memberContacts").innerHTML=response;
 		     		}
 		   	});
 		  }
-		  
+
 		function fetch_select6(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_group.php',
@@ -700,12 +700,12 @@ if(isset($_POST['login'])){
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("groupid").innerHTML=response;
-		       			
+
 		     		}
 		   	});
 		  }
 		  function fetch_select7(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_members.php',
@@ -714,12 +714,12 @@ if(isset($_POST['login'])){
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("memberid").innerHTML=response;
-		       			
+
 		     		}
 		   	});
 		  }
 		   function fetch_select9(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetchEmails.php',
@@ -728,13 +728,13 @@ if(isset($_POST['login'])){
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("recipients").innerHTML=response;
-		       			document.getElementById("memid").value=val; 
-		       			
+		       			document.getElementById("memid").value=val;
+
 		     		}
 		   	});
 		}
 		 function fetch_select10(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_contact_datax.php',
@@ -742,13 +742,13 @@ if(isset($_POST['login'])){
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("memberContacts").innerHTML=response; 
-		       			
+		       			document.getElementById("memberContacts").innerHTML=response;
+
 		     		}
 		   	});
 		}
 		function fetch_select11(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'getGroupSales.php',
@@ -756,8 +756,8 @@ if(isset($_POST['login'])){
 		       			get_option:val
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("goalreport").innerHTML=response; 
-		       			
+		       			document.getElementById("goalreport").innerHTML=response;
+
 		     		}
 		   	});
 		}
@@ -770,11 +770,11 @@ if(isset($_POST['login'])){
 		       			get_option:val, get_option2:group
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("goalreport").innerHTML=response; 
+		       			document.getElementById("goalreport").innerHTML=response;
 		     		}
 		   	});
-		   
-		} 
+
+		}
 		function fetch_select13(val) {
 		var group = document.getElementById("memberid").value;
 		   	$.ajax({
@@ -784,13 +784,13 @@ if(isset($_POST['login'])){
 		       			get_option:val, get_option2:group
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("goalreport").innerHTML=response; 
+		       			document.getElementById("goalreport").innerHTML=response;
 		     		}
 		   	});
-		   
-		} 
+
+		}
 		function fetch_select14(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_group2.php',
@@ -799,16 +799,16 @@ if(isset($_POST['login'])){
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("groupid").innerHTML=response;
-		       			
+
 		     		}
 		   	});
 		  }
-		 
-	</script> 
-	
+
+	</script>
+
 	 <script>
 	function fetch_select15(val) {
-		
+
 		   	$.ajax({
 		   	    // var option = $('input[type="radio"]:checked').val();
 		     		type: 'post',
@@ -819,22 +819,22 @@ if(isset($_POST['login'])){
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("selection").innerHTML=response;
-		       			
-		       			
+
+
 		     		}
-		   	}); 
-		   }    
+		   	});
+		   }
 	 </script>
 	 <script>
 	 function fetch_select16(val) {
-		
+
 		       			document.getElementById("selection").innerHTML='';
-		       
-		   }    
+
+		   }
 	 </script>
 	 <script>
 	 function fetch_select17(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_group.php',
@@ -843,13 +843,13 @@ if(isset($_POST['login'])){
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("groupid2").innerHTML=response;
-		       			
+
 		     		}
 		   	});
 		  }
-		  
+
 		  function fetch_select18(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetch_group.php',
@@ -858,22 +858,22 @@ if(isset($_POST['login'])){
 		     		},
 		     		success: function (response) {
 		       			document.getElementById("txtHint").innerHTML=response;
-		       			
+
 		     		}
 		   	});
 		  }
 		   function fetch_select19(val) {
-		
+
 		   	$.ajax({
 		     		type: 'post',
 		     		url: 'fetchEmails2.php',
 		     		data: {
 		       			get_option:val
-		       			
+
 		     		},
 		     		success: function (response) {
-		       			document.getElementById("recipients").innerHTML=response; 
-		       			
+		       			document.getElementById("recipients").innerHTML=response;
+
 		     		}
 		   	});
 		}
@@ -890,24 +890,24 @@ if(isset($_POST['login'])){
         var sent = getParameterByName('cs');
          if(sent == 1)
          {
-           
+
            document.getElementById("emessage").innerHTML="email sent";
            $("#emessage").html("Email(s) Sent").fadeIn(5000).fadeOut(5000);
 
          }
         }
        </script>
-       
-       
-	
+
+
+
 	<script>
 		$(function(){
 		 $('#slider')
 		   .anythingSlider() // add any non-default options here
 		});
 	</script>
-       
-	
+
+
 	<script>
 		function getUrlVars() {
 		    var vars = {};
@@ -918,15 +918,15 @@ if(isset($_POST['login'])){
 		}
 		var group = getUrlVars()["group"];
 	</script>
-	
+
 	<script src="http://app.ecwid.com/script.js?" charset="utf-8"></script>
 	<script>xAffiliate('24503');</script>
 	<script> xProductBrowser("categoriesPerRow=3","views=grid(5,4) list(10) table(20)","categoryView=grid","searchView=list","style="); </script>
 
-	
+
 
   <!-- jequery for validation -- ensures fields at least have text -->
-  <script> 
+  <script>
     var $formLogin = $('#loginform');
     var $formLost = $('#lost-form');
     var $modalAnimateTime = 300;
@@ -971,11 +971,11 @@ if(isset($_POST['login'])){
                 setTimeout(function() {
                     $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
                 }, 0);
-            }); $('[data-toggle="tooltip"]').tooltip(); 
+            }); $('[data-toggle="tooltip"]').tooltip();
     });
-   
+
   </script>
-  
+
     <script>/* remove containers so dropdowns are consistant inside sidenavigation */
         $(function () {
         $(window).on('load, resize', function () {
@@ -991,7 +991,7 @@ if(isset($_POST['login'])){
         .resize();
         });
      </script>
-     
+
      <script> //pause play carousel, switch active classes depedning on button clicked */
         $(function () {
             $('#carousel-presentation').carousel({
@@ -1016,7 +1016,7 @@ if(isset($_POST['login'])){
 
      });
 	</script>
-	 
+
   <script>
     $(document).ready(function(){
       var date_input=$('input[name="fundStart"]'); //our date input has the name "date"
@@ -1032,18 +1032,18 @@ if(isset($_POST['login'])){
 </script>
 </head>
 <header>
-    
+
     <div class ="container-fluid"> <!-- START above nav elements content container -->
        <div class="row-fluid" id="aboveNavElements">
           <a href="#" class="hidden-lg hidden-md pull-right" id="accountIcon" role="button" data-toggle="modal" data-target="#login-modal"><i data-toggle="tooltip" data-placement="left" title="Account Login and Information" class="fa fa-user fa-3x" aria-hidden="true"></i></a>
 
           <div id="headerImage" class="col-lg-3 col-md-1 col-sm-1" style="">
-              <a href="../index.php"><img class="img-responsive" src="../newdeal/images/logo.png" alt="GMlogo" class="img-responsive"></img></a>
+              <a href="../index.php"><img class="img-responsive" src="../newdeal/images/fundatm_logo.png" alt="GMlogo" class="img-responsive"></img></a>
           </div>
 
           <div id="bannerHeader" class="col-lg-7 col-lg-push-1 col-md-7 col-xs-12">
-  	        <img class="img-responsive" src="../images/main_2.jpg" alt="Main Banner Image. Achieve Great Goals!"/>   
-          </div>    
+  	        <img class="img-responsive" src="../images/main_2.jpg" alt="Main Banner Image. Achieve Great Goals!"/>
+          </div>
 
           <a href="#"  id="accountIcon" class="pull-right  hidden-sm hidden-xs" role="button" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user fa-4x" aria-hidden="true" style="text-indent: 5px;"></i>Account</a>
 
@@ -1065,7 +1065,7 @@ if(isset($_POST['login'])){
         </button>
       </div>
     <div class ="container-fluid">
-      <div class="collapse navbar-collapse"> 
+      <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav" id="navCats"  id="mainCategoryType"> <!-- navbar list items -->
 
 
@@ -1073,7 +1073,7 @@ if(isset($_POST['login'])){
             <a href="../greatmoodsMall.php?group=16444&storeid=900#!/Womens/c/18159169/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Women<span class="sr-only"></span></a>
             <?php include '../menu/menu_women.php'; ?>
          </li> <!-- end nav dropdown for multi columns -->
-          
+
          <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Accessories/c/18195523/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Accessories <span class="sr-only"></span></a>
               <?php include '../menu/menu_accessories.php'; ?>
@@ -1082,51 +1082,51 @@ if(isset($_POST['login'])){
           <li class="dropdown"  id="mainCategoryType">
             <a href="../greatmoodsMall.php?group=16444&storeid=900#!/Mens/c/18159150/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Men <span class="sr-only"></span></a>
             <?php include '../menu/menu_men.php'; ?>
-          </li> 
-          
+          </li>
+
           <li class="dropdown"  id="mainCategoryType">
             <a href="../greatmoodsMall.php?group=16444&storeid=900#!/Juniors/c/18195671/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Juniors <span class="sr-only"></span></a>
             <?php include '../menu/menu_juniors.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Kids/c/18209039/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Kids <span class="sr-only"></span></a>
               <?php include '../menu/menu_kids.php'; ?>
-          </li>  
+          </li>
           <li class="dropdown"  id="mainCategoryType">
             <a "../greatmoodsMall.php?group=16444&storeid=900#!/Fitness/c/18209624/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Fitness <span class="sr-only"></span> </a>
             <?php include '../menu/menu_fitness.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Food/c/18209702/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Gifts <span class="sr-only"></span> </a>
              <?php include '../menu/menu_food.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Entertainment/c/18209743/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Entertainment<span class="sr-only"></span> </a>
              <?php include '../menu/menu_entertainment.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown" id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Houseware/c/18209794/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="sr-only"></span></a>
             <?php include '../menu/menu_housewares.php'; ?>
-          </li>         
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Health/c/18209818/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Health<span class="sr-only"></span> </a>
             <?php include '../menu/menu_health.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Inspirational/c/18209845/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true">Inspirational<span class="sr-only"></span> </a>
             <?php include '../menu/menu_inspirational.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Holiday/c/18209901/offset=0&sort=priceAsc"  class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true">Holiday<span class="sr-only"></span> </a>
               <?php include '../menu/menu_holiday.php'; ?>
-          </li>  
+          </li>
 
           <li class="dropdown"  id="mainCategoryType">
             <a  href="../greatmoodsMall.php?group=16444&storeid=900#!/Business/c/18209939/offset=0&sort=priceAsc"  class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true">Business<span class="sr-only"></span> </a>
@@ -1155,12 +1155,12 @@ if(isset($_POST['login'])){
           <li id="fund-border" class="divider-vertical" style="border-right: 1px solid transparent !important;border-left: 1px solid white !important"></li>
 
         <!--<li id="login-button" role="button" data-toggle="modal" data-target="#login-modal" aria-hidden="true"><a href="#"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Login</a></li>-->
-      </div> 
+      </div>
     </div><!-- end container -->
   </nav> <!-- end nav -->
 
     <!-- Code for navbar collapse to SIDEBAR on MOBILE screens -->
-  <div class="navmenu navmenu-default navmenu-fixed-left offcanvas" >                
+  <div class="navmenu navmenu-default navmenu-fixed-left offcanvas" >
     <ul class="nav navmenu-nav">
       <!--<span role="button" data-toggle="modal" data-target="#login-modal" aria-hidden="true">Login</span>-->
       <li class="dropdown">
@@ -1174,43 +1174,43 @@ if(isset($_POST['login'])){
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Men <span class="sr-only"></span></a>
             <?php include '../menu/menu_men.php'; ?>
-      </li> 
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button"aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Juniors <span class="sr-only"></span></a>
             <?php include '../menu/menu_juniors.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Kids <span class="sr-only"></span> </a>
         <?php include '../menu/menu_kids.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false" id="mainCategoryType">Fitness <span class="sr-only"></span> </a>             
+        <a href="#" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false" id="mainCategoryType">Fitness <span class="sr-only"></span> </a>
           <?php include '../menu/menu_fitness.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Gifts <span class="sr-only"></span></a>
           <?php include '../menu/menu_food.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Entertainment <span class="sr-only"></span></a>
          <?php include '../menu/menu_entertainment.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Home <span class="sr-only"></span></a>
             <?php include '../menu/menu_housewares.php'; ?>
-      </li>         
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" role="button"  aria-haspopup="true" aria-expanded="false"  id="mainCategoryType">Health <span class="sr-only"></span> </a>
         <?php include '../menu/menu_health.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown" >
         <a href="#"  id="mainCategoryType" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Inspirational <span class="sr-only"></span></a>
           <?php include '../menu/menu_inspirational.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#"  id="mainCategoryType" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Holiday <span class="sr-only"></span></a>
         <?php include '../menu/menu_holiday.php'; ?>
-      </li>  
+      </li>
       <li class="dropdown">
         <a href="#"  id="mainCategoryType" class="dropdown-toggle"  role="button" aria-haspopup="true" aria-expanded="false">Business <span class="sr-only"></span></a>
         <?php include '../menu/menu_business.php'; ?>
@@ -1230,9 +1230,9 @@ if(isset($_POST['login'])){
         <li class="divider"></li>
       </ul> <!-- end navmenu -->
     </div> <!--end side nav -->
-    
-    
-<!-- Login/logged in/change pw modal elements -->    
+
+
+<!-- Login/logged in/change pw modal elements -->
 <!-- START MODAL LOGIN -  pops up box for login -->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -1270,15 +1270,15 @@ if(isset($_POST['login'])){
             	         	echo '<div class="modal-footer">';
 			         	    include('../menu/logout.inc.php');
 			         	    echo '</div>'; /*modal body end */
-                } 
+                }
            ?>
           </div>
-      </div>    <!-- end modal content -->   
+      </div>    <!-- end modal content -->
     </div> <!-- end modal-dialogue -->
   </div> <!-- END MODAL LOGIN -->
-    
-          <!-- Reset PW Modal  
-          || WHILE ALL FUNCTIONS WORKED FINE FOR THIS, IT DOES NOT PROPERLY STORE PWs || 
+
+          <!-- Reset PW Modal
+          || WHILE ALL FUNCTIONS WORKED FINE FOR THIS, IT DOES NOT PROPERLY STORE PWs ||
           || Saving so I can look into utilizing PHP for reset inside this modal - have used it to show messages based on button submit, but pws still did not change ||
         <div class="modal fade" id="change-pw">
             <div class="modal-dialog">
@@ -1286,7 +1286,7 @@ if(isset($_POST['login'])){
                     <div class="modal-header" align="center">
                       <img class="img-rounded" id="img_logo" src="../images/GMlogo.png">
                     </div>
-                	<!-- change pw modal2 form 
+                	<!-- change pw modal2 form
                   </?php
                         if($_SESSION['LOGIN'] == "TRUE") {
                                 echo '<div class="modal-body">';
@@ -1302,8 +1302,8 @@ if(isset($_POST['login'])){
                                 echo '</div>'; /* end modal footer */
                         }
                 	  ?>
-                </div>    <!-- end modal content  
-            </div> <!-- end modal-dialogue 
+                </div>    <!-- end modal content
+            </div> <!-- end modal-dialogue
         </div>  END MODAL CHANGEPW -->
 
 </header>
@@ -1311,5 +1311,3 @@ if(isset($_POST['login'])){
     <a href="#">GreatMoods<br>Mall Directory</a>
     <php include '../menu/menu_mall_directory_site.php'; ?>
 </li> -->
-
-

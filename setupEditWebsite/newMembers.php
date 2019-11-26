@@ -28,7 +28,7 @@
 
 <!DOCTYPE html>
 <head>
-	<title>Add New Leaders</title>
+	<title>Add New Members</title>
   <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
   <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
 
@@ -74,6 +74,7 @@ ul.tab li a:focus, .active {
     padding: 2px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    box-shadow: 0px 0px 15px #888888;
 }
 .tabcontent{
 padding-right:1em;
@@ -91,6 +92,10 @@ label{
 .interim-header{
     margin: -2rem 0 -2rem 0;
 }
+.files {
+  border-radius: 25px;
+}
+
 </style>
 </head>
 
@@ -98,13 +103,74 @@ label{
       <?php include 'header.inc.php' ; ?>
       <?php include 'sideLeftNav.php' ; ?>
 
-	<br>
-    <div class="container" id="getStartedContent" style="width: 85%; border: solid magenta 1px">
+
+    <div class="container" id="getStartedContent" style="width: 85%;">
     <div class="row-fluid">
     <div class=" col-md-7 col-md-push-2" id="newLeaderWrap" >
-<ul class="tab">
+        <h1>Add New Member Account</h1>
+        <form class="interim-form" action="" style="box-shadow: 0px 0px 15px #888888;">
+          <br>
+          <h3>--Option 1: Add One Member--</h3>
+          <div class="tablerow">
+            <span id="hd_vp2">Vice President:</span>
+            <span></span>
+            <span id="hd_sc2">Sales Coordinator:</span>
+            <span></span>
+            <span id="hd_rp2">Representive:</span>
+            <span></span>
+            <span id="hd_gmfr2">Fundraiser Account:</span>
+            <span></span>
+            <span id="hd_fg2">Group:</span>
+          </div> <!-- end row -->
+
+          <div class="tablerow">
+  					<select class="role2">
+  						<option>Select VP Account</option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  					</select>
+            <span></span>
+  					<select class="role2">
+  						<option>Select SC Account</option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  					</select>
+            <span></span>
+  					<select class="role2">
+  						<option>Select RP Account</option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  					</select>
+            <span></span>
+  					<select class="role2">
+  						<option>Select FR Account</option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  					</select>
+            <span></span>
+  					<select class="role2">
+  						<option>Select Group</option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  						<option></option>
+  					</select>
+  				</div>
+        </form>
+<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
   <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen">Information</a></li>
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')">Upload Multiple Members</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')">Account Login</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')">Social Media</a></li>
+  <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')">Profile Photo</a></li>
+
 </ul>
 
     <div id="Single" class="tabcontent">
@@ -114,25 +180,7 @@ label{
     </div>-->
 
 		<form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data">
-			<div class="table" style="width:100%">
-			    <br>
-			<div class="row">
-					<select class="role5" name="groupid" id="groupid" onchange="fetch_select(this.value);" required>
-							<option value="">Select Fundraiser Account</option>
-							<?php
-						$getAccount = "SELECT * FROM Dealers WHERE setuppersonid = '$userID' AND isMainGroup = 0 ORDER BY Dealer asc";
-						$result = mysqli_query($link, $getAccount)
-						or die("MySQL ERROR om query 1: ".mysqli_error($link));
-						while($row = mysqli_fetch_assoc($result))
-						{
-						  $dealerName = $row['Dealer'];
-						  echo '
-						  <option value="'.$row['loginid'].'">'.$dealerName.' '.$row[DealerDir].'</option>
-						  ';
-					        }
-						?>
-						</select>
-				</div> <!-- end row -->
+      <div class="table" style="width:100%">
 
 
 				<div class="simpleTabs">
@@ -141,13 +189,13 @@ label{
 						<li><a href="#">Account Login</a></li>
 						<li><a href="#">Social Media</a></li>
 						<li><a href="#">Profile Photo</a></li>
-					</ul>-->
+					</ul> -->
 
               <div class="interim-form">
-							<h2>[Leader Type]'s Contact Information</h2>
+							<h2 style="color: #cc0000">[Group] Member Contact Information</h2>
 							<span>[Group] Leader Type: </span><!-- [Group] = same as the selected group above -->
 							<select name="">
-								<option value="" selected>Select Leader</option>
+								<option value="" selected>Select Member Title</option>
 								<option value="">-depends on group-</option>
 								<option value=""></option>
 								<option value=""></option>
@@ -472,14 +520,17 @@ label{
 								<option value="male">Male</option>
 							</select>
 						</div> <!-- end row -->
+            <br><br>
+            <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+              <div class="tablerow">
+                <input type="submit" class="redbutton" value="Save & Exit">
+                <input type="submit" class="redbutton" value="Save & Add Another">
+              </div> <!-- end row -->
+            </section> <!-- end SUBMIT BUTTON SECTION ROW -->
 					</div> <!-- end tab 1 -->
 				</div> <!-- end simple tabs -->
 
-					<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-        				<div class="pull-right">
-    						<input type="submit" name="submit" class="redbutton" value="Add New Leader">
-		        		</div>
-				    </section> <!-- end SUBMIT BUTTON SECTION ROW -->
 
 				</div> <!-- end row -->
 			</div> <!-- end table -->
@@ -491,64 +542,140 @@ label{
 <div class="row-fluid">
     <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
     <div id="Multiple" class="tabcontent">
-     <div class="page-header"><h1>Upload Members</h1></div>
+
 
           <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
+            <div class="simpleTabs">
+            <div class="interim-form">
 
-				<h3>How To Add Multiple Members</h3><br>
-				<ol>
-					<li><a href="download.php">Download</a> Our Member Setup Spreadsheet</li>
-					<li>Input the Data for Each Member You want to Add.</li>
-					<li>Enter a 6 character password for each leader.</li>
-					<li>Select Fundraiser Account from Drop Down Menu</li>
-					<li>Upload the Completed Spreadsheet...</li>
-				</ol>
-				<br>
+              <h2 style="color: #cc0000">Account Login</h2>
+               <!-- titles -->
+                <span id="hd_loginemail">Email Address</span>
+               <!-- end row -->
+              <div id="row"> <!-- inputs -->
+                <input id="loginemail" type="text" name="" value="">
+              </div> <!-- end row -->
 
-			<p class="nospace">Label your spreadsheet columns from left to right as follows:</p>
-		          <table>
-		          	<tr>
-			          <th>Title</th>
-			          <th>First Name</th>
-			          <th>Last Name</th>
-			          <th>Phone Number</th>
-			          <th>Email Address</th>
-			          <th>Password</th>
-			          </tr>
-		          </table>
+              <div id="row"> <!-- titles -->
+              <span id="hd_password">Password</span>
+              <span></span><span></span>
+              <span></span><span></span>
+              <span id="hd_cpassword">Confirm Password</span>
+              </div> <!-- end row -->
+              <div id="row"> <!-- inputs -->
+                <input id="password" type="text" name="" value="">
+                <input id="cpassword" type="text" name="" value="">
+              </div> <!-- end row -->
+              <br>
+              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+                <div class="tablerow">
+                  <input type="submit" class="redbutton" value="Save & Exit">
+                  <input type="submit" class="redbutton" value="Save & Add Another">
+                </div> <!-- end row -->
+              </section>
 
-          		<br>
+            </div> <!-- end tab 2 --></form>
 
-          <div class="table">
+    </div>
+  </div>
+</div>
+</div>
 
-				<div class="row">
-					<select class="role5" name="groupid" id="groupid" onchange="fetch_select(this.value);" required>
-							<option value="">Select Fundraiser Account</option>
-							<?php
-						$getAccount = "SELECT * FROM Dealers WHERE setuppersonid = '$userID' AND isMainGroup = 0 ORDER BY Dealer asc";
-						$result = mysqli_query($link, $getAccount)
-						or die("MySQL ERROR om query 1: ".mysqli_error($link));
-						while($row = mysqli_fetch_assoc($result))
-						{
-						  $dealerName = $row['Dealer'];
-						  echo '
-						  <option value="'.$row['loginid'].'">'.$dealerName.' '.$row[DealerDir].'</option>
-						  ';
-					        }
-						?>
-						</select>
-				</div> <!-- end row -->
-			</div> <!-- end table -->
+<div class="row-fluid">
+    <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
+    <div id="Triple" class="tabcontent">
 
 
-                <label for="file">Upload File</label>
-                <input type="file" name="file" required>
-            <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-    			<div class="pull-right">
-                    <input type="submit" name="submit" value="Submit" class="redbutton" />
-                </div>
-            </section> <!-- end SUBMIT BUTTON SECTION ROW -->
-</form>
+          <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
+            <div class="simpleTabs">
+            <div class="interim-form">
+  						<h2 style="color: #cc0000">Social Media Connections</h2>
+  						<div id="row">
+  							<span id="hd_fb">Facebook</span>
+  							<input id="fb" type="text" name="" value="www.facebook.com">
+  						</div> <!-- end row -->
+  						<div id="row">
+  							<span id="hd_tw">Twitter</span>
+  							<input id="tw" type="text" name="" value="www.twitter.com">
+  						</div> <!-- end row -->
+  						<div id="row">
+  							<span id="hd_li">LinkedIn</span>
+  							<input id="li" type="text" name="" value="www.linkedin.com">
+  						</div> <!-- end row -->
+  						<div id="row">
+  							<span id="hd_pn">Pinterest</span>
+  							<input id="pn" type="text" name="" value="www.pinterest.com">
+  						</div> <!-- end row -->
+  						<div id="row">
+  							<span id="hd_gp">Google+</span>
+  							<input id="gp" type="text" name="" value="plus.google.com">
+  						</div>
+              <br>
+
+              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+                <div class="tablerow">
+                  <input type="submit" class="redbutton" value="Save & Exit">
+                  <input type="submit" class="redbutton" value="Save & Add Another">
+                </div> <!-- end row -->
+              </section>
+              <!-- end row -->
+              </div>
+              </div>
+  					</div> <!-- end tab 3 -->
+
+          </form>
+
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
+    <div id="Four" class="tabcontent">
+
+
+          <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
+            <div class="simpleTabs">
+            <div class="interim-form">
+  						<h2 style="color: #cc0000">Profile Photo</h2>
+              <div class="tablerow">
+  							<span>Upload Profile Photo:</span>
+  							<input type="file" id="" name="">
+                <br>
+  							<input type="submit" class="redbutton" value="Upload Photo">
+  							<br><br>
+  							<h3 id="">Preview Photo:</h3>
+  							<img src="" alt="uploaded profile photo">
+  						</div>
+              <br><br>
+              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+                <div class="tablerow">
+                  <input type="submit" class="redbutton" value="Save & Exit">
+                  <input type="submit" class="redbutton" value="Save & Add Another">
+                </div> <!-- end row -->
+              </section>
+              </div>
+               <!-- end row -->
+            </div>
+  					</div> <!-- end tab 3 -->
+            <br>
+
+
+          </form>
+
+          <form class="graybackground" style="box-shadow: 0px 0px 15px #888888;">
+    				<h3>--Option 2: Add Multiple Leaders--</h3>
+    				<h2 style="color: #cc0000">How To Add Multiple Leaders</h2>
+    				<ol>
+    					<li><a href="">Download</a> Our Fundraiser Leader Setup Spreadsheet</li>
+    					<li>Input the Data for Each Fundraiser Leader Account you Want to Add</li>
+    					<li>Upload the Completed Spreadsheet Below...</li>
+    				</ol>
+            <br>
+    				<input class="files" type="file" name="">
+            <br>
+    				<input class="redbutton" type="submit" name="" value="Upload File">
+            <br><br>
+    			</form>
 
     </div>
 </div>
@@ -574,16 +701,12 @@ document.getElementById("defaultOpen").click();
 </script>
 </div> <!--end container-->
 
-	<?php include 'footer.php' ; ?>
+	<?php include '../footer.php' ; ?>
 
 </body>
 </html>
-<!--<pre>
-<?php if ($_POST && $mailSent){
-	echo htmlentities($message, ENT_COMPAT, 'UTF-8')."\n";
-	echo 'Headers: '.htmlentities($headers, ENT_COMPAT, 'UTF-8');
-} ?>
-</pre>-->
+
+
 <?php
    ob_end_flush();
 ?>

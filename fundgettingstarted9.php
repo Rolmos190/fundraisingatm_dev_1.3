@@ -1,5 +1,5 @@
 <?php
-  
+
       session_start();
       ob_start();
       define("SITE_ROOT",$_SERVER["DOCUMENT_ROOT"].'/salesTest/');
@@ -8,7 +8,7 @@
       $groupID = $_GET['group'];
       $table = "sample_websites";
       $query = "SELECT * FROM $table WHERE samplewebID = $groupID";
-      $result = mysqli_query($link, $query) or die(mysqli_error());
+      $result = mysqli_query($link, $query) or die(mysqli_error($link));
       $row_count = mysqli_num_rows($result);
       if($row_count == '0'){
         echo "<br />Sample Website Not Found.<br />";
@@ -34,9 +34,9 @@
            $title = $club;
          }else{
            $title = $row['sampleTitle'];
-         }   
+         }
       }
-      
+
 ?>
 
 <!DOCTYPE html>
@@ -53,12 +53,12 @@
  	<div id="column1b">
 		<h1>Getting Started</h1>
 		<h3>Sign Up and Start Today!</h3>
-	
+
 		<p>Getting started is easy! Drop us an e-mail and let us know who you are: Your Organization name, where you’re located, contact name, number, email address and what you or your Organization would like to do.</p>
 		<p>Achieving Success for your Goals is our Goal, 24/7/365 days a year! The GreatMoods team will do whatever we can to help support you and your organization in accomplishing your mission.</p>
-	
+
 		<div id="graybackground">
-		
+
 			<form action="contactEmail.php" method="post" enctype="multipart/form-data">
 				<table id="contactus">
 					<tr>
@@ -80,24 +80,24 @@
 							<input id="mailbutton" type="reset" class="redbutton" value="Clear Text">
 						</td>
 					</tr>
-					
+
 				</table>
 			</form>
 		</div>
-		
+
 		<br>
-		
+
 		<h3>Interested in Becoming a GreatMoods Fundraising Representative?</h3>
 		<p>If you would like to apply to become a GreatMoods Fundraising Representative or would like to find out more, please send us your resume and cover letter to: <a href="mailto:rephr@greatmoods.com%20subject:Rep%20Interest%20From%20Getting%20Started%20Page" target="_blank">rephr@greatmoods.com</a></p>
 	</div> <!--end column1b -->
-	
+
 	<div id="column2b">
 		<br>
 		<img src="images/rep-pages/churchchoir.png" width="404" height="270" alt="Church Choir">
 		<img class="imgLeft" src="images/rep-pages/dodgeball.png" width="198" height="166" alt="Stuents Playing Dodgeball">
 		<img class="imgRight" src="images/rep-pages/soccergirls.png" width="198" height="166" alt="High School Girls Soccer">
 		<div id="pcaption">GreatMoods offers fundraising opportunities for schools, religious organizations, community organizations and more. </div>
-	</div> <!--end column2b--> 
+	</div> <!--end column2b-->
   </div>  <!--end content-->
 
   <?php include 'footer.php' ; ?>
