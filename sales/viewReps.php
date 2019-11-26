@@ -46,7 +46,7 @@
 	<h3>Select Representative Account Below</h3>
 
     <form>
-			<?
+			<?php
 
 			$query = "SELECT * FROM distributors WHERE setupID ='$userID' AND role = 'RP'";
 		        $result = mysqli_query($link, $query)or die ("couldn't execute  pages query.".mysqli_error($link));
