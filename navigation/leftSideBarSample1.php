@@ -15,24 +15,24 @@
 	
 	<ul id="sideNav">
 	      <li><a href="samplewebsite.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-home navicon"></i> Fundraiser Homepage</a></li>
-	      <li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-desktop navicon"></i> GreatMoods<br>Program Overview</a></li>
+	      <li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-desktop navicon"></i> FundraisingATM<br>Program Overview</a></li>
 	      <li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-list-ul navicon"></i> Fundraiser Setup Steps</a></li> 
-	      <li><a href="fundgettingstarted1.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-smile-o navicon"></i> About GreatMoods</a></li>
+	      <li><a href="fundgettingstarted1.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-smile-o navicon"></i> About FundraisingATM</a></li>
 	      <li><a href="fundgettingstarted9.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-check navicon"></i> Get Started Today!<br>Contact Your Rep!</a></li>
 	</ul>
 	
 	<hr>
 	
-	<h4>About GreatMoods</h4>
+	<h4>About FundraisingATM</h4>
 	<ul id="sideNav">
 		<li><a href="fundgettingstarted1.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-smile-o navicon"></i> Welcome!</a></li>
-		<li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-desktop navicon"></i> GreatMoods<br>Program Overview</a></li>
+		<li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-desktop navicon"></i> FundraisingATM<br>Program Overview</a></li>
 		<li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-list-ul navicon"></i> Fundraiser Setup Steps</a></li> 
-		<li><a href="fundgettingstarted2.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-heart navicon"></i> GreatMoods Mission</a></li>
-		<li><a href="fundgettingstarted12.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-mouse-pointer navicon"></i> GreatMoods Online Fundraising</a></li>
-		<li><a href="fundgettingstarted3.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-star navicon"></i> Strengths of the<br>GreatMoods Program</a></li>
+		<li><a href="fundgettingstarted2.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-heart navicon"></i> FundraisingATM's Mission</a></li>
+		<li><a href="fundgettingstarted12.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-mouse-pointer navicon"></i> FundraisingATM Online Fundraising</a></li>
+		<li><a href="fundgettingstarted3.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-star navicon"></i> Strengths of the<br>FundraisingATM Program</a></li>
 		<li><a href="fundgettingstarted4.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-line-chart navicon"></i> 3 Steps to<br>Fundraising $uccess</a></li>
-		<li><a href="fundgettingstarted5.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-shopping-cart navicon"></i> Greatmoods Mall<br>Products & Gifts</a></li>
+		<li><a href="fundgettingstarted5.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-shopping-cart navicon"></i> FundraisingATM Mall<br>Products & Gifts</a></li>
 		<li><a href="fundgettingstarted6.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-truck navicon"></i> We Deliver!</a></li>
 		<li><a href="fundgettingstarted7.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-money navicon"></i> Cash Deposited Weekly!</a></li>
 		<li><a href="fundgettingstarted8.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-calculator navicon"></i> Calculate Your $uccess</a></li>

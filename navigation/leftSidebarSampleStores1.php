@@ -1,6 +1,6 @@
 <div id="leftSideBar">
 	<header class="masthead">
-	  <div class="brand-container"><h4 class="brand-name">GreatMoods Mall</h4></div>
+	  <div class="brand-container"><h4 class="brand-name">FundraisingATM Mall</h4></div>
 	  
 	  <nav class="mallSideNav">
 	    <div class="nav-container">
@@ -94,16 +94,16 @@
 	
 	<hr>
 	
-	<h4>About GreatMoods</h4>
+	<h4>About FundraisingATM</h4>
        <ul id="sideNav">
              <li><a href="index.php"><i class="fa fa-home navicon"></i> Welcome!</a></li>
-             <li><a href="gm_programoverview.php"><i class="fa fa-desktop navicon"></i> GreatMoods<br>Program Overview</a></li>
+             <li><a href="gm_programoverview.php"><i class="fa fa-desktop navicon"></i> FundraisingATM<br>Program Overview</a></li>
              <li><a href="gm_fundsetupsteps.php"><i class="fa fa-list-ul navicon"></i> Fundraiser Setup Steps</a></li> 
-             <li><a href="mission.php"><i class="fa fa-heart navicon"></i> GreatMoods Mission</a></li>
-             <li><a href="onlinefundraising.php"><i class="fa fa-mouse-pointer navicon"></i> GreatMoods<br>Online Fundraising</a></li>
-             <li><a href="program.php"><i class="fa fa-star navicon"></i> Strengths of the<br>GreatMoods Program</a></li>
+             <li><a href="mission.php"><i class="fa fa-heart navicon"></i> FundraisingATM's Mission</a></li>
+             <li><a href="onlinefundraising.php"><i class="fa fa-mouse-pointer navicon"></i> FundraisingATM<br>Online Fundraising</a></li>
+             <li><a href="program.php"><i class="fa fa-star navicon"></i> Strengths of the<br>FundraisingATM Program</a></li>
              <li><a href="easysetup.php"><i class="fa fa-line-chart navicon"></i> 3 Steps to <br>Fundraising $uccess!</a></li>
-             <li><a href="opportunities.php"><i class="fa fa-shopping-cart navicon"></i> GreatMoods Mall<br>Products & Gifts</a></li>
+             <li><a href="opportunities.php"><i class="fa fa-shopping-cart navicon"></i> FundraisingATM Mall<br>Products & Gifts</a></li>
              <li><a href="deliver.php"><i class="fa fa-truck navicon"></i> We Deliver!</a></li>
              <li><a href="cash.php"><i class="fa fa-money navicon"></i> Cash Deposited Weekly!</a></li>
              <li><a href="calculator.php"><i class="fa fa-calculator navicon"></i> Calculate Your $uccess</a></li>

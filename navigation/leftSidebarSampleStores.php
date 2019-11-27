@@ -1,6 +1,6 @@
 <div id="leftSideBar">
 
-	h4 class="expand">GreatMoods Mall <button class="sidenavbutton">+</button></h4> 
+	h4 class="expand">FundraisingATM Mall <button class="sidenavbutton">+</button></h4> 
 	<show><ul id="sideNav">
 		<li><a href="../greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Womens/c/18159169/offset=0&sort=priceAsc">Women</a> <button1 class="sidenavbutton">+</button1>
 			<?php include 'navigation/leftnavSubmenu_women.php'; ?>
