@@ -100,13 +100,13 @@
                     </div>
 
                     <div class="tab-pane" id="calc" role="tabpanel">
-                        <p class="card-text">A simple to use calculator that will allow you to find out how much money you can raise using the GreatMoods Program.</p>
+                        <p class="card-text">A simple to use calculator that will allow you to find out how much money you can raise using the FundraisingATM Program.</p>
 												<div class="text-center">
                         <a id="tab-Button"  href="calculator.php" class="btn btn-primary">Use Calculator</a>
 											</div>
                     </div>
                     <div class="tab-pane" id="steps" role="tabpanel">
-                        <p class="card-text">The GreatMoods Program allows all of the Fundraising to take place online with our Simple 3 Step Setup.</p>
+                        <p class="card-text">The FundraisingATM Program allows all of the Fundraising to take place online with our Simple 3 Step Setup.</p>
                         <blockquote class="card-text">Step 1) Setup Website Example</blockquote>
                         <blockquote class="card-text">Step 2) Setup Members Example</blockquote>
                         <blockquote class="card-text">Step 3) Setup E-Mails Example</blockquote>
