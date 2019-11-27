@@ -1263,12 +1263,12 @@ if(isset($_POST['login'])){
                elseif ($_SESSION['LOGIN'] == "TRUE") {
                         echo '<div class="modal-body">';
                             echo '<div class="mallmenu">';
-            	            echo '<h4><a href="index.php">GreatMoods Homepage</a></h4>';
+            	            echo '<h4><a href="index.php">FundraisingATM Homepage</a></h4>';
             	         	echo '<h4><a href="viewReps.php"/>Account Home</a></h4>';
                 	        echo '<h4><a href="../reset.php">Change My Password</a></h4>';
             	         	echo '</div>'; /*modal body end */
             	         	echo '<div class="modal-footer">';
-			         	    include('../menu/logout.inc.php');
+			         	    include('../includes/logout.inc.php');
 			         	    echo '</div>'; /*modal body end */
                 }
            ?>
