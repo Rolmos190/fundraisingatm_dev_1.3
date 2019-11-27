@@ -9,7 +9,7 @@ session_start();
 </head>
 
 <body id="contactrep-content">
-  <?php include 'includes/header.inc.php'; ?>
+  <?php include 'header.inc.php'; ?>
 	<div class"container">
 <!--<?php include 'navigation/leftSidebarNavHomepage.nav.php'; ?>-->
    <?php include 'navigation/fullSidebar_home.php'; ?>
@@ -89,7 +89,7 @@ session_start();
 	                 target="_blank">rephr@FundraisingATM.com</a></p>
 		</div> <!--end row -->
 	</div>  <!--end container -->
-  <?php include 'footer.php' ; ?>
+  <?php include 'footerold.php' ; ?>
 
 </body>
 </html>

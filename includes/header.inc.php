@@ -328,7 +328,7 @@ $(".row .thumbnail").click(function(){
               <?php include 'menu/menu_kids.php'; ?>
           </li>
           <li class="dropdown"  id="mainCategoryType">
-            <a "greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Fitness/c/18209624/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Fitness <span class="sr-only"></span> </a>
+            <a href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Fitness/c/18209624/offset=0&sort=priceAsc" class="dropdown-toggle" data-toggle="dropdown disabled" role="button" aria-haspopup="true" aria-expanded="false">Fitness <span class="sr-only"></span> </a>
             <?php include 'menu/menu_fitness.php'; ?>
           </li>
 

@@ -11,7 +11,7 @@
 <body>
 <div id="container">
   <?php include 'includes/header.inc.php'; ?>
-  <?php include 'navigation/leftSidebarNavHomepage.nav.php'; ?>
+
 
   <div id="content">
 	<div id="column1">
@@ -49,7 +49,7 @@
 	<br>
   </div>  <!--end content-->
 
-  <?php include 'footer.php' ; ?>
+  <?php include 'footerold.php' ; ?>
 </div><!--end container-->
 </body>
 
