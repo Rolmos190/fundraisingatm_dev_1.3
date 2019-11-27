@@ -1,12 +1,12 @@
-<?php 
+<?php
 	session_start();
 	ob_start();
 	require_once ('connection.inc.php');
 	//include "./connection.inc.php";
 	$table = "users";
-        
+
 	$link = connectTo();
-	$home = "./index.php";
+	$home = "../index.php";
 	$username = trim($_POST['email']);
 	$password = trim($_POST['password']);
 	// protection agains sql injection attacks
@@ -55,14 +55,14 @@
 		$home = $user['landingPage'];
 		$role = $user['role'];
 		$userID = $user['userID'];
-		
+
 		$_SESSION['LOGIN'] = "TRUE";
 		//$_SESSION['email'] = $username;
 		$_SESSION['home'] = $home;
-		$_SESSION['password'] = $password;	
+		$_SESSION['password'] = $password;
 		$_SESSION['Security'] = $security;
 		$_SESSION['role'] = $role;
-		
+
 		$_SESSION['home2']  = $_SERVER['HTTP_HOST']."/".$home;
 		// Get user info from user_info table
 		$sql_userInfo = "SELECT * FROM user_info WHERE email = '$username'";
@@ -70,12 +70,12 @@
 	        $row2 = mysqli_fetch_assoc($result2);
 	        $_SESSION['userId'] = $row2['userInfoID'];
 	        $_SESSION['firstName'] = $row2['FName'];
-	        
+
 	        $sql_dealer = "SELECT * FROM Dealers WHERE userName = '$username'";
 	        $result3 = mysqli_query($link, $sql_dealer);
 	        $row3 = mysqli_fetch_assoc($result3);
 	        $_SESSION['groupid'] = $row3['loginid'];
-	        
+
 	        if($home == "") {
 			header("Location:setupEditMainWebsite/index.php");
 			exit;
@@ -83,6 +83,6 @@
 			header("Location:$home");
 			exit;
 		} // end else
-	} // end if	
+	} // end if
 	ob_end_flush();
 ?>

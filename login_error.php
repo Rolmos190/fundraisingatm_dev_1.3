@@ -12,7 +12,7 @@
 <div id="container">
   <?php include 'includes/header.inc.php'; ?>
   <?php include 'navigation/leftSidebarNavHomepage.nav.php'; ?>
-  
+
   <div id="content">
 	<div id="column1">
 		<h1>OOPS!</h1>
@@ -41,14 +41,14 @@
 			</form>
 		</div> <!-- end graybackground -->
 	</div> <!-- end column1 -->
-		
+
 	<div id="column2">
 		<img src="images/girlpointatcomputer-flipped.jpg" width="404" alt="girl pointing to computer">
 	</div> <!-- end column2 -->
-	
+
 	<br>
   </div>  <!--end content-->
-  
+
   <?php include 'footer.php' ; ?>
 </div><!--end container-->
 </body>
