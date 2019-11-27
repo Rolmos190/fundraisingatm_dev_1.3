@@ -87,22 +87,22 @@ overflow:hidden;
     </div>
     <div class="item">
         <a href="gm_programoverview.php">
-            <span class="fa fa-desktop navicon"></span>GreatMoods Overview
+            <span class="fa fa-desktop navicon"></span>FundraisingATM Overview
         </a>
     </div>  
     <div class="item">
         <a href="mission.php">
-            <span class="fa fa-list-ul navicon"></span>GreatMoods Mission
+            <span class="fa fa-list-ul navicon"></span>FundraisingATM's Mission
         </a>
     </div>
     <div class="item">
         <a href="onlinefundraising.php">
-            <span class="fa fa-mouse-pointer navicon"></span>GreatMoodsOnline Fundraising
+            <span class="fa fa-mouse-pointer navicon"></span>FundraisingATM Online Fundraising
         </a>
      </div>         
     <div class="item">
         <a href="program.php">
-            <span class="fa fa-star navicon"></span>Strengths of theGreatMoods Program
+            <span class="fa fa-star navicon"></span>Strengths of the FundraisingATM Program
         </a>
     </div>
     <div class="item">
@@ -111,7 +111,7 @@ overflow:hidden;
         </a>
     </div>
     <div class="item">        
-	<a href="opportunities.php"><i class="fa fa-shopping-cart navicon"></i> GreatMoods Mall Products & Gifts</a>
+	<a href="opportunities.php"><i class="fa fa-shopping-cart navicon"></i> FundraisingATM Mall Products & Gifts</a>
     </div>
 
     <div class="item">

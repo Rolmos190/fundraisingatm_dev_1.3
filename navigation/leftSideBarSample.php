@@ -28,20 +28,20 @@
   	
     <ul class="nav nav-pills nav-stacked" style="border-bottom:1px solid #cccccc">
         <li><a href="samplestudent.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-home navicon"></i>Fundraiser Homepage</a></li>
-        <li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-desktop navicon"></i>GreatMoods Program Overview</a></li>
+        <li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-desktop navicon"></i>FundraisingATM's Program Overview</a></li>
           <li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-line-chart navicon"></i>Fundraiser Setup Steps</a></li>
-	      <li><a href="fundgettingstarted.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-smile-o"></i>About GreatMoods</a></li>
+	      <li><a href="fundgettingstarted.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-smile-o"></i>About FundraisingATM</a></li>
 	      <li style="border-bottom:1px solid black"><a href="fundgettingstarted9.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-check navicon"></i>Get Started!</a></li>
     </ul>
     <ul id="general-links" class="nav nav-pills nav-stacked hidden-md hidden-sm hidden-xs">
-        <li><h2 id="nav-label">About Greatmoods</h2></li>
+        <li><h2 id="nav-label">About FundraisingATM</h2></li>
         <li><a href="fundgettingstarted.php?group=<?php echo $_GET['group']; ?>"><i class="fa fa-smile-o"></i>Welcome</a></li>
-        <li><a href="gm_programoverview.php"><i class="fa fa-desktop navicon"></i>GreatMoods Overview</a></li>  
-        <li><a href="mission.php"><i class="fa fa-list-ul navicon"></i>GreatMoods Mission</a></li>
-        <li><a href="onlinefundraising.php"><i class="fa fa-mouse-pointer navicon"></i>GreatMoodsOnline Fundraising</a></li>         
-        <li><a href="program.php"><i class="fa fa-star navicon"></i>Strengths of the GreatMoods Program</a></li>
+        <li><a href="gm_programoverview.php"><i class="fa fa-desktop navicon"></i>FundraisingATM Overview</a></li>  
+        <li><a href="mission.php"><i class="fa fa-list-ul navicon"></i>FundraisingATM's Mission</a></li>
+        <li><a href="onlinefundraising.php"><i class="fa fa-mouse-pointer navicon"></i>FundraisingATM Online Fundraising</a></li>         
+        <li><a href="program.php"><i class="fa fa-star navicon"></i>Strengths of the FundraisingATM Program</a></li>
         <li><a href="easysetup.php"><i class="fa fa-line-chart navicon"></i>3 Steps to Fundraising Success!</a></li>
-        <li><a href="opportunities.php"><i class="fa fa-shopping-cart navicon"></i> GreatMoods Mall Products & Gifts</a></li>
+        <li><a href="opportunities.php"><i class="fa fa-shopping-cart navicon"></i> FundraisingATM Mall Products & Gifts</a></li>
         <li><a href="deliver.php"><i class="fa fa-truck navicon"></i> We Deliver!</a></li>
         <li><a href="cash.php"><i class="fa fa-money navicon"></i> Cash Deposited Weekly!</a></li>
         <li><a href="calculator.php"><i class="fa fa-calculator navicon"></i> Calculate Your $uccess</a></li>
