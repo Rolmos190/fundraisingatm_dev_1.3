@@ -9,10 +9,10 @@
     <div  class="container-fluid"  style="    padding-top: 4em !important;">
         <div class="row-centered" id="imageAndInfo">
             <div class ="col-lg-1 col-md-4 col-sm-12 col-xs-12">
-              <a href="#"><img id="footerLogo" class="" src="../newdeal/images/logo.png" alt="FundraisingATM Logo" width="auto" height="150"/></a>
+              <a href="#"><img id="footerLogo" class="" src="../newdeal/images/fundatm_logo.png" alt="FundraisingATM Logo" width="auto" height="150"/></a>
              </div>
                 <ul id="infoList" class="row-centered col-lg-push-3 col-lg-8 col-md-7 col-md-push-1 col-sm-12 col-xs-12 list-inline">
-                    		 <?
+                    		 <?php
 		     if(isset($_SESSION['authenticated']))
 		     {
 		        echo'
