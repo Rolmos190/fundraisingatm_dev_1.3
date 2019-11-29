@@ -1,3 +1,8 @@
+<?php
+ error_reporting(0); /* Database not linked to navigation; this code just removes those errors! Enable to see errors */
+ ?>
+
+
 <!DOCTYPE HTML>
 <head>
 	<meta charset="UTF-8">
@@ -6,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/global_styles.css">
 	<link rel="stylesheet" type="text/css" href="../css/allforms_styles.css">
 	<link rel="stylesheet" href="../images/font-awesome-4.6.3/css/font-awesome.min.css">
-	
+
 	<script>
 		$(document).ready(function() {
 			$(“.nav li:has(ul)”).hover(function(){
@@ -21,7 +26,7 @@
         var x = document.getElementById('example1');
         var y = document.getElementById('example2');
         if (x.style.display === 'none') {
-        x.style.display = 'block'; 
+        x.style.display = 'block';
         y.style.display = 'none';
         } else {
           x.style.display = 'none';
@@ -33,7 +38,7 @@
         var x = document.getElementById('example2');
         var y = document.getElementById('example1');
         if (x.style.display === 'none') {
-        x.style.display = 'block'; 
+        x.style.display = 'block';
         y.style.display = 'none';
         } else {
           x.style.display = 'none';
@@ -41,7 +46,7 @@
        }
        </script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	
+
 	<script>
 		$(document).ready(function(){
 		  $("button1").click(function(){
@@ -49,7 +54,7 @@
 		  });
 		});
 	</script>
-	
+
 	<script>
 		$(document).ready(function(){
 		  $("button2").click(function(){
@@ -57,7 +62,7 @@
 		  });
 		});
 	</script>
-	
+
 	<script type="text/javascript">
 		var LHtotal;
 		var AHtotal;
@@ -86,7 +91,7 @@
 			document.getElementById("LHtotal").innerHTML = result1;
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//average high schools
 			var num2 = Number(document.getElementById("AHnum").value);
 			var fund2 = Number(document.getElementById("AHfund").value);
@@ -105,7 +110,7 @@
 			schoolTotal = format(schoolTotal,2);
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//large middle schools
 			var num3 = Number(document.getElementById("LMnum").value);
 			var fund = Number(document.getElementById("LMfund").value);
@@ -125,7 +130,7 @@
 			schoolTotal = format(schoolTotal,2);
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//average middle schools
 			var num4 = Number(document.getElementById("AMnum").value);
 			var fund4 = Number(document.getElementById("AMfund").value);
@@ -143,7 +148,7 @@
 			schoolTotal += result4;
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//elementary schools
 			var num7 = Number(document.getElementById("Enum").value);
 			var fund7 = Number(document.getElementById("Efund").value);
@@ -161,8 +166,8 @@
 			document.getElementById("Etotal").innerHTML = result7;
 			document.getElementById("schoolTotal").innerHTML = schoolTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
-			
+
+
 			//large churches
 			var num5 = Number(document.getElementById("LCnum").value);
 			var fund5 = Number(document.getElementById("LCfund").value);
@@ -180,7 +185,7 @@
 			churchTotal = result5;
 			document.getElementById("churchTotal").innerHTML = churchTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
+
 			//average churches
 			var num6 = Number(document.getElementById("ACnum").value);
 			var fund6 = Number(document.getElementById("ACfund").value);
@@ -198,9 +203,9 @@
 			churchTotal += result6;
 			document.getElementById("churchTotal").innerHTML = churchTotal;
 			document.getElementById("grandTotal").value = grandTotal1;
-			
-			
-			
+
+
+
 			//organizations
 			var num8 = Number(document.getElementById("Onum").value);
 			var fund8 = Number(document.getElementById("Ofund").value);
@@ -218,35 +223,35 @@
 			orgTotal = result8;
 			document.getElementById("Ototal").innerHTML = result8;
 			document.getElementById("orgTotal").innerHTML = orgTotal;
-			document.getElementById("grandTotal").value = grandTotal1;	
+			document.getElementById("grandTotal").value = grandTotal1;
 		}
 		function format(num, dec) {
 	        	return Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
 	        }
 	</script>
-	
+
 	<script src="http://app.ecwid.com/script.js?" charset="utf-8"></script>
 	<script>  xAffiliate(''); </script>
 	<script> xProductBrowser("categoriesPerRow=3","views=grid(5,4) list(10) table(20)","categoryView=grid","searchView=list","style="); </script>
-	
+
 	<!-- jQuery (required) -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	
+
 	<!-- Optional plugins -->
 	<script src="../CSS-Tricks-AnythingSlider/js/jquery.easing.1.2.js"></script>
 	<script src="../CSS-Tricks-AnythingSlider/js/swfobject.js"></script>
-	
+
 	<!-- Anything Slider -->
 	<link rel="stylesheet" href="../CSS-Tricks-AnythingSlider/css/anythingslider.css">
 	<script src="../CSS-Tricks-AnythingSlider/js/jquery.anythingslider.js"></script>
-	
+
 	<!-- Add the stylesheet(s) you are going to use here. -->
 	<link rel="stylesheet" href="../CSS-Tricks-AnythingSlider/css/theme-cs-portfolio.css">
-	
+
 	<!-- AnythingSlider optional extensions -->
 	<script src="../CSS-Tricks-AnythingSlider/js/jquery.anythingslider.fx.js"></script>
 	<script src="../CSS-Tricks-AnythingSlider/js/jquery.anythingslider.video.js"></script>
-	
+
 	<!-- Required -->
 	<script>
 		$(function(){
@@ -261,9 +266,9 @@
   <div id="headerMain">
   	<div id="bannerwrap"><a href="index.php"><img id="logo2" src="../images/whitelogo.png" alt="GreatMoods Logo"></a>
   	<img id="banner" src="../images/Header-new_Homepage-Collage.png" width="1024" height="150" alt=Photo Collage"></div>
-  	
+
     <div id="menuWrapper"> </div> <!--end menuWrapper-->
-    
+
     <ul class="nav">
     <li><a href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Womens/c/18159169/offset=0&sort=priceAsc">Women</a>
         <?php include 'menu_women.php'; ?>
@@ -304,11 +309,11 @@
     <li class="rtborder"><a href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Business/c/18209939/offset=0&sort=priceAsc">Business</a>
         <?php include 'menu_business.php'; ?>
     </li>
-   
+
    	<span class="examplesDropdown">Fundraiser Examples</span>
     	<li class="examplesEdu"><a class="titleLink" href="#">Schools</a><?php include 'menu_education_examples.php'; ?></li>
 	<li class="examplesOrg"><a class="titleLink" href="#">Organizations</a><?php include 'menu_organization_examples.php'; ?></li>
-   
+
     <li class="lfborder"><a class="logintitle" href="#">My Account<br>Sign In</a>
     		<div class="newlogin">
 		        <?php
@@ -321,7 +326,7 @@
 		                echo '<br>';
 		                echo '<input id="redbutton" class="user redbutton" name="login" type="submit" value="sign in">';
 		                echo '</form>';
-		                
+
 		            } elseif($_SESSION['LOGIN'] == "TRUE") {
 		            	echo '<div class="loggedinMenu">';
 		                echo '<h5>my account</h5>';
@@ -331,7 +336,7 @@
 		         	echo '</div>';
 		              }
 		         ?>
- 
+
       		</div> <!--end login-->
     	</li>
 </ul>
