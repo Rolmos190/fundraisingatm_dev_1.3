@@ -1,12 +1,13 @@
 <?php
 	session_start();
 	ob_start();
-	/* if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "Executive")
+	/*if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "Executive")
        {
             header('Location: ../../index.php');
             exit;
-       }
-       */
+	   }
+	   */
+    
 	include '../includes/connection.inc.php';
 	include('../samplewebsites/imageFunctions.inc.php');
        $link = connectTo();
@@ -168,7 +169,7 @@
 
 <!DOCTYPE html>
 <head>
-	<title>Add New Members</title>
+<title>FundraisingATM | Executive</title>
   <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
   <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
 
@@ -246,16 +247,17 @@ label{
       <?php include 'sidenav.php' ; ?>
 
       <div id="content">
-          <h1>Add Vice President</h1>
+	  <br>
+          <h1>Add New Vice President</h1>
       	<h3></h3> 
      		<div class="table">
 			<form class="" action="addVP.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return validate();">
 			<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
 			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen">Information</a></li>
 			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')">Account Login</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')">Payment</a></li>
 			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')">Social Media</a></li>
 			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')">Profile Photo</a></li>
-
 			</ul>
 
 			<div id="Single" class="tabcontent">
@@ -264,7 +266,9 @@ label{
 	<h1>Add Fundraiser Leader</h1>
 </div>-->
 
-	<form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data">
+	<!-- <form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data"> -->
+	
+
   <div class="table" style="width:100%">
 
 
@@ -277,8 +281,8 @@ label{
 				</ul> -->
 
 		  <div>
-						<h2 style="color: #cc0000">[Group] Member Contact Information</h2>
-						<span>[Group] Leader Type: </span><!-- [Group] = same as the selected group above -->
+						<h2 style="color: #cc0000"> Contact Information</h2>
+						<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
 						<select name="">
 							<option value="" selected>Select Member Title</option>
 							<option value="">-depends on group-</option>
@@ -320,11 +324,10 @@ label{
 						<tr>
 							<td id="td_1">
 								<div class="tablerow">
-									<br>
-									<input type="checkbox" name="" value="" checked>Use Fundraiser Account Address<br>
+									<input type="checkbox" name="" value="" checked>Use Fundraiser Account Address<br><br>
 									<input type="checkbox" name="" value="">Use Alternate Address:
 								</div> <!-- end row -->
-
+								<br>
 								<div class="tablerow"> <!-- title -->
 									<span id="hd_address1">Address 1</span>
 								</div> <!-- end row -->
@@ -340,9 +343,9 @@ label{
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
-									<span id="hd_city">City</span>
-				<span></span>
-									<span id="hd_state">State</span>
+									<span id="hd_zip">City</span>	
+									<span></span><span></span><span></span><span></span>
+									<span id="hd_zip">State</span>
 									<span id="hd_zip">Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
@@ -401,16 +404,17 @@ label{
 										<option value="WI">WI</option>
 										<option value="WY">WY</option>
 									</select>
+									<span></span><span></span>
 									<input id="zip" type="text" name="">
 								</div> <!-- end row -->
-							</td>
+					
 
-							<td id="td_2">
+							
 								<div class="tablerow"> <!-- titles -->
 									<span id="hd_mphone">Cell Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="mphone1" type="text" name="" maxlength="3"><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
+									<input id="mphone1" type="text" name="">
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
 										<option>Verizon</option>
@@ -425,17 +429,16 @@ label{
 									<span id="hd_hphone">Home Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow">
-									<input id="hphone1" type="text" name=""><input id="hphone2" type="text" name=""><input id="hphone3" type="text" name="">
+									<input id="hphone1" type="text" name="">
 								</div> <!-- end row -->
-								<div class="tablerow"> <!-- titles -->
+								<!-- <div class="tablerow"> 
 									<span id="hd_wphone">Primary Phone</span>
 									<span id="ext">Ext</span>
-								</div> <!-- end row -->
+								</div>
 								<div class="tablerow">
 									<input id="wphone1" type="text" name="">
-									<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">
 									<input id="ext" type="text" name="">
-								</div> <!-- end row -->
+								</div>  -->
 							</td>
 						</tr>
 					</table>
@@ -629,9 +632,9 @@ label{
 
           <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
             <div class="simpleTabs">
-            <div class="interim-form">
+            <div>
 
-              <h2 style="color: #cc0000">Account Login</h2>
+              <h2 style="color: #cc0000">Create Your Account Login</h2>
                <!-- titles -->
                 <span id="hd_loginemail">Email Address</span>
                <!-- end row -->
@@ -643,6 +646,7 @@ label{
               <span id="hd_password">Password</span>
               <span></span><span></span>
               <span></span><span></span>
+			  <span></span><span></span>
               <span id="hd_cpassword">Confirm Password</span>
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
@@ -664,7 +668,61 @@ label{
 </div>
 </div>
 					
-					
+<div class="row-fluid">
+    <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
+    <div id="Five" class="tabcontent">
+
+
+          <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
+            <div class="simpleTabs">
+            <div>
+			<h2 style="color: #cc0000">3 Simple Steps for Payment</h2></div>
+					<h3 style="color: black"><b>1. PayPal Information</b></h3>
+					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
+					<div class="tablerow"> <!-- title -->
+						<span id="hd_ppemail">PayPal Email</span>
+					</div> <!-- end row -->
+					<div class="tablerow"> <!-- input -->
+						<input id="paypalemail" type="email" name="paypalemail">
+					</div> <!-- end row -->
+					<br>
+					<h3 style="color: black"><b>2. Fund Distribution and Tax Information</b></h3>
+					<p>One of the following numbers is required for distribution of funds and also for tax purposes.</p>
+					<div class="tablerow"> <!-- titles -->
+						<span id="hd_ssn">SSN</span>
+						<span></span>
+						<span id="hd_ftin">Fed-TIN</span>
+						<span></span>
+						<span id="hd_stin">State-TIN</span>
+						<span></span>
+						<span id="hd_nonp">501(c)(3)</span>
+					</div> <!-- end row -->
+					<div class="tablerow"> <!-- inputs -->
+						<input id="ssn1" type="text" name="ssn1"><!--<input id="ssn2" type="text" name="ssn2"><input id="ssn3" type="text" name="ssn3">-->
+						<input id="ftin1" type="text" name="ftin1"><!--<input id="ftin2" type="text" name="ftin2">-->
+						<input id="stin1" type="text" name="stin1"><!--<input id="stin2" type="text" name="stin2">-->
+						<input id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
+					</div> <!-- end row -->
+					<br>
+					<h3 style="color: black"><strong>3. 1099 Form</strong></h3>
+					<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
+					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
+					<br>
+					<h3>Vice President Total Commission Override: 0.5%</h3>
+              
+              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+                <div class="tablerow">
+                  <input type="submit" class="redbutton" value="Save & Exit">
+                  <input type="submit" class="redbutton" value="Save & Add Another">
+                </div> <!-- end row -->
+              </section>
+
+            </div> <!-- end tab 2 --></form>
+
+    </div>
+  </div>
+</div>					
+
 				
 <div class="row-fluid">
     <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
@@ -673,7 +731,7 @@ label{
 
           <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
             <div class="simpleTabs">
-            <div class="interim-form">
+            <div>
   						<h2 style="color: #cc0000">Social Media Connections</h2>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
@@ -720,7 +778,7 @@ label{
 
           <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
             <div class="simpleTabs">
-            <div class="interim-form">
+            <div>
   						<h2 style="color: #cc0000">Profile Photo</h2>
               <div class="tablerow">
   							<span>Upload Profile Photo:</span>
@@ -780,7 +838,8 @@ function openCity(evt, cityName) {
 document.getElementById("defaultOpen").click();
 </script>
 </div> <!--end container-->
-      <?php include 'footer.php' ; ?>   
+
+<?php include 'footer.php' ; ?>   
 
 </body>
 </html>
