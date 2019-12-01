@@ -17,7 +17,7 @@
                     if(isset($_SESSION['authenticated']))
                         {
                             echo'
-                                <li class="btn btn-md btn-link"><a href="memberHome.php">Account Homepage</a></li><span class="divider-vertical hidden-xs"></span>
+                                <li class="btn btn-md btn-link"><a href="editClub.php">Account Homepage</a></li><span class="divider-vertical hidden-xs"></span>
                             ';
                         }
                 ?>

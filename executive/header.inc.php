@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>GreatMoods | Executive</title>
+    <title>FundraisingATM | Executive</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../bootstrap/dist/js/bootstrap.js"></script>
     <!-- Bootstrap -->
@@ -332,7 +332,7 @@ function fetch_select5(val)
 </head>
 
 <div id="headerMain">
-	<div id="bannerwrap"><a href="../index.php"><img id="logo2" src="../images/whitelogo.png" alt="GreatMoods Logo"></a>
+	<div id="bannerwrap"><a href="../index.php"><img id="logo2" src="" alt=""></a>
   	<img id="banner" src="../images/Header-new_Homepage-Collage.png" width="1024" height="150" alt="GreatMoods Photo Collage" /></div>
 	
 	<div id="menuWrapper"> </div> <!--end menuWrapper-->

@@ -28,7 +28,7 @@
 	      	</div>
 
 	      	<div class="col-md-3 col-md-push-1 col-lg-4 col-lg-push-3 hidden-xs hidden-sm">
-				<br>
+				<br><br><br><br>
 		    	<img class="img-responsive" src="images/rep-pages/churchchoir.png" width="404" height="270" alt="Church Choir"/>
 			</div> <!--end column2-->
 	    </div><!-- end row -->
@@ -77,6 +77,7 @@
 	     	</div>
 	      	
 			<div class="col-lg-4 col-lg-push-3 col-md-4 col-md-push-3 col-sm-10 col-sm-push-3 col-xs-10 col-xs-push-3" id="getting-start-imgs" style="">
+				<br>				
 				<img id="bottom-img" class="img-responsive" src="images/rep-pages/dodgeball.png" width="198" height="166" alt="Stuents Playing Dodgeball"/>
 				<img id="bottom-img" class="img-responsive" src="images/rep-pages/soccergirls.png" width="198" height="166" alt="High School Girls Soccer"><span class="caption"><br>FundraisingATM offers fundraising opportunities for schools, religious organizations, community organizations and more. </span></img>
 		  	</div>
@@ -92,7 +93,7 @@
 	</div>  <!--end container -->
   
 	<?php 
-		include 'footer.php' ; 
+		include 'footerold.php' ; 
 	?>
 
 </body>
