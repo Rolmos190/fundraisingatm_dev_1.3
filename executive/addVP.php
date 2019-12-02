@@ -7,7 +7,7 @@
             exit;
 	   }
 	   */
-    
+
 	include '../includes/connection.inc.php';
 	include('../samplewebsites/imageFunctions.inc.php');
        $link = connectTo();
@@ -15,8 +15,8 @@
        $table1 = "user_info";
        $table2 = "users";
        $table3 = "distributors";
-        
-        
+
+
 	$upload_msg = "Message: <br />";
 	function isUniqueEmail($link, $table1, $email) {
 		$query = "SELECT * FROM $table1 WHERE email='$email'";
@@ -28,14 +28,14 @@
 			return true;
 		}
 	}
-	
+
 	// check if form has been submitted
 	if(isset($_POST['submit'])){
-	
+
 	$vpPhoto = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/vp/';
 	$vpPicPath = "";
-	
+
 	//grab all form fields
 	$company = mysqli_real_escape_string($link, $_POST['cname']);
 	$fname = mysqli_real_escape_string($link, $_POST['fname']);
@@ -70,21 +70,21 @@
 	$landingPage = "vp/vpLanding.php";
 	$who = "VP";
 	$percent = 0.5;
-	$salt = time(); 			// create salt using the current timestamp 
+	$salt = time(); 			// create salt using the current timestamp
 	$loginPass = sha1($loginPass.$salt); 	// encrypt the password and salt with SHA1
 	//$distPic = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/vp/';
 	$imagePath = "";
-	
+
 	  /**  process_image
 	  **	This function will first verify if the file uploaded is an image file.
 	  **	Next, the image will save the file in the desired directory in a folder labeled with the ID from the parameter.
 	  **      Last, the directory path to the image is returned so it can be saved to the database.
 	  **/
-	
+
 	  function process_image($name, $id, $tmpPic, $baseDirPath){
 
-		$cleanedPic = checkName($_FILES["$name"]["name"]);	
+		$cleanedPic = checkName($_FILES["$name"]["name"]);
 		if(!is_image($tmpPic)) {
     			// is not an image
     			$upload_msg .= $cleanedPic . " is not an image file. <br />";
@@ -92,29 +92,29 @@
     			if($_FILES['$name']['error'] > 0) {
 				$upload_msg .= $_FILES['$name']['error'] . "<br />";
 			} else {
-				
+
 				if (file_exists($baseDirPath.$id."/".$cleanedPic)){
 					$imagePath = "images/vp/".$id."/".$cleanedPic;
 				} else {
 					$picDirectory = $baseDirPath;
-					
-					
+
+
 					if (!is_dir($picDirectory.$id)){
 						mkdir($picDirectory.$id);
-						
+
 					}
 					$picDirectory = $picDirectory.$id."/";
 					move_uploaded_file($tmpPic, $picDirectory . $cleanedPic);
 					$upload_msg .= "$cleanedPic uploaded.<br />";
 					$imagePath = "images/vp/".$id."/".$cleanedPic;
-					
-					
+
+
 				}// end third inner else
 				return $imagePath;
 			} // end first inner else
 		      } // end else
 	     }// end process_image
-	    
+
 		//if good email insert data
 	    if(isUniqueEmail($link, $table1, $email)) {
 		$query1 = "INSERT INTO $table2 (username, password, Security, landingPage, salt, created, lastLogin, role)";
@@ -130,19 +130,19 @@
 		$res1 = mysqli_query($link, $query1)or die ("couldn't execute query 1.".mysqli_error($link));
 		// insert data into distributors table
 		$res2 = mysqli_query($link, $query2)or die ("couldn't execute query 2.".mysqli_error($link));
-		
+
 		$res3 = mysqli_query($link, $query3)or die ("couldn't execute query 3.".mysqli_error($link));
-		
+
 		if($res1 && $res2 && $res3){
 			mysqli_query($link, "commit;");
 			$query9 = "SELECT * FROM user_info WHERE email='$email'";
 			$res4 = mysqli_query($link, $query9)or die ("couldn't execute query 9.".mysqli_error($link));
 			$row = mysqli_fetch_assoc($res4);
 			$newUserID = $row['userInfoID'];
-			
+
 			$queryx = "UPDATE distributors SET loginid = '$newUserID ', distPicPath='$imagePath' WHERE email = '$email'";
 			mysqli_query($link, $queryx)or die ("couldn't execute query x.".mysqli_error($link));
-			
+
 			if($vpPhoto != ''){
 		    $personalPicPath = process_image('uploaded_file',$newUserID, $vpPhoto, $imageDirPath);
 		    if($personalPicPath !=''){
@@ -154,15 +154,15 @@
 			//newDistributorEmail($email,$FName,$LName,$cellPhone);
 			 header( 'Location: viewAccounts.php' );
 
-		} 
+		}
 	}
-		
+
 		else
 		{
             mysqli_query($link, "rollback;");
 			echo "I'm sorry, there was a problem creating your account.";
 			}
-	
+
 
 	}// end if
 ?>
@@ -249,15 +249,15 @@ label{
       <div id="content">
 	  <br>
           <h1>Add New Vice President</h1>
-      	<h3></h3> 
+      	<h3></h3>
      		<div class="table">
-			<form class="" action="addVP.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return validate();">
+			<form class="graybackground" action="addVP.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return validate();">
 			<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen">Information</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')">Account Login</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')">Payment</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')">Social Media</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')">Profile Photo</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black">Account Login</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black">Payment</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black">Social Media</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Profile Photo</a></li>
 			</ul>
 
 			<div id="Single" class="tabcontent">
@@ -267,7 +267,7 @@ label{
 </div>-->
 
 	<!-- <form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data"> -->
-	
+
 
   <div class="table" style="width:100%">
 
@@ -281,29 +281,22 @@ label{
 				</ul> -->
 
 		  <div>
+						<br>
 						<h2 style="color: #cc0000"> Contact Information</h2>
 						<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
-						<select name="">
-							<option value="" selected>Select Member Title</option>
-							<option value="">-depends on group-</option>
-							<option value=""></option>
-							<option value=""></option>
-							<option value=""></option>
-							<option value="">Other/Custom (Specify)</option><!-- If Other/Custom is selected, then display input field below -->
-						</select>
-						<span>Other/Custom:</span>
-						<input id="fltype" type="text" name="" value="">
-				
+
 
 					<div class="tablerow"> <!-- titles -->
 						<span id="hd_fname">First</span>
 		  <span></span>
 						<span id="hd_mname">Middle</span>
-		  <span></span>
+
 						<span id="hd_lname">Last</span>
-		  <span></span>
+						<span></span>
 						<span id="hd_pname" title="Preferred First Name">Preferred</span>
 						<span id="hd_title">Title</span>
+						<span></span>
+						<span id="hd_fname">Company</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
 						<input id="fname" type="text" name="">
@@ -318,6 +311,8 @@ label{
 							<option value="">Miss</option>
 							<option value="">Dr.</option>
 						</select>
+						<input id="company" type="text" name="">
+
 					</div> <!-- end row -->
 
 					<table>
@@ -343,7 +338,7 @@ label{
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
-									<span id="hd_zip">City</span>	
+									<span id="hd_zip">City</span>
 									<span></span><span></span><span></span><span></span>
 									<span id="hd_zip">State</span>
 									<span id="hd_zip">Zip</span>
@@ -407,14 +402,15 @@ label{
 									<span></span><span></span>
 									<input id="zip" type="text" name="">
 								</div> <!-- end row -->
-					
 
-							
+
+
 								<div class="tablerow"> <!-- titles -->
-									<span id="hd_mphone">Cell Phone</span>
+									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
 									<input id="mphone1" type="text" name="">
+									<span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
 										<option>Verizon</option>
@@ -431,14 +427,17 @@ label{
 								<div class="tablerow">
 									<input id="hphone1" type="text" name="">
 								</div> <!-- end row -->
-								<!-- <div class="tablerow"> 
-									<span id="hd_wphone">Primary Phone</span>
+
+								<div class="tablerow">
+									<span id="hd_wphone">Work Phone</span>
 									<span id="ext">Ext</span>
 								</div>
 								<div class="tablerow">
 									<input id="wphone1" type="text" name="">
+									<span></span>
+									<span id="ext"></span>
 									<input id="ext" type="text" name="">
-								</div>  -->
+								</div>
 							</td>
 						</tr>
 					</table>
@@ -622,18 +621,16 @@ label{
 
 			</div> <!-- end row -->
 		</div> <!-- end table -->
-	</form>
-</div>
-
-<div class="row-fluid">
-    <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
-    <div id="Multiple" class="tabcontent">
 
 
-          <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
+
+<div id="Multiple" class="tabcontent">
+<div class="table" style="width:100%">
+
+
             <div class="simpleTabs">
             <div>
-
+							<br>
               <h2 style="color: #cc0000">Create Your Account Login</h2>
                <!-- titles -->
                 <span id="hd_loginemail">Email Address</span>
@@ -661,24 +658,24 @@ label{
                 </div> <!-- end row -->
               </section>
 
-            </div> <!-- end tab 2 --></form>
+            </div> <!-- end tab 2 -->
+
 
     </div>
   </div>
 </div>
-</div>
-					
-<div class="row-fluid">
-    <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
-    <div id="Five" class="tabcontent">
 
 
-          <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
+
+<div id="Five" class="tabcontent">
+<div class="table" style="width:100%">
+
             <div class="simpleTabs">
             <div>
+							<br>
 			<h2 style="color: #cc0000">3 Simple Steps for Payment</h2></div>
 					<h3 style="color: black"><b>1. PayPal Information</b></h3>
-					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
+					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. <br>If you prefer, we can set up your PayPal account for you.</p>
 					<div class="tablerow"> <!-- title -->
 						<span id="hd_ppemail">PayPal Email</span>
 					</div> <!-- end row -->
@@ -709,7 +706,7 @@ label{
 					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
 					<br>
 					<h3>Vice President Total Commission Override: 0.5%</h3>
-              
+
               <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
                 <div class="tablerow">
                   <input type="submit" class="redbutton" value="Save & Exit">
@@ -717,21 +714,21 @@ label{
                 </div> <!-- end row -->
               </section>
 
-            </div> <!-- end tab 2 --></form>
+            </div> <!-- end tab 2 -->
 
-    </div>
+
   </div>
-</div>					
-
-				
-<div class="row-fluid">
-    <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
-    <div id="Triple" class="tabcontent">
+</div>
 
 
-          <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
+<div id="Triple" class="tabcontent">
+<div class="table" style="width:100%">
+
+
+
             <div class="simpleTabs">
             <div>
+							<br>
   						<h2 style="color: #cc0000">Social Media Connections</h2>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
@@ -766,19 +763,18 @@ label{
               </div>
   					</div> <!-- end tab 3 -->
 
-          </form>
 
-    </div>
+
+
 </div>
 
-<div class="row-fluid">
-    <div class=" col-md-7 col-md-push-2" id="newLeaderWrap">
-    <div id="Four" class="tabcontent">
+<div id="Four" class="tabcontent">
+<div class="table" style="width:100%">
 
 
-          <form name="import" method="post" action="uploadMembers.php" enctype="multipart/form-data">
             <div class="simpleTabs">
             <div>
+							<br>
   						<h2 style="color: #cc0000">Profile Photo</h2>
               <div class="tablerow">
   							<span>Upload Profile Photo:</span>
@@ -803,8 +799,8 @@ label{
             <br>
 
 
-          
-			
+
+
 			<!--<form class="graybackground">
 				<h3>--Option 2: Add Multiple Business Associates--</h3>
 				<h2>How To Add Multiple Business Associates</h2><br>
@@ -817,8 +813,8 @@ label{
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
 			</form>
 		</div> <!-- end table -->
-  </div> <!--end content -->
-  
+   <!--end content -->
+</div>
   <script>
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
@@ -839,8 +835,8 @@ document.getElementById("defaultOpen").click();
 </script>
 </div> <!--end container-->
 
-<?php include 'footer.php' ; ?>   
-
+<?php include 'footer.php' ; ?>
+</div>
 </body>
 </html>
 
