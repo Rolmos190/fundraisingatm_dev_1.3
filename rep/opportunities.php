@@ -10,24 +10,24 @@
 
   <?php include '../rep/header.inc.php'; ?>
   <?php include '../rep/leftSidebarNavRep.php'; ?>
-  
+
   <div id="content">
-    <h1>The GreatMoods Mall</h1>
+    <h1>The FundraisingATMs Mall</h1>
   	<h3>Wonderful Fundraising Products and Gifts Year Round</h3>
-    
+
     <div id="column1">
-      <p>GreatMoods has a wonderful variety of Products and Gifts at our GreatMoods Mall for every season, reason and occasion. This makes for a perfect year-round Fundraiser because it offers the chance for people to order products for themselves or as gifts for others.</p>
-      <p>The GreatMoods Mall has 20,000+ products that range from practical to silly, every day to elegant, delicious to indulgent and many of the Products and Gifts will be used for years to come.</p>
+      <p>FundraisingATMs has a wonderful variety of Products and Gifts at our FundraisingATMs Mall for every season, reason and occasion. This makes for a perfect year-round Fundraiser because it offers the chance for people to order products for themselves or as gifts for others.</p>
+      <p>The FundraisingATMs Mall has 20,000+ products that range from practical to silly, every day to elegant, delicious to indulgent and many of the Products and Gifts will be used for years to come.</p>
       <img src="../images/gm_mallproductsgifts.jpg" alt="collage" style="width: 100%;">
       <p>&nbsp;</p>
     </div>
     <!--end column1-->
-    
-    <div id="column2"> 
+
+    <div id="column2">
     	<div id="leadBox">
         	<div id="infoText">
           		<div id="redBar1">
-				<h3>GreatMoods Mall Directory</h3>
+				<h3>FundraisingATMs Mall Directory</h3>
 			</div> <!--end redBar1-->
 			<ul>
 				<li>Multiple Fashion Boutiques</li>
@@ -57,11 +57,11 @@
 				<li>The Cookie Jar (Coming Soon)</li>
 				<li>The Chocolate Factory (Coming Soon)</li> -->
 			</ul>
-		</div> <!--end infoText--> 
+		</div> <!--end infoText-->
 	</div> <!--end leadBox-->
-    </div>    <!--end column2--> 
+    </div>    <!--end column2-->
   </div>  <!--end content-->
-  
+
   <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
