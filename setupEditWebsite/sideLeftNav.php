@@ -9,7 +9,7 @@
                     <img src="../<?php echo $pic;?>" class="img-rounded img-responsive center-block profileimgcrop" alt="Profile Pic"/>
 
                     <!-- identify user through either variable PHP calls or through user's session data; session has been autenticated - First and Last names should always show correctly -->
-                  	<h3 id="sidebarTitleNoMoney">Welcome <?
+                  	<h3 id="sidebarTitleNoMoney">Welcome <?php
 
                                echo $_SESSION['firstName'];
 

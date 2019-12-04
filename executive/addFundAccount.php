@@ -1,12 +1,13 @@
 <?php
 session_start();
 
-       /*if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "Executive")
+     /*if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "Executive")
        {
             header('Location: ../../index.php');
             exit;
        }
        */
+
         ob_start();
 	include "connectTo.php";
 	include('../samplewebsites/imageFunctions.inc.php');
@@ -33,12 +34,13 @@ session_start();
 	// check if form has been submitted
 	if(isset($_POST['submit'])){
 
-	$scPhoto = $_FILES['uploaded_file']['tmp_name'];
+	$rpPhoto = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/sc/';
 	$vpPicPath = "";
 
 	//grab all form fileds
-	$vp = mysqli_real_escape_string($link, $_POST['vpid']);
+	$vpid = mysqli_real_escape_string($link, $_POST['vpid']);
+	$scid = mysqli_real_escape_string($link, $_POST['scid']);
 	$company = mysqli_real_escape_string($link, $_POST['cname']);
 	$fname = mysqli_real_escape_string($link, $_POST['fname']);
 	$mname = mysqli_real_escape_string($link, $_POST['mname']);
@@ -69,53 +71,16 @@ session_start();
 	//$workPhone = $_POST['workphone'];
 	$extPhone = mysqli_real_escape_string($link, $_POST['ext']);
 	$paypal = mysqli_real_escape_string($link, $_POST['paypalemail']);
-	$landingPage = "sales/viewReps.php";
-	$who = "SC";
-	$percent = 1;
+	$landingPage = "setupEditWebsite/accountEdit.php";
+	$who = "RP";
+	$percent = 6;
 	$salt = time(); 			// create salt using the current timestamp
 	$loginPass = sha1($loginPass.$salt); 	// encrypt the password and salt with SHA1
 	//$distPic = $_FILES['uploaded_file']['tmp_name'];
-	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/sc/';
+	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/rp/';
 	$imagePath = "";
 
-	  /**  process_image
-	  **	This function will first verify if the file uploaded is an image file.
-	  **	Next, the image will save the file in the desired directory in a folder labeled with the ID from the parameter.
-	  **      Last, the directory path to the image is returned so it can be saved to the database.
-	  **/
-	  /*function process_image($name, $id, $tmpPic, $baseDirPath){
 
-		$cleanedPic = checkName($_FILES["$name"]["name"]);
-		if(!is_image($tmpPic)) {
-    			// is not an image
-    			$upload_msg .= $cleanedPic . " is not an image file. <br />";
-    		} else {
-    			if($_FILES['$name']['error'] > 0) {
-				$upload_msg .= $_FILES['$name']['error'] . "<br />";
-			} else {
-
-				if (file_exists($baseDirPath.$id."/".$cleanedPic)){
-					$imagePath = "images/vp/".$id."/".$cleanedPic;
-				} else {
-					$picDirectory = $baseDirPath;
-
-
-					if (!is_dir($picDirectory.$id)){
-						mkdir($picDirectory.$id);
-
-					}
-					$picDirectory = $picDirectory.$id."/";
-					move_uploaded_file($tmpPic, $picDirectory . $cleanedPic);
-					$upload_msg .= "$cleanedPic uploaded.<br />";
-					$imagePath = "images/vp/".$id."/".$cleanedPic;
-
-
-				}// end third inner else
-				return $imagePath;
-			} // end first inner else
-		      } // end else
-	     }//end process_image
-	 */
 	  function process_image($name, $id, $tmpPic, $baseDirPath){
 
 		$cleanedPic = checkName($_FILES["$name"]["name"]);
@@ -128,7 +93,7 @@ session_start();
 			} else {
 
 				if (file_exists($baseDirPath.$id."/".$cleanedPic)){
-					$imagePath = "images/sc/".$id."/".$cleanedPic;
+					$imagePath = "images/rp/".$id."/".$cleanedPic;
 				} else {
 					$picDirectory = $baseDirPath;
 
@@ -140,7 +105,7 @@ session_start();
 					$picDirectory = $picDirectory.$id."/";
 					move_uploaded_file($tmpPic, $picDirectory . $cleanedPic);
 					$upload_msg .= "$cleanedPic uploaded.<br />";
-					$imagePath = "images/sc/".$id."/".$cleanedPic;
+					$imagePath = "images/rp/".$id."/".$cleanedPic;
 
 
 				}// end third inner else
@@ -156,7 +121,7 @@ session_start();
 		$query2 = "INSERT INTO $table1 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, cellPhone, workPhone, userPaypal,role,title,gender, userBaseCommPct, fedtin, statetin, threec)";
 		$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone', '$wPhone', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
         $query3 = "INSERT INTO $table3 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, workPhoneExt,  distPicPath,setupID, role,paypal)";
-		$query3 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$salesMan','$extPhone', '$imagePath','$vp', '$who', '$paypal')";
+		$query3 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$salesMan','$extPhone', '$imagePath','$scid', '$who','$paypal')";
 
 
 		mysqli_query($link, "start transaction;");
@@ -177,8 +142,8 @@ session_start();
 			$queryx = "UPDATE distributors SET loginid = '$newUserID ', distPicPath='$imagePath' WHERE email = '$email'";
 			mysqli_query($link, $queryx)or die ("couldn't execute query x.".mysql_error());
 
-			if($scPhoto != ''){
-		    $personalPicPath = process_image('uploaded_file',$newUserID, $scPhoto, $imageDirPath);
+			if($rpPhoto != ''){
+		    $personalPicPath = process_image('uploaded_file',$newUserID, $rpPhoto, $imageDirPath);
 		    if($personalPicPath !=''){
 			$query10 = "UPDATE $table1 SET picPath = '$personalPicPath' WHERE userInfoID = '$newUserID'";
 			mysqli_query($link, $query10);
@@ -199,7 +164,6 @@ session_start();
 
 
 	}// end if
-
 ?>
 <!DOCTYPE html>
 <head>
@@ -281,13 +245,16 @@ label{
 
       <div id="content">
 			<br>
-          <h1>Add New Sales Coordinator</h1>
+          <h1>Add New Fundraiser Account</h1>
 
           <h3></h3>
 		<div class="table">
-		<form class="graybackground" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
-			<div>
+      <form class="graybackground" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+				<h2><b>--Option 1: Add One Account--</b></h2>
+			<div class="tablerow">
 				<span id="hd_vp2">Vice President:</span>
+        <span id="hd_sc2">Sales Coordinator:</span>
+				<span id="hd_rp2">Representative</span>
 			</div> <!-- end row -->
 
 			<div class="tablerow" >
@@ -304,14 +271,19 @@ label{
 					}
 					?>
 				</select>
+        <select name="vpid" id="vpid" class="role2">
+          <option>Select SC Account</option>
+        </select>
+				<select name="vpid" id="vpid" class="role2">
+          <option>Select RP Account</option>
+        </select>
+
 			</div> <!-- end row -->
 <br>
 			<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
 			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black">Account Login</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black">Payment</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Banner</a></li>
 			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black">Social Media</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Profile Photo</a></li>
 			</ul>
 
 			<div id="Single" class="tabcontent">
@@ -331,50 +303,64 @@ label{
 					<li><a href="#">Profile Photo</a></li>
 				</ul> -->
 
-		  <div>
-        <br>
-						<h2 style="color: #cc0000"> Contact Information</h2>
-						<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
 
-
-
-					<div class="tablerow"> <!-- titles -->
-						<span id="hd_fname">First</span>
-		  <span></span>
-						<span id="hd_mname">Middle</span>
-						<span id="hd_lname">Last</span>
-		  <span></span>
-						<span id="hd_pname" title="Preferred First Name">Preferred</span>
-						<span id="hd_title">Title</span>
-            <span></span>
-						<span id="hd_fname">Company</span>
-					</div> <!-- end row -->
-					<div class="tablerow"> <!-- inputs -->
-						<input id="fname" type="text" name="">
-						<input id="mname" type="text" name="">
-						<input id="lname" type="text" name="">
-						<input id="pname" type="text" name="">
-						<select name="">
-							<option value="">---</option>
-							<option value="">Mr.</option>
-							<option value="">Ms.</option>
-							<option value="">Mrs.</option>
-							<option value="">Miss</option>
-							<option value="">Dr.</option>
-						</select>
-            <input id="company" type="text" name="">
-
-					</div> <!-- end row -->
 
 					<table>
 						<tr>
 							<td id="td_1">
 								<div class="tablerow">
-									<input type="checkbox" name="" value="" checked>Use Fundraiser Account Address<br><br>
-									<input type="checkbox" name="" value="">Use Alternate Address:
+									<h1 style="color: #cc0000"> <b>Specify Account Type</b></h1>
+									<br>
+
+									<select id="vpid" name="category">
+										<option selected>Select Organization</option>
+										<option value="All Categories">All Categories</option>
+										<option value="Educational Organizations">Educational Organizations</option>
+										<option value="Faith Groups">Faith Groups</option>
+										<option value="Community Organizations">Community Organizations</option>
+										<option value="Youth & Sports Organizations">Youth & Sports Organizations</option>
+										<option value="Local & National Charities">Local & National Charities</option>
+										<option value="National Organizations">National Organizations</option>
+										<option value="Individual Charity">Individual Charity</option>
+										<option value="Other">Other</option>
+									</select>
+									<select id="vpid" name="type">
+										<option selected>Select Category</option>
+										<option value="All Educational Types">All Educational Types</option>
+										<option value="4yr College">4yr College</option>
+										<option value="2yr College">2yr College</option>
+										<option value="High School">High School</option>
+										<option value="Middle School">Middle School</option>
+										<option value="Elementary School">Elementary School</option>
+										<option value="Home School">Home School</option>
+										<option value="Preschool School">Preschool School</option>
+										<option value="Other">Other</option>
+									</select>
+									<select id="vpid" name="subtype">
+										<option selected>Select Sub-Category</option>
+										<option value="All Sub-Types">All Sub-Types</option>
+										<option value="Public" >Public</option>
+										<option value="Private">Private</option>
+										<option value="Christian">Christian</option>
+										<option value="Charter">Charter</option>
+									</select>
+									<br>
+									<br>
+
+									<h1 style="color: #cc0000"> <b>[Category] Contact Information</b></h1>
+
 								</div> <!-- end row -->
 								<br>
 								<div class="tablerow"> <!-- title -->
+									<span id="hd_address1">[Category] Name </span>
+								</div> <!-- end row -->
+								<div class="tablerow"> <!-- input -->
+									<br>
+									<input id="address1" type="text" name="">
+								</div>
+
+								<div class="tablerow"> <!-- title -->
+									<br>
 									<span id="hd_address1">Address 1</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
@@ -382,6 +368,7 @@ label{
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- title -->
+									<br>
 									<span id="hd_address2">Address 2</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
@@ -389,12 +376,14 @@ label{
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
+									<br>
 									<span id="hd_zip">City</span>
 									<span></span><span></span><span></span><span></span>
 									<span id="hd_zip">State</span>
 									<span id="hd_zip">Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
+									<br>
 									<input id="city" type="text" name="">
 									<select id="state" name="State">
 										<option value="" selected="selected">--</option>
@@ -456,214 +445,36 @@ label{
 
 
 
-								<div class="tablerow"> <!-- titles -->
-                  <br>
-									<span id="hd_mphone">Mobile Phone</span>
-								</div> <!-- end row -->
-								<div class="tablerow"> <!-- inputs -->
-									<input id="mphone1" type="text" name="">
-                  <span></span><span></span><span></span>
-									<select id="mcarrier" title="Needed To Receive Texts From Computer">
-										<option>Select Carrier</option>
-										<option>Verizon</option>
-										<option>AT&T</option>
-										<option>Sprint</option>
-										<option>T-Mobile</option>
-										<option>U.S. Cellular</option>
-										<option>Other</option>
-									</select>
-								</div> <!-- end row -->
+								 <!-- end row -->
 								<div class="tablerow">
-									<span id="hd_hphone">Home Phone</span>
+									<br>
+									<span id="hd_hphone">Work Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow">
 									<input id="hphone1" type="text" name="">
 								</div> <!-- end row -->
-								<div class="tablerow">
-									<span id="hd_wphone">Work Phone</span>
+								<!-- <div class="tablerow">
+									<span id="hd_wphone">Primary Phone</span>
 									<span id="ext">Ext</span>
 								</div>
 								<div class="tablerow">
 									<input id="wphone1" type="text" name="">
-                  <span></span>
-									<span id="ext"></span>
 									<input id="ext" type="text" name="">
-								</div>
+								</div>  -->
 							</td>
 						</tr>
 					</table>
 
-					<div class="tablerow"> <!-- titles -->
-						<span id="hd_bday">Birthday</span>
-		  <span id="hd_gender"></span>
-						<span id="hd_gender">Gender</span>
-					</div> <!-- end row -->
-					<div class="tablerow"> <!-- inputs -->
-						<select id="month" name="">
-							<option value="na">Month</option>
-							<option value="1">January</option>
-							<option value="2">February</option>
-							<option value="3">March</option>
-							<option value="4">April</option>
-							<option value="5">May</option>
-							<option value="6">June</option>
-							<option value="7">July</option>
-							<option value="8">August</option>
-							<option value="9">September</option>
-							<option value="10">October</option>
-							<option value="11">November</option>
-							<option value="12">December</option>
-						</select>
-						<select id="day" name="">
-							<option value="na">Day</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
-							<option value="13">13</option>
-							<option value="14">14</option>
-							<option value="15">15</option>
-							<option value="16">16</option>
-							<option value="17">17</option>
-							<option value="18">18</option>
-							<option value="19">19</option>
-							<option value="20">20</option>
-							<option value="21">21</option>
-							<option value="22">22</option>
-							<option value="23">23</option>
-							<option value="24">24</option>
-							<option value="25">25</option>
-							<option value="26">26</option>
-							<option value="27">27</option>
-							<option value="28">28</option>
-							<option value="29">29</option>
-							<option value="30">30</option>
-							<option value="31">31</option>
-						</select>
-						<select id="year" name="">
-							<option value="na">Year</option>
-							<option value="2014">2014</option>
-							<option value="2013">2013</option>
-							<option value="2012">2012</option>
-							<option value="2011">2011</option>
-							<option value="2010">2010</option>
-							<option value="2009">2009</option>
-							<option value="2008">2008</option>
-							<option value="2007">2007</option>
-							<option value="2006">2006</option>
-							<option value="2005">2005</option>
-							<option value="2004">2004</option>
-							<option value="2003">2003</option>
-							<option value="2002">2002</option>
-							<option value="2001">2001</option>
-							<option value="2000">2000</option>
-							<option value="1999">1999</option>
-							<option value="1998">1998</option>
-							<option value="1997">1997</option>
-							<option value="1996">1996</option>
-							<option value="1995">1995</option>
-							<option value="1994">1994</option>
-							<option value="1993">1993</option>
-							<option value="1992">1992</option>
-							<option value="1991">1991</option>
-							<option value="1990">1990</option>
-							<option value="1989">1989</option>
-							<option value="1988">1988</option>
-							<option value="1987">1987</option>
-							<option value="1986">1986</option>
-							<option value="1985">1985</option>
-							<option value="1984">1984</option>
-							<option value="1983">1983</option>
-							<option value="1982">1982</option>
-							<option value="1981">1981</option>
-							<option value="1980">1980</option>
-							<option value="1979">1979</option>
-							<option value="1978">1978</option>
-							<option value="1977">1977</option>
-							<option value="1976">1976</option>
-							<option value="1975">1975</option>
-							<option value="1974">1974</option>
-							<option value="1973">1973</option>
-							<option value="1972">1972</option>
-							<option value="1971">1971</option>
-							<option value="1970">1970</option>
-							<option value="1969">1969</option>
-							<option value="1968">1968</option>
-							<option value="1967">1967</option>
-							<option value="1966">1966</option>
-							<option value="1965">1965</option>
-							<option value="1964">1964</option>
-							<option value="1963">1963</option>
-							<option value="1962">1962</option>
-							<option value="1961">1961</option>
-							<option value="1960">1960</option>
-							<option value="1959">1959</option>
-							<option value="1958">1958</option>
-							<option value="1957">1957</option>
-							<option value="1956">1956</option>
-							<option value="1955">1955</option>
-							<option value="1954">1954</option>
-							<option value="1953">1953</option>
-							<option value="1952">1952</option>
-							<option value="1951">1951</option>
-							<option value="1950">1950</option>
-							<option value="1949">1949</option>
-							<option value="1948">1948</option>
-							<option value="1947">1947</option>
-							<option value="1946">1946</option>
-							<option value="1945">1945</option>
-							<option value="1944">1944</option>
-							<option value="1943">1943</option>
-							<option value="1942">1942</option>
-							<option value="1941">1941</option>
-							<option value="1940">1940</option>
-							<option value="1939">1939</option>
-							<option value="1938">1938</option>
-							<option value="1937">1937</option>
-							<option value="1936">1936</option>
-							<option value="1935">1935</option>
-							<option value="1934">1934</option>
-							<option value="1933">1933</option>
-							<option value="1932">1932</option>
-							<option value="1931">1931</option>
-							<option value="1930">1930</option>
-							<option value="1929">1929</option>
-							<option value="1928">1928</option>
-							<option value="1927">1927</option>
-							<option value="1926">1926</option>
-							<option value="1925">1925</option>
-							<option value="1924">1924</option>
-							<option value="1923">1923</option>
-							<option value="1922">1922</option>
-							<option value="1921">1921</option>
-							<option value="1920">1920</option>
-							<option value="1919">1919</option>
-							<option value="1918">1918</option>
-							<option value="1917">1917</option>
-							<option value="1916">1916</option>
-							<option value="1915">1915</option>
-							<option value="1914">1914</option>
-						</select>
-						<select id="gender">
-							<option value="na">Gender</option>
-							<option value="female">Female</option>
-							<option value="male">Male</option>
-						</select>
-					</div> <!-- end row -->
+
+					 <!-- end row -->
 		<br><br>
 		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 
 		  <div class="tablerow">
 			<input type="submit" class="redbutton" value="Save & Exit">
 			<input type="submit" class="redbutton" value="Save & Add Another">
+			<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
+
 		  </div> <!-- end row -->
 		</section> <!-- end SUBMIT BUTTON SECTION ROW -->
 				</div> <!-- end tab 1 -->
@@ -671,105 +482,7 @@ label{
 
 
 			</div> <!-- end row -->
-		</div> <!-- end table -->
 
-
-
-  <div id="Multiple" class="tabcontent">
-    <div class="table" style="width:100%">
-
-
-            <div class="simpleTabs">
-            <div>
-              <br>
-              <h2 style="color: #cc0000">Create Your Account Login</h2>
-               <!-- titles -->
-                <span id="hd_loginemail">Email Address</span>
-               <!-- end row -->
-              <div id="row"> <!-- inputs -->
-                <input id="loginemail" type="text" name="" value="">
-              </div> <!-- end row -->
-
-              <div id="row"> <!-- titles -->
-              <span id="hd_password">Password</span>
-              <span></span><span></span>
-              <span></span><span></span>
-			  <span></span><span></span>
-              <span id="hd_cpassword">Confirm Password</span>
-              </div> <!-- end row -->
-              <div id="row"> <!-- inputs -->
-                <input id="password" type="text" name="" value="">
-                <input id="cpassword" type="text" name="" value="">
-              </div> <!-- end row -->
-              <br>
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
-
-            </div> <!-- end tab 2 -->
-
-
-    </div>
-  </div>
-</div>
-
-
-<div id="Five" class="tabcontent">
-  <div class="table" style="width:100%">
-
-
-            <div class="simpleTabs">
-            <div>
-              <br>
-			<h2 style="color: #cc0000">3 Simple Steps for Payment</h2></div>
-					<h3 style="color: black"><b>1. PayPal Information</b></h3>
-					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account.<br> If you prefer, we can set up your PayPal account for you.</p>
-					<div class="tablerow"> <!-- title -->
-						<span id="hd_ppemail">PayPal Email</span>
-					</div> <!-- end row -->
-					<div class="tablerow"> <!-- input -->
-						<input id="paypalemail" type="email" name="paypalemail">
-					</div> <!-- end row -->
-					<br>
-					<h3 style="color: black"><b>2. Fund Distribution and Tax Information</b></h3>
-					<p>One of the following numbers is required for distribution of funds and also for tax purposes.</p>
-					<div class="tablerow"> <!-- titles -->
-						<span id="hd_ssn">SSN</span>
-						<span></span>
-						<span id="hd_ftin">Fed-TIN</span>
-						<span></span>
-						<span id="hd_stin">State-TIN</span>
-						<span></span>
-						<span id="hd_nonp">501(c)(3)</span>
-					</div> <!-- end row -->
-					<div class="tablerow"> <!-- inputs -->
-						<input id="ssn1" type="text" name="ssn1"><!--<input id="ssn2" type="text" name="ssn2"><input id="ssn3" type="text" name="ssn3">-->
-						<input id="ftin1" type="text" name="ftin1"><!--<input id="ftin2" type="text" name="ftin2">-->
-						<input id="stin1" type="text" name="stin1"><!--<input id="stin2" type="text" name="stin2">-->
-						<input id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
-					</div> <!-- end row -->
-					<br>
-					<h3 style="color: black"><strong>3. 1099 Form</strong></h3>
-					<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
-					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
-					<br>
-					<h3>Vice President Total Commission Override: 0.5%</h3>
-
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
-
-            </div> <!-- end tab 2 -->
-
-    </div>
-
-</div>
 
 
 <div id="Triple" class="tabcontent">
@@ -778,7 +491,7 @@ label{
 
             <div class="simpleTabs">
             <div>
-              <br>
+							<br>
   						<h2 style="color: #cc0000">Social Media Connections</h2>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
@@ -806,6 +519,8 @@ label{
                 <div class="tablerow">
                   <input type="submit" class="redbutton" value="Save & Exit">
                   <input type="submit" class="redbutton" value="Save & Add Another">
+									<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
+
                 </div> <!-- end row -->
               </section>
               <!-- end row -->
@@ -823,15 +538,15 @@ label{
 
             <div class="simpleTabs">
             <div>
-              <br>
-  						<h2 style="color: #cc0000">Profile Photo</h2>
+							<br>
+  						<h2 style="color: #cc0000">Website Banner</h2>
             </div>
               <div class="tablerow">
-  							<span id="">Upload Profile Photo:</span><br><br>
+  							<span id="">Upload Banner:</span><br><br>
   							<input type="file" id="" name="uploaded_file">
-  							<input type="submit" class="redbutton" value="Upload Photo">
+  							<input type="submit" class="redbutton" value="Upload">
   							<br><br>
-  							<h3 id="">Preview Photo:</h3>
+  							<h3 id="">Preview Banner:</h3>
   							<img src="" alt="uploaded profile photo">
   						</div>
               <br><br>
@@ -839,6 +554,7 @@ label{
                 <div class="tablerow">
                   <input type="submit" class="redbutton" value="Save & Exit">
                   <input type="submit" class="redbutton" value="Save & Add Another">
+									<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
                 </div> <!-- end row -->
               </section>
 
@@ -861,9 +577,27 @@ label{
 				<input type="file" name="">
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
 			</form>
-		</div> <!-- end table -->
-   <!--end content -->
 
+		</div> <!-- end table -->
+
+	</div><!--end content -->
+	 <div class="table">
+	 	<form class="graybackground" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+	 		<h2><b>--Option 2: Add Multiple Accounts--</b></h2>
+			<br>
+			<h2 style="color: #cc0000">How To Add Multiple Leaders</h2>
+			<ol>
+				<li><a href="">Download</a> Our Fundraiser Leader Setup Spreadsheet</li>
+				<li>Input the Data for Each Fundraiser Leader Account you Want to Add</li>
+				<li>Upload the Completed Spreadsheet Below...</li>
+			</ol>
+
+			<br>
+			<input class="files" type="file" name="">
+			<input class="redbutton" type="submit" name="" value="Upload File">
+			<br><br>
+	 </form>
+ </div>
   <script>
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
@@ -882,7 +616,7 @@ function openCity(evt, cityName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
-</div> <!--end container-->
+ <!--end container-->
 </div>
 <?php include 'footer.php' ; ?>
 </div>

@@ -21,8 +21,8 @@ session_start();
       <div id="content">
           <h1>Add Fundraiser Group</h1>
           <h3></h3>
-		
-	
+
+
 		<div class="table">
 			<form class="" action="" method="">
 				<div class="tablerow">
@@ -31,7 +31,7 @@ session_start();
 						<span id="hd_rp2">Representative:</span>
 						<span id="hd_gmfr2">Fundraiser Account:</span>
 					</div> <!-- end row -->
-					
+
 				<div class="tablerow">
 					<select class="role2">
 						<option>Select VP Account</option>
@@ -62,11 +62,11 @@ session_start();
 						<option></option>
 					</select>
 				</div> <!-- end row -->
-				
+
 				<br>
-				
+
 			<div class="interim-form">
-				<div class="tablerow">
+				<div class="tablerow">.
 					<div class="interim-header"><h2>Select Group(s)</h2></div>
 					<div class="groupcolumns">
 						<h6>Education</h6>
@@ -88,7 +88,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Thetre & Drama</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-								
+
 						<div class="groupsection">
 							<span id="">General</span><br>
 							<div class="checkboxes">
@@ -104,8 +104,8 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Tablets,PCs & Internet</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
-						<div class="groupsection">		
+
+						<div class="groupsection">
 							<span id="">Athletics</span><br>
 							<div class="checkboxes">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
@@ -132,7 +132,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Volleyball, Girls</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Middle School</h7><br>
 							<span id="">Clubs & Organizations</span><br>
@@ -161,7 +161,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Yearbook</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-								
+
 						<div class="groupsection">
 							<span id="">General</span><br>
 							<div class="checkboxes">
@@ -177,7 +177,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Tablets,PCs & Internet</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<span id="">Athletics</span><br>
 							<div class="checkboxes">
@@ -234,7 +234,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Wrestling</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-							
+
 						<div class="groupsection">
 							<h7>High School</h7><br>
 							<span id="">Clubs & Organizations</span><br>
@@ -267,7 +267,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Yearbook</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-								
+
 						<div class="groupsection">
 							<span id="">General</span><br>
 							<div class="checkboxes">
@@ -287,7 +287,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Tablets, PCs & Internet</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<span id="">Athletics</span><br>
 							<div class="checkboxes">
@@ -346,7 +346,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Wrestling</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 
 						<div class="groupsection">
 							<h7>College</h7><br>
@@ -379,7 +379,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Theatre & Drama</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<span id="">General</span><br>
 							<div class="checkboxes">
@@ -392,7 +392,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Tablets, PCs & Internet</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<span id="">Athletics</span><br>
 							<div class="checkboxes">
@@ -454,7 +454,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Wrestling</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Trade, Vocational & Tech School</h7><br>
 							<div class="checkboxes">
@@ -464,7 +464,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Trade Supplies</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Preschool</h7><br>
 							<div class="checkboxes">
@@ -476,7 +476,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Tablets, PCs, & Internet</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Home School</h7><br>
 							<div class="checkboxes">
@@ -484,7 +484,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Electronic Projection & A/V</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Camp</h7><br>
 							<div class="checkboxes">
@@ -500,9 +500,9 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Youth Camps</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<br>
-						
+
 						<div class="groupsection">
 							<h6>Organizations</h6>
 							<h7>Faith Based Organizations</h7><br>
@@ -521,7 +521,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Reformed</label> <br>
 								<input type="checkbox" name="" value=""><label>Spirit-Filled</label> <br>
 							</div> <!-- end checkboxes -->
-							
+
 							<span id="">Judaism</span><br>
 							<div class="checkboxes">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
@@ -529,7 +529,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Jewish Orthodox</label> <br>
 								<input type="checkbox" name="" value=""><label>Jewish Reformed</label> <br>
 							</div> <!-- end checkboxes -->
-							
+
 							<span id="">Other Faiths</span><br>
 							<div class="checkboxes">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
@@ -539,7 +539,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Other Faiths</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Local & National Organizations</h7><br>
 							<div class="checkboxes">
@@ -557,7 +557,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Veterans of Foreign Wars (VFW)</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Local & National Charities</h7><br>
 							<div class="checkboxes">
@@ -587,7 +587,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Wounded Warrior Project</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Community Organizations</h7><br>
 							<div class="checkboxes">
@@ -602,7 +602,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Police Department</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Youth & Sports</h7><br>
 							<div class="checkboxes">
@@ -615,7 +615,7 @@ session_start();
 								<input type="checkbox" name="" value=""><label>YMCA</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<div class="groupsection">
 							<h7>Sports League</h7><br>
 							<div class="checkboxes">
@@ -623,9 +623,9 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Summer Leagues</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-						
+
 						<br>
-						
+
 						<div class="groupsection">
 							<h6>General</h6>
 							<div class="checkboxes">
@@ -636,18 +636,18 @@ session_start();
 						</div> <!-- end groupsection -->
 					</div> <!-- end groupcolumns -->
 				</div> <!-- end interim-form -->
-				
+
 				<div class="clear"></div>
-				
+
 				<br>
-				
+
 				<input type="submit" class="redbutton" value="Save & Exit">
 				<input type="submit" class="redbutton" value="Save & Add Another">
-			</form>  
+			</form>
 		</div> <!-- end table -->
   </div> <!--end content -->
-  
-      <?php include 'footer.php' ; ?>   
+
+      <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>
