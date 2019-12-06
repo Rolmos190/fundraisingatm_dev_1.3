@@ -20,9 +20,14 @@
                         ';
                      }
                   ?>
-                        <li id="homelink" class="btn btn-md btn-link"><a href="../index.php<?php echo $groupID;?>">FundraisingATM Homepage</a></li><span class="divider-vertical hidden-xs"></span>
-                        <li class="btn btn-md btn-link"><a href="fundgettingstarted11.php?group=<?php echo $groupID;?>">FundraisingATM Program Overview</a></li><span class="divider-vertical hidden-xs"></span>
-                        <li id="getstarted" class="btn btn-md btn-link"><a href="../gettingstarted_sendemail.php?group=<?php echo $groupID;?>">Getting Started</li>
+                        <li id="homelink" class="btn btn-md btn-link">
+                          <a href="../index.php<?php echo $groupID;?>">FundraisingATM Homepage</a>
+                        </li><span class="divider-vertical hidden-xs"></span>
+                        <li class="btn btn-md btn-link">
+                          <a href="fundgettingstarted11.php?group=<?php echo $groupID;?>">FundraisingATM Program Overview</a>
+                        </li><span class="divider-vertical hidden-xs"></span>
+                        <li id="getstarted" class="btn btn-md btn-link">
+                          <a href="../gettingstarted_sendemail.php?group=<?php echo $groupID;?>">Getting Started</li>
                         <!-- <li class="btn btn-md btn-link"><a href="">Privacy &amp; Warranties</a></li> -->
 
                 </ul>
