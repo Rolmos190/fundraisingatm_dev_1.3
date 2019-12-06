@@ -3,7 +3,7 @@
                      	<li><a href="index.php">Welcome!</a></li>
                      	<li><a href="gm_programoverview.php" title="">FundraisingATMs Program Overview</a></li>
              		<li><a href="gm_fundsetupsteps.php" title="">Fundraiser Setup Steps</a></li>
-                     	<li><a href="mission.php">GreatMoods Mission</a></li>
+                     	<li><a href="mission.php">FundraisingATM Mission</a></li>
                      	<li><a href="onlinefundraising.php">FundraisingATM<br>Online Fundraising</a></li>
                      	<li><a href="program.php">Strengths of the<br>FundraisingATMs Program</a></li>
                      	<li><a href="easysetup.php">3 Steps to<br>Fundraising $uccess!</a></li>
