@@ -8,8 +8,8 @@
 	   }
 	   */
 
-	include '../includes/connection.inc.php';
-	include('../samplewebsites/imageFunctions.inc.php');
+	include("../includes/connection.inc.php");
+	include("../samplewebsites/imageFunctions.inc.php");
        $link = connectTo();
        $userID = $_SESSION['userId'];
        $table1 = "user_info";
