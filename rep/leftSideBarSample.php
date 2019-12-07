@@ -11,12 +11,12 @@
   		<a href="#" target="_blank"><i id="gpicon" class="fa fa-google-plus-square" title="Google+"></i></a>-->
   		<a href="#" target="_blank"><i id="emailicon" class="fa fa-envelope-square" title="Email"></i></a>
   	</div>
-	
+
 	<ul id="sideNav">
 	      <li><a href="samplewebsite.php?group=<?php echo $_GET['group']; ?>">Fundraiser Homepage</a></li>
-	      <li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">GreatMoods Program Overview</a></li>
-	      <li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>">Fundraiser Setup Steps</a></li> 
-	      <li><a href="fundgettingstarted.php?group=<?php echo $_GET['group']; ?>">About GreatMoods</a></li>
+	      <li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Program Overview</a></li>
+	      <li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>">Fundraiser Setup Steps</a></li>
+	      <li><a href="fundgettingstarted.php?group=<?php echo $_GET['group']; ?>">About FundraisingATM</a></li>
 	      <li><a href="fundgettingstarted9.php?group=<?php echo $_GET['group']; ?>">Getting Started</a></li>
 	</ul>
 </div>

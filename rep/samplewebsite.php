@@ -42,7 +42,7 @@
 
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods Sample Website</title>
+	<title>FundraisingATM Sample Website</title>
 </head>
 
 <body>
@@ -52,24 +52,17 @@
 
   <div id="contentSample">
     <div id="column1">
+      <br>
     	<h3 class="sample"><!-- <?php echo $student_name; ?>'s --><?php echo $title; ?> Fundraiser</h3>
-    	
+
     	<div class="grpcollage">
         	<div class="mainSlides"><img src="../<?php echo $group_photo;?>" alt="placeholder for group photo"></div>
-        	<div class="mainSlides"><img src="images/sliders/mainslider1.jpg" alt="Sign Up Your Group and Start Fundraising Today!"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider2.jpg" alt="How Our Fundraising Program Works"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider3.jpg" alt="Example of Free Member Fundraising Website"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider4.jpg" alt="Great Fundraising Products at the GreatMoods Mall"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider5.jpg" alt="Fundraising Products You  Really Want"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider6.jpg" alt="35% of Every Purchase is Yours!"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider7.jpg" alt="We Deliver Everything!"></div>
-		<div class="mainSlides"><a href="gettingstarted_sendemail.php"><img src="images/sliders/mainslider8.jpg" alt="3 Easy Steps To Sign Up & Start Today!"></a></div>
-      	</div> <!-- end slider -->
-	
+      	</div>
+
 	<div class="reasonsbox">
         <h5 id="reasons">Reasons for Our Fundraiser</h5>
         <?php
-          echo '<div id ="reasoncontent">'; 
+          echo '<div id ="reasoncontent">';
           $r_list = explode('.', $reasons);
           echo '<ul>';
           foreach ($r_list as $item){
@@ -81,7 +74,7 @@
           echo '</div>';
         ?>
       </div>
-      
+
       <div id="goals">
       <br />
       <p><strong>My Goal</strong><br />
@@ -89,8 +82,8 @@
       <p><strong>Raised<br />
         So Far</strong><br />
         $<?php echo $so_far; ?>.00</p>
-    </div> <!--end goals--> 
-	
+    </div> <!--end goals-->
+
       <div class="leader">
       	<div class="leaderimgcrop">
           <img src="../<?php echo $leader_photo;?>" alt="Leader photo">
@@ -99,22 +92,23 @@
           <span class="title"><strong><?php echo $position; ?></strong></span>
           <span class="leadername"><?php echo $leader; ?></span>
         </div>
-      </div> <!--end leader-->  
-        
+      </div> <!--end leader-->
+
       <div class="studentleader">
       	<div class="leaderimgcrop">
           <img src="../<?php echo $student_photo;?>" alt="Leader">
         </div> <!-- end leaderimgcrop -->
         <div class="contactinfo2">
-         <!-- <span class="title"><strong>Student Leader</strong></span>
-          <span class="leadername"><?php echo $student_leader_name; ?></span> -->
+         <span class="title"><strong>Leader</strong></span>
+          <span class="leadername"><?php echo $student_leader_name; ?></span>
         </div>
       </div> <!--end studentleader-->
 
   </div> <!-- End Column 1-->
-  
-  <div id="column2">  	
+
+  <div id="column2">
   	<div class="shopDetails">
+      
         <ul class="stumenu">
           <h5>Shopping Ideas For...</h5>
           <li><a href="">Mothers</a></li>
@@ -132,16 +126,16 @@
           <li><a href="">Me, Myself &amp; I</a></li>
         </ul>
       </div>
-      
+
       <br>
-      
+
       <div class="bestsellers">
       	<h5>New Arrivals</h5>
 	<img src="../images/rightcol_collage_4pics_15nov2016.jpg" width="160" height="" alt="new arrivals daily">
       </div>
-      
+
   </div> <!-- end column 2 -->
-	
+
   </div> <!--end content-->
   <div class="clearfloat">  </div>
 

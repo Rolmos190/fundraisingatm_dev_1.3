@@ -1,4 +1,4 @@
-<?php 
+<?php
 if(isset($_POST['login'])){
     session_start();
     ob_start();
@@ -9,12 +9,12 @@ if(isset($_POST['login'])){
 <head>
 	<meta charset="UTF-8">
 	<meta name="wot-verification" content="afd275378407e34df6ec"/>
-	
+
 	<link rel="shortcut icon" href="../images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="../css/global_styles.css">
 	<link rel="stylesheet" type="text/css" href="../css/allforms_styles.css">
 	<link rel="stylesheet" href="../../images/font-awesome-4.6.3/css/font-awesome.min.css">
-		
+
 	<script type="text/javascript" src="../jquery-ui-1.10.3/jquery-1.9.1.js"></script>
 	<script> $(document).ready(function(){ $("button").click(function(){ $("show").toggle(); }); }); </script>
 	<script> $(document).ready(function(){ $("button1").click(function(){ $("show1").toggle(); }); }); </script>
@@ -31,10 +31,10 @@ if(isset($_POST['login'])){
 	<script> $(document).ready(function(){ $("button12").click(function(){ $("show12").toggle(); }); }); </script>
 	<script> $(document).ready(function(){ $("button13").click(function(){ $("show13").toggle(); }); }); </script>
 	<script> $(document).ready(function(){ $("button14").click(function(){ $("show14").toggle(); }); }); </script>
-	
+
 	<script>
 		function calculateSchool(orgType) {
-		        var price = 35; 
+		        var price = 35;
 		        var commission = .35;
 			//elementary schools
 			//var num7 = Number(document.getElementById("Enum").value);
@@ -48,31 +48,31 @@ if(isset($_POST['login'])){
 			var numPerYear7 = Number(document.getElementById("EnumPerYear").value);
 			var total7 = baskets7 * numPerYear7 * price * commission * active7;
 			var result7 =  format(total7,2);
-			document.getElementById("Etotal").innerHTML = result7;			
+			document.getElementById("Etotal").innerHTML = result7;
 		}
 		function format(num, dec) {
 	        	return Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
 	        }
 	</script>
-	
+
 	<!-- jQuery (required) -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	
+
 	<!-- Optional plugins -->
 	<script src="CSS-Tricks-AnythingSlider/js/jquery.easing.1.2.js"></script>
 	<script src="CSS-Tricks-AnythingSlider/js/swfobject.js"></script>
-	
+
 	<!-- Anything Slider -->
 	<link rel="stylesheet" href="CSS-Tricks-AnythingSlider/css/anythingslider.css">
 	<script src="CSS-Tricks-AnythingSlider/js/jquery.anythingslider.js"></script>
-	
+
 	<!-- Add the stylesheet(s) you are going to use here. -->
 	<link rel="stylesheet" href="CSS-Tricks-AnythingSlider/css/theme-cs-portfolio.css">
-	
+
 	<!-- AnythingSlider optional extensions -->
 	<script src="CSS-Tricks-AnythingSlider/js/jquery.anythingslider.fx.js"></script>
 	<script src="CSS-Tricks-AnythingSlider/js/jquery.anythingslider.video.js"></script>
-	
+
 	<!-- Required -->
 	<script>
 		$(function(){
@@ -84,11 +84,11 @@ if(isset($_POST['login'])){
 
 <div id="container">
   <div id="headerMain">
-  	<div id="bannerwrap"><a href="index.php"><img id="logo2" src="../images/whitelogo.png" alt="GreatMoods Logo"></a>
+  	<div id="bannerwrap"><a href="index.php"><img id="logo2" src="../newdeal/images/fundatm_logo.png" width="100" height= "80" alt="FundraisingATM Logo"></a>
   		<img id="banner" src="../<?php echo $banner_path;?>" width="1024" height="150" alt="banner placeholder" /></div>
-  	
+
     <div id="menuWrapper"> </div> <!--end menuWrapper-->
-	
+
 	<ul class="nav">
 		<li><a href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Womens/c/18159169/offset=0&sort=priceAsc">Women</a>
 		        <?php include 'menu_women.php'; ?>
@@ -129,11 +129,11 @@ if(isset($_POST['login'])){
 		    <li class="rtborder"><a href="greatmoodsMall.php?group=<?php echo $_GET['group']; ?>&storeid=900#!/Business/c/18209939/offset=0&sort=priceAsc">Business</a>
 		        <?php include 'menu_business.php'; ?>
 		    </li>
-		   
+
 		<span class="examplesDropdown">Fundraiser Examples</span>
     		<li class="examplesEdu"><a class="titleLink" href="#">Schools</a><?php include 'menu_education_examples.php'; ?></li>
 		<li class="examplesOrg"><a class="titleLink" href="#">Organizations</a><?php include 'menu_organization_examples.php'; ?></li>
-		   
+
 		    <li class="lfborder"><a class="logintitle" href="#">My Account<br>Sign In</a>
 	    		<div class="newlogin">
 			        <?php
@@ -146,18 +146,18 @@ if(isset($_POST['login'])){
 			                echo '<br>';
 			                echo '<input id="redbutton" class="user redbutton" name="login" type="submit" value="sign in">';
 			                echo '</form>';
-			                
+
 			            } elseif($_SESSION['LOGIN'] == "TRUE") {
 			            	echo '<div class="loggedinMenu">';
-			                echo '<h5>my account</h5>';
-			                echo '<span><a href="index.php">GreatMoods Homepage</a></span>';
+			                echo '<h5>My Account</h5>';
+			                echo '<span><a href="index.php">FundraisingATM Homepage</a></span>';
 			         	echo '<br>';
 			         	include('../includes/logout.inc.php');
 			         	echo '</div>';
 			              }
 			         ?>
-	 
+
 	      		</div> <!--end login-->
 	    	</li>
 	</ul>
-</div> <!--end headerMain-->  
+</div> <!--end headerMain-->
