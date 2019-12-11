@@ -604,13 +604,6 @@ label{
 						</select>
 					</div> <!-- end row -->
 		<br><br>
-		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-
-		  <div class="tablerow">
-			<input type="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
-			<input type="submit" class="redbutton" value="Save & Add Another">
-		  </div> <!-- end row -->
-		</section> <!-- end SUBMIT BUTTON SECTION ROW -->
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
 
@@ -647,12 +640,7 @@ label{
                 <input id="cpassword" type="text" name="" value="">
               </div> <!-- end row -->
               <br>
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
+
 
             </div> <!-- end tab 2 -->
 
@@ -703,12 +691,7 @@ label{
 					<br>
 					<h3>Vice President Total Commission Override: 0.5%</h3>
 
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
+
 
             </div> <!-- end tab 2 -->
 
@@ -748,12 +731,7 @@ label{
   						</div>
               <br>
 
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
+
               <!-- end row -->
               </div>
               </div>
@@ -782,12 +760,7 @@ label{
   							<img src="" alt="uploaded profile photo">
   						</div>
               <br><br>
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
+
               </div>
                <!-- end row -->
             </div>
@@ -807,6 +780,13 @@ label{
 				</ol>
 				<input type="file" name="">
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
+				<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+				  <div class="tablerow">
+					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+					<input type="submit" class="redbutton" value="Save & Add Another">
+				  </div> <!-- end row -->
+				</section> <!-- end SUBMIT BUTTON SECTION ROW -->
 			</form>
 		</div> <!-- end table -->
    <!--end content -->
