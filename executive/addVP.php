@@ -299,10 +299,10 @@ label{
 						<span id="hd_fname">Company</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
-						<input id="fname" type="text" name="">
-						<input id="mname" type="text" name="">
-						<input id="lname" type="text" name="">
-						<input id="pname" type="text" name="">
+						<input id="fname" type="text" name="fname">
+						<input id="mname" type="text" name="mname">
+						<input id="lname" type="text" name="lname">
+						<input id="pname" type="text" name="pname">
 						<select name="">
 							<option value="">---</option>
 							<option value="">Mr.</option>
@@ -311,7 +311,7 @@ label{
 							<option value="">Miss</option>
 							<option value="">Dr.</option>
 						</select>
-						<input id="company" type="text" name="">
+						<input id="company" type="text" name="cname">
 
 					</div> <!-- end row -->
 
