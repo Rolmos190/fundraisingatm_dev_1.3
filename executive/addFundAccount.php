@@ -585,10 +585,10 @@ label{
 	 	<form class="graybackground" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 	 		<h2><b>--Option 2: Add Multiple Accounts--</b></h2>
 			<br>
-			<h2 style="color: #cc0000">How To Add Multiple Leaders</h2>
+			<h2 style="color: #cc0000">How To Add Multiple Accounts</h2>
 			<ol>
-				<li><a href="">Download</a> Our Fundraiser Leader Setup Spreadsheet</li>
-				<li>Input the Data for Each Fundraiser Leader Account you Want to Add</li>
+				<li><a href="">Download</a> Our Fundraiser Setup Spreadsheet</li>
+				<li>Input the Data for Each Fundraiser Account You Want to Add</li>
 				<li>Upload the Completed Spreadsheet Below...</li>
 			</ol>
 

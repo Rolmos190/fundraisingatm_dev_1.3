@@ -369,11 +369,7 @@ label{
 					<table>
 						<tr>
 							<td id="td_1">
-								<div class="tablerow">
-									<input type="checkbox" name="" value="" checked>Use Fundraiser Account Address<br><br>
-									<input type="checkbox" name="" value="">Use Alternate Address:
-								</div> <!-- end row -->
-								<br>
+								
 								<div class="tablerow"> <!-- title -->
 									<span id="hd_address1">Address 1</span>
 								</div> <!-- end row -->

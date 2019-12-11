@@ -245,12 +245,12 @@ label{
 
       <div id="content">
 			<br>
-          <h1>Add New Fundraiser Leader</h1>
+          <h1>Add New Friends & Family</h1>
 
           <h3></h3>
 		<div class="table">
       <form class="graybackground" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
-				<h2><b>--Option 1: Add One Leader--</b></h2>
+				<h2><b>--Option 1: Add One--</b></h2>
 			<div class="tablerow">
 				<span id="hd_vp2">Vice President:</span>
         <span id="hd_sc2">Sales Coordinator:</span>
@@ -288,6 +288,18 @@ label{
         </select>
 
 			</div> <!-- end row -->
+
+			<div class="tablerow" >
+				<br>
+				<span id="hd_vp2">Member:</span>
+			</div>
+
+			<div class="tablerow" >
+				<select name="vpid" id="vpid" class="role2">
+          <option>Select Member</option>
+        </select>
+			</div>
+
 <br>
 			<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
 				<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
@@ -315,10 +327,10 @@ label{
 
 				<div>
 					<br>
-							<h2 style="color: #cc0000"> [Leader's Type]'s Contact Information</h2>
-							<span>[Group] Leader Type: </span>	<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
+							<h2 style="color: #cc0000"> Friend / Family Contact Information</h2>
+							<span>Friend/Family Title: </span>	<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
 							<select name="">
-								<option value="" selected>Select Leader</option>
+								<option value="" selected>Select Title</option>
 								<option value="">-depends on group-</option>
 								<option value=""></option>
 								<option value=""></option>
@@ -330,6 +342,7 @@ label{
 
 
 						<div class="tablerow"> <!-- titles -->
+							<br>
 							<span id="hd_fname">First</span>
 			  <span></span>
 							<span id="hd_mname">Middle</span>
@@ -359,11 +372,7 @@ label{
 						<table>
 							<tr>
 								<td id="td_1">
-									<div class="tablerow">
-										<input type="checkbox" name="" value="" checked>Use Fundraiser Account Address<br><br>
-										<input type="checkbox" name="" value="">Use Alternate Address:
-									</div> <!-- end row -->
-									<br>
+
 									<div class="tablerow"> <!-- title -->
 										<span id="hd_address1">Address 1</span>
 									</div> <!-- end row -->
@@ -660,8 +669,8 @@ label{
 		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 
 		  <div class="tablerow">
-			<input type="submit" class="redbutton" value="Add New Fundraiser Leader">
-			<input type="submit" class="redbutton" value="Save & Add Another Leader">
+			<input type="submit" class="redbutton" value="Save & Exit">
+			<input type="submit" class="redbutton" value="Save & Add Another">
 
 		  </div> <!-- end row -->
 		</section> <!-- end SUBMIT BUTTON SECTION ROW -->
@@ -700,8 +709,8 @@ label{
 		              <br>
 		              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 		                <div class="tablerow">
-											<input type="submit" class="redbutton" value="Add New Fundraiser Leader">
-											<input type="submit" class="redbutton" value="Save & Add Another Leader">
+											<input type="submit" class="redbutton" value="Save & Exit">
+											<input type="submit" class="redbutton" value="Save & Add Another">
 		                </div> <!-- end row -->
 		              </section>
 
@@ -745,8 +754,8 @@ label{
 
               <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
                 <div class="tablerow">
-									<input type="submit" class="redbutton" value="Add New Fundraiser Leader">
-									<input type="submit" class="redbutton" value="Save & Add Another Leader">
+									<input type="submit" class="redbutton" value="Save & Exit">
+									<input type="submit" class="redbutton" value="Save & Add Another">
 
                 </div> <!-- end row -->
               </section>
@@ -779,8 +788,8 @@ label{
               <br><br>
               <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
                 <div class="tablerow">
-									<input type="submit" class="redbutton" value="Add New Fundraiser Leader">
-									<input type="submit" class="redbutton" value="Save & Add Another Leader">
+									<input type="submit" class="redbutton" value="Save & Exit">
+									<input type="submit" class="redbutton" value="Save & Add Another">
                 </div> <!-- end row -->
               </section>
 
@@ -809,12 +818,12 @@ label{
 	</div><!--end content -->
 	 <div class="table">
 	 	<form class="graybackground" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
-	 		<h2><b>--Option 2: Add Multiple Leaders--</b></h2>
+	 		<h2><b>--Option 2: Add Multiple--</b></h2>
 			<br>
-			<h2 style="color: #cc0000">How To Add Multiple Leaders</h2>
+			<h2 style="color: #cc0000">How To Add Multiple Friends & Family</h2>
 			<ol>
-				<li><a href="">Download</a> Our Fundraiser Leader Setup Spreadsheet</li>
-				<li>Input the Data for Each Fundraiser Leader Account You Want to Add</li>
+				<li><a href="">Download</a> Our Setup Spreadsheet</li>
+				<li>Input the Data for Each Friend or Family Member You Want to Add</li>
 				<li>Upload the Completed Spreadsheet Below...</li>
 			</ol>
 

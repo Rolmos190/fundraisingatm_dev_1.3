@@ -16,11 +16,12 @@
 						 <li><a href="addFundAccount.php" title="">Add Fundraiser Account</a></li>
 						 <li><a href="addFundGroup.php" title="">Add Fundraiser Group</a></li>
 						 <li><a href="addFundLeader.php" title="">Add Fundraiser Leader</a></li>
+						 <li><a href="addFundMember.php" title="">Add Fundraiser Member</a></li>
+						 <li><a href="addFriendFamily.php" title="">Add Friend & Family</a></li>
+						 <li><a href="addBusinessSupporter.php" title="">Add Business Supporter</a></li>
+
 						 <!--
              <li><a href="emails.php" title="">Send Email</a></li>
-             <li><a href="addFundMember.php" title="">Add Fundraiser Member</a></li>
-             <li><a href="addFriendFamily.php" title="">Add Friend & Family</a></li>
-             <li><a href="addBusinessSupporter.php" title="">Add Business Supporter</a></li>
              <li><a href="addBusinessAssociate.php" title="">Add Business Associate</a></li> -->
              <li><a href="editAccount.php" title="">Edit My Account</a></li>
       	</ul>
