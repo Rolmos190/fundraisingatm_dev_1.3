@@ -57,7 +57,7 @@
 	$ext = mysqli_real_escape_string($link, $_POST['ext']);
 	$fbPage = mysqli_real_escape_string($link, $_POST['fb']);
 	$twitter = mysqli_real_escape_string($link, $_POST['twitter']);
-	$linkedin = mysqli_real_escape_string($link, $_POST['lindkedin']);
+	$linkedin = mysqli_real_escape_string($link, $_POST['linkedin']);
 	$loginPass = mysqli_real_escape_string($link, $_POST['loginpass']);
 	$salesMan = 25403;
 	$ftin = mysqli_real_escape_string($link, $_POST['ftin1']);
