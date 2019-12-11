@@ -50,7 +50,8 @@
 	$state = mysqli_real_escape_string($link, $_POST['state']);
 	$zip = mysqli_real_escape_string($link, $_POST['zip']);
 	$email = mysqli_real_escape_string($link, $_POST['email']);
-	$hPhone1 = mysqli_real_escape_string($link, $_POST['wphone1']);
+	$hPhone1 = mysqli_real_escape_string($link, $_POST['hphone1']);
+	$wPhone1 = mysqli_real_escape_string($link, $_POST['wphone1']);
 	//$hPhone2 = mysqli_real_escape_string($link, $_POST['hphone2']);
 	//$wPhone3 = mysqli_real_escape_string($link, $_POST['hphone3']);
 	$mPhone = mysqli_real_escape_string($link, $_POST['mphone']);
@@ -120,7 +121,7 @@
 		$query1 = "INSERT INTO $table2 (username, password, Security, landingPage, salt, created, lastLogin, role)";
 		$query1 .= "VALUES('$email','$loginPass','1','$landingPage','$salt', now(), now(), '$who')";
 		$query2 = "INSERT INTO $table1 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, cellPhone, workPhone, userPaypal,role,title,gender, userBaseCommPct, fedtin, statetin, threec)";
-		$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone', '$wPhone', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
+		$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone', '$wPhone1', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
         $query3 = "INSERT INTO $table3 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, vpID, workPhoneExt,  distPicPath,setupID, role)";
 		$query3 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$salesMan','$extPhone', '$imagePath','$userID', '$who')";
 
