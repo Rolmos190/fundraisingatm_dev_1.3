@@ -318,7 +318,7 @@ label{
 					<table>
 						<tr>
 							<td id="td_1">
-								
+
 								<div class="tablerow"> <!-- title -->
 									<span id="hd_address1">Address 1</span>
 								</div> <!-- end row -->
@@ -607,7 +607,7 @@ label{
 		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 
 		  <div class="tablerow">
-			<input type="submit" class="redbutton" value="Save & Exit">
+			<input type="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
 			<input type="submit" class="redbutton" value="Save & Add Another">
 		  </div> <!-- end row -->
 		</section> <!-- end SUBMIT BUTTON SECTION ROW -->
