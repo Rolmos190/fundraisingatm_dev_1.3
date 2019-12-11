@@ -323,14 +323,14 @@ label{
 									<span id="hd_address1">Address 1</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
-									<input id="address1" type="text" name="">
+									<input id="address1" type="text" name="address1">
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- title -->
 									<span id="hd_address2">Address 2</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
-									<input id="address2" type="text" name="">
+									<input id="address2" type="text" name="address2">
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
@@ -340,8 +340,8 @@ label{
 									<span id="hd_zip">Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="city" type="text" name="">
-									<select id="state" name="State">
+									<input id="city" type="text" name="city">
+									<select id="state" name="state">
 										<option value="" selected="selected">--</option>
 										<option value="AL">AL</option>
 										<option value="AK">AK</option>
@@ -396,7 +396,7 @@ label{
 										<option value="WY">WY</option>
 									</select>
 									<span></span><span></span>
-									<input id="zip" type="text" name="">
+									<input id="zip" type="text" name="zip" maxlength="5">
 								</div> <!-- end row -->
 
 
@@ -405,7 +405,7 @@ label{
 									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="mphone1" type="text" name="">
+									<input id="mphone1" type="text" name="mphone">
 									<span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
@@ -421,7 +421,7 @@ label{
 									<span id="hd_hphone">Home Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow">
-									<input id="hphone1" type="text" name="">
+									<input id="hphone1" type="text" name="hphone1">
 								</div> <!-- end row -->
 
 								<div class="tablerow">
@@ -429,10 +429,10 @@ label{
 									<span id="ext">Ext</span>
 								</div>
 								<div class="tablerow">
-									<input id="wphone1" type="text" name="">
+									<input id="wphone1" type="text" name="wphone1">
 									<span></span>
 									<span id="ext"></span>
-									<input id="ext" type="text" name="">
+									<input id="ext" type="text" name="ext">
 								</div>
 							</td>
 						</tr>
@@ -444,7 +444,7 @@ label{
 						<span id="hd_gender">Gender</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
-						<select id="month" name="">
+						<select id="month" name="bmonth">
 							<option value="na">Month</option>
 							<option value="1">January</option>
 							<option value="2">February</option>
@@ -459,7 +459,7 @@ label{
 							<option value="11">November</option>
 							<option value="12">December</option>
 						</select>
-						<select id="day" name="">
+						<select id="day" name="bday">
 							<option value="na">Day</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -493,7 +493,7 @@ label{
 							<option value="30">30</option>
 							<option value="31">31</option>
 						</select>
-						<select id="year" name="">
+						<select id="year" name="byear">
 							<option value="na">Year</option>
 							<option value="2014">2014</option>
 							<option value="2013">2013</option>
@@ -625,7 +625,7 @@ label{
                 <span id="hd_loginemail">Email Address</span>
                <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="loginemail" type="text" name="" value="">
+                <input id="loginemail" type="text" name="email" value="">
               </div> <!-- end row -->
 
               <div id="row"> <!-- titles -->
@@ -636,8 +636,8 @@ label{
               <span id="hd_cpassword">Confirm Password</span>
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="password" type="text" name="" value="">
-                <input id="cpassword" type="text" name="" value="">
+                <input id="password" type="password" name="loginpass" value="">
+                <input id="cpassword" type="password" name="cpass" value="">
               </div> <!-- end row -->
               <br>
 
@@ -711,23 +711,23 @@ label{
   						<h2 style="color: #cc0000">Social Media Connections</h2>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
-  							<input id="fb" type="text" name="" value="www.facebook.com">
+  							<input id="fb" type="text" name="fb" value="www.facebook.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_tw">Twitter</span>
-  							<input id="tw" type="text" name="" value="www.twitter.com">
+  							<input id="tw" type="text" name="twitter" value="www.twitter.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_li">LinkedIn</span>
-  							<input id="li" type="text" name="" value="www.linkedin.com">
+  							<input id="li" type="text" name="linkedin" value="www.linkedin.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_pn">Pinterest</span>
-  							<input id="pn" type="text" name="" value="www.pinterest.com">
+  							<input id="pn" type="text" name="printrest" value="www.pinterest.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_gp">Google+</span>
-  							<input id="gp" type="text" name="" value="plus.google.com">
+  							<input id="gp" type="text" name="googleplus" value="plus.google.com">
   						</div>
               <br>
 
@@ -752,7 +752,7 @@ label{
   						<h2 style="color: #cc0000">Profile Photo</h2>
               <div class="tablerow">
   							<span>Upload Profile Photo:</span>
-  							<input type="file" id="" name="">
+  							<input type="file" id="" name="uploaded_file">
                 <br>
   							<input type="submit" class="redbutton" value="Upload Photo">
   							<br><br>
