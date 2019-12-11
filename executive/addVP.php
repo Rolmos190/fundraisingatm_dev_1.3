@@ -303,7 +303,7 @@ label{
 						<input id="mname" type="text" name="mname">
 						<input id="lname" type="text" name="lname">
 						<input id="pname" type="text" name="pname">
-						<select name="">
+						<select name="title">
 							<option value="">---</option>
 							<option value="">Mr.</option>
 							<option value="">Ms.</option>
@@ -407,7 +407,7 @@ label{
 								<div class="tablerow"> <!-- inputs -->
 									<input id="mphone1" type="text" name="mphone">
 									<span></span><span></span><span></span>
-									<select id="mcarrier" title="Needed To Receive Texts From Computer">
+									<select id="mcarrier" title="Needed To Receive Texts From Computer" name="carrier">
 										<option>Select Carrier</option>
 										<option>Verizon</option>
 										<option>AT&T</option>
@@ -440,7 +440,7 @@ label{
 
 					<div class="tablerow"> <!-- titles -->
 						<span id="hd_bday">Birthday</span>
-		  <span id="hd_gender"></span>
+		  		<span id="hd_gender"></span>
 						<span id="hd_gender">Gender</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
@@ -597,7 +597,7 @@ label{
 							<option value="1915">1915</option>
 							<option value="1914">1914</option>
 						</select>
-						<select id="gender">
+						<select id="gender" name="gender">
 							<option value="na">Gender</option>
 							<option value="female">Female</option>
 							<option value="male">Male</option>
