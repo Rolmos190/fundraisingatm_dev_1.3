@@ -51,8 +51,8 @@
 	$zip = mysqli_real_escape_string($link, $_POST['zip']);
 	$email = mysqli_real_escape_string($link, $_POST['email']);
 	$hPhone1 = mysqli_real_escape_string($link, $_POST['wphone1']);
-	$hPhone2 = mysqli_real_escape_string($link, $_POST['hphone2']);
-	$wPhone3 = mysqli_real_escape_string($link, $_POST['hphone3']);
+	//$hPhone2 = mysqli_real_escape_string($link, $_POST['hphone2']);
+	//$wPhone3 = mysqli_real_escape_string($link, $_POST['hphone3']);
 	$mPhone = mysqli_real_escape_string($link, $_POST['mphone']);
 	$ext = mysqli_real_escape_string($link, $_POST['ext']);
 	$fbPage = mysqli_real_escape_string($link, $_POST['fb']);
