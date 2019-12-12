@@ -52,9 +52,7 @@
 	$email = mysqli_real_escape_string($link, $_POST['email']);
 	$hPhone1 = mysqli_real_escape_string($link, $_POST['hphone1']);
 	$wPhone1 = mysqli_real_escape_string($link, $_POST['wphone1']);
-	//$hPhone2 = mysqli_real_escape_string($link, $_POST['hphone2']);
-	//$wPhone3 = mysqli_real_escape_string($link, $_POST['hphone3']);
-	$mPhone = mysqli_real_escape_string($link, $_POST['mphone']);
+	$mPhone1 = mysqli_real_escape_string($link, $_POST['mphone1']);
 	$ext = mysqli_real_escape_string($link, $_POST['ext']);
 	$fbPage = mysqli_real_escape_string($link, $_POST['fb']);
 	$twitter = mysqli_real_escape_string($link, $_POST['twitter']);
@@ -121,7 +119,7 @@
 		$query1 = "INSERT INTO $table2 (username, password, Security, landingPage, salt, created, lastLogin, role)";
 		$query1 .= "VALUES('$email','$loginPass','1','$landingPage','$salt', now(), now(), '$who')";
 		$query2 = "INSERT INTO $table1 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, cellPhone, workPhone, userPaypal,role,title,gender, userBaseCommPct, fedtin, statetin, threec)";
-		$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone', '$wPhone1', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
+		$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone1', '$wPhone1', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
         $query3 = "INSERT INTO $table3 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, vpID, workPhoneExt,  distPicPath,setupID, role)";
 		$query3 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$salesMan','$extPhone', '$imagePath','$userID', '$who')";
 
@@ -172,9 +170,9 @@
 <head>
 <title>FundraisingATM | Executive</title>
   <!-- <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
-  <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" /> -->
+  <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
 
-  <!-- <script type="text/javascript" src="../js/simpletabs_1.3.js"></script> -->
+  <script type="text/javascript" src="../js/simpletabs_1.3.js"></script> -->
 	<style>
 ul.tab {
     list-style-type: none;
@@ -406,7 +404,7 @@ label{
 									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="mphone1" type="text" name="mphone">
+									<input id="mphone1" type="text" name="mphone1">
 									<span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer" name="carrier">
 										<option>Select Carrier</option>
