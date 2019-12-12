@@ -320,11 +320,11 @@ label{
 						<span id="hd_fname">Company</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
-						<input id="fname" type="text" name="">
-						<input id="mname" type="text" name="">
-						<input id="lname" type="text" name="">
-						<input id="pname" type="text" name="">
-						<select name="">
+						<input id="fname" type="text" name="fname">
+						<input id="mname" type="text" name="mname">
+						<input id="lname" type="text" name="lname">
+						<input id="pname" type="text" name="pname">
+						<select name="title">
 							<option value="">---</option>
 							<option value="">Mr.</option>
 							<option value="">Ms.</option>
@@ -332,7 +332,7 @@ label{
 							<option value="">Miss</option>
 							<option value="">Dr.</option>
 						</select>
-            <input id="company" type="text" name="">
+            <input id="company" type="text" name="cname">
 
 					</div> <!-- end row -->
 
@@ -343,14 +343,14 @@ label{
 									<span id="hd_address1">Address 1</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
-									<input id="address1" type="text" name="">
+									<input id="address1" type="text" name="address1">
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- title -->
 									<span id="hd_address2">Address 2</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
-									<input id="address2" type="text" name="">
+									<input id="address2" type="text" name="address2">
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
@@ -360,7 +360,7 @@ label{
 									<span id="hd_zip">Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="city" type="text" name="">
+									<input id="city" type="text" name="city">
 									<select id="state" name="State">
 										<option value="" selected="selected">--</option>
 										<option value="AL">AL</option>
@@ -416,7 +416,7 @@ label{
 										<option value="WY">WY</option>
 									</select>
 									<span></span><span></span>
-									<input id="zip" type="text" name="">
+									<input id="zip" type="text" name="zip" maxlength="5">
 								</div> <!-- end row -->
 
 
@@ -426,7 +426,7 @@ label{
 									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="mphone1" type="text" name="">
+									<input id="mphone1" type="text" name="mphone1">
                   <span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
@@ -442,17 +442,17 @@ label{
 									<span id="hd_hphone">Home Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow">
-									<input id="hphone1" type="text" name="">
+									<input id="hphone1" type="text" name="hPhone1">
 								</div> <!-- end row -->
 								<div class="tablerow">
 									<span id="hd_wphone">Work Phone</span>
 									<span id="ext">Ext</span>
 								</div>
 								<div class="tablerow">
-									<input id="wphone1" type="text" name="">
+									<input id="wphone1" type="text" name="whphone1">
                   <span></span>
 									<span id="ext"></span>
-									<input id="ext" type="text" name="">
+									<input id="ext" type="text" name="ext">
 								</div>
 							</td>
 						</tr>
