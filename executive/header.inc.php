@@ -1,6 +1,6 @@
 <head>
 	<meta charset="UTF-8">
-	
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -19,10 +19,10 @@
 	<link rel="shortcut icon" href="../images/favicon.ico">
 	<link href="../css/global_styles.css" rel="stylesheet" type="text/css" />
 	<link href="../css/allforms_styles.css" rel="stylesheet" type="text/css" />
-	
+
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />   
-	
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
+
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>-->
 	<script src="../js/simpletabs_1.3.js"></script>
@@ -40,7 +40,7 @@
         });
        });
 	</script>
-	
+
 	<script> //select-deselect all recipients in emails
 		function setCheckboxes1(act) {
 		  var e = document.getElementsByClassName('leaders');
@@ -73,14 +73,14 @@
 		  }
 		}
 	</script>
- 
+
      <script>
-	 
+
 
      // Form validation code will come here.
       function validate()
       {
-		  
+
 		  if( document.myForm.fname.value == "" )
          {
             document.getElementById("fname").style.border="3px solid red";
@@ -89,7 +89,7 @@
          }else {
 			 document.getElementById("fname").style.border="1px solid black";
 		 }
-         
+
           if( document.myForm.lname.value == "" )
          {
             document.getElementById("lname").style.border="3px solid red";
@@ -98,7 +98,7 @@
          }else {
 			 document.getElementById("lname").style.border="1px solid black";
 		 }
-         
+
           if( document.myForm.address1.value == "" )
          {
             document.getElementById("address1").style.border="3px solid red";
@@ -107,7 +107,7 @@
          }else {
 			 document.getElementById("address1").style.border="1px solid black";
 		 }
-		 
+
          if( document.myForm.city.value == "" )
          {
             document.getElementById("city").style.border="3px solid red";
@@ -116,7 +116,7 @@
          }else {
 			 document.getElementById("city").style.border="1px solid black";
 		 }
-		 
+
          if( document.myForm.state.value == "" )
          {
             document.getElementById("state").style.border="3px solid red";
@@ -125,7 +125,7 @@
          }else {
 			 document.getElementById("state").style.border="1px solid black";
 		 }
-		 
+
          if( document.myForm.zip.value == "" )
          {
             document.getElementById("zip").style.border="3px solid red";
@@ -134,7 +134,7 @@
          }else {
 			 document.getElementById("zip").style.border="1px solid black";
 		 }
-         
+
          if( document.myForm.email.value == "" )
          {
             document.getElementById("email").style.border="3px solid red";
@@ -143,7 +143,7 @@
          }else {
 			 document.getElementById("email").style.border="1px solid black";
 		 }
-         
+
          if( document.myForm.zip.value == "" ||
          isNaN( document.myForm.zip.value ) ||
          document.myForm.Zip.value.length != 5 )
@@ -154,7 +154,7 @@
          }else {
 			 document.getElementById("zip").style.border="1px solid black";
 		 }
-         
+
          if( document.myForm.Country.value == "-1" )
          {
             document.getElementById("Country").style.border="3px solid red";
@@ -162,8 +162,8 @@
          }else {
 			 document.getElementById("Country").style.border="1px solid black";
 		 }
-	
-		 
+
+
 		 if(document.myForm.password == "" ||
 		 document.myForm.cpassword == "" ||
 		 document.myForm.password != document.myForm.cpassword )
@@ -176,7 +176,7 @@
 			 document.getElementById("password").style.border="1px solid black";
 			 document.getElementById("cpassword").style.border="1px solid black";
 		 }
-		 
+
 		 if(document.myForm.vpid == "Select VP Account")
 		 {
 			document.getElementById("vpid").style.border="3px solid red";
@@ -185,10 +185,10 @@
 		 }else {
 			 document.getElementById("vpid").style.border="1px solid black";
 		 }
-         
+
 		 return( true );
       }
- 
+
 </script>
 
 <script>
@@ -202,11 +202,11 @@ function fetch_select(val)
        get_option:val
      },
      success: function (response) {
-       document.getElementById("new_select").innerHTML=response; 
+       document.getElementById("new_select").innerHTML=response;
      }
    });
-   
-   
+
+
    $.ajax({
      type: 'post',
      url: 'fetch_datax.php',
@@ -214,11 +214,11 @@ function fetch_select(val)
        get_option:val
      },
      success: function (response) {
-       document.getElementById("gms_accts").innerHTML=response; 
+       document.getElementById("gms_accts").innerHTML=response;
      }
    });
-   
-   
+
+
 }
 
 function fetch_select2(val)
@@ -230,7 +230,7 @@ function fetch_select2(val)
        get_option:val
      },
      success: function (response) {
-       document.getElementById("new_select2").innerHTML=response; 
+       document.getElementById("new_select2").innerHTML=response;
      }
    });
     $.ajax({
@@ -240,7 +240,7 @@ function fetch_select2(val)
        get_option:val
      },
      success: function (response) {
-       document.getElementById("gms_accts").innerHTML=response; 
+       document.getElementById("gms_accts").innerHTML=response;
      }
    });
 }
@@ -254,10 +254,10 @@ function fetch_select3(val)
        get_option:val
      },
      success: function (response) {
-       document.getElementById("new_select3").innerHTML=response; 
+       document.getElementById("new_select3").innerHTML=response;
      }
    });
-   
+
     $.ajax({
      type: 'post',
      url: 'fetch_data3x.php',
@@ -265,7 +265,7 @@ function fetch_select3(val)
        get_option:val
      },
      success: function (response) {
-       document.getElementById("gms_accts").innerHTML=response; 
+       document.getElementById("gms_accts").innerHTML=response;
      }
    });
 }
@@ -280,10 +280,10 @@ function fetch_select4(val)
        get_option:val
      },
      success: function (response) {
-       document.getElementById("new_select4").innerHTML=response; 
+       document.getElementById("new_select4").innerHTML=response;
      }
    });
-   
+
    $.ajax({
      type: 'post',
      url: 'fetch_data4x.php',
@@ -291,7 +291,7 @@ function fetch_select4(val)
        get_option:val
      },
      success: function (response) {
-       document.getElementById("gms_accts").innerHTML=response; 
+       document.getElementById("gms_accts").innerHTML=response;
      }
    });
 }
@@ -305,16 +305,16 @@ function fetch_select5(val)
        get_option:val
      },
      success: function (response) {
-       document.getElementById("new_select5").innerHTML=response; 
+       document.getElementById("new_select5").innerHTML=response;
      }
    });
 }
 
-</script>  
+</script>
  <script>
     $(document).ready(function () {
 	$('.view_data').click(function () { // id of the modal with event
-	
+
 	var order_id = $(this).attr("id");
 	$.ajax({
 	 url : "selectSupplier.php",
@@ -324,17 +324,17 @@ function fetch_select5(val)
 	 $('#edit_detail').html(data);
 	 $('#dataModal').modal("show");
 	 }
-	
+
 	});
 	})
 });
-    </script>  
+    </script>
 </head>
 
 <div id="headerMain">
-	<div id="bannerwrap"><a href="../index.php"><img id="logo2" src="" alt=""></a>
+	<div id="bannerwrap"><a href="../index.php"><img id="logo2" src="../images/whitelogo.png" alt=""></a>
   	<img id="banner" src="../images/Header-new_Homepage-Collage.png" width="1024" height="150" alt="GreatMoods Photo Collage" /></div>
-	
+
 	<div id="menuWrapper"> </div> <!--end menuWrapper-->
 
       <ul class="nav">
@@ -377,11 +377,11 @@ function fetch_select5(val)
 	    <li class="rtborder"><a href="#">Business</a>
 	        <?php include 'menu_business_home.php'; ?>
 	    </li>
-	   
+
 	   	<span class="examplesDropdown">Fundraiser Examples</span>
 		<li class="examplesEdu"><a class="titleLink" href="#">Schools</a><?php include 'menu_education_examples.php'; ?></li>
 		<li class="examplesOrg"><a class="titleLink" href="#">Organizations</a><?php include 'menu_organization_examples.php'; ?></li>
-	   
+
 	   <li class="lfborder"><a class="logintitle" href="#">My Account</a>
     		<div class="newlogin">
 		        <?php
@@ -394,7 +394,7 @@ function fetch_select5(val)
 		                echo '<br>';
 		                echo '<input id="redbutton" class="user redbutton" name="login" type="submit" value="sign in">';
 		                echo '</form>';
-		                
+
 		            } elseif($_SESSION['LOGIN'] == "TRUE") {
 		                echo '<div class="loggedinMenu">';
 		                echo '<h5>my account</h5>';
@@ -411,4 +411,3 @@ function fetch_select5(val)
 	  </ul><!--end mainNav-->
 
 </div><!--end headerMain-->
-  
