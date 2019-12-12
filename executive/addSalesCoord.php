@@ -354,7 +354,7 @@ label{
 						<input id="mname" type="text" name="mname">
 						<input id="lname" type="text" name="lname">
 						<input id="pname" type="text" name="pname">
-						<select name="">
+						<select name="title">
 							<option value="">---</option>
 							<option value="">Mr.</option>
 							<option value="">Ms.</option>
@@ -374,14 +374,14 @@ label{
 									<span id="hd_address1">Address 1</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
-									<input id="address1" type="text" name="">
+									<input id="address1" type="text" name="address1">
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- title -->
 									<span id="hd_address2">Address 2</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
-									<input id="address2" type="text" name="">
+									<input id="address2" type="text" name="address2">
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
@@ -391,7 +391,7 @@ label{
 									<span id="hd_zip">Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="city" type="text" name="">
+									<input id="city" type="text" name="city">
 									<select id="state" name="State">
 										<option value="" selected="selected">--</option>
 										<option value="AL">AL</option>
@@ -447,7 +447,7 @@ label{
 										<option value="WY">WY</option>
 									</select>
 									<span></span><span></span>
-									<input id="zip" type="text" name="">
+									<input id="zip" type="text" name="zip" maxlength="5">
 								</div> <!-- end row -->
 
 
@@ -457,7 +457,7 @@ label{
 									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="mphone1" type="text" name="">
+									<input id="mphone1" type="text" name="mphone1">
                   <span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
@@ -473,17 +473,17 @@ label{
 									<span id="hd_hphone">Home Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow">
-									<input id="hphone1" type="text" name="">
+									<input id="hphone1" type="text" name="hPhone1">
 								</div> <!-- end row -->
 								<div class="tablerow">
 									<span id="hd_wphone">Work Phone</span>
 									<span id="ext">Ext</span>
 								</div>
 								<div class="tablerow">
-									<input id="wphone1" type="text" name="">
+									<input id="wphone1" type="text" name="wphone1">
                   <span></span>
 									<span id="ext"></span>
-									<input id="ext" type="text" name="">
+									<input id="ext" type="text" name="ext">
 								</div>
 							</td>
 						</tr>
@@ -495,7 +495,7 @@ label{
 						<span id="hd_gender">Gender</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
-						<select id="month" name="">
+						<select id="month" name="bmonth">
 							<option value="na">Month</option>
 							<option value="1">January</option>
 							<option value="2">February</option>
@@ -510,7 +510,7 @@ label{
 							<option value="11">November</option>
 							<option value="12">December</option>
 						</select>
-						<select id="day" name="">
+						<select id="day" name="bday">
 							<option value="na">Day</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -544,7 +544,7 @@ label{
 							<option value="30">30</option>
 							<option value="31">31</option>
 						</select>
-						<select id="year" name="">
+						<select id="year" name="byear">
 							<option value="na">Year</option>
 							<option value="2014">2014</option>
 							<option value="2013">2013</option>
@@ -648,20 +648,13 @@ label{
 							<option value="1915">1915</option>
 							<option value="1914">1914</option>
 						</select>
-						<select id="gender">
+						<select id="gender" name="gender">
 							<option value="na">Gender</option>
 							<option value="female">Female</option>
 							<option value="male">Male</option>
 						</select>
 					</div> <!-- end row -->
 		<br><br>
-		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-
-		  <div class="tablerow">
-			<input type="submit" class="redbutton" value="Save & Exit">
-			<input type="submit" class="redbutton" value="Save & Add Another">
-		  </div> <!-- end row -->
-		</section> <!-- end SUBMIT BUTTON SECTION ROW -->
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
 
@@ -683,7 +676,7 @@ label{
                 <span id="hd_loginemail">Email Address</span>
                <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="loginemail" type="text" name="" value="">
+                <input id="loginemail" type="text" name="email" value="">
               </div> <!-- end row -->
 
               <div id="row"> <!-- titles -->
@@ -694,17 +687,10 @@ label{
               <span id="hd_cpassword">Confirm Password</span>
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="password" type="text" name="" value="">
-                <input id="cpassword" type="text" name="" value="">
+                <input id="password" type="text" name="loginpass" value="">
+                <input id="cpassword" type="text" name="cpass" value="">
               </div> <!-- end row -->
               <br>
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
-
             </div> <!-- end tab 2 -->
 
 
@@ -752,14 +738,8 @@ label{
 					<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
 					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
 					<br>
-					<h3>Vice President Total Commission Override: 0.5%</h3>
+					<h3>Sales Coordinator Total Commission Override: 0.5%</h3>
 
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
 
             </div> <!-- end tab 2 -->
 
@@ -778,32 +758,26 @@ label{
   						<h2 style="color: #cc0000">Social Media Connections</h2>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
-  							<input id="fb" type="text" name="" value="www.facebook.com">
+  							<input id="fb" type="text" name="fb" value="www.facebook.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_tw">Twitter</span>
-  							<input id="tw" type="text" name="" value="www.twitter.com">
+  							<input id="tw" type="text" name="twitter" value="www.twitter.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_li">LinkedIn</span>
-  							<input id="li" type="text" name="" value="www.linkedin.com">
+  							<input id="li" type="text" name="linkedin" value="www.linkedin.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_pn">Pinterest</span>
-  							<input id="pn" type="text" name="" value="www.pinterest.com">
+  							<input id="pn" type="text" name="printrest" value="www.pinterest.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_gp">Google+</span>
-  							<input id="gp" type="text" name="" value="plus.google.com">
+  							<input id="gp" type="text" name="googleplus" value="plus.google.com">
   						</div>
               <br>
 
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
               <!-- end row -->
               </div>
               </div>
@@ -831,12 +805,7 @@ label{
   							<img src="" alt="uploaded profile photo">
   						</div>
               <br><br>
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
+
 
                <!-- end row -->
             </div>
@@ -856,7 +825,16 @@ label{
 				</ol>
 				<input type="file" name="">
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
-			</form>
+        <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+          <div class="tablerow">
+            <input type="submit" class="redbutton" value="Save & Exit">
+            <input type="submit" class="redbutton" value="Save & Add Another">
+          </div> <!-- end row -->
+        </section>
+
+
+
+      </form>
 		</div> <!-- end table -->
    <!--end content -->
 
