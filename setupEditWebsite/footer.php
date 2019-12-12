@@ -10,9 +10,9 @@
             <div class ="col-lg-1 col-md-4 col-sm-12 col-xs-12">
                 <a href="#"><img id="footerLogo" class="" src="../newdeal/images/fundatm_logo.png" alt="FundraisingATM Logo" width="auto" height="150"/></a>
             </div>
-                
+
             <ul id="infoList" class="row-centered col-lg-push-3 col-lg-8 col-md-7 col-md-push-1 col-sm-12 col-xs-12 list-inline">
-        	
+
                 <?php
                     if(isset($_SESSION['authenticated']))
                         {
@@ -21,15 +21,15 @@
                             ';
                         }
                 ?>
-            
+
                 <li id="homelink" class="btn btn-md btn-link"><a href="membersite.php?group=<?php echo $groupID;?>">FundraisingATM Homepage</a></li><span class="divider-vertical hidden-xs"></span>
                 <li class="btn btn-md btn-link"><a href="fundgettingstarted11.php?group=<?php echo $groupID;?>">FundraisingATM Program Overview</a></li><span class="divider-vertical hidden-xs"></span>
                 <li id="getstarted" class="btn btn-md btn-link"><a href="../gettingstarted_sendemail.php?group=<?php echo $groupID;?>">Getting Started</li><span class="divider-vertical hidden-xs"></span>
                 <!--<li class="btn btn-md btn-link"><a href="">Privacy &amp; Warranties</a></li>-->
             </ul>
-                
+
         </div><!--end row-->
-        
+
         <div class="row-centered">
             <div class="col-lg-push-5 col-lg-6 col-md-12 col-sm-12 col-xs-12" id="copyright">
                 <span class="text-muted">Copyright &copy; <?php echo date('Y'); ?> FundraisingATM.com, LLC. All Rights Reserved</span>

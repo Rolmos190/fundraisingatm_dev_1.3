@@ -42,7 +42,7 @@
 
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods Sample Website</title>
+	<title>FundraisingATM Sample Website</title>
 </head>
 
 <body>
@@ -52,10 +52,13 @@
 
   <div id="contentSample">
     <div id="column1">
+      <br>
     	<h3 class="sample"><!-- <?php echo $student_name; ?>'s --><?php echo $title; ?> Fundraiser</h3>
 
     	<div class="grpcollage">
         	<div class="mainSlides"><img src="../<?php echo $group_photo;?>" alt="placeholder for group photo"></div>
+
+          <!-- this block might need to be deleted
         	<div class="mainSlides"><img src="images/sliders/mainslider1.jpg" alt="Sign Up Your Group and Start Fundraising Today!"></div>
 		<div class="mainSlides"><img src="images/sliders/mainslider2.jpg" alt="How Our Fundraising Program Works"></div>
 		<div class="mainSlides"><img src="images/sliders/mainslider3.jpg" alt="Example of Free Member Fundraising Website"></div>
@@ -64,8 +67,7 @@
 		<div class="mainSlides"><img src="images/sliders/mainslider6.jpg" alt="35% of Every Purchase is Yours!"></div>
 		<div class="mainSlides"><img src="images/sliders/mainslider7.jpg" alt="We Deliver Everything!"></div>
 		<div class="mainSlides"><a href="gettingstarted_sendemail.php"><img src="images/sliders/mainslider8.jpg" alt="3 Easy Steps To Sign Up & Start Today!"></a></div>
-      	</div> <!-- end slider -->
-
+  </div> <!-- end slider -- this block above maybe need to be deleted -->
 	<div class="reasonsbox">
         <h5 id="reasons">Reasons for Our Fundraiser</h5>
         <?php
@@ -106,8 +108,8 @@
           <img src="../<?php echo $student_photo;?>" alt="Leader">
         </div> <!-- end leaderimgcrop -->
         <div class="contactinfo2">
-         <!-- <span class="title"><strong>Student Leader</strong></span>
-          <span class="leadername"><?php echo $student_leader_name; ?></span> -->
+         <span class="title"><strong>Leader</strong></span>
+          <span class="leadername"><?php echo $student_leader_name; ?></span>
         </div>
       </div> <!--end studentleader-->
 
@@ -115,6 +117,7 @@
 
   <div id="column2">
   	<div class="shopDetails">
+
         <ul class="stumenu">
           <h5>Shopping Ideas For...</h5>
           <li><a href="">Mothers</a></li>

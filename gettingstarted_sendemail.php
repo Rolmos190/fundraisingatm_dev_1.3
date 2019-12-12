@@ -5,17 +5,17 @@
 <!DOCTYPE HTML>
 <head>
 	<title>Sign Up & Start Today!</title>
+	<?php
+	include 'includes/header.inc.php';
+	?>
 </head>
 
 <body id="contactrep-content">
 
-	<?php 
-		include 'includes/header.inc.php'; 
-	?>
 
 	<div>
-		<?php 
-			include 'navigation/fullSidebar_home.php'; 
+		<?php
+			include 'navigation/fullSidebar_home.php';
 		?>
 
 		<div class="row">
@@ -33,7 +33,7 @@
 			</div> <!--end column2-->
 	    </div><!-- end row -->
 	</div><!-- end container -->
-	
+
 	<div class="container-fluid">
 		<div class="row">
 		    <div class="col-sm-11 col-sm-push-2 col-md-6 col-md-push-2 col-lg-5 col-lg-push-2">
@@ -75,15 +75,15 @@
 	          		</form>
 	        	</div>
 	     	</div>
-	      	
+
 			<div class="col-lg-4 col-lg-push-3 col-md-4 col-md-push-3 col-sm-10 col-sm-push-3 col-xs-10 col-xs-push-3" id="getting-start-imgs" style="">
-				<br>				
+				<br>
 				<img id="bottom-img" class="img-responsive" src="images/rep-pages/dodgeball.png" width="198" height="166" alt="Stuents Playing Dodgeball"/>
 				<img id="bottom-img" class="img-responsive" src="images/rep-pages/soccergirls.png" width="198" height="166" alt="High School Girls Soccer"><span class="caption"><br>FundraisingATM offers fundraising opportunities for schools, religious organizations, community organizations and more. </span></img>
 		  	</div>
 		</div> <!--end row -->
 	</div><!--end contact form-->
-	
+
 	<div class="container-fluid">
 		<div class="row">
 			<h3 class="col-xs-10 col-xs-push-2 col-sm-10 col-sm-push-2 col-lg-10 col-lg-push-2 col-md-10 col-md-push-2" >Interested in Becoming a FundraisingATM Fundraising Representative?</h3>
@@ -91,9 +91,9 @@
 	        target="_blank">rephr@FundraisingATM.com</a></p>
 		</div> <!--end row -->
 	</div>  <!--end container -->
-  
-	<?php 
-		include 'footerold.php' ; 
+
+	<?php
+		include 'footerold.php' ;
 	?>
 
 </body>

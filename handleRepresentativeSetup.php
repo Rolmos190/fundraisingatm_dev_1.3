@@ -1,5 +1,5 @@
-<?php	
-session_start(); 
+<?php
+session_start();
 if(!isset($_SESSION['authenticated']))
        {
             header('Location: ../index.php');
@@ -73,7 +73,7 @@ if(!isset($_SESSION['authenticated']))
 	$paypal = $_POST['paypal'];
 	$landingPage = "dashboard2.php";
 	$who = "Representative";
-	$salt = time(); 			// create salt using the current timestamp 
+	$salt = time(); 			// create salt using the current timestamp
 	$loginPass = sha1($loginPass.$salt); 	// encrypt the password and salt with SHA1
 	$bannerDirPath = "";
 	$distPicDirPath = "";
@@ -81,7 +81,7 @@ if(!isset($_SESSION['authenticated']))
 	// code to upload banner and picture
 	$banner = $_FILES['bannerUpload']['tmp_name'];
 	$repPic = $_FILES['representativePic']['tmp_name'];
-	
+
 	// Banner upload operations
 	if($banner != ''){
 	$cleanedBanner = checkName($_FILES["bannerUpload"]["name"]);
@@ -109,7 +109,7 @@ if(!isset($_SESSION['authenticated']))
 	}// end banner upload
 	// Representative picture upload operations
 	if($repPic != ''){
-	$cleanedRepPic = checkName($_FILES["representativePic"]["name"]);	
+	$cleanedRepPic = checkName($_FILES["representativePic"]["name"]);
 	if(!is_image($repPic)) {
     		// is not an image
     		echo $cleanedRepPic . " is not an image file. ";
@@ -157,7 +157,7 @@ if(!isset($_SESSION['authenticated']))
 	}// end if
 
 ?>
-   
+
 </div>
 <!--end content-->
 <?php include 'footer.php' ; ?>

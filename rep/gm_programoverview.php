@@ -5,25 +5,25 @@ session_start();
 
   <?php include 'header.inc.php'; ?>
   <?php include 'leftSidebarNavRep.php'; ?>
-  
+
   <div id="content">
     	<div class="presentation">
 		<div id="slider">
-			<div><img src="../images/presentation/gm_presentation6-1.jpg" alt="slide 1"></div>
-			<div><img src="../images/presentation/gm_presentation6-2.jpg" alt="slide 2"></div>
-			<div><img src="../images/presentation/gm_presentation6-3.jpg" alt="slide 3"></div>
+			<div><img src="../images/presentation/1.jpg" alt="slide 1"></div>
+			<div><img src="../images/presentation/2.jpg" alt="slide 2"></div>
+			<div><img src="../images/presentation/3.jpg" alt="slide 3"></div>
 			<div><img src="../images/presentation/gm_presentation6-4.jpg" alt="slide 4"></div>
 			<div><img src="../images/presentation/gm_presentation6-5.jpg" alt="slide 5"></div>
 			<div><img src="../images/presentation/gm_presentation6-6.jpg" alt="slide 6"></div>
 			<div><img src="../images/presentation/gm_presentation6-7.jpg" alt="slide 7"></div>
-			<div><img src="../images/presentation/gm_presentation6-8.jpg" alt="slide 8"></div>
+			<div><img src="../images/presentation/6-8.jpg" alt="slide 8"></div>
 			<div><img src="../images/presentation/gm_presentation6-9.jpg" alt="slide 9"></div>
-			<div><img src="../images/presentation/gm_presentation6-10.jpg" alt="slide 10"></div>
+			<div><img src="../images/presentation/6-10.jpg" alt="slide 10"></div>
 			<div><img src="../images/presentation/gm_presentation6-11.jpg" alt="slide 11"></div>
-			<div><img src="../images/presentation/gm_presentation6-12.jpg" alt="slide 12"></div>
+			<div><img src="../images/presentation/6-12.jpg" alt="slide 12"></div>
 			<div><img src="../images/presentation/gm_presentation6-13.jpg" alt="slide 13"></div>
 			<div><img src="../images/presentation/gm_presentation6-14.jpg" alt="slide 14"></div>
-			<div><img src="../images/presentation/gm_presentation6-15.jpg" alt="slide 15"></div>
+			<div><img src="../images/presentation/6-15.jpg" alt="slide 15"></div>
 			<div><img src="../images/presentation/gm_presentation6-16.jpg" alt="slide 16"></div>
 			<div><img src="../images/presentation/gm_presentation6-17.jpg" alt="slide 17"></div>
 			<div><img src="../images/presentation/gm_presentation6-18.jpg" alt="slide 18"></div>
@@ -41,13 +41,13 @@ session_start();
 			<div><img src="../images/presentation/gm_presentation6-30.jpg" alt="slide 30"></div>
 			<div><img src="../images/presentation/gm_presentation6-31.jpg" alt="slide 31"></div>
 			<div><img src="../images/presentation/gm_presentation6-32.jpg" alt="slide 32"></div>
-			<div><img src="../images/presentation/gm_presentation6-33.jpg" alt="slide 33"></div>
-			<div><img src="../images/presentation/gm_presentation6-34.jpg" alt="slide 34"></div>
-			<div><img src="../images/presentation/gm_presentation6-35.jpg" alt="slide 35"></div>
+			<div><img src="../images/presentation/6-33.jpg" alt="slide 33"></div>
+			<div><img src="../images/presentation/6-34.jpg" alt="slide 34"></div>
+			<div><img src="../images/presentation/6-35.jpg" alt="slide 35"></div>
 		</div> <!-- end slider -->
 	</div> <!-- end presentation -->
   </div>  <!--end content-->
-  
+
   <?php include 'footer.php' ; ?>
 </div><!--end container-->
 
