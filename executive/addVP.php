@@ -171,10 +171,10 @@
 <!DOCTYPE html>
 <head>
 <title>FundraisingATM | Executive</title>
-  <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
-  <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
+  <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" /> -->
 
-  <script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
+  <!-- <script type="text/javascript" src="../js/simpletabs_1.3.js"></script> -->
 	<style>
 ul.tab {
     list-style-type: none;
