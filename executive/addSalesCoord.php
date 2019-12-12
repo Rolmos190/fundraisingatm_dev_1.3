@@ -53,7 +53,7 @@ session_start();
 	$zip = mysqli_real_escape_string($link, $_POST['zip']);
 	$email = mysqli_real_escape_string($link, $_POST['email']);
 	$hPhone1 = mysqli_real_escape_string($link, $_POST['hphone1']);
-	$wPhone1 = mysqli_real_escape_string($link, $_POST['hphone1']);
+	$wPhone1 = mysqli_real_escape_string($link, $_POST['wphone1']);
 	$mPhone1 = mysqli_real_escape_string($link, $_POST['mphone1']);
 	$ext = mysqli_real_escape_string($link, $_POST['ext']);
 	$fbPage = mysqli_real_escape_string($link, $_POST['fb']);
