@@ -1,17 +1,18 @@
 <?php
-session_start();
+        include '../includes/autoload.php';
 
-       /*if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "Executive")
+       if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "VP")
        {
             header('Location: ../../index.php');
             exit;
        }
-       */
-        ob_start();
-	include "connectTo.php";
-	include('../samplewebsites/imageFunctions.inc.php');
+       if($_SESSION['freeze'] == "TRUE")
+       {
+          // echo "Account Frozen";
+           header('Location: accountEdit.php');
+       }
+
 	$id = $_SESSION['userId'];
-	$link = connectTo();
 
 	$table1 = "user_info";
 	$table2 = "users";
@@ -52,14 +53,15 @@ session_start();
 	$state = mysqli_real_escape_string($link, $_POST['state']);
 	$zip = mysqli_real_escape_string($link, $_POST['zip']);
 	$email = mysqli_real_escape_string($link, $_POST['email']);
-	$hPhone1 = mysqli_real_escape_string($link, $_POST['hphone1']);
-	$wPhone1 = mysqli_real_escape_string($link, $_POST['wphone1']);
-	$mPhone1 = mysqli_real_escape_string($link, $_POST['mphone1']);
+	$hPhone1 = mysqli_real_escape_string($link, $_POST['wphone1']);
+	$hphone2 = mysqli_real_escape_string($link, $_POST['hphone2']);
+	$wPhone3 = mysqli_real_escape_string($link, $_POST['hphone3']);
+  $mphone = mysqli_real_escape_string($link, $_POST['mphone']);
 	$ext = mysqli_real_escape_string($link, $_POST['ext']);
 	$fbPage = mysqli_real_escape_string($link, $_POST['fb']);
 	$twitter = mysqli_real_escape_string($link, $_POST['twitter']);
 	$linkedin = mysqli_real_escape_string($link, $_POST['lindkedin']);
-	$loginPass = mysqli_real_escape_string($link, $_POST['loginpass']);
+	$loginPass = mysqli_real_escape_string($link, $_POST['password']);
 	$salesMan = $_POST['sales'];
 	$ftin = mysqli_real_escape_string($link, $_POST['ftin1']);
 	$stin = mysqli_real_escape_string($link, $_POST['stin1']);
@@ -153,9 +155,9 @@ session_start();
 		$query1 = "INSERT INTO $table2 (username, password, Security, landingPage, salt, created, lastLogin, role)";
 		$query1 .= "VALUES('$email','$loginPass','1','$landingPage','$salt', now(), now(), '$who')";
 		$query2 = "INSERT INTO $table1 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, cellPhone, workPhone, userPaypal,role,title,gender, userBaseCommPct, fedtin, statetin, threec)";
-		$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone1', '$wPhone1', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
-        $query3 = "INSERT INTO $table3 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, workPhoneExt,  distPicPath,setupID, role,paypal)";
-		$query3 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$salesMan','$extPhone', '$imagePath','$vp', '$who', '$paypal')";
+		$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone', '$wPhone', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
+        $query3 = "INSERT INTO $table3 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, fbPage, twitter, linkedin, vpID, workPhone, workPhoneExt,  distPicPath,setupID, role,paypal)";
+		$query3 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$fbPage','$twitter','$linkedin', '$id', '$wPhone3','$ext', '$imagePath','$id', '$who', '$paypal')";
 
 
 		mysqli_query($link, "start transaction;");
@@ -192,10 +194,46 @@ session_start();
 
 		else
 		{
-            mysqli_query($link, "rollback;");
-			echo "I'm sorry, there was a problem creating your account.";
-			}
+      //       mysqli_query($link, "rollback;");
+			// echo "I'm sorry, there was a problem creating your account.";
+			// }
+      $query15 = "SELECT * FROM user_info WHERE email='$email'";
+			$res15 = mysqli_query($link, $query15)or die ("couldn't execute query 15.".mysqli_error($link));
+			$rowC = mysqli_fetch_assoc($res15);
+			$newUserID = $rowC['userInfoID'];
+			$company2 = $rowC['companyName'];
+			$fname2 = $rowC['FName'];
+			$lname2 = $rowC['LName'];
+			$ssn2 = $rowC['ssn'];
+			$ad1 = $rowC['address1'];
+			$ad2 = $rowC['address2'];
+			$city2 = $rowC['city'];
+			$state2 = $rowC['state'];
+			$zip2 = $rowC['zip'];
+			$fbPage = $rowC['fbPage'];
+			$twitter2 = $rowC['twitter'];
+			$linkedin2 = $rowC['linkedin'];
+			$phone2 = $rowC['workPhone'];
+			$ext2 = $rowC['workPhoneExt'];
+			$imagePath2 = $rowC['picPath'];
+			$paypal2 = $rowC['userPaypal'];
+			$title2 = $rowC['title'];
+			$gender2 = $rowC['gender'];
 
+
+			$query16 = "INSERT INTO distributors (companyName, FName, LName, ssn, address1, address2, city, state, zip, email, fbPage, twitter,
+			 linkedin, vpID, workPhone, workPhoneExt,  distPicPath, setupID,loginid, role, paypal, title, gender)";
+
+		        $query16 .= " VALUES('$company2','$fname2','$lname2','$ssn2','$ad1','$ad2','$city2','$state2','$zip2',
+		        '$email','$fbPage','$twitter2','$linkedin2', '$id', '$newUserID', '$phone2', '$ext2', '$imagePath2', '$id', '$who', '$paypal2', '$title2', '$gender2')";
+		        $res16 = mysqli_query($link, $query16)or die ("couldn't execute query 16.".mysqli_error($link));
+
+		        echo "Your account has been successfuly created.\n\n";
+			//newDistributorEmail($email,$FName,$LName,$cellPhone);
+			 header( 'Location: accounts.php' );
+
+	        }
+	
 
 	}// end if
 
@@ -284,7 +322,7 @@ label{
 
           <h3></h3>
 		<div class="table">
-		<form class="graybackground" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+		<form class="graybackground" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
 			<div>
 				<span id="hd_vp2">Vice President:</span>
 			</div> <!-- end row -->
@@ -391,7 +429,7 @@ label{
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
 									<input id="city" type="text" name="city">
-									<select id="state" name="State">
+									<select id="state" name="state">
 										<option value="" selected="selected">--</option>
 										<option value="AL">AL</option>
 										<option value="AK">AK</option>
@@ -446,7 +484,7 @@ label{
 										<option value="WY">WY</option>
 									</select>
 									<span></span><span></span>
-									<input id="zip" type="text" name="zip" maxlength="5">
+									<input id="zip" type="text" name="zip" maxlength="5" required>
 								</div> <!-- end row -->
 
 
@@ -456,7 +494,7 @@ label{
 									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="mphone1" type="text" name="mphone1">
+									<input id="mphone1" type="text" name="mphone">
                   <span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
@@ -472,17 +510,17 @@ label{
 									<span id="hd_hphone">Home Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow">
-									<input id="hphone1" type="text" name="hPhone1">
+									<input id="hphone1" type="text" name="hPhone">
 								</div> <!-- end row -->
 								<div class="tablerow">
 									<span id="hd_wphone">Work Phone</span>
 									<span id="ext">Ext</span>
 								</div>
 								<div class="tablerow">
-									<input id="wphone1" type="text" name="wphone1">
+									<input id="phone" type="text" name="wphone" maxlength="12">
                   <span></span>
 									<span id="ext"></span>
-									<input id="ext" type="text" name="ext">
+									<input id="ext" type="text" name="ext" maxlength="5">
 								</div>
 							</td>
 						</tr>
@@ -494,7 +532,7 @@ label{
 						<span id="hd_gender">Gender</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
-						<select id="month" name="bmonth">
+						<select id="month" name="month">
 							<option value="na">Month</option>
 							<option value="1">January</option>
 							<option value="2">February</option>
@@ -509,7 +547,7 @@ label{
 							<option value="11">November</option>
 							<option value="12">December</option>
 						</select>
-						<select id="day" name="bday">
+						<select id="day" name="day">
 							<option value="na">Day</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -543,7 +581,7 @@ label{
 							<option value="30">30</option>
 							<option value="31">31</option>
 						</select>
-						<select id="year" name="byear">
+						<select id="year" name="year">
 							<option value="na">Year</option>
 							<option value="2014">2014</option>
 							<option value="2013">2013</option>
@@ -675,7 +713,7 @@ label{
                 <span id="hd_loginemail">Email Address</span>
                <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="loginemail" type="text" name="email">
+                <input id="email" type="email" name="email">
               </div> <!-- end row -->
 
               <div id="row"> <!-- titles -->
@@ -686,8 +724,9 @@ label{
               <span id="hd_cpassword">Confirm Password</span>
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="password" type="password" name="password">
-                <input id="cpassword" type="password" name="cpassword">
+                <input id="pass1" type="password" name="password" required>
+                <input id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required>
+                <span id="error"></span>
               </div> <!-- end row -->
               <br>
             </div> <!-- end tab 2 -->
