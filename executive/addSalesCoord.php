@@ -826,7 +826,7 @@ label{
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
         <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
           <div class="tablerow">
-            <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+            <input type="submit" name="submit" class="redbutton" value="Save & Exit">
             <input type="submit" class="redbutton" value="Save & Add Another">
           </div> <!-- end row -->
         </section>
