@@ -361,7 +361,7 @@ label{
 							<option value="">Miss</option>
 							<option value="">Dr.</option>
 						</select>
-            <input id="company" type="text" name="cname">
+            <input id="cname" type="text" name="cname">
 
 					</div> <!-- end row -->
 
@@ -675,7 +675,7 @@ label{
                 <span id="hd_loginemail">Email Address</span>
                <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="loginemail" type="text" name="email" value="">
+                <input id="loginemail" type="text" name="email">
               </div> <!-- end row -->
 
               <div id="row"> <!-- titles -->
@@ -686,8 +686,8 @@ label{
               <span id="hd_cpassword">Confirm Password</span>
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="password" type="text" name="loginpass" value="">
-                <input id="cpassword" type="text" name="cpass" value="">
+                <input id="password" type="password" name="password">
+                <input id="cpassword" type="password" name="cpassword">
               </div> <!-- end row -->
               <br>
             </div> <!-- end tab 2 -->
@@ -826,7 +826,7 @@ label{
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
         <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
           <div class="tablerow">
-            <input type="submit" class="redbutton" value="Save & Exit">
+            <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
             <input type="submit" class="redbutton" value="Save & Add Another">
           </div> <!-- end row -->
         </section>
