@@ -269,7 +269,7 @@ label{
 					}
 					?>
 				</select>
-        <select name="vpid" id="vpid" class="role2">
+        <select name="scid" id="scid" class="role2">
           <option>Select SC Account</option>
         </select>
 			</div> <!-- end row -->
@@ -353,14 +353,17 @@ label{
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
-									<span id="hd_zip">City</span>
-									<span></span><span></span><span></span><span></span>
-									<span id="hd_zip">State</span>
-									<span id="hd_zip">Zip</span>
+									<span>City</span>
+
+                  <span id="hd_zip"></span>
+
+									<span>State</span>
+                  <span></span><span></span>
+                  <span>Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
 									<input id="city" type="text" name="city">
-									<select id="state" name="State">
+									<select id="state" name="state">
 										<option value="" selected="selected">--</option>
 										<option value="AL">AL</option>
 										<option value="AK">AK</option>
@@ -418,15 +421,13 @@ label{
 									<input id="zip" type="text" name="zip" maxlength="5">
 								</div> <!-- end row -->
 
-
-
-								<div class="tablerow"> <!-- titles -->
+								<div class="row"> <!-- titles -->
                   <br>
 									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
-								<div class="tablerow"> <!-- inputs -->
+								<div class="row"> <!-- inputs -->
 									<input id="mphone1" type="text" name="mphone1">
-                  <span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
 										<option>Verizon</option>
@@ -437,19 +438,19 @@ label{
 										<option>Other</option>
 									</select>
 								</div> <!-- end row -->
-								<div class="tablerow">
+								<div class="row">
 									<span id="hd_hphone">Home Phone</span>
 								</div> <!-- end row -->
-								<div class="tablerow">
+								<div class="row">
 									<input id="hphone1" type="text" name="hPhone1">
 								</div> <!-- end row -->
-								<div class="tablerow">
+								<div class="row">
 									<span id="hd_wphone">Work Phone</span>
 									<span id="ext">Ext</span>
 								</div>
-								<div class="tablerow">
+								<div class="row">
 									<input id="wphone1" type="text" name="whphone1">
-                  <span></span>
+                  <span></span><span></span><span></span>
 									<span id="ext"></span>
 									<input id="ext" type="text" name="ext">
 								</div>
@@ -459,11 +460,12 @@ label{
 
 					<div class="tablerow"> <!-- titles -->
 						<span id="hd_bday">Birthday</span>
-		  <span id="hd_gender"></span>
+		        <span id="hd_gender"></span>
+            <span></span>
 						<span id="hd_gender">Gender</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
-						<select id="month" name="">
+						<select id="month" name="bmonth">
 							<option value="na">Month</option>
 							<option value="1">January</option>
 							<option value="2">February</option>
@@ -478,7 +480,7 @@ label{
 							<option value="11">November</option>
 							<option value="12">December</option>
 						</select>
-						<select id="day" name="">
+						<select id="day" name="bday">
 							<option value="na">Day</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -512,7 +514,7 @@ label{
 							<option value="30">30</option>
 							<option value="31">31</option>
 						</select>
-						<select id="year" name="">
+						<select id="year" name="byear">
 							<option value="na">Year</option>
 							<option value="2014">2014</option>
 							<option value="2013">2013</option>
@@ -616,20 +618,18 @@ label{
 							<option value="1915">1915</option>
 							<option value="1914">1914</option>
 						</select>
-						<select id="gender">
+						<select id="gender" name="gender">
 							<option value="na">Gender</option>
 							<option value="female">Female</option>
 							<option value="male">Male</option>
 						</select>
 					</div> <!-- end row -->
-		<br><br>
-		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-
-		  <div class="tablerow">
-			<input type="submit" class="redbutton" value="Save & Exit">
-			<input type="submit" class="redbutton" value="Save & Add Another">
-		  </div> <!-- end row -->
-		</section> <!-- end SUBMIT BUTTON SECTION ROW -->
+    <br><br>
+    <div class="btn-group" >
+      <button type="button" class="btn" id="prevtab">Prev</button>
+      <span></span>
+      <button type="button" class="btn" id="nexttab">Next</button>
+    </div>
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
 
@@ -651,7 +651,7 @@ label{
                 <span id="hd_loginemail">Email Address</span>
                <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="loginemail" type="text" name="" value="">
+                <input id="loginemail" type="text" name="email" value="">
               </div> <!-- end row -->
 
               <div id="row"> <!-- titles -->
@@ -662,17 +662,16 @@ label{
               <span id="hd_cpassword">Confirm Password</span>
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="password" type="text" name="" value="">
-                <input id="cpassword" type="text" name="" value="">
+                <input id="password" type="password" name="loginpass" value="">
+                <input id="password" type="password" name="cpass" value="">
               </div> <!-- end row -->
-              <br>
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
 
+              <br><br>
+              <div class="btn-group" >
+                <button type="button" class="btn" id="prevtab">Prev</button>
+                <span></span>
+                <button type="button" class="btn" id="nexttab">Next</button>
+              </div>
             </div> <!-- end tab 2 -->
 
 
@@ -721,13 +720,12 @@ label{
 					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
 					<br>
 					<h3>Vice President Total Commission Override: 0.5%</h3>
-
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
+          <br><br>
+          <div class="btn-group" >
+            <button type="button" class="btn" id="prevtab">Prev</button>
+            <span></span>
+            <button type="button" class="btn" id="nexttab">Next</button>
+          </div>
 
             </div> <!-- end tab 2 -->
 
@@ -746,32 +744,31 @@ label{
   						<h2 style="color: #cc0000">Social Media Connections</h2>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
-  							<input id="fb" type="text" name="" value="www.facebook.com">
+  							<input id="fb" type="text" name="fb" value="www.facebook.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_tw">Twitter</span>
-  							<input id="tw" type="text" name="" value="www.twitter.com">
+  							<input id="tw" type="text" name="twitter" value="www.twitter.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_li">LinkedIn</span>
-  							<input id="li" type="text" name="" value="www.linkedin.com">
+  							<input id="li" type="text" name="linkedin" value="www.linkedin.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_pn">Pinterest</span>
-  							<input id="pn" type="text" name="" value="www.pinterest.com">
+  							<input id="pn" type="text" name="printrest" value="www.pinterest.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_gp">Google+</span>
-  							<input id="gp" type="text" name="" value="plus.google.com">
+  							<input id="gp" type="text" name="googleplus" value="plus.google.com">
   						</div>
-              <br>
+              <br><br>
+            <div class="btn-group" >
+              <button type="button" class="btn" id="prevtab">Prev</button>
+              <span></span>
+              <button type="button" class="btn" id="nexttab">Next</button>
+            </div>
 
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
               <!-- end row -->
               </div>
               </div>
@@ -845,6 +842,16 @@ function openCity(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+var $tabs = $('.tabbable li');
+
+$('#prevtab').on('click', function(){
+  $tabcontent.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
+});
+$('#nexttab').on('click', function() {
+  $tabcontent.filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
+});
+
 </script>
 </div> <!--end container-->
 </div>

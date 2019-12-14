@@ -8,7 +8,7 @@ session_start();
        }
        */
 
-        ob_start();
+  ob_start();
 	include "connectTo.php";
 	include('../samplewebsites/imageFunctions.inc.php');
 	$id = $_SESSION['userId'];
@@ -249,7 +249,7 @@ label{
 
           <h3></h3>
 		<div class="table">
-      <form class="graybackground" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+      <form class="graybackground" action="addFundAccount.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 				<h2><b>--Option 1: Add One Account--</b></h2>
 			<div class="tablerow">
 				<span id="hd_vp2">Vice President:</span>
@@ -377,13 +377,14 @@ label{
 
 								<div class="tablerow"> <!-- titles -->
 									<br>
-									<span id="hd_zip">City</span>
-									<span></span><span></span><span></span><span></span>
-									<span id="hd_zip">State</span>
-									<span id="hd_zip">Zip</span>
+									<span>City</span>
+									<span id="hd_zip"></span>
+									<span>State</span>
+                  <span></span><span></span>
+
+									<span>Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<br>
 									<input id="city" type="text" name="">
 									<select id="state" name="State">
 										<option value="" selected="selected">--</option>
@@ -467,16 +468,12 @@ label{
 
 
 					 <!-- end row -->
-		<br><br>
-		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 
-		  <div class="tablerow">
-			<input type="submit" class="redbutton" value="Save & Exit">
-			<input type="submit" class="redbutton" value="Save & Add Another">
-			<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
-
-		  </div> <!-- end row -->
-		</section> <!-- end SUBMIT BUTTON SECTION ROW -->
+    <br><br>
+    <div class="btn-group" >
+      <span></span>
+      <button type="button" class="btn" id="nexttab">Next</button>
+    </div> <!-- end SUBMIT BUTTON SECTION ROW -->
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
 
@@ -550,13 +547,11 @@ label{
   							<img src="" alt="uploaded profile photo">
   						</div>
               <br><br>
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-									<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
-                </div> <!-- end row -->
-              </section>
+              <div class="btn-group" >
+                <button type="button" class="btn" id="prevtab">Prev</button>
+                <span></span>
+                <button type="button" class="btn" id="nexttab">Next</button>
+              </div>
 
                <!-- end row -->
             </div>

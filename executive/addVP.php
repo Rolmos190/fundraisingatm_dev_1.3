@@ -333,10 +333,13 @@ label{
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
-									<span id="hd_zip">City</span>
-									<span></span><span></span><span></span><span></span>
-									<span id="hd_zip">State</span>
-									<span id="hd_zip">Zip</span>
+									<span>City</span>
+
+                  <span id="hd_zip"></span>
+
+									<span>State</span>
+                  <span></span><span></span>
+                  <span>Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
 									<input id="city" type="text" name="city">
@@ -401,11 +404,12 @@ label{
 
 
 								<div class="tablerow"> <!-- titles -->
+									<br>
 									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
 									<input id="mphone1" type="text" name="mphone1">
-									<span></span><span></span><span></span>
+									<span></span><span></span><span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer" name="carrier">
 										<option>Select Carrier</option>
 										<option>Verizon</option>
@@ -429,7 +433,7 @@ label{
 								</div>
 								<div class="tablerow">
 									<input id="wphone1" type="text" name="wphone1">
-									<span></span>
+									<span></span><span></span><span></span>
 									<span id="ext"></span>
 									<input id="ext" type="text" name="ext">
 								</div>
@@ -439,7 +443,9 @@ label{
 
 					<div class="tablerow"> <!-- titles -->
 						<span id="hd_bday">Birthday</span>
-		  		<span id="hd_gender"></span>
+						<span id="hd_gender"></span>
+
+						<span></span>
 						<span id="hd_gender">Gender</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
@@ -602,10 +608,13 @@ label{
 							<option value="male">Male</option>
 						</select>
 					</div> <!-- end row -->
-		<br><br>
+		<br>
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
-
+			<div class="btn-group" >
+				<span></span>
+				<button type="button" class="btn" id="nexttab">Next</button>
+			</div>
 
 			</div> <!-- end row -->
 		</div> <!-- end table -->
@@ -636,10 +645,14 @@ label{
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
                 <input id="password" type="password" name="loginpass" value="">
-                <input id="cpassword" type="password" name="cpass" value="">
+                <input id="password" type="password" name="cpass" value="">
               </div> <!-- end row -->
-              <br>
-
+              <br><br>
+							<div class="btn-group" >
+					      <button type="button" class="btn" id="prevtab">Prev</button>
+					      <span></span>
+					      <button type="button" class="btn" id="nexttab">Next</button>
+					    </div>
 
             </div> <!-- end tab 2 -->
 
@@ -690,6 +703,12 @@ label{
 					<br>
 					<h3>Vice President Total Commission Override: 0.5%</h3>
 
+					<br><br>
+					<div class="btn-group" >
+						<button type="button" class="btn" id="prevtab">Prev</button>
+						<span></span>
+						<button type="button" class="btn" id="nexttab">Next</button>
+					</div>
 
 
             </div> <!-- end tab 2 -->
@@ -728,8 +747,13 @@ label{
   							<span id="hd_gp">Google+</span>
   							<input id="gp" type="text" name="googleplus" value="plus.google.com">
   						</div>
-              <br>
 
+							<br><br>
+							<div class="btn-group" >
+					      <button type="button" class="btn" id="prevtab">Prev</button>
+					      <span></span>
+					      <button type="button" class="btn" id="nexttab">Next</button>
+					    </div>
 
               <!-- end row -->
               </div>
@@ -762,6 +786,15 @@ label{
 
               </div>
                <!-- end row -->
+
+
+							 <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+			 				  <div class="tablerow">
+			 					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+			 					<input type="submit" class="redbutton" value="Save & Add Another">
+			 				  </div> <!-- end row -->
+			 				</section>
             </div>
   					</div> <!-- end tab 3 -->
             <br>
@@ -779,13 +812,7 @@ label{
 				</ol>
 				<input type="file" name="">
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
-				<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-
-				  <div class="tablerow">
-					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
-					<input type="submit" class="redbutton" value="Save & Add Another">
-				  </div> <!-- end row -->
-				</section> <!-- end SUBMIT BUTTON SECTION ROW -->
+				 <!-- end SUBMIT BUTTON SECTION ROW -->
 			</form>
 		</div> <!-- end table -->
    <!--end content -->

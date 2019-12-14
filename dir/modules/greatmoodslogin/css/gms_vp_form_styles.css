@@ -164,11 +164,11 @@ span#hd_date, span#hd_time, span#hd_note { width: 11em; }
 input#notename	{width: 19.2em; margin: 0 0.4em 0.4em 0; }
 input#date, input#time {width: 9.2em; margin: 0 0.4em 0.4em 0; }
 textarea#note	{display: inline-block; margin: 0 0.4em 0 0; }
-#viewnote1, #viewnote2, #viewnote3, #viewnote4{ 
+#viewnote1, #viewnote2, #viewnote3, #viewnote4{
 	display: none;
 	margin: -.4em .2em .4em 0;
 	padding: .2em .4em;
-	background: #ddd; 
+	background: #ddd;
 	border-radius: .3em;
 }
 
@@ -198,26 +198,26 @@ input#numproducts	{ width: 9.5%; margin: 1% .5%; }
 p#whslprice		{ display: inline-block; width: 9%; margin: 1% .5%; text-align: center;}
 p#commission		{ display: inline-block; width: 8%; margin: 1% .5%; text-align: center;}
 p#schoolresult{
-	display: inline-block; 
-	width: 11%; 
-	margin: 1% .5%; 
-	text-align: center; 
-	font-weight: bold; 
-	font-size: 1em; 
+	display: inline-block;
+	width: 11%;
+	margin: 1% .5%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1em;
 }
 p#x { display: inline-block; width: 1%; margin: 1% .5%; text-align: center; }
 
 
 /* Calendar */
 #calendar{
-	margin: 0 0 .5em 0; 
+	margin: 0 0 .5em 0;
 	padding: 0 0 .4em .4em;
 	background: #eee;
 	border-radius: .8em;
 }
 	#calendar img{ display: inline-block; width: 11.5em;	margin: .2em; }
 
-	
+
 /* Contacts */
 #contacts{
 	margin: 0 0 .5em 0;
@@ -228,20 +228,20 @@ p#x { display: inline-block; width: 1%; margin: 1% .5%; text-align: center; }
 
 /* Un-Assigned Accounts */
 #unassigned_sc, #unassigned_rp, #unassigned_fr{
-	width: 46%;	
+	width: 46%;
 	display: inline-block;
 	background: #eee;
-	padding: .5em; 
+	padding: .5em;
 	border-radius: .8em;
 	vertical-align: top;
 }
 	#unassigned_sc, #unassigned_rp{ margin: 0 1% 2% 0; }
-	
-	
+
+
 /* E-Cards */
 #cards{ width: 100%; }
 	#cards img{ display: inline; width: 31.5%; margin: .5%; }
-	
+
 
 /* Email/Text Program */
 span#hd_to1, #hd_to2{ width: 1.8em; }

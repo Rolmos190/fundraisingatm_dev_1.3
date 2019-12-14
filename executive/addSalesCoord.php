@@ -1,18 +1,35 @@
 <?php
-        include '../includes/autoload.php';
+session_start();
 
-       if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "VP")
+     /*if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "Executive")
        {
             header('Location: ../../index.php');
             exit;
        }
-       if($_SESSION['freeze'] == "TRUE")
-       {
-          // echo "Account Frozen";
-           header('Location: accountEdit.php');
-       }
+       */
 
+        ob_start();
+	include "connectTo.php";
+	include('../samplewebsites/imageFunctions.inc.php');
 	$id = $_SESSION['userId'];
+	$link = connectTo();
+
+
+
+  //       include '../includes/autoload.php';
+  //
+  //      if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "VP")
+  //      {
+  //           header('Location: ../../index.php');
+  //           exit;
+  //      }
+  //      if($_SESSION['freeze'] == "TRUE")
+  //      {
+  //         // echo "Account Frozen";
+  //          header('Location: accountEdit.php');
+  //      }
+  //
+	// $id = $_SESSION['userId'];
 
 	$table1 = "user_info";
 	$table2 = "users";
@@ -194,49 +211,51 @@
 
 		else
 		{
+      mysqli_query($link, "rollback;");
+echo "I'm sorry, there was a problem creating your account.";
       //       mysqli_query($link, "rollback;");
 			// echo "I'm sorry, there was a problem creating your account.";
 			// }
-      $query15 = "SELECT * FROM user_info WHERE email='$email'";
-			$res15 = mysqli_query($link, $query15)or die ("couldn't execute query 15.".mysqli_error($link));
-			$rowC = mysqli_fetch_assoc($res15);
-			$newUserID = $rowC['userInfoID'];
-			$company2 = $rowC['companyName'];
-			$fname2 = $rowC['FName'];
-			$lname2 = $rowC['LName'];
-			$ssn2 = $rowC['ssn'];
-			$ad1 = $rowC['address1'];
-			$ad2 = $rowC['address2'];
-			$city2 = $rowC['city'];
-			$state2 = $rowC['state'];
-			$zip2 = $rowC['zip'];
-			$fbPage = $rowC['fbPage'];
-			$twitter2 = $rowC['twitter'];
-			$linkedin2 = $rowC['linkedin'];
-			$phone2 = $rowC['workPhone'];
-			$ext2 = $rowC['workPhoneExt'];
-			$imagePath2 = $rowC['picPath'];
-			$paypal2 = $rowC['userPaypal'];
-			$title2 = $rowC['title'];
-			$gender2 = $rowC['gender'];
-
-
-			$query16 = "INSERT INTO distributors (companyName, FName, LName, ssn, address1, address2, city, state, zip, email, fbPage, twitter,
-			 linkedin, vpID, workPhone, workPhoneExt,  distPicPath, setupID,loginid, role, paypal, title, gender)";
-
-		        $query16 .= " VALUES('$company2','$fname2','$lname2','$ssn2','$ad1','$ad2','$city2','$state2','$zip2',
-		        '$email','$fbPage','$twitter2','$linkedin2', '$id', '$newUserID', '$phone2', '$ext2', '$imagePath2', '$id', '$who', '$paypal2', '$title2', '$gender2')";
-		        $res16 = mysqli_query($link, $query16)or die ("couldn't execute query 16.".mysqli_error($link));
-
-		        echo "Your account has been successfuly created.\n\n";
-			//newDistributorEmail($email,$FName,$LName,$cellPhone);
-			 header( 'Location: accounts.php' );
-
-	        }
-	
+      // $query15 = "SELECT * FROM user_info WHERE email='$email'";
+			// $res15 = mysqli_query($link, $query15)or die ("couldn't execute query 15.".mysqli_error($link));
+			// $rowC = mysqli_fetch_assoc($res15);
+			// $newUserID = $rowC['userInfoID'];
+			// $company2 = $rowC['companyName'];
+			// $fname2 = $rowC['FName'];
+			// $lname2 = $rowC['LName'];
+			// $ssn2 = $rowC['ssn'];
+			// $ad1 = $rowC['address1'];
+			// $ad2 = $rowC['address2'];
+			// $city2 = $rowC['city'];
+			// $state2 = $rowC['state'];
+			// $zip2 = $rowC['zip'];
+			// $fbPage = $rowC['fbPage'];
+			// $twitter2 = $rowC['twitter'];
+			// $linkedin2 = $rowC['linkedin'];
+			// $phone2 = $rowC['workPhone'];
+			// $ext2 = $rowC['workPhoneExt'];
+			// $imagePath2 = $rowC['picPath'];
+			// $paypal2 = $rowC['userPaypal'];
+			// $title2 = $rowC['title'];
+			// $gender2 = $rowC['gender'];
+      //
+      //
+			// $query16 = "INSERT INTO distributors (companyName, FName, LName, ssn, address1, address2, city, state, zip, email, fbPage, twitter,
+			//  linkedin, vpID, workPhone, workPhoneExt,  distPicPath, setupID,loginid, role, paypal, title, gender)";
+      //
+		  //       $query16 .= " VALUES('$company2','$fname2','$lname2','$ssn2','$ad1','$ad2','$city2','$state2','$zip2',
+		  //       '$email','$fbPage','$twitter2','$linkedin2', '$id', '$newUserID', '$phone2', '$ext2', '$imagePath2', '$id', '$who', '$paypal2', '$title2', '$gender2')";
+		  //       $res16 = mysqli_query($link, $query16)or die ("couldn't execute query 16.".mysqli_error($link));
+      //
+		  //       echo "Your account has been successfuly created.\n\n";
+			// //newDistributorEmail($email,$FName,$LName,$cellPhone);
+			//  header( 'Location: accounts.php' );
+      //
+	    //     }
+      //
 
 	}// end if
-
+}
 ?>
 <!DOCTYPE html>
 <head>
