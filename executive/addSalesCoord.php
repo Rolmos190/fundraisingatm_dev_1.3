@@ -441,11 +441,13 @@ label{
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
-									<span id="hd_zip">City</span>
-									<span></span><span></span><span></span><span></span>
-									<span id="hd_zip">State</span>
-									<span id="hd_zip">Zip</span>
-								</div> <!-- end row -->
+                  <span>City</span>
+
+                  <span id="hd_zip"></span>
+
+									<span>State</span>
+                  <span></span><span></span><span></span>
+                  <span>Zip</span>
 								<div class="tablerow"> <!-- inputs -->
 									<input id="city" type="text" name="city">
 									<select id="state" name="state">
@@ -514,7 +516,7 @@ label{
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
 									<input id="mphone1" type="text" name="mphone">
-                  <span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
 										<option>Verizon</option>
@@ -535,9 +537,9 @@ label{
 									<span id="hd_wphone">Work Phone</span>
 									<span id="ext">Ext</span>
 								</div>
-								<div class="tablerow">
+								<div class="row">
 									<input id="phone" type="text" name="wphone" maxlength="12">
-                  <span></span>
+                  <span></span><span></span><span></span>
 									<span id="ext"></span>
 									<input id="ext" type="text" name="ext" maxlength="5">
 								</div>
@@ -547,7 +549,8 @@ label{
 
 					<div class="tablerow"> <!-- titles -->
 						<span id="hd_bday">Birthday</span>
-		  <span id="hd_gender"></span>
+		          <span id="hd_gender"></span>
+              <span></span>
 						<span id="hd_gender">Gender</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
@@ -714,7 +717,10 @@ label{
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
 
-
+      <div class="btn-group" >
+        <span></span>
+        <button type="button" class="btn" id="nexttab">Next</button>
+      </div>
 			</div> <!-- end row -->
 		</div> <!-- end table -->
 
@@ -743,14 +749,18 @@ label{
               <span id="hd_cpassword">Confirm Password</span>
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="pass1" type="password" name="password" required>
-                <input id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required>
+                <input id="password" type="password" name="password" >
+                <input id="password" type="password" name="cpassword" >
                 <span id="error"></span>
               </div> <!-- end row -->
               <br>
             </div> <!-- end tab 2 -->
-
-
+            <br>
+            <div class="btn-group" >
+              <button type="button" class="btn" id="prevtab">Prev</button>
+              <span></span>
+              <button type="button" class="btn" id="nexttab">Next</button>
+            </div>
     </div>
   </div>
 </div>
@@ -797,7 +807,12 @@ label{
 					<br>
 					<h3>Sales Coordinator Total Commission Override: 0.5%</h3>
 
-
+          <br>
+          <div class="btn-group" >
+            <button type="button" class="btn" id="prevtab">Prev</button>
+            <span></span>
+            <button type="button" class="btn" id="nexttab">Next</button>
+          </div>
             </div> <!-- end tab 2 -->
 
     </div>
@@ -834,7 +849,12 @@ label{
   							<input id="gp" type="text" name="googleplus" value="plus.google.com">
   						</div>
               <br>
-
+              <br>
+              <div class="btn-group" >
+                <button type="button" class="btn" id="prevtab">Prev</button>
+                <span></span>
+                <button type="button" class="btn" id="nexttab">Next</button>
+              </div>
               <!-- end row -->
               </div>
               </div>
