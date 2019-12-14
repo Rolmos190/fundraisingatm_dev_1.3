@@ -358,7 +358,7 @@ label{
                   <span id="hd_zip"></span>
 
 									<span>State</span>
-                  <span></span><span></span>
+                  <span></span><span></span><span></span>
                   <span>Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
@@ -442,17 +442,17 @@ label{
 									<span id="hd_hphone">Home Phone</span>
 								</div> <!-- end row -->
 								<div class="row">
-									<input id="hphone1" type="text" name="hPhone1">
+									<input id="hphone1" type="text" name="hPhone1" maxlength="12">
 								</div> <!-- end row -->
 								<div class="row">
 									<span id="hd_wphone">Work Phone</span>
 									<span id="ext">Ext</span>
 								</div>
 								<div class="row">
-									<input id="wphone1" type="text" name="whphone1">
+									<input id="wphone1" type="text" name="whphone1" maxlength="12">
                   <span></span><span></span><span></span>
 									<span id="ext"></span>
-									<input id="ext" type="text" name="ext">
+									<input id="ext" type="text" name="ext" maxlength="5">
 								</div>
 							</td>
 						</tr>

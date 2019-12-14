@@ -10,7 +10,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods | Executive</title>
+	<title>FundraisingATM | Executive</title>
 
 	<style>
 		.scrollable-ul { overflow-y: auto; height: 120px; background: white;}
@@ -659,7 +659,7 @@ session_start();
 			</form>
 		</div> <!-- end table -->
   </div> <!--end content -->
-</div>
+
       <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 </body>
