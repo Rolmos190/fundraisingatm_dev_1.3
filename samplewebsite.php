@@ -62,7 +62,7 @@
 
 </head>
 <body>
-<?php include 'includes/header_sample.php'; ?>
+<?php include '../includes/header_sample.php'; ?>
 <div class="container-fluid">
         <div class=""><?php include 'navigation/rightSidebar.php'; ?></div>
 
