@@ -241,9 +241,9 @@ label{
 
 
 <body>
+	<?php include 'header.inc.php' ; ?>
+	<?php include 'sidenav.php' ; ?>
 <div id="container">
-      <?php include 'header.inc.php' ; ?>
-      <?php include 'sidenav.php' ; ?>
 
       <div id="content">
 	  <br>
@@ -837,8 +837,8 @@ document.getElementById("defaultOpen").click();
 </script>
 </div> <!--end container-->
 
-<?php include 'footer.php' ; ?>
 </div>
+<?php include 'footer.php' ; ?>
 </body>
 </html>
 
