@@ -10,6 +10,7 @@
 	include "connectTo.php";
 
 	$id = $_SESSION['userId'];
+    echo $_SESSION["userId"];
 	$link = connectTo();
 
 	$table1 = "user_info";
@@ -264,7 +265,7 @@
 
   </div> <!--end content -->
 
-      <?php include 'footer.php' ; ?>   
+      <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>
