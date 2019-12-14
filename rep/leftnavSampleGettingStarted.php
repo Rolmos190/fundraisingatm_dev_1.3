@@ -14,23 +14,23 @@
 
     <ul id="sideNav">
       <li><a href="samplestudent.php?group=<?php echo $_GET['group']; ?>">Fundraiser Homepage</a></li>
-      <li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">GreatMoods Program Overview</a></li>
-      <li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>">Fundraiser Setup Steps</a></li> 
+      <li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Program Overview</a></li>
+      <li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>">Fundraiser Setup Steps</a></li>
       <li><a href="fundgettingstarted9.php?group=<?php echo $_GET['group']; ?>">Getting Started</a></li>
   </ul>
-  
+
   <hr>
-  
-  <h4>About GreatMoods</h4>
+
+  <h4>About FundraisingATM</h4>
 	<ul id="sideNav">
 		<li><a href="fundgettingstarted1.php?group=<?php echo $_GET['group']; ?>">Welcome!</a></li>
-		<li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">GreatMoods Program Overview</a></li>
-		<li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>">Fundraiser Setup Steps</a></li> 
-		<li><a href="fundgettingstarted2.php?group=<?php echo $_GET['group']; ?>">GreatMoods Mission</a></li>
-		<li><a href="fundgettingstarted12.php?group=<?php echo $_GET['group']; ?>">GreatMoods Online Fundraising</a></li>
-		<li><a href="fundgettingstarted3.php?group=<?php echo $_GET['group']; ?>">Strengths of the<br>GreatMoods Program</a></li>
+		<li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Program Overview</a></li>
+		<li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>">Fundraiser Setup Steps</a></li>
+		<li><a href="fundgettingstarted2.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Mission</a></li>
+		<li><a href="fundgettingstarted12.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Online Fundraising</a></li>
+		<li><a href="fundgettingstarted3.php?group=<?php echo $_GET['group']; ?>">Strengths of the<br>FundraisingATM Program</a></li>
 		<li><a href="fundgettingstarted4.php?group=<?php echo $_GET['group']; ?>">3 Steps to<br>Fundraising $uccess</a></li>
-		<li><a href="fundgettingstarted5.php?group=<?php echo $_GET['group']; ?>">Greatmoods Mall<br>Products & Gifts</a></li>
+		<li><a href="fundgettingstarted5.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Mall<br>Products & Gifts</a></li>
 		<li><a href="fundgettingstarted6.php?group=<?php echo $_GET['group']; ?>">We Deliver!</a></li>
 		<li><a href="fundgettingstarted7.php?group=<?php echo $_GET['group']; ?>">Cash Deposited Weekly!</a></li>
 		<li><a href="fundgettingstarted8.php?group=<?php echo $_GET['group']; ?>">Calculate Your $uccess</a></li>
