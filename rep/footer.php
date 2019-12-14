@@ -17,7 +17,7 @@
 		<br><br><br>
 
 		<ul class="footerMenu">
-			<li>Copyright &copy; <?php echo date('Y'); ?> Greatmoods.com, LLC. All Rights Reserved</li>
+			<li>Copyright &copy; <?php echo date('Y'); ?> FundraisingATM.com, LLC. All Rights Reserved</li>
 		</ul>
 	</div>
 </div>

@@ -6,7 +6,7 @@
 <!DOCTYPE HTML>
 <head>
 	<meta charset="UTF-8">
-	<title>GreatMoods Rep</title>
+	<title>FundraisingATM Rep</title>
 	<link rel="shortcut icon" href="../images/favicon.ico" >
 	<link rel="stylesheet" type="text/css" href="../css/global_styles.css">
 	<link rel="stylesheet" type="text/css" href="../css/allforms_styles.css">
@@ -264,7 +264,7 @@
 <body>
 <div id="container">
   <div id="headerMain">
-  	<div id="bannerwrap"><a href="index.php"><img id="logo2" src="../images/whitelogo.png" alt="GreatMoods Logo"></a>
+  	<div id="bannerwrap"><a href="index.php"><img id="logo2" src="../newdeal/images/FundraisingATM120519white.png" alt="FundraisingATM Logo"></a>
   	<img id="banner" src="../images/Header-new_Homepage-Collage.png" width="1024" height="150" alt=Photo Collage"></div>
 
     <div id="menuWrapper"> </div> <!--end menuWrapper-->
@@ -330,7 +330,7 @@
 		            } elseif($_SESSION['LOGIN'] == "TRUE") {
 		            	echo '<div class="loggedinMenu">';
 		                echo '<h5>my account</h5>';
-		                echo '<span><a href="index.php">GreatMoods Homepage</a></span>';
+		                echo '<span><a href="index.php">FundraisingATM Homepage</a></span>';
 		         	echo '<br>';
 		         	include('../includes/logout.inc.php');
 		         	echo '</div>';

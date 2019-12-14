@@ -33,7 +33,7 @@
            $title = $club;
          }else{
            $title = $row['sampleTitle'];
-         }   
+         }
       }
 ?>
 
@@ -44,19 +44,19 @@
 	<div id="column1b">
 		<h1>We Deliver! </h1>
 		<h3>The Ordering and Delivery Process</h3>
-		
+
 		<p>Ordering and Delivery is easy for your Friends & Family Members that are supporting your Fundraiser; they just need to do 2 simple steps. </p>
-		<p><b>Step 1</b> - Shop at the GreatMoods Mall, adding their product selections to their Shopping Cart.</p>
+		<p><b>Step 1</b> - Shop at the FundraisingATM Mall, adding their product selections to their Shopping Cart.</p>
 		<p><b>Step 2</b> - Check Out with PayPal and enter where they want everything delivered to.</p>
 		<p><b>Done!</b></p>
-		<p>GreatMoods delivers all Products or Gifts a week before the holiday or special occasion, year round.</p>
+		<p>FundraisingATM delivers all Products or Gifts a week before the holiday or special occasion, year round.</p>
 	</div> <!--end column1b-->
-	
+
 	<div id="column2b">
 		<img src="../../images/rep-pages/scouts.png" width="404" height="270" alt="Kiwanis Club">
 		<img class="imgLeft" src="../../images/rep-pages/lukeandfriends.png" width="198" height="166" alt="Young Girl">
 		<img class="imgRight" src="../../images/rep-pages/volleyball.png" width="198" height="166" alt="Boy with School Fundraiser">
-	</div> <!--end column2b--> 
+	</div> <!--end column2b-->
   </div>  <!--end content-->
 
   <?php include 'footer.php' ; ?>

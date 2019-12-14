@@ -33,7 +33,7 @@
            $title = $club;
          }else{
            $title = $row['sampleTitle'];
-         }   
+         }
       }
 ?>
 
@@ -41,23 +41,23 @@
   	<?php include 'leftnavSampleGettingStarted.php'; ?>
 
  <div id="contentSample">
-	<h1>The GreatMoods Mall</h1>
+	<h1>The FundraisingATM Mall</h1>
 	<h3>Wonderful Fundraising Products and Gifts Year Round</h3>
-	
+
 	<div id="column1b">
-		<p>GreatMoods has a wonderful variety of Products and Gifts at our GreatMoods Mall for every season, reason and occasion. This makes for a perfect year-round Fundraiser because it offers the chance for people to order products for themselves or as gifts for others.</p>
-		<p>The GreatMoods Mall has 20,000+ products that range from practical to silly, every day to elegant, delicious to indulgent and many of the Products and Gifts will be used for years to come.</p>
+		<p>FundraisingATM has a wonderful variety of Products and Gifts at our FundraisingATM Mall for every season, reason and occasion. This makes for a perfect year-round Fundraiser because it offers the chance for people to order products for themselves or as gifts for others.</p>
+		<p>The FundraisingATM Mall has 20,000+ products that range from practical to silly, every day to elegant, delicious to indulgent and many of the Products and Gifts will be used for years to come.</p>
 		<img src="../images/gm_mallproductsgifts.jpg" alt="collage" style="width: 100%;">
 		<p>&nbsp;</p>
 	</div> <!--end column1b-->
-	
-	<div id="column2b"> 
+
+	<div id="column2b">
 		<div id="leadBox">
 			<div id="infoText">
 				<div id="redBar1">
-					<h3>GreatMoods Mall Directory</h3>
+					<h3>FundraisingATM Mall Directory</h3>
 				</div> <!--end redBar1-->
-				
+
 				<ul>
 					<li>Multiple Fashion Boutiques</li>
 					<li>Jewelry, Glitz & Glamour Accessories</li>
@@ -86,9 +86,9 @@
 					<li>The Cookie Jar (Coming Soon)</li>
 					<li>The Chocolate Factory (Coming Soon)</li> -->
 				</ul>
-			</div> <!--end infoText--> 
+			</div> <!--end infoText-->
 		</div> <!--end leadBox-->
-	</div>    <!--end column2b--> 
+	</div>    <!--end column2b-->
     </div> <!-- end column 2 -->
 
   </div>  <!--end content-->
