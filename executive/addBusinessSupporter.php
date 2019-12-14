@@ -249,7 +249,7 @@ label{
 
           <h3></h3>
 		<div class="table">
-      <form class="graybackground" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+      <form class="graybackground" action="addBusinessSupporter.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 				<h2><b>--Option 1: Add One--</b></h2>
 			<div class="tablerow">
 				<span id="hd_vp2">Vice President:</span>
@@ -274,7 +274,7 @@ label{
 					}
 					?>
 				</select>
-        <select name="vpid" id="vpid" class="role2">
+        <select name="scid" id="scid" class="role2">
           <option>Select SC Account</option>
         </select>
 				<select name="vpid" id="vpid" class="role2">
@@ -334,31 +334,34 @@ label{
 										<span id="hd_address1">Company Name</span>
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- input -->
-										<input id="address1" type="text" name="">
+										<input id="address1" type="text" name="cname">
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- title -->
 										<span id="hd_address1">Address 1</span>
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- input -->
-										<input id="address1" type="text" name="">
+										<input id="address1" type="text" name="address1">
 									</div> <!-- end row -->
 
 									<div class="tablerow"> <!-- title -->
 										<span id="hd_address2">Address 2</span>
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- input -->
-										<input id="address2" type="text" name="">
+										<input id="address2" type="text" name="address2">
 									</div> <!-- end row -->
 
 									<div class="tablerow"> <!-- titles -->
-										<span id="hd_zip">City</span>
-										<span></span><span></span><span></span><span></span>
-										<span id="hd_zip">State</span>
-										<span id="hd_zip">Zip</span>
+                    <span>City</span>
+
+                    <span id="hd_zip"></span>
+
+  									<span>State</span>
+                    <span></span><span></span><span></span>
+                    <span>Zip</span>
 									</div> <!-- end row -->
 									<div class="tablerow"> <!-- inputs -->
-										<input id="city" type="text" name="">
-										<select id="state" name="State">
+										<input id="city" type="text" name="city">
+										<select id="state" name="state">
 											<option value="" selected="selected">--</option>
 											<option value="AL">AL</option>
 											<option value="AK">AK</option>
@@ -413,7 +416,7 @@ label{
 											<option value="WY">WY</option>
 										</select>
 										<span></span><span></span>
-										<input id="zip" type="text" name="">
+										<input id="zip" type="text" name="zip" maxlength="5">
 									</div> <!-- end row -->
 
 								</td>
@@ -424,14 +427,10 @@ label{
 
 					 <!-- end row -->
 		<br><br>
-		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-
-		  <div class="tablerow">
-			<input type="submit" class="redbutton" value="Add New Business Supporter">
-			<input type="submit" class="redbutton" value="Save & Add Another Supporter">
-
-		  </div> <!-- end row -->
-		</section> <!-- end SUBMIT BUTTON SECTION ROW -->
+    <div class="btn-group" >
+      <span></span>
+      <button type="button" class="btn" id="nexttab">Next</button>
+    </div> <!-- end SUBMIT BUTTON SECTION ROW -->
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
   </div>
@@ -451,18 +450,17 @@ label{
 			 							<span id="hd_fname">First</span>
 										<span></span>
 			 							<span id="hd_mname">Middle</span>
-										<span></span>
 			 							<span id="hd_lname">Last</span>
 			 						</div>
 			 						<div class="tablerow">
-			 							<input id="fname" type="text" name="" value="">
-			 							<input id="mname" type="text" name="" value="">
-			 							<input id="lname" type="text" name="" value="">
+			 							<input id="fname" type="text" name="fname" value="">
+			 							<input id="mname" type="text" name="mname" value="">
+			 							<input id="lname" type="text" name="lname" value="">
 									</div>
 		                <span id="hd_loginemail">Email Address</span>
 		               <!-- end row -->
 		              <div id="row"> <!-- inputs -->
-		                <input id="loginemail" type="text" name="" value="">
+		                <input id="loginemail" type="text" name="email" value="">
 		              </div> <!-- end row -->
 
 		              <div id="row"> <!-- titles -->
@@ -474,8 +472,8 @@ label{
 		              </div> <!-- end row -->
 
 		              <div id="row"> <!-- inputs -->
-		                <input id="password" type="text" name="" value="">
-		                <input id="cpassword" type="text" name="" value="">
+		                <input id="password" type="password" name="loginpass" value="">
+		                <input id="password" type="password" name="cpass" value="">
 		              </div> <!-- end row -->
 
 									<td id="td_2">
@@ -485,17 +483,16 @@ label{
 											<span id="hd_ext">Ext</span>
 										</div> <!-- end row -->
 										<div class="tablerow">
-											<input id="wphone1" type="text" name="" value="">
-											<input id="ext" type="text" name="" value="">
+											<input id="wphone1" type="text" name="wphone1" value="">
+											<input id="ext" type="text" name="ext" value="">
 										</div> <!-- end row -->
 									</td>
-		              <br>
-		              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-		                <div class="tablerow">
-											<input type="submit" class="redbutton" value="Add New Business Supporter">
-											<input type="submit" class="redbutton" value="Save & Add Another Supporter">
-		                </div> <!-- end row -->
-		              </section>
+		              <br><br>
+                  <div class="btn-group" >
+                    <button type="button" class="btn" id="prevtab">Prev</button>
+                    <span></span>
+                    <button type="button" class="btn" id="nexttab">Next</button>
+                  </div>
 
 		            </div> <!-- end tab 2 -->
 

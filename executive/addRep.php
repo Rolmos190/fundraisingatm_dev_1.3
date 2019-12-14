@@ -269,7 +269,7 @@ label{
 					}
 					?>
 				</select>
-        <select name="scid" id="scid" onchange="fetch_select2(this.value);">
+        <select name="scid" id="scid" class="role2">
           <option>Select SC Account</option>
         </select>
 			</div> <!-- end row -->
@@ -353,10 +353,13 @@ label{
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
-									<span id="hd_zip">City</span>
-									<span></span><span></span><span></span><span></span>
-									<span id="hd_zip">State</span>
-									<span id="hd_zip">Zip</span>
+									<span>City</span>
+
+                  <span id="hd_zip"></span>
+
+									<span>State</span>
+                  <span></span><span></span><span></span>
+                  <span>Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
 									<input id="city" type="text" name="city">
@@ -418,15 +421,13 @@ label{
 									<input id="zip" type="text" name="zip" maxlength="5" required>
 								</div> <!-- end row -->
 
-
-
-								<div class="tablerow"> <!-- titles -->
+								<div class="row"> <!-- titles -->
                   <br>
 									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
-								<div class="tablerow"> <!-- inputs -->
+								<div class="row"> <!-- inputs -->
 									<input id="mphone1" type="text" name="mphone1">
-                  <span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span><span></span>
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
 										<option>Verizon</option>
@@ -437,21 +438,21 @@ label{
 										<option>Other</option>
 									</select>
 								</div> <!-- end row -->
-								<div class="tablerow">
+								<div class="row">
 									<span id="hd_hphone">Home Phone</span>
 								</div> <!-- end row -->
-								<div class="tablerow">
-									<input id="hphone1" type="text" name="hPhone1">
+								<div class="row">
+									<input id="hphone1" type="text" name="hPhone1" maxlength="12">
 								</div> <!-- end row -->
-								<div class="tablerow">
+								<div class="row">
 									<span id="hd_wphone">Work Phone</span>
 									<span id="ext">Ext</span>
 								</div>
-								<div class="tablerow">
-									<input id="wphone1" type="text" name="whphone1">
-                  <span></span>
+								<div class="row">
+									<input id="wphone1" type="text" name="whphone1" maxlength="12">
+                  <span></span><span></span><span></span>
 									<span id="ext"></span>
-									<input id="ext" type="text" name="ext">
+									<input id="ext" type="text" name="ext" maxlength="5">
 								</div>
 							</td>
 						</tr>
@@ -459,7 +460,8 @@ label{
 
 					<div class="tablerow"> <!-- titles -->
 						<span id="hd_bday">Birthday</span>
-		  <span id="hd_gender"></span>
+		        <span id="hd_gender"></span>
+            <span></span>
 						<span id="hd_gender">Gender</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
@@ -622,8 +624,12 @@ label{
 							<option value="male">Male</option>
 						</select>
 					</div> <!-- end row -->
-		<br><br>
-
+    <br><br>
+    <div class="btn-group" >
+      <button type="button" class="btn" id="prevtab">Prev</button>
+      <span></span>
+      <button type="button" class="btn" id="nexttab">Next</button>
+    </div>
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
 
@@ -657,10 +663,15 @@ label{
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
                 <input id="password" type="password" name="loginpass" value="">
-                <input id="cpassword" type="password" name="cpass" value="">
+                <input id="password" type="password" name="cpass" value="">
               </div> <!-- end row -->
-              <br>
 
+              <br><br>
+              <div class="btn-group" >
+                <button type="button" class="btn" id="prevtab">Prev</button>
+                <span></span>
+                <button type="button" class="btn" id="nexttab">Next</button>
+              </div>
             </div> <!-- end tab 2 -->
 
 
@@ -709,7 +720,12 @@ label{
 					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
 					<br>
 					<h3>Vice President Total Commission Override: 0.5%</h3>
-
+          <br><br>
+          <div class="btn-group" >
+            <button type="button" class="btn" id="prevtab">Prev</button>
+            <span></span>
+            <button type="button" class="btn" id="nexttab">Next</button>
+          </div>
 
             </div> <!-- end tab 2 -->
 
@@ -746,7 +762,12 @@ label{
   							<span id="hd_gp">Google+</span>
   							<input id="gp" type="text" name="googleplus" value="plus.google.com">
   						</div>
-              <br>
+              <br><br>
+            <div class="btn-group" >
+              <button type="button" class="btn" id="prevtab">Prev</button>
+              <span></span>
+              <button type="button" class="btn" id="nexttab">Next</button>
+            </div>
 
               <!-- end row -->
               </div>
@@ -825,6 +846,16 @@ function openCity(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+var $tabs = $('.tabbable li');
+
+$('#prevtab').on('click', function(){
+  $tabcontent.filter('.active').prev('li').find('a[data-toggle="tab"]').tab('show');
+});
+$('#nexttab').on('click', function() {
+  $tabcontent.filter('.active').next('li').find('a[data-toggle="tab"]').tab('show');
+});
+
 </script>
 </div> <!--end container-->
 </div>

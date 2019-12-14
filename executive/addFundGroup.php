@@ -10,7 +10,11 @@ session_start();
 ?>
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods | Executive</title>
+	<title>FundraisingATM | Executive</title>
+
+	<style>
+		.scrollable-ul { overflow-y: auto; height: 120px; background: white;}
+	</style>
 </head>
 
 <body>
@@ -23,7 +27,7 @@ session_start();
           <h3></h3>
 
 
-		<div class="table">
+		<div  class="graybackground">
 			<form class="" action="" method="">
 				<div class="tablerow">
 						<span id="hd_vp2">Vice President:</span>
@@ -64,16 +68,15 @@ session_start();
 				</div> <!-- end row -->
 
 				<br>
+				<div class="table" >
+				<div class="tablerow">
+					<div><h2 style="color: #cc0000">Select Group(s)</h2></div>
 
-			<div class="interim-form">
-				<div class="tablerow">.
-					<div class="interim-header"><h2>Select Group(s)</h2></div>
-					<div class="groupcolumns">
-						<h6>Education</h6>
-						<div class="groupsection">
-							<h7>Elementary School</h7><br>
-							<span id="">Clubs & Organizations</span><br>
-							<div class="checkboxes">
+						<div class="tablerow">
+							<center><h5>Education</h5></center>
+							<h7 style="text-decoration: underline;"><strong>Elementary School</strong></h7><br>
+							<span id=""style="color: #cc0000">Clubs & Organizations</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>4-H</label> <br>
 								<input type="checkbox" name="" value=""><label>Art Club</label> <br>
@@ -90,8 +93,8 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<span id="">General</span><br>
-							<div class="checkboxes">
+							<span id=""style="color: #cc0000">General</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>General</label> <br>
 								<input type="checkbox" name="" value=""><label>Graduation</label> <br>
@@ -106,8 +109,8 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<span id="">Athletics</span><br>
-							<div class="checkboxes">
+							<span id=""style="color: #cc0000">Athletics</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Baseball</label> <br>
 								<input type="checkbox" name="" value=""><label>Basketball, Boys</label> <br>
@@ -132,11 +135,11 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Volleyball, Girls</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
-
 						<div class="groupsection">
-							<h7>Middle School</h7><br>
-							<span id="">Clubs & Organizations</span><br>
-							<div class="checkboxes">
+							<br><br>
+							<h7 style="text-decoration: underline;"><strong>Middle School</strong></h7><br>
+							<span id=""style="color: #cc0000">Clubs & Organizations</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>4-H</label> <br>
 								<input type="checkbox" name="" value=""><label>Band</label> <br>
@@ -163,8 +166,8 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<span id="">General</span><br>
-							<div class="checkboxes">
+							<span id=""style="color: #cc0000">General</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>General</label> <br>
 								<input type="checkbox" name="" value=""><label>Graduation</label> <br>
@@ -179,8 +182,8 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<span id="">Athletics</span><br>
-							<div class="checkboxes">
+							<span id=""style="color: #cc0000">Athletics</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Archery</label> <br>
 								<input type="checkbox" name="" value=""><label>Badminton</label> <br>
@@ -236,9 +239,10 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>High School</h7><br>
-							<span id="">Clubs & Organizations</span><br>
-							<div class="checkboxes">
+							<br><br>
+							<h7 style="text-decoration: underline;"><strong>High School</strong></h7><br>
+							<span id=""style="color: #cc0000">Clubs & Organizations</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>4-H</label> <br>
 								<input type="checkbox" name="" value=""><label>Band</label> <br>
@@ -269,8 +273,8 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<span id="">General</span><br>
-							<div class="checkboxes">
+							<span id=""style="color: #cc0000">General</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>General</label> <br>
 								<input type="checkbox" name="" value=""><label>Graduation</label> <br>
@@ -289,8 +293,8 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<span id="">Athletics</span><br>
-							<div class="checkboxes">
+							<span id=""style="color: #cc0000">Athletics</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Archery</label> <br>
 								<input type="checkbox" name="" value=""><label>Badminton</label> <br>
@@ -349,9 +353,10 @@ session_start();
 
 
 						<div class="groupsection">
-							<h7>College</h7><br>
-							<span id="">Clubs & Organizations</span><br>
-							<div class="checkboxes">
+							<br><br>
+							<h7 style="text-decoration: underline;"><strong>College</strong></h7><br>
+							<span id=""style="color: #cc0000">Clubs & Organizations</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>4-H</label> <br>
 								<input type="checkbox" name="" value=""><label>Alumni Association</label> <br>
@@ -381,8 +386,8 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<span id="">General</span><br>
-							<div class="checkboxes">
+							<span id=""style="color: #cc0000">General</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>After-School Program</label> <br>
 								<input type="checkbox" name="" value=""><label>Athletic Equipment</label> <br>
@@ -394,8 +399,8 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<span id="">Athletics</span><br>
-							<div class="checkboxes">
+							<span id=""style="color: #cc0000">Athletics</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Archery</label> <br>
 								<input type="checkbox" name="" value=""><label>Badminton</label> <br>
@@ -456,8 +461,9 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>Trade, Vocational & Tech School</h7><br>
-							<div class="checkboxes">
+							<br><br>
+							<h7 style="text-decoration: underline; "><strong>Trade, Vocational & Tech School</strong></h7><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Field Trips & Travel</label> <br>
 								<input type="checkbox" name="" value=""><label>General Equipment</label> <br>
@@ -466,8 +472,9 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>Preschool</h7><br>
-							<div class="checkboxes">
+							<br>
+							<h7 style="text-decoration: underline;"><strong>Preschool</strong></h7><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Electronic Projection & A/V</label> <br>
 								<input type="checkbox" name="" value=""><label>Equipment & Supplies</label> <br>
@@ -478,16 +485,18 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>Home School</h7><br>
-							<div class="checkboxes">
+							<br>
+							<h7 style="text-decoration: underline;"><strong>Home School</strong></h7><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Electronic Projection & A/V</label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>Camp</h7><br>
-							<div class="checkboxes">
+							<br>
+							<h7 style="text-decoration: underline;"><strong>Camp</strong></h7><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Bible Camps</label> <br>
 								<input type="checkbox" name="" value=""><label>Dance Camps</label> <br>
@@ -504,10 +513,11 @@ session_start();
 						<br>
 
 						<div class="groupsection">
-							<h6>Organizations</h6>
-							<h7>Faith Based Organizations</h7><br>
-							<span id="">Christianity</span><br>
-							<div class="checkboxes">
+							<br>
+							<center><h5>Organizations</h5></center>
+							<h7 style="text-decoration: underline"><strong>Faith Based Organizations</strong></h7><br>
+							<span id="" style="color: #cc0000">Christianity</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Baptist</label> <br>
 								<input type="checkbox" name="" value=""><label>Catholic</label> <br>
@@ -522,16 +532,16 @@ session_start();
 								<input type="checkbox" name="" value=""><label>Spirit-Filled</label> <br>
 							</div> <!-- end checkboxes -->
 
-							<span id="">Judaism</span><br>
-							<div class="checkboxes">
+							<span id="" style="color: #cc0000">Judaism</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Jewish Conservative</label> <br>
 								<input type="checkbox" name="" value=""><label>Jewish Orthodox</label> <br>
 								<input type="checkbox" name="" value=""><label>Jewish Reformed</label> <br>
 							</div> <!-- end checkboxes -->
 
-							<span id="">Other Faiths</span><br>
-							<div class="checkboxes">
+							<span id="" style="color: #cc0000">Other Faiths</span><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Buddhist</label> <br>
 								<input type="checkbox" name="" value=""><label>Hindu</label> <br>
@@ -541,8 +551,9 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>Local & National Organizations</h7><br>
-							<div class="checkboxes">
+							<br>
+							<h7 style="text-decoration: underline;"><strong>Local & National Organizations</strong></h7><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Jaycees</label> <br>
 								<input type="checkbox" name="" value=""><label>Junior League</label> <br>
@@ -559,8 +570,9 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>Local & National Charities</h7><br>
-							<div class="checkboxes">
+							<br>
+							<h7 style="text-decoration: underline"><strong>Local & National Charities</strong></h7><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Alzheimer Foundation of American</label> <br>
 								<input type="checkbox" name="" value=""><label>American Cancer Society</label> <br>
@@ -589,8 +601,9 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>Community Organizations</h7><br>
-							<div class="checkboxes">
+							<br>
+							<h7 style="text-decoration: underline;"><strong>Community Organizations</strong></h7><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value="">Animal Shelters<label></label> <br>
 								<input type="checkbox" name="" value=""><label>ASPCA</label> <br>
@@ -604,8 +617,9 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>Youth & Sports</h7><br>
-							<div class="checkboxes">
+							<br>
+							<h7 style="text-decoration: underline;"><strong>Youth & Sports</strong></h7><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Athletic Associations</label> <br>
 								<input type="checkbox" name="" value=""><label>Big Brothers/Big Sisters of America</label> <br>
@@ -617,8 +631,9 @@ session_start();
 						</div> <!-- end groupsection -->
 
 						<div class="groupsection">
-							<h7>Sports League</h7><br>
-							<div class="checkboxes">
+							<br>
+							<h7 style="text-decoration: underline"><strong>Sports League</strong></h7><br>
+							<div class="checkboxes scrollable-ul">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
 								<input type="checkbox" name="" value=""><label>Summer Leagues</label> <br>
 							</div> <!-- end checkboxes -->
@@ -627,11 +642,9 @@ session_start();
 						<br>
 
 						<div class="groupsection">
-							<h6>General</h6>
+							<h6 style="text-decoration: underline"><strong>General</strong></h6>
 							<div class="checkboxes">
 								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label></label> <br>
-								<input type="checkbox" name="" value=""><label></label> <br>
 							</div> <!-- end checkboxes -->
 						</div> <!-- end groupsection -->
 					</div> <!-- end groupcolumns -->
@@ -649,7 +662,6 @@ session_start();
 
       <?php include 'footer.php' ; ?>
 </div> <!--end container-->
-
 </body>
 </html>
 

@@ -8,7 +8,7 @@ session_start();
        }
        */
 
-        ob_start();
+  ob_start();
 	include "connectTo.php";
 	include('../samplewebsites/imageFunctions.inc.php');
 	$id = $_SESSION['userId'];
@@ -249,7 +249,7 @@ label{
 
           <h3></h3>
 		<div class="table">
-      <form class="graybackground" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+      <form class="graybackground" action="addFundAccount.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 				<h2><b>--Option 1: Add One Account--</b></h2>
 			<div class="tablerow">
 				<span id="hd_vp2">Vice President:</span>
@@ -364,7 +364,7 @@ label{
 									<span id="hd_address1">Address 1</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
-									<input id="address1" type="text" name="">
+									<input id="address1" type="text" name="address1">
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- title -->
@@ -372,20 +372,21 @@ label{
 									<span id="hd_address2">Address 2</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- input -->
-									<input id="address2" type="text" name="">
+									<input id="address2" type="text" name="address2">
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
 									<br>
-									<span id="hd_zip">City</span>
-									<span></span><span></span><span></span><span></span>
-									<span id="hd_zip">State</span>
-									<span id="hd_zip">Zip</span>
+									<span>City</span>
+									<span id="hd_zip"></span>
+									<span>State</span>
+                  <span></span><span></span><span></span>
+
+									<span>Zip</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<br>
-									<input id="city" type="text" name="">
-									<select id="state" name="State">
+									<input id="city" type="text" name="city">
+									<select id="state" name="state">
 										<option value="" selected="selected">--</option>
 										<option value="AL">AL</option>
 										<option value="AK">AK</option>
@@ -440,7 +441,7 @@ label{
 										<option value="WY">WY</option>
 									</select>
 									<span></span><span></span>
-									<input id="zip" type="text" name="">
+									<input id="zip" type="text" name="zip" maxlength="5">
 								</div> <!-- end row -->
 
 
@@ -449,9 +450,15 @@ label{
 								<div class="tablerow">
 									<br>
 									<span id="hd_hphone">Work Phone</span>
+                  <span id="ext">Ext</span>
 								</div> <!-- end row -->
-								<div class="tablerow">
-									<input id="hphone1" type="text" name="">
+								<div class="row">
+									<input id="hphone1" type="text" name="hphone1" maxlength="12">
+                  <span></span><span></span><span></span>
+
+                  <span id="ext"></span>
+
+                  <input id="ext" type="text" name="ext" maxlength="5">
 								</div> <!-- end row -->
 								<!-- <div class="tablerow">
 									<span id="hd_wphone">Primary Phone</span>
@@ -467,16 +474,12 @@ label{
 
 
 					 <!-- end row -->
-		<br><br>
-		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 
-		  <div class="tablerow">
-			<input type="submit" class="redbutton" value="Save & Exit">
-			<input type="submit" class="redbutton" value="Save & Add Another">
-			<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
-
-		  </div> <!-- end row -->
-		</section> <!-- end SUBMIT BUTTON SECTION ROW -->
+    <br><br>
+    <div class="btn-group" >
+      <span></span>
+      <button type="button" class="btn" id="nexttab">Next</button>
+    </div> <!-- end SUBMIT BUTTON SECTION ROW -->
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
 
@@ -495,28 +498,29 @@ label{
   						<h2 style="color: #cc0000">Social Media Connections</h2>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
-  							<input id="fb" type="text" name="" value="www.facebook.com">
+  							<input id="fb" type="text" name="fb" value="www.facebook.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_tw">Twitter</span>
-  							<input id="tw" type="text" name="" value="www.twitter.com">
+  							<input id="tw" type="text" name="twitter" value="www.twitter.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_li">LinkedIn</span>
-  							<input id="li" type="text" name="" value="www.linkedin.com">
+  							<input id="li" type="text" name="linkedin" value="www.linkedin.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_pn">Pinterest</span>
-  							<input id="pn" type="text" name="" value="www.pinterest.com">
+  							<input id="pn" type="text" name="printrest" value="www.pinterest.com">
   						</div> <!-- end row -->
   						<div id="row">
   							<span id="hd_gp">Google+</span>
-  							<input id="gp" type="text" name="" value="plus.google.com">
+  							<input id="gp" type="text" name="googleplus" value="plus.google.com">
   						</div>
               <br>
 
               <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
                 <div class="tablerow">
+                  <br><br>
                   <input type="submit" class="redbutton" value="Save & Exit">
                   <input type="submit" class="redbutton" value="Save & Add Another">
 									<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
@@ -550,13 +554,11 @@ label{
   							<img src="" alt="uploaded profile photo">
   						</div>
               <br><br>
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-									<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
-                </div> <!-- end row -->
-              </section>
+              <div class="btn-group" >
+                <button type="button" class="btn" id="prevtab">Prev</button>
+                <span></span>
+                <button type="button" class="btn" id="nexttab">Next</button>
+              </div>
 
                <!-- end row -->
             </div>
@@ -582,7 +584,7 @@ label{
 
 	</div><!--end content -->
 	 <div class="table">
-	 	<form class="graybackground" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+	 	<form class="graybackground" action="addFundAccount.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 	 		<h2><b>--Option 2: Add Multiple Accounts--</b></h2>
 			<br>
 			<h2 style="color: #cc0000">How To Add Multiple Accounts</h2>
