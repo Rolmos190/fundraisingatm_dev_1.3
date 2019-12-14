@@ -18,8 +18,8 @@
       {
          $query = "SELECT * FROM $table WHERE samplewebID = $sample";
       }
-      
-      
+
+
       $result = mysqli_query($link, $query) or die(mysqli_error());
       $row_count = mysqli_num_rows($result);
       if($row_count == '0'){
@@ -53,7 +53,7 @@
 
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods Sample Website</title>
+	<title>FundraisingATM Sample Website</title>
 	<style>
 	    #reasoncontent{
 	        width:auto !important;
@@ -82,7 +82,7 @@
                 <li data-target="#carousel-band" data-slide-to="1"></li>
                 <li data-target="#carousel-band" data-slide-to="2"></li>
                 <li data-target="#carousel-band" data-slide-to="3"></li>
-                <li data-target="#carousel-band" data-slide-to="4"></li>        
+                <li data-target="#carousel-band" data-slide-to="4"></li>
                 <li data-target="#carousel-band" data-slide-to="5"></li>
                 <li data-target="#carousel-band" data-slide-to="6"></li>
             </ol>
@@ -100,11 +100,11 @@
                   <img class="img-responsive center-block" src="../images/sliders/mbrslider2.jpg" alt="Shop at Any Stores Above">
                 </div>
                     <div class="item">
-                  <img class="img-responsive center-block" src="../images/sliders/mbrslider3.jpg" alt="Great Fundraising Products at the GreatMoods Mall">
+                  <img class="img-responsive center-block" src="../images/sliders/mbrslider3.jpg" alt="Great Fundraising Products at the FundraisingATM Mall">
                 </div>
                 <div class="item">
                   <img class="img-responsive center-block" src="../images/sliders/mbrslider4.jpg" alt="Fundraising Products You  Really Want">
-                </div> 
+                </div>
                 <div class="item">
                   <img class="img-responsive center-block" src="../images/sliders/mbrslider5.jpg"  alt="35% of Every Purchase is Yours!">
                 </div>
@@ -135,7 +135,7 @@
         	<div class="reasonsbox col-xs-11 col-xs-push-1 col-sm-push-0 col-sm-4 col-md-3 col-md-push-1 col-md-offset-1 col-lg-offset-0 col-lg-push-1 col-lg-4">
                 <h5 id="reasons">Reasons for Our Fundraiser</h5>
                 <?php
-                  echo '<div id ="reasoncontent">'; 
+                  echo '<div id ="reasoncontent">';
                   $r_list = explode('.', $reasons);
                   echo '<ul>';
                   foreach ($r_list as $item){
@@ -147,8 +147,8 @@
                   echo '</div>';
                 ?>
               </div>
-              
-        
+
+
             <!--$width = round(($paid_amount/$total_prize)*100,2);-->
             <!--<div class="row">-->
                 <div class="col-xs-9 col-xs-offset-3 col-sm-push-0 col-sm-offset-2 col-sm-2 col-md-3 col-md-push-1 col-md-offset-1 col-lg-3">
@@ -162,28 +162,28 @@
                                         <div class="amount"><?php echo $so_far; ?></div>
                                     </div>
                                 </div>
-                    
+
                             </div>
-                    
+
                         </div>
                 </div>
             <!--</div>-->
-            
+
             <div class="img-thumbnail pull-right col-xs-1 col-xs-pull-4 col-sm-1 col-sm-pull-0 col-md-1 col-lg-1" style="width:130px;height:180px">
               <img class=" img-responsive" src="<?php echo $leader_photo;?>" alt="UPLOAD YOUR LEADER PICTURE HERE!">
             <div class="contactinfo2">
               <span class="title"><strong><?php echo $position; ?></strong></span>
               <span class="leadername"><?php echo $leader; ?></span>
             </div>
-            </div> <!--end leader-->  
-            
+            </div> <!--end leader-->
+
             <div class="img-thumbnail  pull-right col-xs-offset-6 col-xs-pull-4 col-xs-1 col-sm-pull-0 col-sm-offset-0 col-md-1 col-lg-1 col-md-offset-0"  style="width:130px;height:180px" >
                 <div class="leaderimgcrop ">
                   <img class=" img-responsive" src="../<?php echo $student_photo;?>" alt="UPLOAD ANY PICTURE HERE!">
                 </div> <!-- end leaderimgcrop -->
                 <div class="contactinfo2">
                   <span class="title"><strong>Student Leader</strong></span>
-                  <span class="leadername"><?php echo $student_leader_name; ?></span> 
+                  <span class="leadername"><?php echo $student_leader_name; ?></span>
                 </div>
             </div> <!--end studentleader-->
         </div> <!-- end container -->
@@ -207,9 +207,9 @@
         <!--          <li><a href="">Me, Myself &amp; I</a></li>-->
         <!--        </ul>-->
         <!--      </div>-->
-          
+
         <!--      <br>-->
-          
+
         <!--  <div class="bestsellers">-->
         <!--  	<h5>New Arrivals Daily!</h5>-->
         <!--    <img src="images/rightcol_collage_4pics_15nov2016.jpg" width="160" height="" alt="new arrivals daily">-->
@@ -220,23 +220,23 @@
 
 
  <?php include 'footer.php' ; ?>
- 
- 
+
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script>//script for thermometer money conversion / completion
     function formatCurrency(n, c, d, t) {
         "use strict";
-    
+
         var s, i, j;
-    
+
         c = isNaN(c = Math.abs(c)) ? 2 : c;
         d = d === undefined ? "." : d;
         t = t === undefined ? "," : t;
-    
+
         s = n < 0 ? "-" : "";
         i = parseInt(n = Math.abs(+n || 0).toFixed(c), 10) + "";
         j = (j = i.length) > 3 ? j % 3 : 0;
-    
+
         return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
     }
 
@@ -253,21 +253,21 @@
      */
     function thermometer(goalAmount, raisedAmount, animate) {
         "use strict";
-    
+
         var $thermo = $("#thermometer"),
             $raised = $(".raised", $thermo),
             $goal = $(".goal", $thermo),
             percentageAmount;
-    
+
         goalAmount = goalAmount || parseFloat( $goal.text() ),
         raisedAmount = raisedAmount || parseFloat( $raised.text() ),
         percentageAmount =  Math.min( Math.round(raisedAmount / goalAmount * 1000) / 10, 100); //make sure we have 1 decimal point
-    
+
         //let's format the numbers and put them back in the DOM
         $goal.find(".amount").text( "$" + formatCurrency( goalAmount ) );
         $raised.find(".amount").text( "$" + formatCurrency( raisedAmount ) );
-    
-    
+
+
         //let's set the raised indicator
         $raised.find(".amount").hide();
         if (animate !== false) {
@@ -286,7 +286,7 @@
     }
 
     $(document).ready(function(){
-    
+
         //call without the parameters to have it read from the DOM
         thermometer();
         // or with parameters if you want to update it using JavaScript.
@@ -295,7 +295,7 @@
         //thermometer( 1000000, 425610, false );
     });
     </script>
-	
+
 
 </body>
 </html>
@@ -308,5 +308,3 @@
 <?php
    ob_end_flush();
 ?>
-
-

@@ -84,7 +84,7 @@ if(isset($_POST['login'])){
 
 <div id="container">
   <div id="headerMain">
-  	<div id="bannerwrap"><a href="index.php"><img id="logo2" src="../newdeal/images/fundatm_logo.png" width="100" height= "80" alt="FundraisingATM Logo"></a>
+  	<div id="bannerwrap"><a href="index.php"><img id="logo2" src="../newdeal/images/FundraisingATM120519white.png" alt="FundraisingATM Logo"></a>
   		<img id="banner" src="../<?php echo $banner_path;?>" width="1024" height="150" alt="banner placeholder" /></div>
 
     <div id="menuWrapper"> </div> <!--end menuWrapper-->
