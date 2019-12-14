@@ -24,8 +24,8 @@
   <h4>About FundraisingATM</h4>
 	<ul id="sideNav">
 		<li><a href="fundgettingstarted1.php?group=<?php echo $_GET['group']; ?>">Welcome!</a></li>
-		<li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Program Overview</a></li>
-		<li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>">Fundraiser Setup Steps</a></li>
+		<!-- <li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Program Overview</a></li> -->
+		<!-- <li><a href="fundgettingstarted14.php?group=<?php echo $_GET['group']; ?>">Fundraiser Setup Steps</a></li> -->
 		<li><a href="fundgettingstarted2.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Mission</a></li>
 		<li><a href="fundgettingstarted12.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Online Fundraising</a></li>
 		<li><a href="fundgettingstarted3.php?group=<?php echo $_GET['group']; ?>">Strengths of the<br>FundraisingATM Program</a></li>
