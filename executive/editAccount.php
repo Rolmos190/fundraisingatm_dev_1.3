@@ -23,7 +23,7 @@
 ?>
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods | Executive</title>
+	<title>FundraisingATM | Executive</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
 
       <div id="content">
           <h1>Edit My Account</h1>
-          <?php echo $id; ?>
+          <h2># <?php echo $id ; ?> </h2>
           <h3></h3>
 		
 	<div class="table">
@@ -354,7 +354,7 @@
 				<br>
 				<div class="tablerow"> 
 					<span>Current Image:<span><br>
-					<img src="../<?php echo $row['picPath']; ?>" alt="Profile Pic">
+					<img src="../<?php echo $row['picPath']; ?>" alt=" Profile Pic">
 				</div> <!-- end row -->
 			</div> <!-- end tab5 content -->
 		</div> <!-- end simple tabs -->

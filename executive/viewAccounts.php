@@ -8,10 +8,11 @@
        */
        ob_start();
 	include "connectTo.php";
-	
+
 	$id = $_SESSION['userId'];
+    echo $_SESSION["userId"];
 	$link = connectTo();
-	
+
 	$table1 = "user_info";
 	$table2 = "users";
 	$table3 = "distributors";
@@ -19,12 +20,12 @@
 ?>
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods | Executive</title>
+	<title>FundraisingATM | Executive</title>
 	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" />
-	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>    
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
  	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-	
+
 </head>
 
 <body>
@@ -36,7 +37,7 @@
           <h1>View Team & Accounts</h1>
           <h3></h3>
             <div id="grid_array"></div> <!-- not sure if the page contents need to be inside this div or not, so I am leaving it at the top for now -->
-            
+
             <form>
 		<div id="table">
 			<div class="row">
@@ -47,8 +48,8 @@
 					<?php
 					$query = "Select * FROM distributors  WHERE setupID='$id' and role='VP'";
                                         $result = mysqli_query($link, $query)or die("MySQL ERROR om query 2: ".mysqli_error($link));
-                                        
-                          
+
+
                                         while($row = mysqli_fetch_assoc($result))
                                         {
 					   echo '<option value="'.$row['loginid'].'">'.$row[FName].' '.$row[LName].' '.$row[loginid].'</option>';
@@ -67,12 +68,12 @@
 					<select id="new_select4"  name="memdid" onchange="">
 					<option>Select Member</option>
 					</select>
-					
+
 
 				</div> <!-- end acct select -->
 			</div> <!-- end row -->
 		</div> <!-- end table -->
-		
+
 		<!-- This alphabet should allow for sorting the data -->
 		<!--<table id="alphabet">
 			<tr>
@@ -104,7 +105,7 @@
 				<td>Z</td>
 			</tr>
 		</table>-->
-		
+
 		<table id="gms_accts">
 			<tr>
 				<!--<th class="checkbox" title="Select"><input type="checkbox" name="" value=""></th>-->
@@ -143,7 +144,7 @@
 					<a href="#"><input class="redbutton" type="button" value="Add Accts" /></a>
 					<a href="#"><input class="redbutton" type="button" value="Send Email" /></a>
 					<a href="viewReports.php"><input class="redbutton" type="button" value="$ Reports" /></a>
-					
+
 				</td>
 			</tr>
 			<tr class="even">
@@ -159,7 +160,7 @@
 					<a href="#"><input class="redbutton" type="button" value="Add Accts" /></a>
 					<a href="#"><input class="redbutton" type="button" value="Send Email" /></a>
 					<a href="viewReports.php"><input class="redbutton" type="button" value="$ Reports" /></a>
-					
+
 				</td>
 			</tr>
 			<tr class="odd">
@@ -175,7 +176,7 @@
 					<a href="#"><input class="redbutton" type="button" value="Add Accts" /></a>
 					<a href="#"><input class="redbutton" type="button" value="Send Email" /></a>
 					<a href="viewReports.php"><input class="redbutton" type="button" value="$ Reports" /></a>
-					
+
 				</td>
 			</tr>
 			<tr class="even">
@@ -191,7 +192,7 @@
 					<a href="#"><input class="redbutton" type="button" value="Add Accts" /></a>
 					<a href="#"><input class="redbutton" type="button" value="Send Email" /></a>
 					<a href="viewReports.php"><input class="redbutton" type="button" value="$ Reports" /></a>
-					
+
 				</td>
 			</tr>
 			<tr class="odd">
@@ -207,7 +208,7 @@
 					<a href="#"><input class="redbutton" type="button" value="Add Accts" /></a>
 					<a href="#"><input class="redbutton" type="button" value="Send Email" /></a>
 					<a href="viewReports.php"><input class="redbutton" type="button" value="$ Reports" /></a>
-					
+
 				</td>
 			</tr>
 			<tr class="even">
@@ -223,7 +224,7 @@
 					<a href="#"><input class="redbutton" type="button" value="Add Accts" /></a>
 					<a href="#"><input class="redbutton" type="button" value="Send Email" /></a>
 					<a href="viewReports.php"><input class="redbutton" type="button" value="$ Reports" /></a>
-					
+
 				</td>
 			</tr>
 			<tr class="odd">
@@ -239,7 +240,7 @@
 					<a href="#"><input class="redbutton" type="button" value="Add Accts" /></a>
 					<a href="#"><input class="redbutton" type="button" value="Send Email" /></a>
 					<a href="viewReports.php"><input class="redbutton" type="button" value="$ Reports" /></a>
-					
+
 				</td>
 			</tr>
 			<tr class="even">
@@ -255,16 +256,16 @@
 					<a href="#"><input class="redbutton" type="button" value="Add Accts" /></a>
 					<a href="#"><input class="redbutton" type="button" value="Send Email" /></a>
 					<a href="viewReports.php"><input class="redbutton" type="button" value="$ Reports" /></a>
-					
+
 				</td>
 			</tr>-->
 		</table>
-		
+
 	</form>
 
   </div> <!--end content -->
-  
-      <?php include 'footer.php' ; ?>   
+
+      <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>

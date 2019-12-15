@@ -106,6 +106,7 @@
 </div> <!--end container-->
 
 </body>
+<?php include 'footer.php' ; ?>
 </html>
 <?php
 ob_end_flush();

@@ -337,7 +337,7 @@ label{
 
       <div id="content">
 			<br>
-          <h1>Add New Sales Coordinator</h1>
+          <h1>Add New Sales Coordinator</h1> 
 
           <h3></h3>
 		<div class="table">
