@@ -330,10 +330,10 @@ function fetch_select5(val)
 });
     </script>
 </head>
-
+<body>
 <div id="headerMain">
 	<div id="bannerwrap"><a href="../index.php"><img id="logo2" src="../newdeal/images/FundraisingATM120519white.png" alt=""></a>
-  	<img id="banner" src="../images/Header-new_Homepage-Collage.png" width="1024" height="150" alt="FundraisingATM Photo Collage" /></div>
+  	<img id="banner" src="../images/Header-new_Homepage-Collage.png" width="1024" height="150" alt="FundraisingATM Photo Collage"></div>
 
 	<div id="menuWrapper"> </div> <!--end menuWrapper-->
 
@@ -409,5 +409,4 @@ function fetch_select5(val)
       		</div> <!--end login-->
     	</li>
 	  </ul><!--end mainNav-->
-
 </div><!--end headerMain-->

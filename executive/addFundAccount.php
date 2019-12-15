@@ -172,70 +172,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
 
   <script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
-	<style>
-ul.tab {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 1px solid #FFF;
-    background-color: #cc0000;
-}
 
-/* Float the list items side by side */
-ul.tab li {float: left;}
-
-/* Style the links inside the list items */
-ul.tab li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-/* Change background color of links on hover */
-ul.tab li a:hover {
-    background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-ul.tab li a:focus, .active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    width: 100%;
-    padding: 2px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-    box-shadow: 0px 0px 15px #888888;
-}
-.tabcontent{
-padding-right:1em;
-padding-left:1em;
-}
-#newLeader{
-    margin-top:2em;
-}
-.form-control{
-    margin-bottom:1rem;
-}
-label{
-    margin-top:1rem;
-}
-.interim-header{
-    margin: -2rem 0 -2rem 0;
-}
-.files {
-  border-radius: 25px;
-}
-
-</style>
 </head>
 
 <body>
