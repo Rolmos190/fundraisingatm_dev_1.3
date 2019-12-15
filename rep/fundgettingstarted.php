@@ -42,7 +42,7 @@
 
  <div id="contentSample">
 	<h1>Getting Started</h1>
-	<h3>Welcome to GreatMoods!</h3>
+	<h3>Welcome to FundraisingATM!</h3>
 
 	<div id="column1b">
 		<div id="leadBox">
@@ -52,31 +52,31 @@
 	          </div> <!--end redBar1-->
 	          <ul>
 			<li><a href="fundgettingstarted1.php?group=<?php echo $_GET['group']; ?>">Welcome!</a></li>
-			<li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">GreatMoods Program Overview</a></li>
-			<li><a href="fundgettingstarted2.php?group=<?php echo $_GET['group']; ?>">GreatMoods Mission</a></li>
-			<li><a href="fundgettingstarted12.php?group=<?php echo $_GET['group']; ?>">GreatMoods Online Fundraising</a></li>
-			<li><a href="fundgettingstarted3.php?group=<?php echo $_GET['group']; ?>">Strengths of the Greatmoods Program</a></li>
+			<li><a href="fundgettingstarted11.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Program Overview</a></li>
+			<li><a href="fundgettingstarted2.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Mission</a></li>
+			<li><a href="fundgettingstarted12.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Online Fundraising</a></li>
+			<li><a href="fundgettingstarted3.php?group=<?php echo $_GET['group']; ?>">Strengths of the FundraisingATM Program</a></li>
 			<li><a href="fundgettingstarted4.php?group=<?php echo $_GET['group']; ?>">3 Steps to Fundraising $uccess</a></li>
-			<li><a href="fundgettingstarted5.php?group=<?php echo $_GET['group']; ?>">Greatmoods Mall Products & Gifts</a></li>
+			<li><a href="fundgettingstarted5.php?group=<?php echo $_GET['group']; ?>">FundraisingATM Mall Products & Gifts</a></li>
 			<li><a href="fundgettingstarted6.php?group=<?php echo $_GET['group']; ?>">We Deliver!</a></li>
 			<li><a href="fundgettingstarted7.php?group=<?php echo $_GET['group']; ?>">Cash Deposited Weekly!</a></li>
 			<li><a href="fundgettingstarted8.php?group=<?php echo $_GET['group']; ?>">Calculate Your $uccess</a></li>
 			<li><a href="fundgettingstarted10.php?group=<?php echo $_GET['group']; ?>">Generate Funds 24/7/365 Days a Year!</a></li>
 			<li><a href="fundgettingstarted9.php?group=<?php echo $_GET['group']; ?>">Sign Up & Start Today!</a></li>
 		</ul>
-	        </div> <!--end infoText--> 
+	        </div> <!--end infoText-->
 		</div> <!--end leadBox-->
-		
+
 		</div> <!--end column1-->
-	    
+
 	    <div id="column2b">
 		    <div>
 		    	<img src="../images/rep-pages/choir1.png" width="404" height="270" alt="High School Choir">
 			<img class="imgLeft" src="../images/rep-pages/youngboy1.png" width="198" height="166" alt="Young Elementary Boy">
 			<img class="imgRight" src="../images/rep-pages/church2.png" width="198" height="166" alt="Lady with Father">
 		    </div>
-		    <div id="pcaption">GreatMoods offers fundraising opportunities for schools, religious organizations, community organizations, and more. </div>
-	</div><!--end column2--> 
+		    <div id="pcaption">FundraisingATM offers fundraising opportunities for schools, religious organizations, community organizations, and more. </div>
+	</div><!--end column2-->
 
   </div>  <!--end content-->
 

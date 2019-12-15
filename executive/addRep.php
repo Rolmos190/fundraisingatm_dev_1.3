@@ -256,7 +256,7 @@ label{
 			</div> <!-- end row -->
 
 			<div class="tablerow" >
-				<select name="vpid" id="vpid" class="role2">
+				<select name="vpid" id="vpid" class="acctlist" onchange="fetch_select(this.value);">
 					<option>Select VP Account</option>
 					<?php
 					$query = "Select * FROM distributors  WHERE setupID='$id' and role='VP'";
@@ -418,7 +418,7 @@ label{
 										<option value="WY">WY</option>
 									</select>
 									<span></span><span></span>
-									<input id="zip" type="text" name="zip" maxlength="5">
+									<input id="zip" type="text" name="zip" maxlength="5" required>
 								</div> <!-- end row -->
 
 								<div class="row"> <!-- titles -->
@@ -796,12 +796,7 @@ label{
   							<img src="" alt="uploaded profile photo">
   						</div>
               <br><br>
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-                <div class="tablerow">
-                  <input type="submit" class="redbutton" value="Save & Exit">
-                  <input type="submit" class="redbutton" value="Save & Add Another">
-                </div> <!-- end row -->
-              </section>
+
 
                <!-- end row -->
             </div>
@@ -821,6 +816,15 @@ label{
 				</ol>
 				<input type="file" name="">
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
+        <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+				  <div class="tablerow">
+					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+					<input type="submit" class="redbutton" value="Save & Add Another">
+				  </div> <!-- end row -->
+				</section>
+
+
 			</form>
 		</div> <!-- end table -->
    <!--end content -->

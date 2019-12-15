@@ -58,16 +58,8 @@
     	<div class="grpcollage">
         	<div class="mainSlides"><img src="../<?php echo $group_photo;?>" alt="placeholder for group photo"></div>
 
-          <!-- this block might need to be deleted
-        	<div class="mainSlides"><img src="images/sliders/mainslider1.jpg" alt="Sign Up Your Group and Start Fundraising Today!"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider2.jpg" alt="How Our Fundraising Program Works"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider3.jpg" alt="Example of Free Member Fundraising Website"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider4.jpg" alt="Great Fundraising Products at the GreatMoods Mall"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider5.jpg" alt="Fundraising Products You  Really Want"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider6.jpg" alt="35% of Every Purchase is Yours!"></div>
-		<div class="mainSlides"><img src="images/sliders/mainslider7.jpg" alt="We Deliver Everything!"></div>
-		<div class="mainSlides"><a href="gettingstarted_sendemail.php"><img src="images/sliders/mainslider8.jpg" alt="3 Easy Steps To Sign Up & Start Today!"></a></div>
-  </div> <!-- end slider -- this block above maybe need to be deleted -->
+          <!-- this block might need to be deleted -->
+  </div> <!-- end slider -- this block above maybe need to be deleted-->
 	<div class="reasonsbox">
         <h5 id="reasons">Reasons for Our Fundraiser</h5>
         <?php

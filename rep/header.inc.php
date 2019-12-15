@@ -264,7 +264,7 @@
 <body>
 <div id="container">
   <div id="headerMain">
-  	<div id="bannerwrap"><a href="index.php"><img id="logo2" src="../images/whitelogo.png" alt="FundraisingATM Logo"></a>
+  	<div id="bannerwrap"><a href="index.php"><img id="logo2" src="../newdeal/images/FundraisingATM120519white.png" alt="FundraisingATM Logo"></a>
   	<img id="banner" src="../images/Header-new_Homepage-Collage.png" width="1024" height="150" alt=Photo Collage"></div>
 
     <div id="menuWrapper"> </div> <!--end menuWrapper-->

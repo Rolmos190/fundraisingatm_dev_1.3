@@ -8,7 +8,7 @@
       $groupID = trim($_GET['group']);
       $store = trim($_GET['storeid']);
       $where = $_SERVER['REQUEST_URI'];
-      
+
       $query1 = "SELECT * FROM Dealers WHERE loginid = '$groupID'";
       $result1 = mysqli_query($link, $query1) or die(mysqli_error($link));
       $row1 = mysqli_fetch_assoc($result1);
@@ -16,7 +16,7 @@
       $about = $row1['About'];
       $setup_person = $row1['setuppersonid'];
       $so_far = getSoloSales($groupID);
-      
+
        //get parent info
       $parent_query = "SELECT * FROM Dealers WHERE loginid = '$setup_person'";
       $getParent = mysqli_query($link, $parent_query)or die(mysqli_error($link));
@@ -29,7 +29,7 @@
       $start1 = $row7['FundraiserStartDate'];
       $end1 = $row7['FundraiserEndDate'];
       $goal = $row7['goal2'];
-      
+
       $query3 = "SELECT * FROM orgMembers WHERE fundraiserID = '$groupID'";
       $result3 = mysqli_query($link, $query3) or die(mysqli_error());
       $row3 = mysqli_fetch_assoc($result3);
@@ -37,7 +37,7 @@
       $owner_email = $row3['orgEmail'];
       $owner_phone = $row3['orgPhone'];
       $parent = $row3['fund_owner_id'];
-	  
+
       $table = "sample_websites";
       $query = "SELECT * FROM $table WHERE samplewebID = '$store'";
       $result = mysqli_query($link, $query) or die(mysqli_error($link));
@@ -77,18 +77,18 @@
 
 <body>
 <div id="container">
-	<?php include 'includes/header_sample.php'; ?> 
+	<?php include 'includes/header_sample.php'; ?>
 	<?php include 'navigation/fullSidebar_home.php'; ?>
-	
+
 	<div id="contentSample">
-		<h1 style="display:inline-block;">GreatMoods Mall</h1>
+		<h1 style="display:inline-block;">FundraisingATM Mall</h1>
 		<div id="searchbar"> <script type="text/javascript" src="https://app.ecwid.com/script.js?9012020" charset="utf-8"></script> <script type="text/javascript"> xSearch("id=my-search-9012020"); </script> </div>
 		
 		<div>
 			<!--<script type="text/javascript" src="https://app.ecwid.com/script.js?9012020"></script>-->
 			<!--<script type="text/javascript"> xMinicart("style=","layout=floating", "title=Click and drag to move"); </script>-->
 		</div>
-		
+
 		<!-- Product Browser Widget -->
 		<div id="my-store-9012020"></div>
 		<div>
@@ -97,8 +97,8 @@
 			<script type="text/javascript"> xProductBrowser("categoriesPerRow=4","views=grid(4,3) list(10) table(20)","categoryView=grid","searchView=list","id=my-store-9012020");</script>
 		</div>
 		<!-- END Product Browser Widget -->
-	
-	
+
+
 	</div> <!--end content-->
 
 	<!-- footer include deleted. add back later -->
