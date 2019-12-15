@@ -333,7 +333,7 @@ function fetch_select5(val)
 
 <div id="headerMain">
 	<div id="bannerwrap"><a href="../index.php"><img id="logo2" src="../newdeal/images/FundraisingATM120519white.png" alt=""></a>
-  	<img id="banner" src="../images/Header-new_Homepage-Collage.png" width="1024" height="150" alt="GreatMoods Photo Collage" /></div>
+  	<img id="banner" src="../images/Header-new_Homepage-Collage.png" width="1024" height="150" alt="FundraisingATM Photo Collage" /></div>
 
 	<div id="menuWrapper"> </div> <!--end menuWrapper-->
 
@@ -397,8 +397,8 @@ function fetch_select5(val)
 
 		            } elseif($_SESSION['LOGIN'] == "TRUE") {
 		                echo '<div class="loggedinMenu">';
-		                echo '<h5>my account</h5>';
-		                echo '<span><a href="../index.php">GreatMoods Homepage</a></span>';
+		                echo '<h5><strong>My Account</strong></h5>';
+		                echo '<span><a href="../index.php">FundraisingATM Homepage</a></span>';
 		         	echo '<span><a href="viewAccounts.php">Account Home</a></span>';
 		         	echo '<span><a href="../reset.php">Change My Password</a></span>';
 		         	echo '<br>';
