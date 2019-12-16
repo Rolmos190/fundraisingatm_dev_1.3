@@ -46,103 +46,96 @@
 </head>
 
 <body>
-<div id="container">
-	<?php include 'header_sample.php'; ?>
-	<?php include 'leftSideBarSample.php'; ?>
-
-  <div id="contentSample">
-    <div id="column1">
-      <br>
-    	<h3 class="sample"><!-- <?php echo $student_name; ?>'s --><?php echo $title; ?> Fundraiser</h3>
-
-    	<div class="grpcollage">
-        	<div class="mainSlides"><img src="../<?php echo $group_photo;?>" alt="placeholder for group photo"></div>
-
-          <!-- this block might need to be deleted -->
-  </div> <!-- end slider -- this block above maybe need to be deleted-->
-	<div class="reasonsbox">
-        <h5 id="reasons">Reasons for Our Fundraiser</h5>
-        <?php
-          echo '<div id ="reasoncontent">';
-          $r_list = explode('.', $reasons);
-          echo '<ul>';
-          foreach ($r_list as $item){
-            if ($item != ''){
-               echo '<li>', trim($item), '</li>';
+  <div id="container">
+    <?php include 'header_sample.php'; ?>
+    <?php include 'leftSideBarSample.php'; ?>
+    <div id="contentSample">
+      <div id="column1">
+        <br>
+      	<h3 class="sample"><!-- <?php echo $student_name; ?>'s --><?php echo $title; ?> Fundraiser</h3>
+        <div class="grpcollage">
+          <div class="mainSlides">
+            <img src="../<?php echo $group_photo;?>" alt="placeholder for group photo">
+          </div>
+        </div> <!-- end slider -- this block above maybe need to be deleted-->
+        
+        <div class="reasonsbox">
+          <h5 id="reasons">Reasons for Our Fundraiser</h5>
+          <?php
+            echo '<div id ="reasoncontent">';
+            $r_list = explode('.', $reasons);
+            echo '<ul>';
+            foreach ($r_list as $item){
+              if ($item != ''){
+                echo '<li>', trim($item), '</li>';
+              }
             }
-          }
-          echo '<?ul>';
-          echo '</div>';
-        ?>
-      </div>
+            echo '<?ul>';
+            echo '</div>';
+          ?>
+        </div> <!-- resonsbox -->
 
-      <div id="goals">
-      <br />
-      <p><strong>My Goal</strong><br />
-        $<?php echo $goal; ?></p><br/>
-      <p><strong>Raised<br />
-        So Far</strong><br />
-        $<?php echo $so_far; ?>.00</p>
-    </div> <!--end goals-->
+        <div id="goals">
+          <br />
+          <p><strong>My Goal</strong><br />
+          $<?php echo $goal; ?></p><br/>
+          <p><strong>Raised<br />
+          So Far</strong><br />
+          $<?php echo $so_far; ?>.00</p>
+        </div> <!--end goals-->
 
-      <div class="leader">
-      	<div class="leaderimgcrop">
-          <img src="../<?php echo $leader_photo;?>" alt="Leader photo">
-        </div> <!-- end leaderimgcrop -->
-        <div class="contactinfo2">
-          <span class="title"><strong><?php echo $position; ?></strong></span>
-          <span class="leadername"><?php echo $leader; ?></span>
+        <div class="leader">
+          <div class="leaderimgcrop">
+            <img src="../<?php echo $leader_photo;?>" alt="Leader photo">
+          </div> <!-- end leaderimgcrop -->
+          <div class="contactinfo2">
+            <span class="title"><strong><?php echo $position; ?></strong></span>
+            <span class="leadername"><?php echo $leader; ?></span>
+          </div>
+        </div> <!--end leader-->
+
+        <div class="studentleader">
+          <div class="leaderimgcrop">
+            <img src="../<?php echo $student_photo;?>" alt="Leader">
+          </div> <!-- end leaderimgcrop -->
+          <div class="contactinfo2">
+            <span class="title"><strong>Leader</strong></span>
+            <span class="leadername"><?php echo $student_leader_name; ?></span>
+          </div>
+        </div> <!--end studentleader-->
+      </div> <!-- End Column 1-->
+
+      <div id="column2">
+        <div class="shopDetails">
+          <ul class="stumenu">
+            <h5>Shopping Ideas For...</h5>
+            <li><a href="">Mothers</a></li>
+            <li><a href="">Grandmas</a></li>
+            <li><a href="">Fathers</a></li>
+            <li><a href="">Grandpas</a></li>
+            <li><a href="">Teen Girls</a></li>
+            <li><a href="">Teen Boys</a></li>
+            <li><a href="">Girls</a></li>
+            <li><a href="">Boys</a></li>
+            <li><a href="">Love &amp; Romance</a></li>
+            <li><a href="">Special Friends</a></li>
+            <li><a href="">Students Away at School</a></li>
+            <li><a href="">Customeres &amp; Clients</a></li>
+            <li><a href="">Me, Myself &amp; I</a></li>
+          </ul>
         </div>
-      </div> <!--end leader-->
-
-      <div class="studentleader">
-      	<div class="leaderimgcrop">
-          <img src="../<?php echo $student_photo;?>" alt="Leader">
-        </div> <!-- end leaderimgcrop -->
-        <div class="contactinfo2">
-         <span class="title"><strong>Leader</strong></span>
-          <span class="leadername"><?php echo $student_leader_name; ?></span>
+        <br>
+        <div class="bestsellers">
+	        <img src="../images/rightcol_collage_4pics_15nov2016.jpg" width="160" height="" alt="new arrivals daily">
         </div>
-      </div> <!--end studentleader-->
-
-  </div> <!-- End Column 1-->
-
-  <div id="column2">
-  	<div class="shopDetails">
-
-        <ul class="stumenu">
-          <h5>Shopping Ideas For...</h5>
-          <li><a href="">Mothers</a></li>
-          <li><a href="">Grandmas</a></li>
-          <li><a href="">Fathers</a></li>
-           <li><a href="">Grandpas</a></li>
-           <li><a href="">Teen Girls</a></li>
-           <li><a href="">Teen Boys</a></li>
-          <li><a href="">Girls</a></li>
-          <li><a href="">Boys</a></li>
-          <li><a href="">Love &amp; Romance</a></li>
-          <li><a href="">Special Friends</a></li>
-          <li><a href="">Students Away at School</a></li>
-          <li><a href="">Customeres &amp; Clients</a></li>
-          <li><a href="">Me, Myself &amp; I</a></li>
-        </ul>
-      </div>
-
-      <br>
-
-      <div class="bestsellers">
-	<img src="../images/rightcol_collage_4pics_15nov2016.jpg" width="160" height="" alt="new arrivals daily">
-      </div>
-
-  </div> <!-- end column 2 -->
-
-  </div> <!--end content-->
-  <div class="clearfloat">  </div>
-  <br><br>
-
-  <?php include 'footer.php' ; ?>
-</div>
-<!--end container-->
+      </div> <!-- end column 2 -->
+    </div> <!--end content sample-->
+    
+    <div class="clearfloat">  
+    </div>
+    <br><br>
+    <?php include 'footer.php' ; ?>
+  </div> <!--end container-->
 </body>
 </html>
 <?php
