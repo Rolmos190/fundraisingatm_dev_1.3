@@ -10,7 +10,7 @@
              <li><a href="addSupplier.php" title="">Add Supplier</a></li>
 
              <li><a href="addAdmin.php" title="">Add GM Administrator</a></li>
-             <li><a href="addVP2.php" title="">Add/Edit Vice President</a></li>
+             <li><a href="addVP.php" title="">Add/Edit Vice President</a></li>
             <li><a href="addSalesCoord.php" title="">Add Sales Coordinator</a></li>
              <li><a href="addRep.php" title="">Add Representative</a></li>
 						 <li><a href="addFundAccount.php" title="">Add Fundraiser Account</a></li>
