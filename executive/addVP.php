@@ -2,11 +2,11 @@
 <?php
 	session_start();
 	ob_start();
-	if(!isset($_SESSION['authenticated']))
-       {
-            header('Location: ../index.php');
-            exit;
-       }
+	// if(!isset($_SESSION['authenticated']))
+    //    {
+    //         header('Location: ../index.php');
+    //         exit;
+    //    }
 	include '../includes/connection.inc.php';
 	include('../samplewebsites/imageFunctions.inc.php');
     $link = connectTo();
@@ -219,8 +219,8 @@
     	<?php include 'sidenav.php' ; ?>
 	  
     	<div id="content">
-			<br>
 			<h1>Add Vice President</h1>
+			<br>
 			<div class="table">
 				<form class="graybackground" style="width:100%" action="addVP.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 					<!--<h3>--Option 1: Add One Business Associate --</h3>
@@ -358,6 +358,7 @@
 								<span id="hd_city">City</span>
 								<span></span>
 								<span id="hd_state">State</span>
+								<span></span>
 								<span id="hd_zip">Zip</span>
 							</div> <!-- end row -->
 
