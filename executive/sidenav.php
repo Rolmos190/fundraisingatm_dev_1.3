@@ -9,11 +9,11 @@
              <li><a href="viewSuppliers.php" title="">View Suppliers</a></li>
              <li><a href="addSupplier.php" title="">Add Supplier</a></li>
 
-             <li><a href="addAdmin.php" title="">Add GM Administrator</a></li>
+             <!-- <li><a href="addAdmin.php" title="">Add GM Administrator</a></li> -->
              <li><a href="addVP.php" title="">Add/Edit Vice President</a></li>
             <li><a href="addSalesCoord.php" title="">Add Sales Coordinator</a></li>
              <li><a href="addRep.php" title="">Add Representative</a></li>
-						 <li><a href="addFundAccount.php" title="">Add Fundraiser Account</a></li>
+						 <li><a href="addFundAccount2.php" title="">Add Fundraiser Account</a></li>
 						 <li><a href="addFundGroup.php" title="">Add Fundraiser Group</a></li>
 						 <li><a href="addFundLeader.php" title="">Add Fundraiser Leader</a></li>
 						 <li><a href="addFundMember.php" title="">Add Fundraiser Member</a></li>

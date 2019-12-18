@@ -219,8 +219,8 @@
     	<?php include 'sidenav.php' ; ?>
 	  
     	<div id="content">
-			<h1>Add Vice President</h1>
 			<br>
+			<h1>Add Vice President</h1>
 			<div class="table">
 				<form class="graybackground" style="width:100%" action="addVP.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 					<!--<h3>--Option 1: Add One Business Associate --</h3>
@@ -619,11 +619,12 @@
 									<option value="male">Male</option>
 								</select>
 							</div> <!-- end row -->	
+							<br>
 						</div> <!-- end information header -->
 					
 						<div class="interim-form" style="width:49%"> <!-- account login tab -->
 							<div class="interim-header">
-								<h2>Account Login</h2>
+								<h2>Create Your Account Login</h2>
 							</div>
 							<div id="row"> <!-- titles -->
 								<span id="hd_loginemail">Email Address</span>
@@ -638,10 +639,10 @@
 								<span id="hd_cpassword">Confirm Password</span>
 							</div> <!-- end row -->
 							<div id="row"> <!-- inputs -->
-								<input id="password" type="text" name="loginpass" value="">
-								<input id="password" type="text" name="cpass" value="">
+								<input id="password" type="password" name="loginpass" value="">
+								<input id="password" type="password" name="cpass" value="">
 							</div> <!-- end row -->
-							<br><br>
+							<br>
 						</div> <!-- end account login tab -->
 						
 						
@@ -677,6 +678,7 @@
 								<span id="hd_gp" title="Google+ Username or Profile URL">Google+</span>
 								<input type="url" id="gp" name="googleplus">
 							</div>--> <!-- end row -->
+							<br>
 						</div> <!-- end tab4 content (social media) -->
 							
 
@@ -692,7 +694,7 @@
 								<span id="">Preview Photo:</span>
 								<img src="" alt="uploaded profile photo">
 							</div> <!-- end row -->
-							<br><br><br>
+							<br><br><br><br>
 						</div> <!-- end tab3 content (profile pic) -->
 						
 						
