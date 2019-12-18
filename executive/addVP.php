@@ -417,7 +417,7 @@
 									<option value="WI">WI</option>
 									<option value="WY">WY</option>
 								</select>
-								<input id="zip" type="text" name="zip">
+								<input id="zip" type="text" name="zip" maxlength="5">
 							</div> <!-- end row -->
 						
 								
@@ -449,8 +449,8 @@
 								<span id="ext">Ext</span>
 							</div> <!-- end row -->
 							<div class="tablerow"> <!-- inputs -->
-								<input id="wphone1" type="text" name="wphone1"><!--<input id="wphone2" type="text" name="wphone2"><input id="wphone3" type="text" name="">-->
-								<input id="ext" type="text" name="ext">
+								<input id="wphone1" type="text" name="wphone1" maxlength="12"><!--<input id="wphone2" type="text" name="wphone2"><input id="wphone3" type="text" name="">-->
+								<input id="ext" type="text" name="ext" maxlength="5">
 							</div> <!-- end row -->
 									
 											
@@ -622,7 +622,7 @@
 							<br>
 						</div> <!-- end information header -->
 					
-						<div class="interim-form" style="width:49%"> <!-- account login tab -->
+						<div class="interim-form" > <!-- account login tab -->
 							<div class="interim-header">
 								<h2>Create Your Account Login</h2>
 							</div>
@@ -654,21 +654,21 @@
 								<span id="hd_fb" title="Facebook Name or Profile URL">Facebook</span>
 							</div> <!-- end row -->
 							<div class="tablerow"> 
-								<input type="url" id="fb"  name="fb">
+								<input type="url" id="fb"  name="fb" placeholder="www.facebook.com">
 							</div>
 							<br>
 							<div class="tablerow"> 
 								<span id="hd_tw" title="Twitter Username or Profile URL">Twitter</span>
 							</div> <!-- end row -->
 							<div class="tablerow"> 
-								<input type="url" id="tw" name="twitter">
+								<input type="url" id="tw" name="twitter" placeholder="www.twitter.com">
 							</div>
 							<br>
 							<div class="tablerow"> 
 								<span id="hd_li" title="LinkedIn Username or Profile URL">LinkedIn</span>
 							</div> <!-- end row -->
 							<div class="tablerow">
-								<input type="url" id="li" name="lindkedin">
+								<input type="url" id="li" name="lindkedin" placeholder="www.linkedin.com">
 							</div>
 							<!--<div class="tablerow"> 
 								<span id="hd_pn" title="Pintrest Username or Profile URL">Pintrest</span>
@@ -682,7 +682,7 @@
 						</div> <!-- end tab4 content (social media) -->
 							
 
-						<div class="interim-form" style="width:49%"> <!-- profile pic tab3 -->
+						<div class="interim-form"> <!-- profile pic tab3 -->
 							<div class="interim-header">
 								<h2>Profile Photo</h2>
 							</div>
@@ -700,7 +700,7 @@
 						
 						<br>
 
-						<div class="interim-form" style="width:99%"> <!-- payment tab -->
+						<div class="interim-form" style="width:95%"> <!-- payment tab -->
 							<div class="interim-header">
 								<h2>3 Simple Steps for Payment</h2>
 							</div>

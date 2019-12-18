@@ -332,7 +332,7 @@ session_start();
 										<option value="WI">WI</option>
 										<option value="WY">WY</option>
 									</select>
-									<input id="zip" type="text" name="zip">
+									<input id="zip" type="text" name="zip" maxlength="5">
 								</div> <!-- end row -->
 							
 						
@@ -364,8 +364,8 @@ session_start();
 									<span id="ext">Ext</span>
 								</div> <!-- end row -->
 								<div class="tablerow">
-									<input id="wphone1" type="text" name="wphone"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">--> 
-									<input id="ext" type="text" name="ext"> 
+									<input id="wphone1" type="text" name="wphone" maxlength="12"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">--> 
+									<input id="ext" type="text" name="ext" maxlength="5"> 
 								</div> <!-- end row -->
 							
 									
@@ -536,7 +536,7 @@ session_start();
 					<br>	
 				</div> <!-- end tab1 content (information) -->
 					
-				<div class="interim-form" style="width:49%"> <!-- account login tab -->
+				<div class="interim-form"> <!-- account login tab -->
 					<div class="interim-header"><h2>Create Account Login</h2></div>
 					<div class="tablerow"> <!-- title -->
 						<span id="hd_loginemail">Email Address</span>
@@ -564,21 +564,21 @@ session_start();
 								<span id="hd_fb" title="Facebook Name or Profile URL">Facebook</span>
 							</div> <!-- end row -->
 							<div class="tablerow"> 
-								<input type="url" id="fb"  name="fb">
+								<input type="url" id="fb"  name="fb" placeholder="www.facebook.com">
 							</div>
 							<br>
 							<div class="tablerow"> 
 								<span id="hd_tw" title="Twitter Username or Profile URL">Twitter</span>
 							</div> <!-- end row -->
 							<div class="tablerow"> 
-								<input type="url" id="tw" name="twitter">
+								<input type="url" id="tw" name="twitter" placeholder="www.twitter.com">
 							</div>
 							<br>
 							<div class="tablerow"> 
 								<span id="hd_li" title="LinkedIn Username or Profile URL">LinkedIn</span>
 							</div> <!-- end row -->
 							<div class="tablerow">
-								<input type="url" id="li" name="lindkedin">
+								<input type="url" id="li" name="lindkedin" placeholder="www.linkedin.com">
 							</div>
 					<!--<div class="tablerow"> 
 						<span id="hd_pn" title="Pintrest Username or Profile URL">Pintrest</span>
@@ -591,7 +591,7 @@ session_start();
 					<br>
 				</div> <!-- end tab4 content (social media) -->
 				
-				<div class="interim-form" style="width:49%"> <!-- profile pic tab5 -->
+				<div class="interim-form" > <!-- profile pic tab5 -->
 					<div class="interim-header"><h2>Profile Photo</h2></div>
 					<div class="tablerow"> 
 						<span id="">Upload Profile Photo:</span>
@@ -604,7 +604,7 @@ session_start();
 					<br><br><br><br>
 				</div> <!-- end tab5 content (profile pic) -->
 
-				<div class="interim-form" style="width:99%"> <!-- payment tab -->
+				<div class="interim-form" style="width:95%"> <!-- payment tab -->
 					<div class="interim-header"><h2>3 Simple Steps for Payment</h2></div>
 					<h3>1. PayPal Information</h3>
 					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>

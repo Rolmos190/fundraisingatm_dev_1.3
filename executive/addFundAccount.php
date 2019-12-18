@@ -30,9 +30,8 @@ session_start();
       <?php include 'sidenav.php' ; ?>
 
       <div id="content">
-	  <br>
           <h1>Add Fundraiser Account</h1>
-		
+		<br>
 		<div class="table">
 			<form class="graybackground" style="width:100%" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 			<!--<h3>--Option 1: Add One Account--</h3>-->
@@ -97,8 +96,8 @@ session_start();
 						</div> <!-- end row -->
 						<div class="tablerow"> <!-- inputs -->
 							<input id="address1" type="text" name="address1" value="">
-							<input id="wphone1" type="text" name="wphone1"><!--<input id="wphone2" type="text" name="wphone2"><input id="wphone3" type="text" name="wphone3">-->
-							<input id="ext" type="text" name="ext">
+							<input id="wphone1" type="text" name="wphone1" maxlength="12"><!--<input id="wphone2" type="text" name="wphone2"><input id="wphone3" type="text" name="wphone3">-->
+							<input id="ext" type="text" name="ext" maxlength="5">
 						</div> <!-- end row -->
 								<div class="tablerow">
 										<span id="hd_address2">Address 2</span>
@@ -169,12 +168,12 @@ session_start();
 							<option value="WI">WI</option>
 							<option value="WY">WY</option>
 							</select>
-							<input id="zip" type="text" name="zip" value="">
+							<input id="zip" type="text" name="zip" value="" maxlength="5">
 						</div> <!-- end row -->
 						<br>
 					</div> <!-- end tab 1 -->
 
-					<div class="interim-form" style="width:49%">
+					<div class="interim-form">
 						<div class="tablerow">
 							<div class="interim-header"><h2>Specify Account Type</h2></div>
 							<div class="row">
@@ -240,27 +239,27 @@ session_start();
 					</div> <!-- end tab 2 -->
 					
 					
-					<div class="interim-form" style="width:49%">
+					<div class="interim-form" >
 						<div class="interim-header"><h2>Social Media Connections</h2></div>
 						<div class="tablerow"> 
 								<span id="hd_fb" title="Facebook Name or Profile URL">Facebook</span>
 							</div> <!-- end row -->
 							<div class="tablerow"> 
-								<input type="url" id="fb"  name="fb">
+								<input type="url" id="fb"  name="fb" placeholder="www.facebook.com">
 							</div>
 							<br>
 							<div class="tablerow"> 
 								<span id="hd_tw" title="Twitter Username or Profile URL">Twitter</span>
 							</div> <!-- end row -->
 							<div class="tablerow"> 
-								<input type="url" id="tw" name="twitter">
+								<input type="url" id="tw" name="twitter" placeholder="www.twitter.com">
 							</div>
 							<br>
 							<div class="tablerow"> 
 								<span id="hd_li" title="LinkedIn Username or Profile URL">LinkedIn</span>
 							</div> <!-- end row -->
 							<div class="tablerow">
-								<input type="url" id="li" name="lindkedin">
+								<input type="url" id="li" name="lindkedin" placeholder="www.linkedin.com">
 							</div>
 						<!--<div class="tablerow"> 
 							<span id="hd_pn">Pinterest</span>
@@ -272,7 +271,7 @@ session_start();
 						</div>--> <!-- end row -->
 						<br>
 					</div> <!-- end tab 3 -->
-					<div class="interim-form" style="width:99%">
+					<div class="interim-form" style="width:95%">
 						<div class="interim-header"><h2>Add Fundraiser Group(s)</h2></div>
 						<div class="groupcolumn1">
 						<center><h5>Education</h5></center>
