@@ -28,8 +28,8 @@ session_start();
 
       <div id="content">
           <h1>Add Fundraiser Member</h1>
-<br>		
-		<div class="table">
+			<br>		
+			<div class="table">
             <form class="graybackground" style="width:99%" action="">
 				<!--<h3>--Option 1: Add One Member--</h3>-->
 				<div class="tablerow">

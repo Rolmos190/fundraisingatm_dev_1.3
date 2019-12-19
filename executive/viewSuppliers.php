@@ -3,17 +3,17 @@
    ob_start();
    include '../includes/functions.php';
 
-   if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "EX")
-    {
-            header('Location: ../index.php');
-            exit;
-    }
+  //  if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "EX")
+  //   {
+  //           header('Location: ../index.php');
+  //           exit;
+  //   }
    include "../includes/connection.inc.php";
    include "../includes/connection.inc2.php";
    //include('../samplewebsites/imageFunctions.inc.php');
    $id = $_SESSION['userId'];
-   //$link = connectTo();
-   $link2 = connectTo2();
+   $link = connectTo();
+  //  $link2 = connectTo2();
    
 ?>
  <body>
