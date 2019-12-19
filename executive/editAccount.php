@@ -14,12 +14,12 @@
       $table1 = "user_info";
       $table2 = "users";
       $table3 = "distributors";
-      
+
       //get info fo logged in user
       $query = "SELECT * FROM $table1 WHERE userInfoID='$id'";
       $result = mysqli_query($link, $query)or die("MySQL ERROR on query 1: ".mysqli_error($link));
       $row = mysqli_fetch_assoc($result);
-      
+
 ?>
 <!DOCTYPE html>
 <head>
@@ -34,27 +34,27 @@
       <div id="content">
           <h1>Edit My Account</h1>
           <h2># <?php echo $id ; ?> </h2>
-          <h3></h3>
-		
+
 	<div class="table">
 		<form class="" action="editAccount.php" >
-			
+
 		<div class="simpleTabs">
 			<!--<ul class="simpleTabsNavigation">
 				<li><a href="#">Information</a></li>
 				<li><a href="#">Account Login</a></li>
 				<li><a href="#">Profile Photo</a></li>
 			</ul>-->
-			
-			<div class="interim-form">
+
+			<div class="interim-form" style="width:49%">
 				<div class="interim-header"><h2>Contact Information</h2></div>
 				<div class="tablerow"> <!-- titles -->
-				        <span id="hd_cname">Company</span>									
+				  <span id="hd_cname">Company</span>
+          <span></span>
 					<span id="hd_fname">First</span>
 					<!--<span id="hd_mname">Middle</span>-->
+          <span></span>
 					<span id="hd_lname">Last</span>
 					<!--<span id="hd_pname" title="Preferred First Name">Preferred</span>-->
-                            		<span id="hd_title">Title</span>
 				</div> <!-- end row -->
 				<div class="tablerow"> <!-- inputs -->
 				        <input id="cname" type="text" name="company" value="<?php echo $row['companyName'];?>">
@@ -62,20 +62,23 @@
 					<!--<input id="mname" type="text" name="mname" value="<?php echo $row['MName'];?>">-->
 					<input id="lname" type="text" name="lname" value="<?php echo $row['LName'];?>">
 					<!--<input id="pname" type="text" name="" value="<?php echo $row['FName'];?>">-->
-    					<select name="salu">
-						<option value="">---</option>
-						<option value="">Mr.</option>
-						<option value="">Ms.</option>
-						<option value="">Mrs.</option>
-						<option value="">Miss</option>
-						<option value="">Dr.</option>
-						<option value="">Rev.</option>
-					</select>
 				</div> <!-- end row -->
-								
-				<table>
-	                            	<tr>
-	                                	<td id="td_1">
+        <div class="tablerow"> <!-- titles -->
+          <span id="hd_title">Title</span>
+        </div>
+        <div class="tablerow"> <!-- titles -->
+        <select name="salu">
+          <option value="">---</option>
+          <option value="">Mr.</option>
+          <option value="">Ms.</option>
+          <option value="">Mrs.</option>
+          <option value="">Miss</option>
+          <option value="">Dr.</option>
+          <option value="">Rev.</option>
+        </select>
+      </div>
+
+              <hr>
 							<div class="tablerow"> <!-- titles -->
 								<span id="hd_address1">Address 1</span>
 							</div> <!-- end row -->
@@ -90,6 +93,7 @@
 			                </div> <!-- end row -->
 							<div class="tablerow"> <!-- titles -->
 								<span id="hd_city">City</span>
+                <span></span><span></span>
 								<span id="hd_state">State</span>
 								<span id="hd_zip">Zip</span>
 							</div> <!-- end row -->
@@ -151,8 +155,7 @@
 								</select>
 								<input id="zip" type="text" name="" value="<?php echo $row['zip'];?>">
 							</div> <!-- end row -->
-                        			</td>
-                        			<td id="td_2">
+
                         				<!--<div class="tablerow"> <!-- title -->
                             				<!--<span id="hd_mphone">Mobile Phone</span>
 										</div> <!-- end row -->
@@ -166,17 +169,17 @@
                            	    			<!--<input id="hphone1" type="text" name=""><input id="hphone2" type="text" name=""><input id="hphone3" type="text" name="">
                       	    			</div> <!-- end row -->
 										<div class="tablerow"> <!-- title -->
+                      <br>
                            		 			<span id="hd_wphone">Primary Phone</span>
+                                    <span></span>
                            		 			<span id="ext">Ext</span>
 										</div> <!-- end row -->
                             				<div class="tablerow">
                            		 			<input id="wphone1" type="text" name="" value="<?php echo $row['homePhone'];?>"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
 											<input id="ext" type="text" name="ext" value="<?php echo $row['workPhoneExt'];?>">
 										</div> <!-- end row -->
-                        			</td>
-                        		</tr>
-                      		</table>
-                      		
+
+
                       		<!--<div class="tablerow"> <!-- titles -->
 								<!--<span id="hd_bday">Birthday</span>
 								<span id="hd_gender">Gender</span>
@@ -341,33 +344,35 @@
 							<option value="male">Male</option>
 						</select>
 					</div> <!-- end row -->
+          <br>
 				</div> <!-- end tab1 content -->
-						
-			
+
+
 
 			<div class="interim-form">
 				<div class="interim-header"><h2>Profile Photo</h2></div>
-				<div class="tablerow"> 
+				<div class="tablerow">
 					<span>Upload Profile Photo:</span><input type="file">
 					<input type="submit" class="redbutton" value="Upload Photo">
 				</div> <!-- end row -->
 				<br>
-				<div class="tablerow"> 
+				<div class="tablerow">
 					<span>Current Image:<span><br>
 					<img src="../<?php echo $row['picPath']; ?>" alt=" Profile Pic">
 				</div> <!-- end row -->
+        <br><br><br>
 			</div> <!-- end tab5 content -->
 		</div> <!-- end simple tabs -->
-		
+
 		<input type="submit" class="redbutton" value="Save Changes">
-		
+
 		</form>
 	</div> <!-- end table -->
 	<br>
 
   </div> <!--end content -->
-  
-      <?php include 'footer.php' ; ?>   
+
+      <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>
