@@ -580,16 +580,15 @@
 						<input id="loginemail" type="text" name="email">
 					</div> <!-- end row -->
 					<br>
-					<div class="tablerow"> <!-- titles -->
+          <div class="row"> <!-- titles -->
 					<span id="hd_password">Password</span>
-					<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
 					<span id="hd_cpassword">Confirm Password</span>
 					</div> <!-- end row -->
-					<div class="tablerow"> <!-- inputs -->
-						<input id="password" type="password" name="password">
-						<input id="password" type="password" name="cpassword">
+					<div class="row"> <!-- inputs -->
+						<input id="pass1" type="password" name="password" required>
+						<input id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required>
+						<span id="error"></span>
 					</div> <!-- end row -->
-					<br>
 				</div> <!-- end tab2 content (account login) -->
 
 
