@@ -33,26 +33,26 @@ $link = connectTo();
 ?>
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods | Vice President</title>
+	<title>FundraisingATM | Vice President</title>
 </head>
 
 <body>
 <div id="container">
       <?php include 'header.inc.php' ; ?>
       <?php include 'sidenav.php' ; ?>
-      
+
       <div id="content">
           	<br />
           	<h3>My Sales People</h3>
-          	
-          	
+
+
 		<select class="role4" name="scid" onChange="fetch_select4(this.value);" required>
 	      		<option>Select Sales Coordinator</option>
-	      		<option value="<?  echo $bob;?>">GreatMoods Coordinator</option>
-	      		<?
+	      		<option value="<?  echo $bob;?>">FundraisingATM Coordinator</option>
+	      		<?php
 	      		$sql = "SELECT * FROM distributors WHERE vpID = '$userID' AND role = 'SC'";
 			$result2 = mysqli_query($link, $sql)or die ("couldn't execute query distrubutors.".mysqli_error($link));
-		
+
 			while($row2 = mysqli_fetch_assoc($result2))
 			{
 	                   echo '<option value="'.$row2[loginid].'">'.$row2['FName'].' '.$row2[LName].'</option>';
@@ -71,10 +71,10 @@ $link = connectTo();
 		<th>Role</th>
 		<th>Actions</th>
 		</tr></thead>
-		<?
+		<?php
 		$sql = "SELECT * FROM distributors WHERE vpID = '$userID' AND role = 'SC'";
 		$result2 = mysqli_query($link, $sql)or die ("couldn't execute query distrubutors.".mysqli_error($link));
-	
+
 		while($row2 = mysqli_fetch_assoc($result2))
 		{
 		  $coordID = $row2['loginid'];
@@ -90,8 +90,8 @@ $link = connectTo();
 		?>
     </table></div>
   </div> <!--end content -->
-  
-      <?php include 'footer.php' ; ?>   
+
+      <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>

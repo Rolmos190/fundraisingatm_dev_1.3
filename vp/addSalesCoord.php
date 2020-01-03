@@ -11,14 +11,14 @@
           // echo "Account Frozen";
            header('Location: accountEdit.php');
        }
-       
+
 	$id = $_SESSION['userId'];
-	
+
 	$table1 = "user_info";
 	$table2 = "users";
 	$table3 = "distributors";
-        
-        
+
+
 	$upload_msg = "Message: <br />";
 	function isUniqueEmail($link, $table1, $email) {
 		$query = "SELECT * FROM $table1 WHERE email='$email'";
@@ -30,14 +30,14 @@
 			return true;
 		}
 	}
-	
+
 	// check if form has been submitted
 	if(isset($_POST['submit'])){
-	
+
 	$scPhoto = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/sc/';
 	$vpPicPath = "";
-	
+
 	//grab all form fileds
 	$vp = mysqli_real_escape_string($link, $_POST['vpid']);
 	$company = mysqli_real_escape_string($link, $_POST['cname']);
@@ -73,16 +73,16 @@
 	$landingPage = "sales/viewReps.php";
 	$who = "SC";
 	$percent = 1;
-	$salt = time(); 			// create salt using the current timestamp 
+	$salt = time(); 			// create salt using the current timestamp
 	$login_Pass = sha1($loginPass.$salt); 	// encrypt the password and salt with SHA1
 	//$distPic = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/sc/';
 	$imagePath = "";
-	
-	
+
+
 	  function process_image($name, $id, $tmpPic, $baseDirPath){
 
-		$cleanedPic = checkName($_FILES["$name"]["name"]);	
+		$cleanedPic = checkName($_FILES["$name"]["name"]);
 		if(!is_image($tmpPic)) {
     			// is not an image
     			$upload_msg .= $cleanedPic . " is not an image file. <br />";
@@ -90,29 +90,29 @@
     			if($_FILES['$name']['error'] > 0) {
 				$upload_msg .= $_FILES['$name']['error'] . "<br />";
 			} else {
-				
+
 				if (file_exists($baseDirPath.$id."/".$cleanedPic)){
 					$imagePath = "images/sc/".$id."/".$cleanedPic;
 				} else {
 					$picDirectory = $baseDirPath;
-					
-					
+
+
 					if (!is_dir($picDirectory.$id)){
 						mkdir($picDirectory.$id);
-						
+
 					}
 					$picDirectory = $picDirectory.$id."/";
 					move_uploaded_file($tmpPic, $picDirectory . $cleanedPic);
 					$upload_msg .= "$cleanedPic uploaded.<br />";
 					$imagePath = "images/sc/".$id."/".$cleanedPic;
-					
-					
+
+
 				}// end third inner else
 				return $imagePath;
 			} // end first inner else
 		      } // end else
 	     }// end process_image
-	    
+
 		//if good email insert data
 	    if(isUniqueEmail($link, $table1, $email)) {
 		$query1 = "INSERT INTO $table2 (username, password, Security, landingPage, salt, created, lastLogin, role)";
@@ -128,19 +128,19 @@
 		$res1 = mysqli_query($link, $query1)or die ("couldn't execute query 1.".mysqli_error($link));
 		// insert data into distributors table
 		$res2 = mysqli_query($link, $query2)or die ("couldn't execute query 2.".mysqli_error($link));
-		
+
 		$res3 = mysqli_query($link, $query3)or die ("couldn't execute query 3.".mysqli_error($link));
-		
+
 		if($res1 && $res2 && $res3){
 			mysqli_query($link, "commit;");
 			$query9 = "SELECT * FROM user_info WHERE email='$email'";
 			$res4 = mysqli_query($link, $query9)or die ("couldn't execute query 9.".mysqli_error());
 			$row = mysqli_fetch_assoc($res4);
 			$newUserID = $row['userInfoID'];
-			
+
 			$queryx = "UPDATE distributors SET loginid = '$newUserID ', distPicPath='$imagePath' WHERE email = '$email'";
 			mysqli_query($link, $queryx)or die ("couldn't execute query x.".mysqli_error($link));
-			
+
 			if($scPhoto != ''){
 		    $personalPicPath = process_image('uploaded_file',$newUserID, $scPhoto, $imageDirPath);
 		    if($personalPicPath !=''){
@@ -152,15 +152,15 @@
 			//newDistributorEmail($email,$FName,$LName,$cellPhone);
 			 header( 'Location: accounts.php' );
 
-		} 
-	      }    
-		
+		}
+	      }
+
 		else
 		{       /*
                         mysqli_query($link, "rollback;");
 			echo "I'm sorry, there was a problem creating your account.";
 			*/
-			
+
 			$query15 = "SELECT * FROM user_info WHERE email='$email'";
 			$res15 = mysqli_query($link, $query15)or die ("couldn't execute query 15.".mysqli_error($link));
 			$rowC = mysqli_fetch_assoc($res15);
@@ -183,21 +183,21 @@
 			$paypal2 = $rowC['userPaypal'];
 			$title2 = $rowC['title'];
 			$gender2 = $rowC['gender'];
-	
-			
+
+
 			$query16 = "INSERT INTO distributors (companyName, FName, LName, ssn, address1, address2, city, state, zip, email, fbPage, twitter,
 			 linkedin, vpID, workPhone, workPhoneExt,  distPicPath, setupID,loginid, role, paypal, title, gender)";
-			 
+
 		        $query16 .= " VALUES('$company2','$fname2','$lname2','$ssn2','$ad1','$ad2','$city2','$state2','$zip2',
 		        '$email','$fbPage','$twitter2','$linkedin2', '$id', '$newUserID', '$phone2', '$ext2', '$imagePath2', '$id', '$who', '$paypal2', '$title2', '$gender2')";
 		        $res16 = mysqli_query($link, $query16)or die ("couldn't execute query 16.".mysqli_error($link));
-		        
+
 		        echo "Your account has been successfuly created.\n\n";
 			//newDistributorEmail($email,$FName,$LName,$cellPhone);
 			 header( 'Location: accounts.php' );
-		
+
 	        }
-	
+
 
 	}// end if
    $userID = $_SESSION['userId'];
@@ -208,7 +208,7 @@
 ?>
 <!DOCTYPE html>
 <head>
-	<title>Add Sales Person</title>
+	<title>Add Sales Coordinator</title>
 </head>
 
 <body>
@@ -218,18 +218,18 @@
 
       <div id="content">
           <h2 align="center">Add Sales Coordinator</h2>
- 
+
 		<div id="border">
 	<form class="" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
-		<div class="table">	
+		<div class="table">
 			<div class="row">
 				<!--<select name="vpid" id="vpid" class="role2">
 					<option>Select VP Account</option>
 					<?php
 					$query = "Select * FROM distributors  WHERE setupID='$id' and role='VP'";
                                         $result = mysqli_query($link, $query)or die("MySQL ERROR om query 2: ".mysqli_error($link));
-                                        
-                          
+
+
                                         while($row = mysqli_fetch_assoc($result))
                                         {
 					   echo '<option value="'.$row['loginid'].'">'.$row[FName].' '.$row[LName].' '.$row[loginid].'</option>';
@@ -237,7 +237,7 @@
 					?>
 				</select>-->
 			</div> <!-- end row -->
-			
+
 			<div class="simpleTabs">
 				<!--<ul class="simpleTabsNavigation">
 					<li><a href="#">Information</a></li>
@@ -249,7 +249,7 @@
 
 				<div class="interim-form">
 					<div class="interim-header"><h3>Contact Information</h3></div>
-					<div class="row"> <!-- titles -->									
+					<div class="row"> <!-- titles -->
 						<span id="hd_fname">First</span>
 						<!--<span id="hd_mname">Middle</span>-->
 						<span id="hd_lname">Last</span>
@@ -273,7 +273,7 @@
 						</select>
 						<input id="cname" type="text" name="cname">
 					</div> <!-- end row -->
-								
+
 					<table>
 						<tr>
 							<td id="td_1">
@@ -283,14 +283,14 @@
 								<div class="row"> <!-- input -->
 									<input id="address1" type="text" name="address1" required>
 								</div> <!-- end row -->
-								
+
 								<div class="row"> <!-- title -->
 									<span id="hd_address2">Address 2</span>
 								</div> <!-- end row -->
 								<div class="row"> <!-- input -->
 									<input id="address2" type="text" name="address2">
 								</div> <!-- end row -->
-												
+
 								<div class="row"> <!-- titles -->
 									<span id="hd_city">City</span>
 									<span id="hd_state">State</span>
@@ -355,7 +355,7 @@
 									<input id="zip" type="text" name="zip" maxlength="5" required>
 								</div> <!-- end row -->
 							</td>
-						
+
 							<td id="td_2">
 								<!--<div class="row"> <!-- titles -->
 									<!--<span id="hd_mphone">Mobile Phone</span>
@@ -383,13 +383,13 @@
 									<span id="ext">Ext</span>
 								</div> <!-- end row -->
 								<div class="row">
-									<input id="phone" type="text" name="phone" maxlength="12"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">--> 
-									<input id="ext" type="text" name="ext" maxlength="5"> 
+									<input id="phone" type="text" name="phone" maxlength="12"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
+									<input id="ext" type="text" name="ext" maxlength="5">
 								</div> <!-- end row -->
 							</td>
 						</tr>
 					</table>
-									
+
 					<div class="row"> <!-- titles -->
 						<!--<span id="hd_bday">Birthday</span>-->
 						<span id="hd_gender">Gender</span>
@@ -553,9 +553,9 @@
 							<option value="female">Female</option>
 							<option value="male">Male</option>
 						</select>
-					</div> <!-- end row -->			
+					</div> <!-- end row -->
 				</div> <!-- end tab1 content (information) -->
-					
+
 				<div class="interim-form"> <!-- account login tab -->
 					<div class="interim-header"><h3>Account Login</h3></div>
 					<div class="row"> <!-- title -->
@@ -564,7 +564,7 @@
 					<div class="row"> <!-- input -->
 						<input id="email" type="email" name="email" required>
 					</div> <!-- end row -->
-					
+
 					<div class="row"> <!-- titles -->
 					<span id="hd_password">Password</span>
 					<span id="hd_cpassword">Confirm Password</span>
@@ -575,7 +575,7 @@
 						<span id="error"></span>
 					</div> <!-- end row -->
 				</div> <!-- end tab2 content (account login) -->
-					
+
 				<div class="interim-form"> <!-- payment tab -->
 					<h3>1. PayPal Information</h3>
 					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
@@ -601,33 +601,33 @@
 						<input id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
 					</div> <!-- end row -->
 					<br>
-					
+
 				</div> <!-- end tab3 content (payment) -->
-					
-			
-				
+
+
+
 				<div class="interim-form"> <!-- profile pic tab5 -->
 					<div class="interim-header"><h2>Profile Photo</h2></div>
-					<div class="row"> 
+					<div class="row">
 						<span id="">Upload Profile Photo:</span>
 						<input type="file" id="" name="uploaded_file">
 						<br><br>
-						
+
 					</div> <!-- end row -->
 				</div> <!-- end tab5 content (profile pic) -->
 			</div> <!-- end simple tabs -->
 		<br>
 			<input type="submit" name="submit" class="redbutton" value="Save & Exit">
+      </div> <!-- end table -->
 			<br><br>
 			<!--<input type="submit" name="submit" class="redbutton" value="Save & Add Another">-->
-		</div> <!-- end table -->
 	</form>
-     
+
 
 </div><!--end border-->
   </div> <!--end content -->
   <?php include 'footer.php' ; ?>
-         
+
 </div> <!--end container-->
 
 </body>
