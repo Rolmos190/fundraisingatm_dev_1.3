@@ -208,22 +208,33 @@
 ?>
 <!DOCTYPE html>
 <head>
-	<title>Add Sales Coordinator</title>
+	<meta charset="UTF-8" />
+	<title>FundraisingATM | VP</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
+  <link href="../css/allforms_styles.css" rel="stylesheet" type="text/css"/>
+
+
+	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
 </head>
 
 <body>
 <div id="container">
-      <?php include 'header.inc.php' ; ?>
-      <?php include 'sidenav.php' ; ?>
-
+  <?php include 'header.inc.php' ; ?>
+  <?php include 'sidenav.php' ; ?>
       <div id="content">
-          <h2 align="center">Add Sales Coordinator</h2>
 
-		<div id="border">
-	<form class="" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
-		<div class="table">
-			<div class="row">
-				<!--<select name="vpid" id="vpid" class="role2">
+          <h1>Add Sales Coordinator</h1>
+		  <br>
+ 		<div class="table">
+		<form class="graybackground" style="width:100%" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+			<div class="tablerow">
+				<span id="hd_vp2">Vice President:</span>
+			</div> <!-- end row -->
+
+			<div class="tablerow">
+				<select name="vpid">
 					<option>Select VP Account</option>
 					<?php
 					$query = "Select * FROM distributors  WHERE setupID='$id' and role='VP'";
@@ -235,7 +246,7 @@
 					   echo '<option value="'.$row['loginid'].'">'.$row[FName].' '.$row[LName].' '.$row[loginid].'</option>';
 					}
 					?>
-				</select>-->
+				</select>
 			</div> <!-- end row -->
 
 			<div class="simpleTabs">
@@ -247,21 +258,22 @@
 					<li><a href="#">Profile Photo</a></li>
 				</ul>-->
 
-				<div class="interim-form">
-					<div class="interim-header"><h3>Contact Information</h3></div>
-					<div class="row"> <!-- titles -->
+				<div class="interim-form" style="width:49%">
+					<div class="interim-header"><h2>Contact Information</h2></div>
+					<div class="tablerow"> <!-- titles -->
 						<span id="hd_fname">First</span>
-						<!--<span id="hd_mname">Middle</span>-->
+						<span></span>
+						<span id="hd_mname">Middle</span>
 						<span id="hd_lname">Last</span>
-						<!--<span id="hd_pname" title="Preferred First Name">Preferred</span>-->
-						<span id="hd_title">Title</span>
-						<span id="hd_cname" title="If you’re a member of a Group/Company being a Sales Coordinator together, please enter that Company Name">Company</span>
+						<!--<span id="hd_pname" title="Preferred First Name">Preferred</span>
+						<span id="hd_title">Title</span>-->
 					</div> <!-- end row -->
-					<div class="row"> <!-- inputs -->
-						<input id="fname" type="text" name="fname" required>
-						<!--<input id="mname" type="text" name="mname">-->
-						<input id="lname" type="text" name="lname" required>
-						<!--<input id="pname" type="text" name="pname">-->
+
+					<div class="tablerow"> <!-- inputs -->
+						<input id="fname" type="text" name="fname">
+						<input id="mname" type="text" name="mname">
+						<input id="lname" type="text" name="lname">
+						<!--<input id="pname" type="text" name="pname">
 						<select name="title">
 							<option value="" selected>---</option>
 							<option value="Mr.">Mr.</option>
@@ -269,36 +281,39 @@
 							<option value="Mrs.">Mrs.</option>
 							<option value="Miss">Miss</option>
 							<option value="Dr.">Dr.</option>
-							<option value="">Rev.</option>
-						</select>
-						<input id="cname" type="text" name="cname">
+						</select>-->
 					</div> <!-- end row -->
+					<div class="tablerow"> <!-- titles -->
+						<span id="hd_cname" title="If you’re a member of a Group/Company being a Sales Coordinator together, please enter that Company Name">Company</span>
+					</div>
+					<div class="tablerow"> <!-- titles -->
+						<input id="cname" type="text" name="cname">
+					</div>
+					<hr>
 
-					<table>
-						<tr>
-							<td id="td_1">
-								<div class="row"> <!-- title -->
+								<div class="tablerow"> <!-- title -->
 									<span id="hd_address1">Address 1</span>
 								</div> <!-- end row -->
-								<div class="row"> <!-- input -->
-									<input id="address1" type="text" name="address1" required>
+								<div class="tablerow"> <!-- input -->
+									<input id="address1" type="text" name="address1">
 								</div> <!-- end row -->
 
-								<div class="row"> <!-- title -->
+								<div class="tablerow"> <!-- title -->
 									<span id="hd_address2">Address 2</span>
 								</div> <!-- end row -->
-								<div class="row"> <!-- input -->
+								<div class="tablerow"> <!-- input -->
 									<input id="address2" type="text" name="address2">
 								</div> <!-- end row -->
 
-								<div class="row"> <!-- titles -->
+								<div class="tablerow"> <!-- titles -->
 									<span id="hd_city">City</span>
+									<span></span>
 									<span id="hd_state">State</span>
 									<span id="hd_zip">Zip</span>
 								</div> <!-- end row -->
-								<div class="row"> <!-- inputs -->
-									<input id="city" type="text" name="city" required>
-									<select id="state" name="state" required>
+								<div class="tablerow"> <!-- inputs -->
+									<input id="city" type="text" name="city">
+									<select id="state" name="state">
 										<option value="" selected="selected">--</option>
 										<option value="AL">AL</option>
 										<option value="AK">AK</option>
@@ -352,15 +367,15 @@
 										<option value="WI">WI</option>
 										<option value="WY">WY</option>
 									</select>
-									<input id="zip" type="text" name="zip" maxlength="5" required>
+									<input id="zip" type="text" name="zip" maxlength="5">
 								</div> <!-- end row -->
-							</td>
 
-							<td id="td_2">
-								<!--<div class="row"> <!-- titles -->
+
+
+								<!--<div class="tablerow"> <!-- titles -->
 									<!--<span id="hd_mphone">Mobile Phone</span>
 								</div>--> <!-- end row -->
-								<!--<div class="row">--> <!-- inputs -->
+								<!--<div class="tablerow">--> <!-- inputs -->
 									<!--<input id="mphone1" type="text" name="mphone"><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
 									<select id="mcarrier" title="Needed To Receive Texts From Computer">
 										<option>Select Carrier</option>
@@ -372,29 +387,28 @@
 										<option>Other</option>
 									</select>
 								</div>--> <!-- end row -->
-								<!--<div class="row">
+								<!--<div class="tablerow">
 									<span id="hd_hphone">Home Phone</span>
 								</div>--> <!-- end row -->
-								<!--<div class="row">
+								<!--<div class="tablerow">
 									<input id="hphone1" type="text" name="hphone"><input id="hphone2" type="text" name=""><input id="hphone3" type="text" name="">
 								</div>--> <!-- end row -->
-								<div class="row"> <!-- titles -->
+								<div class="tablerow"> <!-- titles -->
 									<span id="hd_wphone">Primary Phone</span>
+									<span></span>
 									<span id="ext">Ext</span>
 								</div> <!-- end row -->
-								<div class="row">
-									<input id="phone" type="text" name="phone" maxlength="12"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
+								<div class="tablerow">
+									<input id="wphone1" type="text" name="wphone" maxlength="12"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
 									<input id="ext" type="text" name="ext" maxlength="5">
 								</div> <!-- end row -->
-							</td>
-						</tr>
-					</table>
 
-					<div class="row"> <!-- titles -->
-						<!--<span id="hd_bday">Birthday</span>-->
+
+					<!--<div class="tablerow">--> <!-- titles -->
+						<!--<span id="hd_bday">Birthday</span>
 						<span id="hd_gender">Gender</span>
-					</div> <!-- end row -->
-					<!--<div class="row">--> <!-- inputs -->
+					</div>--> <!-- end row -->
+					<!--<div class="tablerow">--> <!-- inputs -->
 						<!--<select id="month" name="month">
 							<option value="na">Month</option>
 							<option value="1">January</option>
@@ -547,87 +561,129 @@
 							<option value="1916">1916</option>
 							<option value="1915">1915</option>
 							<option value="1914">1914</option>
-						</select>-->
+						</select>
 						<select id="gender" name="gender">
 							<option value="na">Gender</option>
 							<option value="female">Female</option>
 							<option value="male">Male</option>
 						</select>
-					</div> <!-- end row -->
+					</div>--> <!-- end row -->
+					<br>
 				</div> <!-- end tab1 content (information) -->
 
 				<div class="interim-form"> <!-- account login tab -->
-					<div class="interim-header"><h3>Account Login</h3></div>
-					<div class="row"> <!-- title -->
+					<div class="interim-header"><h2>Create Account Login</h2></div>
+					<div class="tablerow"> <!-- title -->
 						<span id="hd_loginemail">Email Address</span>
 					</div> <!-- end row -->
-					<div class="row"> <!-- input -->
-						<input id="email" type="email" name="email" required>
-					</div> <!-- end row -->
-
-					<div class="row"> <!-- titles -->
-					<span id="hd_password">Password</span>
-					<span id="hd_cpassword">Confirm Password</span>
-					</div> <!-- end row -->
-					<div class="row"> <!-- inputs -->
-						<input id="pass1" type="password" name="password" required>
-						<input id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required>
-						<span id="error"></span>
-					</div> <!-- end row -->
-				</div> <!-- end tab2 content (account login) -->
-
-				<div class="interim-form"> <!-- payment tab -->
-					<h3>1. PayPal Information</h3>
-					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
-					<div class="row"> <!-- title -->
-						<span id="hd_ppemail">PayPal Email</span>
-					</div> <!-- end row -->
-					<div class="row"> <!-- input -->
-						<input id="paypalemail" type="email" name="paypalemail" r>
+					<div class="tablerow"> <!-- input -->
+						<input id="loginemail" type="text" name="email">
 					</div> <!-- end row -->
 					<br>
+					<div class="tablerow"> <!-- titles -->
+					<span id="hd_password">Password</span>
+					<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+					<span id="hd_cpassword">Confirm Password</span>
+					</div> <!-- end row -->
+					<div class="tablerow"> <!-- inputs -->
+						<input id="password" type="password" name="password">
+						<input id="password" type="password" name="cpassword">
+					</div> <!-- end row -->
+					<br>
+				</div> <!-- end tab2 content (account login) -->
+
+
+				<div class="interim-form" style="width:49%"> <!-- social media tab4 -->
+					<div class="interim-header"><h2>Social Media Connections</h2></div>
+					<div class="tablerow">
+								<span id="hd_fb" title="Facebook Name or Profile URL">Facebook</span>
+							</div> <!-- end row -->
+							<div class="tablerow">
+								<input type="url" id="fb"  name="fb" placeholder="www.facebook.com">
+							</div>
+							<br>
+							<div class="tablerow">
+								<span id="hd_tw" title="Twitter Username or Profile URL">Twitter</span>
+							</div> <!-- end row -->
+							<div class="tablerow">
+								<input type="url" id="tw" name="twitter" placeholder="www.twitter.com">
+							</div>
+							<br>
+							<div class="tablerow">
+								<span id="hd_li" title="LinkedIn Username or Profile URL">LinkedIn</span>
+							</div> <!-- end row -->
+							<div class="tablerow">
+								<input type="url" id="li" name="lindkedin" placeholder="www.linkedin.com">
+							</div>
+					<!--<div class="tablerow">
+						<span id="hd_pn" title="Pintrest Username or Profile URL">Pintrest</span>
+						<input type="url" id="pn" name="printrest">
+					</div>--> <!-- end row -->
+					<!--<div class="tablerow">
+						<span id="hd_gp" title="Google+ Username or Profile URL">Google+</span>
+						<input type="url" id="gp" name="googleplus">
+					</div>--> <!-- end row -->
+					<br>
+				</div> <!-- end tab4 content (social media) -->
+
+				<div class="interim-form"> <!-- profile pic tab5 -->
+					<div class="interim-header"><h2>Profile Photo</h2></div>
+					<div class="tablerow">
+						<span id="">Upload Profile Photo:</span>
+						<input type="file" id="" name="uploaded_file">
+						<input type="submit" class="redbutton" value="Upload Photo">
+						<br><br><br>
+						<span id="">Preview Photo:</span>
+						<img src="" alt="uploaded profile photo">
+					</div> <!-- end row -->
+					<br><br><br><br>
+				</div> <!-- end tab5 content (profile pic) -->
+
+				<div class="interim-form" style="width:95%"> <!-- payment tab -->
+					<div class="interim-header"><h2>3 Simple Steps for Payment</h2></div>
+					<h3>1. PayPal Information</h3>
+					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
+					<div class="tablerow"> <!-- title -->
+						<span id="hd_ppemail">PayPal Email</span>
+					</div> <!-- end row -->
+					<div class="tablerow"> <!-- input -->
+						<input id="ppemail" type="text" name="paypalemail">
+					</div> <!-- end row -->
+
 					<h3>2. Fund Distribution and Tax Information</h3>
 					<p>One of the following numbers is required for distribution of funds and also for tax purposes.</p>
-					<div class="row"> <!-- titles -->
+					<div class="tablerow"> <!-- titles -->
 						<span id="hd_ssn">SSN</span>
+						<span></span>
 						<span id="hd_ftin">Fed-TIN</span>
 						<span id="hd_stin">State-TIN</span>
 						<span id="hd_nonp">501(c)(3)</span>
 					</div> <!-- end row -->
-					<div class="row"> <!-- inputs -->
-						<input id="ssn" type="text" name="ssn"><!--<input id="ssn2" type="text" name="ssn2"><input id="ssn3" type="text" name="ssn3">-->
+					<div class="tablerow"> <!-- inputs -->
+						<input id="ssn1" type="text" name="ssn1"><!--<input id="ssn2" type="text" name="ssn2"><input id="ssn3" type="text" name="ssn3">-->
 						<input id="ftin1" type="text" name="ftin1"><!--<input id="ftin2" type="text" name="ftin2">-->
 						<input id="stin1" type="text" name="stin1"><!--<input id="stin2" type="text" name="stin2">-->
 						<input id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
 					</div> <!-- end row -->
-					<br>
 
+					<h3>3. 1099 Form</h3>
+					<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
+					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
+					<br>
+					<h3>Sales Coordinator Total Commission Override: 1%</h3>
 				</div> <!-- end tab3 content (payment) -->
 
-
-
-				<div class="interim-form"> <!-- profile pic tab5 -->
-					<div class="interim-header"><h2>Profile Photo</h2></div>
-					<div class="row">
-						<span id="">Upload Profile Photo:</span>
-						<input type="file" id="" name="uploaded_file">
-						<br><br>
-
-					</div> <!-- end row -->
-				</div> <!-- end tab5 content (profile pic) -->
 			</div> <!-- end simple tabs -->
-		<br>
+
 			<input type="submit" name="submit" class="redbutton" value="Save & Exit">
-      </div> <!-- end table -->
-			<br><br>
-			<!--<input type="submit" name="submit" class="redbutton" value="Save & Add Another">-->
-	</form>
+			<input type="submit" name="submit" class="redbutton" value="Save & Add Another">
+		</form>
+	</div> <!-- end table -->
 
 
-</div><!--end border-->
   </div> <!--end content -->
-  <?php include 'footer.php' ; ?>
 
+      <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>
