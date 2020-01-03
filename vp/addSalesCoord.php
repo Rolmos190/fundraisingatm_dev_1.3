@@ -227,13 +227,13 @@
 
           <h1>Add Sales Coordinator</h1>
 		  <br>
- 		<div class="table">
-		<form class="graybackground" style="width:100%" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
-			<div class="tablerow">
+ 		<div id="border">
+		<form class="" style="width:100%" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+			<!-- <div class="tablerow">
 				<span id="hd_vp2">Vice President:</span>
 			</div> <!-- end row -->
 
-			<div class="tablerow">
+			<!-- <div class="tablerow">
 				<select name="vpid">
 					<option>Select VP Account</option>
 					<?php
@@ -677,8 +677,9 @@
 
 			<input type="submit" name="submit" class="redbutton" value="Save & Exit">
 			<input type="submit" name="submit" class="redbutton" value="Save & Add Another">
+    </div> <!-- end table -->
+    <br><br>
 		</form>
-	</div> <!-- end table -->
 
 
   </div> <!--end content -->
