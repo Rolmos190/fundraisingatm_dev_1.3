@@ -663,9 +663,10 @@ include '../includes/autoload.php';
 			
 				<input type="submit" name="submit" class="redbutton" value="Save & Exit">
 			</div> <!-- end table -->	
+			
 		</form>
-		<br><br>
 		</div><!--end border-->
+		<br>
   </div> <!--end content -->
   
       <?php include 'footer.php' ; ?>   

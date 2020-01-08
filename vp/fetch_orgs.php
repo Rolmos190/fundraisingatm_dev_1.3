@@ -11,8 +11,9 @@
       switch ($gp)
       {
       case "Christian Faiths":
-        echo'<div class="show">
-        <h7>Christianity</h7><br><br>         
+		echo'<div class="show">
+		<br>
+        <h5 style="color:#cc0000; text-decoration: underline;">Christianity</h5>        
         	<div class="typecolumns">  
       			<div class="typesection colnobreak">
 				<input type="radio" name="fundtype" value="Baptist"><label>Baptist</label> <br>
