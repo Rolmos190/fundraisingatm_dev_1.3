@@ -213,7 +213,7 @@
 	<link rel="shortcut icon" href="../images/favicon.ico">
 
 	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
-  <link href="../css/allforms_styles.css" rel="stylesheet" type="text/css"/>
+  	<link href="../css/allforms_styles.css" rel="stylesheet" type="text/css"/>
 
 
 	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
@@ -225,7 +225,7 @@
   <?php include 'sidenav.php' ; ?>
       <div id="content">
 
-          <h1>Add Sales Coordinator</h1>
+          <h1><center>Add Sales Coordinator</center></h1>
 		  <br>
  		<div id="border">
 		<form class="" style="width:100%" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
@@ -393,13 +393,13 @@
 								<!--<div class="tablerow">
 									<input id="hphone1" type="text" name="hphone"><input id="hphone2" type="text" name=""><input id="hphone3" type="text" name="">
 								</div>--> <!-- end row -->
-								<div class="tablerow"> <!-- titles -->
+								<div class="row"> <!-- titles -->
 									<span id="hd_wphone">Primary Phone</span>
 									<span></span>
 									<span id="ext">Ext</span>
 								</div> <!-- end row -->
-								<div class="tablerow">
-									<input id="wphone1" type="text" name="wphone" maxlength="12"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
+								<div class="row">
+									<input id="phone" type="text" name="wphone" maxlength="12"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
 									<input id="ext" type="text" name="ext" maxlength="5">
 								</div> <!-- end row -->
 

@@ -43,12 +43,12 @@ $link = connectTo();
 
       <div id="content">
           	<br />
-          	<h3>My Sales People</h3>
+          	<h2>My Sales People</h2>
 
 
 		<select class="role4" name="scid" onChange="fetch_select4(this.value);" required>
-	      		<option>Select Sales Coordinator</option>
-	      		<option value="<?  echo $bob;?>">FundraisingATM Coordinator</option>
+	      		<option disabled>Select Sales Coordinator</option>
+	      		<!-- <option value="<?  echo $bob;?>">FundraisingATM Coordinator</option> -->
 	      		<?php
 	      		$sql = "SELECT * FROM distributors WHERE vpID = '$userID' AND role = 'SC'";
 			$result2 = mysqli_query($link, $sql)or die ("couldn't execute query distrubutors.".mysqli_error($link));
@@ -59,8 +59,8 @@ $link = connectTo();
 		        }
 		        ?>
       		</select>
-      		<br><br>
-      		<div id="cd">
+			<br>
+			  <div id="cd">
 		<table class="table table-bordered table-striped">
 		    <thead>
 		<tr>

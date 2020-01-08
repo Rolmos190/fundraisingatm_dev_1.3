@@ -40,7 +40,7 @@
 		
 	<select class="role4" name="scid" onChange="fetch_select2(this.value);" required>
                                 <option>Select Sales Coordinator</option>
-                                <option value="<?  echo $bob;?>">GreatMoods Coordinator</option>
+                                <option value="<?  echo $bob;?>">FundraisingATM Coordinator</option>
       		                <?
       		                     $sql = "SELECT * FROM distributors WHERE vpID = '$userID' AND role = 'SC'";
 		                     $result2 = mysqli_query($link, $sql)or die ("couldn't execute query distrubutors.".mysql_error());

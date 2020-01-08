@@ -211,7 +211,12 @@ include '../includes/autoload.php';
 ?>
 <!DOCTYPE html>
 <head>
-	<title>Fundraising Representative</title>
+	<title>FundraisingATM | VP</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
+	<link href="../css/allforms_styles.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
+
 	
 </head>
 
@@ -222,20 +227,21 @@ include '../includes/autoload.php';
 
       <div id="content">
           <h2 align="center">Add Representative</h2>
-     
+
 		<br>
-		
+		<div id="border">
+
 		<form class="" action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
 			<div class="table">
 				<div class="row">
-					<!--<span id="hd_vp4">Vice President:</span>-->
-				&nbsp;	&nbsp;&nbsp;&nbsp;
+					<span id="hd_vp4">Sales Coordinator:</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;
 				</div> <!-- end row -->
 					
 				<div class="row">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<select class="role4" name="scid" onchange="fetch_select(this.value);" required>
+				<select class="role4" name="scid" onchange="fetch_select(this.value);" required>
 						<option value="">Select SC Account</option>
-						<option value="<?  echo $bob;?>">Set GreatMoods as Coordinator</option>
+						<option value="<?  echo $bob;?>">Set FundraisingATM as Coordinator</option>
 						<?php
 						$query = "Select * FROM distributors  WHERE setupID = '$id' and role='SC'";
 	                                        $result = mysqli_query($link, $query)or die("MySQL ERROR om query 2: ".mysqli_error($link));
@@ -268,7 +274,6 @@ include '../includes/autoload.php';
 					</select>-->
 				</div> <!-- end row -->
 				<br>
-				<div id="border">
 				<div class="simpleTabs">
 					<!--<ul class="simpleTabsNavigation">
 						<li><a href="#">Information</a></li>
@@ -280,8 +285,8 @@ include '../includes/autoload.php';
 
 			
 					<div class="interim-form"> <!-- information tab1 -->
-						<div class="interim-header"><h3>Contact Information</h3></div>
-						<div class="row"> <!-- titles -->									
+						<div class="interim-header"><h2>Contact Information</h2></div>
+						<div class="tablerow"> <!-- titles -->									
 							<span id="hd_fname">First</span>
 							<!--<span id="hd_mname">Middle</span>-->
 							<span id="hd_lname">Last</span>
@@ -311,10 +316,7 @@ include '../includes/autoload.php';
 							</select>
 							<!--<input id="cname" type="text" name="cname">-->
 						</div> <!-- end row -->
-									
-						<table>
-							<tr>
-								<td id="td_1">
+									<br>
 									<div class="row"> <!-- title -->
 										<span id="hd_address1">Address 1</span>
 									</div> <!-- end row -->
@@ -329,7 +331,7 @@ include '../includes/autoload.php';
 										<input id="address2" type="text" name="address2">
 									</div> <!-- end row -->
 													
-									<div class="row"> <!-- titles -->
+									<div class="tablerow"> <!-- titles -->
 										<span id="hd_city">City</span>
 										<span id="hd_state">State</span>
 										<span id="hd_zip">Zip</span>
@@ -392,9 +394,7 @@ include '../includes/autoload.php';
 										</select>
 										<input id="zip" type="text" name="zip" maxlength="5" >
 									</div> <!-- end row -->
-								</td>
 							
-								<td id="td_2">
 									<!--<div class="row">--> <!-- titles -->
 										<!--<span id="hd_mphone">Mobile Phone</span>
 									</div>--> <!-- end row -->
@@ -424,9 +424,7 @@ include '../includes/autoload.php';
 										<input id="phone" type="text" name="phone" maxlength="12"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
 										<input id="ext" type="text" name="ext" maxlength="5"> 
 									</div> <!-- end row -->
-								</td>
-							</tr>
-						</table>
+								
 										
 						<!--<div class="row">--> <!-- titles -->
 							<!--<span id="hd_bday">Birthday</span>
@@ -595,14 +593,14 @@ include '../includes/autoload.php';
 					</div> <!-- end tab1 content (information) -->
 						
 					<div class="interim-form"> <!-- account login tab -->
-						<div class="interim-header"><h3>Account Login</h3></div>
+						<div class="interim-header"><h2>Account Login</h2></div>
 						<div class="row"> <!-- title -->
 							<span id="hd_loginemail">Email Address</span>
 						</div> <!-- end row -->
 						<div class="row"> <!-- input -->
 							<input id="loginemail" type="email" name="email" required>
 						</div> <!-- end row -->
-						
+						<br>
 						<div class="row"> <!-- titles -->
 						<span id="hd_password">Password</span>
 						<span id="hd_cpassword">Confirm Password</span>
@@ -613,40 +611,9 @@ include '../includes/autoload.php';
 							<span id="error"></span>
 						</div> <!-- end row -->
 					</div> <!-- end tab2 content (account login) -->
-						
-					<div class="interim-form"> <!-- payment tab -->
-		
-						<h3>1. PayPal Information</h3>
-						<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
-						<div class="row"> <!-- title -->
-							<span id="hd_ppemail">PayPal Email</span>
-						</div> <!-- end row -->
-						<div class="row"> <!-- input -->
-							<input id="paypalemail" type="email" name="paypalemail">
-						</div> <!-- end row -->
-						<br>
-						<h3>2. Fund Distribution and Tax Information</h3>
-						<p>One of the following numbers is required for distribution of funds and also for tax purposes.</p>
-						<div class="row"> <!-- titles -->
-							<span id="hd_ssn">SSN</span>
-							<span id="hd_ftin">Fed-TIN</span>
-							<span id="hd_stin">State-TIN</span>
-							<span id="hd_nonp">501(c)(3)</span>
-						</div> <!-- end row -->
-						<div class="row"> <!-- inputs -->
-							<input id="ssn1" type="text" name="ssn1"><!--<input id="ssn2" type="text" name="ssn2"><input id="ssn3" type="text" name="ssn3">-->
-							<input id="ftin1" type="text" name="ftin1"><!--<input id="ftin2" type="text" name="ftin2">-->
-							<input id="stin1" type="text" name="stin1"><!--<input id="stin2" type="text" name="stin2">-->
-							<input id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
-						</div> <!-- end row -->
-						<br>
-				
-					</div> <!-- end tab3 content (payment) -->
-						
-					
 					
 					<div class="interim-form"> <!-- profile pic tab5 -->
-						<div class="interim-header"><h3>Profile Photo</h3></div>
+						<div class="interim-header"><h2>Profile Photo</h2></div>
 						<div class="row"> 
 							<span id="">Upload Profile Photo:</span>
 							<input type="file" id="" name="uploaded_file">
@@ -655,13 +622,49 @@ include '../includes/autoload.php';
 							
 						</div> <!-- end row -->
 					</div> <!-- end tab5 content (profile pic) -->
+						
+					<div class="interim-form" style="width:95%"> <!-- payment tab -->
+						<div class="interim-header"><h2>3 Simple Steps for Payment</h2></div>
+						<h3>1. PayPal Information</h3>
+						<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
+						<div class="tablerow"> <!-- title -->
+							<span id="hd_ppemail">PayPal Email</span>
+						</div> <!-- end row -->
+						<div class="tablerow"> <!-- input -->
+							<input id="ppemail" type="text" name="paypalemail">
+						</div> <!-- end row -->
+	
+						<h3>2. Fund Distribution and Tax Information</h3>
+						<p>One of the following numbers is required for distribution of funds and also for tax purposes.</p>
+						<div class="tablerow"> <!-- titles -->
+							<span id="hd_ssn">SSN</span>
+							<span></span>
+							<span id="hd_ftin">Fed-TIN</span>
+							<span id="hd_stin">State-TIN</span>
+							<span id="hd_nonp">501(c)(3)</span>
+						</div> <!-- end row -->
+						<div class="tablerow"> <!-- inputs -->
+							<input id="ssn1" type="text" name="ssn1"><!--<input id="ssn2" type="text" name="ssn2"><input id="ssn3" type="text" name="ssn3">-->
+							<input id="ftin1" type="text" name="ftin1"><!--<input id="ftin2" type="text" name="ftin2">-->
+							<input id="stin1" type="text" name="stin1"><!--<input id="stin2" type="text" name="stin2">-->
+							<input id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
+						</div> <!-- end row -->
+	
+						<h3>3. 1099 Form</h3>
+						<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
+						Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
+						<br>
+						<h3>Sales Coordinator Total Commission Override: 1%</h3>
+					</div> <!-- end tab3 content (payment) -->
+						
+					
+					
 				</div> <!-- end simple tabs -->
 			
 				<input type="submit" name="submit" class="redbutton" value="Save & Exit">
 			</div> <!-- end table -->	
 		</form>
-		
-		<br>
+		<br><br>
 		</div><!--end border-->
   </div> <!--end content -->
   
