@@ -32,8 +32,9 @@
         ';
         break;
       case "Judaism":
-        echo'
-        <h7>Judaism</h7><br><br>      
+		echo'
+		<br>
+        <h5 style="color:#cc0000; text-decoration: underline;">Judaism</h5>     
         	<div class="typecolumns">  
       			<div class="typesection colnobreak">                
 					<input type="radio" name="fundtype" value="Jewish Conservative"><label>Jewish Conservative</label> <br>
@@ -44,8 +45,9 @@
         ';
         break;
       case "Faiths":
-      echo'
-        <h7>Other Faiths</h7><br><br>     
+	  echo'
+		<br>
+        <h5 style="color:#cc0000; text-decoration: underline;">Other Faiths</h5>     
         	<div class="typecolumns">  
       			<div class="typesection colnobreak">                 
 					<input type="radio" name="fundtype" value="Buddhism"><label>Buddhism</label> <br>
@@ -59,8 +61,9 @@
         
         break;
       case "Local & National Organizations":
-        echo'
-        <h7>Local & National Organizations</h7><br><br> 
+		echo'
+		<br>
+        <h5 style="color:#cc0000; text-decoration: underline;">Local & National Organizations</h5>
         	<div class="typecolumns">  
       			<div class="typesection colnobreak">                     
 					<input type="radio" name="fundtype" value="Jaycees"><label>Jaycees</label> <br>
@@ -81,7 +84,7 @@
         
          break;
       case "Local & National Charities":
-      echo'<h7>Local & National Charities</h7><br><br>   
+      echo'<br> <h5 style="color:#cc0000; text-decoration: underline;">Local & National Charities</h5>   
       		<div class="typecolumns2">  
       			<div class="typesection colnobreak">                    
 					<input type="radio" name="fundtype" value="Alzheimer Foundation of America"><label class="smfont">Alzheimer Foundation of America</label> <br>
@@ -119,8 +122,9 @@
         
          break;
       case "Community Organizations":
-      echo'
-        <h7>Community Organizations</h7><br><br>   
+	  echo'
+	  <br>
+        <h5 style="color:#cc0000; text-decoration: underline;">Community Organizations</h5>   
         	<div class="typecolumns">  
       			<div class="typesection colnobreak">                   
 					<input type="radio" name="fundtype" value="Animal Shelters"><label>Animal Shelters</label> <br>
@@ -138,8 +142,9 @@
         
          break;
       case "Youth & Sports":
-      echo'
-        <h7>Youth & Sports</h7><br><br>     
+	  echo'
+	  <br>
+        <h5 style="color:#cc0000; text-decoration: underline;">Youth & Sports</h5>
         	<div class="typecolumns">  
       			<div class="typesection colnobreak">                 
 					<input type="radio" name="fundtype" value="Athletic Associations"><label>Athletic Associations</label> <br>

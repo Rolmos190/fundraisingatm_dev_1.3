@@ -51,6 +51,10 @@ $link = connectTo();
 <!DOCTYPE html>
 <head>
 	<title>Setup Group Information | Representative</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
+	<link href="../css/allforms_styles.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
 </head>
 
 <body>
@@ -60,7 +64,8 @@ $link = connectTo();
 
 <div id="content">  
       <h2 align="center">Add New Fundraiser</h2>
-      <h3>Step 2: Setup Fundraising Group Information</h3>
+	  <div id="border">
+      <h3 align="center">Step 2: Setup Fundraising Group Information</h3>
       
       
       <form class="" action="addFundraiser.php" method="post" id="myForm" name="myForm" onsubmit="return atleast_onecheckbox(event)" enctype="multipart/form-data">
@@ -94,8 +99,6 @@ $link = connectTo();
 	        ?>
       		</select>-->
       		<br>
-      		<br>
-      		<div id="border">
       		<div class="table">
 
         <?php
@@ -785,11 +788,11 @@ $link = connectTo();
 		break;
 
 		case "Episcopal":
-		echo '<div class="interim-form"> 
+		echo '<div class="interim-form" style="width:99%"> 
 			<div class="interim-header"><h2>Select Episcopal Organization to Setup</h2></div>
 
 			<input type="checkbox" name="all" onClick="toggle(this)">&nbsp;<label>Select All</label>
-			<br><br>
+			
 
 			<div class="groupcolumns">
 				<div class="groupsection">
@@ -2222,8 +2225,8 @@ case "Reformed":
 ?>
               
          <br>
-         <div class="interim-form">
-			<div class="interim-header"><h3>Contact Information</h3></div>
+         <div class="interim-form" style="width:50%">
+			<div class="interim-header"><h2>Contact Information</h2></div>
 			<div class="row">
 				<span id="hd_frname"><?echo $fundtype;?>&nbsp;Name</span>
 			</div> <!-- end row -->			
@@ -2233,7 +2236,8 @@ case "Reformed":
 			
 			<div class="row">
 				<span id="hd_address1">Address 1</span>
-        			<span id="hd_address2">Address 2</span>
+				<span></span><span></span><span></span>
+        		<span id="hd_address2">Address 2</span>
 			</div> <!-- end row -->
 			<div class="row">
 				<input id="address1" type="text" name="address1" maxlength="50" required>
@@ -2242,7 +2246,9 @@ case "Reformed":
 			
 			<div class="row">
 				<span id="hd_city">City</span>
-        			<span id="hd_state">State</span>
+				<span></span>
+					<span id="hd_state">State</span>
+					<span></span>
         			<span id="hd_zip">Zip</span>
 			</div> <!-- end row -->
 			<div class="row">
@@ -2299,7 +2305,8 @@ case "Reformed":
 					<option value="WV">WV</option>
 					<option value="WI">WI</option>
 					<option value="WY">WY</option>
-			        </select>
+					</select>
+					<span></span>
 			        <input id="zip" name="zip" type="text" maxlength="5" required/>
 			</div> <!-- end row -->
 			<div class="row">
@@ -2309,22 +2316,23 @@ case "Reformed":
 			<div class="row">
 			<input type="text" name="phone" id="phone" value="" maxlength="14" />
 			</div> <!-- end row -->
+			<br><br>
 		</div> <!-- end interim-form -->
 		
-		<div class="interim-form">
-			<div class="interim-header"><h3>Website</h3></div>
+		<div class="interim-form" style="width: 48%">
+			<div class="interim-header"><h2>Website</h2></div>
 				<div class="row">
-					<span id="hd_url"><?php echo $fundtype; ?>'s<br>Existing Website URL</span>
+					<span id="hd_url"><?php echo $fundtype; ?>'s Existing Website URL</span>
 				</div> <!-- end row -->
 				<div class="row">
-					<input id="url" name="websiteURL" type="url" maxlength="250">include http://
+					<input id="url" name="websiteURL" type="url" maxlength="250"><i>&nbsp;(include http://)</i>
 				</div> <!-- end row -->
 				
 				<div class="row">
 					<span id="hd_banner"></span>
 				</div> <!-- end row -->
 				<div class="row">
-				<h6><b>1.</b> <?echo $fundtype;?>'s Banner</h6>
+				<h6><b>1.</b> <?php echo $fundtype;?>'s Banner</h6>
 					<input id="AddOrgBannerPhoto" name="banner" type="file">
 				</div> <!-- end row -->
 				<div class="row"> <!-- Leader bottom left pic -->
@@ -2384,8 +2392,8 @@ case "Reformed":
         <input type="hidden" name="validation"  id="validation" value="0" />
         <input type="submit" name="submit" class="redbutton" value="Create New Fundraiser" >
       </form>
-      <br>
-      </div><!--end border-->  
+	</div><!--end border-->  
+	<br>
         
   </div> <!--end content-->
   
