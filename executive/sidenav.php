@@ -1,7 +1,7 @@
 
 <div id="leftSideBar">
 	<br>
-	<h1>GM Executive</h1>
+	<h1>FundraisingATM Executive</h1>
 
        	<ul id="sideNav" >
 
@@ -13,12 +13,12 @@
              <li><a href="addVP.php" title="">Add/Edit Vice President</a></li>
             <li><a href="addSalesCoord.php" title="">Add Sales Coordinator</a></li>
              <li><a href="addRep.php" title="">Add Representative</a></li>
-			<li><a href="addFundAccount.php" title="">Add Fundraiser Account</a></li>
-			<!-- <li><a href="addFundGroup.php" title="">Add Fundraiser Group</a></li> -->
-			<li><a href="addFundLeader.php" title="">Add Fundraiser Leader</a></li>
-			<li><a href="addFundMember.php" title="">Add Fundraiser Member</a></li>
-			<li><a href="addFriendFamily.php" title="">Add Friend & Family</a></li>
-			<li><a href="addBusinessSupporter.php" title="">Add Business Supporter</a></li>
+						 <li><a href="addFundAccount.php" title="">Add Fundraiser Account</a></li>
+						 <!-- <li><a href="addFundGroup.php" title="">Add Fundraiser Group</a></li> -->
+						 <li><a href="addFundLeader.php" title="">Add Fundraiser Leader</a></li>
+						 <li><a href="addFundMember.php" title="">Add Fundraiser Member</a></li>
+						 <li><a href="addFriendFamily.php" title="">Add Friend & Family</a></li>
+						 <li><a href="addBusinessSupporter.php" title="">Add Business Supporter</a></li>
 
 						 <!--
              <li><a href="emails.php" title="">Send Email</a></li>

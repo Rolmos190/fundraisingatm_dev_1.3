@@ -7,5 +7,5 @@ function connectTo2() {
 		$link = mysqli_connect("$host", "$username", "$password", "$db_name");
 		return $link;
 		mysqli_close($link);
-	}	
+	}
 ?>

@@ -12,22 +12,22 @@
    include "../includes/connection.inc2.php";
    //include('../samplewebsites/imageFunctions.inc.php');
    $id = $_SESSION['userId'];
-   $link = connectTo();
+   $link = connectTo2();
   //  $link2 = connectTo2();
-   
+
 ?>
  <body>
 
 <div id="container">
       <?php include 'header.inc.php' ; ?>
-    
+
       <?php include 'sidenav.php' ; ?>
 
       <div id="content">
       <br>
       <!--<div class="col-lg-4">-->
       <h3>View Suppliers</h3>
-      
+
       <table class="table table-bordered">
         <th>Supplier Name</th>
     	<th>Email</th>
@@ -41,7 +41,7 @@
     	<th colspan="2">Edit</th>
       <?php
         $query = "SELECT * FROM users";
-    	$result = mysqli_query($link2, $query)or die("MYSQL ERROR query 2: ".mysqli_error($link));
+    	$result = mysqli_query($link, $query)or die("MYSQL ERROR query 2: ".mysqli_error($link));
     	while($row = mysqli_fetch_assoc($result))
     	{
     	   echo "<tr>
@@ -82,7 +82,7 @@
         </div>
         </div>
      </div>
-     
+
       </div><!--content-->
       <?php include 'footer.php' ; ?>
       </div><!--container-->
