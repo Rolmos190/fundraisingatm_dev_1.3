@@ -24,6 +24,13 @@
 <!DOCTYPE html>
 <head>
 	<title>Add New Members</title> 
+	<link rel="shortcut icon" href="../images/favicon.ico">
+
+<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
+  <link href="../css/allforms_styles.css" rel="stylesheet" type="text/css"/>
+
+
+<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
 	<style>
 
 ul.tab {
@@ -125,7 +132,7 @@ ul.tab li a:focus, .active {
 				
 					  <div id="border">
 					<div class="interim-form">
-						<div class="interim-header"><h3>Contact Information</h3></div>
+						<div class="interim-header"><h2>Contact Information</h2></div>
 						<div class="row">
 							<!--<span>[Group] Leader Type: </span>--> <!-- [Group] = same as the selected group above -->
 							<!--<select name="">
@@ -168,7 +175,7 @@ ul.tab li a:focus, .active {
 					</div> <!-- end tab 1 -->
 					
 					<div class="interim-form">
-						<div class="interim-header"><h3>Account Login</h3></div>
+						<div class="interim-header"><h2>Account Login</h2></div>
 						<div id="row"> <!-- titles -->
 							<span id="hd_loginemail">Email Address</span>
 						</div> <!-- end row -->
@@ -188,7 +195,7 @@ ul.tab li a:focus, .active {
 					</div> <!-- end tab 2 -->
 					
 					<div class="interim-form">
-						<div class="interim-header"><h3>Social Media Connections</h3></div>
+						<div class="interim-header"><h2>Social Media Connections</h2></div>
 						<div id="row"> 
 							<span id="hd_fb">Facebook</span>
 							<input id="fb" type="text" name="fb" value="" placeholder="www.facebook.com">
@@ -204,16 +211,16 @@ ul.tab li a:focus, .active {
 							<input id="li" type="text" name="" value="" placeholder="www.linkedin.com">
 						</div> <!-- end row -->
 						
+					</div> <!-- end tab4 content (profile pic) -->
 					
 					<div class="interim-form"> <!-- profile pic tab4 -->
-						<div class="interim-header"><h3>Profile Photo</h3></div>
+						<div class="interim-header"><h2>Profile Photo</h2></div>
 						<div class="row"> 
 							<span id="">Upload Profile Photo:</span>
 							<input type="file" id="" name="uploaded_file">
 							<br>
 							<input type="submit" name="submit" class="redbutton" value="Add New Fundraiser Leader">
 						</div> <!-- end row -->
-					</div> <!-- end tab4 content (profile pic) -->
 				</div> <!-- end simple tabs -->
 			
 			 <!-- end table -->

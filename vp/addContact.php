@@ -149,7 +149,7 @@
 			
 					
 				<section class="interim-form" id="contactInformationSection-form">
-					<div class="interim-header"><h2>Information</h2></div><hr>
+					<div class="interim-header"><h2 style="color: #cc0000">Information</h2></div><hr>
 				
 						<!--<span>Friend or Family Type: </span>
 						<select name="">
@@ -492,8 +492,9 @@
 						    <option value="Business Supporter">Business Supporter</option>
 						    <option value="Friend & Family">Friend & Family</option>
 						</select>
-					</div> <!-- end row -->
-					<div class="interim-header"><h2>Contact Email</h2></div><hr>
+                    </div> <!-- end row -->
+                    <br><br><br>
+					<div class="interim-header"><h2 style="color: #cc0000">Contact Email</h2></div>
 
 					<div id="row-fluid"> <!-- inputs -->
 						<label for="email" id="hd_loginemail">Email Address</label>
@@ -533,7 +534,8 @@
 				<section class="row row-flex" style="margin-top:4rem" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
     				<div class="col-lg-3 col-lg-push-9">
     					<input style="width:15rem" type="submit" name="submit" class="redbutton btn btn-md btn-danger" value="Save & Exit">
-    				</div>
+                    </div>
+                    
 				</section> <!-- end SUBMIT BUTTON SECTION ROW -->
         	</form>
 
@@ -548,13 +550,14 @@
         		</ol>
         		<input type="file" name="">
         		<input class="redbutton" type="submit" name="uploaded_file" value="Upload File">
-        	</form>-->
+            </form>-->
+            
         	</div>
-        	
+        	<br><br><br>
 	    </div> <!--end AddPersonFormWrap -->
     </div><!-- end row wrap -->
 </div> <!--end container wrap -->
-      <?php include '../footer.php' ; ?>   
+      <?php include 'footer.php' ; ?>   
 
 </body>
 </html>

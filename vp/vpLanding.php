@@ -10,7 +10,7 @@
           // echo "Account Frozen";
            header('Location: accountEdit.php');
        }
-   
+
    $userID = $_SESSION['userId'];
    $query = "SELECT * FROM user_info WHERE userInfoID='$userID' and role='VP'";
    $result = mysqli_query($link, $query)or die ("couldn't execute query.".mysqli_error($link));
@@ -20,7 +20,7 @@
 ?>
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods | VP</title>
+	<title>FundraisingATM | VP</title>
 </head>
 
 <body>
@@ -34,8 +34,8 @@
 		<p></p>
 
   </div> <!--end content -->
-  
-      <?php include 'footer.php' ; ?>   
+
+      <?php include 'footer.php' ; ?>
 </div> <!--end container-->
 
 </body>

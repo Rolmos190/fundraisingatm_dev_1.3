@@ -42,7 +42,9 @@
 ?>
 <!DOCTYPE html>
 <head>
-	<title>Add New Fundraiser</title>
+	<title>FundraisingATM | Add Fundraiser Account</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+
 </head>
 
 <body>
@@ -52,16 +54,17 @@
       <?php include 'sidenav.php' ; ?>
       
       <div id="content">
-    <h2 align="center">Add New Fundraiser</h2>
-         &nbsp;&nbsp;&nbsp; <h3>Step 1: Choose Organization Type</h3>
+    <h2 align="center">Add Fundraiser Account</h2>
           
           <div id="border">
+			<h3 align="center">Step 1: Choose Organization Type</h3>
+
           <form name="fundraisingType" id="fundraisingType" method="post" action="information2.php" enctype="multipart/form-data">
           	<span id="ValidationError"></span><br>
           	<div id="graybackground50">
           		<div class="typecolumns2">
 				<div class="typesection colnobreak">
-					<h7>Education</h7> <br><br>
+					<h3 style="color: #cc0000; text-decoration: underline;">Education</h3>
 		          		<input type="radio" name="fundtype" value="Elementary School"  onClick="fetch_select16(this.value);">&nbsp;<label>Elementary School</label> <br>
 		          		<input type="radio" name="fundtype" value="Middle School" onClick="fetch_select16(this.value);">&nbsp;<label>Middle School</label> <br>
 					<input type="radio" name="fundtype" value="High School"  onClick="fetch_select16(this.value);">&nbsp;<label>High School</label> <br>
@@ -71,9 +74,9 @@
 					<input type="radio" name="fundtype" value="Trade, Vocational & Tech" onClick="fetch_select16(this.value);">&nbsp;<label>Trade, Vocational & Tech</label> <br>
 					<input type="radio" name="fundtype" value="Camps" onClick="fetch_select16(this.value);">&nbsp;<label>Camps</label> <br>
 				</div> <!-- end typesection-->
-				
+				<br>
 				<div class="typesection colnobreak">
-					<h7>Organizations</h7><br><br>                      
+					<h3 style="color: #cc0000; text-decoration: underline;">Organizations</h3>                      
 					<input type="radio" name="t" value="Christian Faiths" onClick="fetch_select15(this.value);">&nbsp;<label>Christian Faiths</label> <br>
 					<input type="radio" name="t" value="Judaism" onClick="fetch_select15(this.value);">&nbsp;<label>Judaism</label> <br>
 					<input type="radio" name="t" value="Faiths" onClick="fetch_select15(this.value);">&nbsp;<label>Other Faiths</label> <br>
@@ -91,7 +94,7 @@
 		
 			</div>
 		</div> <!-- end whitebackground50 -->
-		
+				
 				<!--<div class="typesection colnobreak">
 					<h7>Christianity</h7><br><br>                      
 					<input type="radio" name="fundtype" value="Baptist">&nbsp;<label>Baptist</label> <br>
@@ -137,7 +140,8 @@
         <input type="hidden" id="choice" name="choice" />
         <input type="submit" name="submit" class="redbutton" value="Step 2: Set Up Website" onclick="return ValidateRadios();" />
       </form>
-      </div><!--end border-->
+	  </div><!--end border-->
+	  <br>
   </div> <!--end content-->
   
       <?php include 'footer.php' ; ?>
