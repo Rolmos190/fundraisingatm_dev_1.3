@@ -42,7 +42,9 @@
 ?>
 <!DOCTYPE html>
 <head>
-	<title>Add New Fundraiser</title>
+	<title>FundraisingATM | Add Fundraiser Account</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+
 </head>
 
 <body>
@@ -52,7 +54,7 @@
       <?php include 'sidenav.php' ; ?>
       
       <div id="content">
-    <h2 align="center">Add New Fundraiser</h2>
+    <h2 align="center">Add Fundraiser Account</h2>
           
           <div id="border">
 			<h3 align="center">Step 1: Choose Organization Type</h3>

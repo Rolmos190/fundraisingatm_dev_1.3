@@ -211,7 +211,7 @@ include '../includes/autoload.php';
 ?>
 <!DOCTYPE html>
 <head>
-	<title>FundraisingATM | VP</title>
+	<title>FundraisingATM | Add Rep</title>
 	<link rel="shortcut icon" href="../images/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
 	<link href="../css/allforms_styles.css" rel="stylesheet" type="text/css"/>

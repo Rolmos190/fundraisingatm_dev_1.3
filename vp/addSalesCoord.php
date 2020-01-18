@@ -206,10 +206,12 @@
    $row = mysqli_fetch_assoc($result);
    $pic = $row['picPath'];
 ?>
+
+
 <!DOCTYPE html>
 <head>
 	<meta charset="UTF-8" />
-	<title>FundraisingATM | VP</title>
+	<title>FundraisingATM | Add SC</title>
 	<link rel="shortcut icon" href="../images/favicon.ico">
 
 	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
