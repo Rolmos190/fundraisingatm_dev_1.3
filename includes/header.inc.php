@@ -472,7 +472,7 @@ $(".row .thumbnail").click(function(){
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header" align="center">
-          <img class="img-rounded" id="img_logo" src="images/GMlogo.png">
+          <img class="img-rounded" id="img_logo" src="newdeal/images/fundatm_logo.png">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <i class="fa fa-times-circle" aria-hidden="true"></i>
           </button>
@@ -497,7 +497,7 @@ $(".row .thumbnail").click(function(){
                elseif ($_SESSION['LOGIN'] == "TRUE") {
                         echo '<div class="modal-body">';
                             echo '<div class="mallmenu">';
-            	            echo '<h4><a href="index.php">GreatMoods Homepage</a></h4>';
+            	            echo '<h4><a href="index.php">FundraisingATM Homepage</a></h4>';
             	         	echo '<h4><a href="'.$_SESSION['home'].'"/>Account Home</a></h4>';
                 	        echo '<h4><a href="reset.php">Change My Password</a></h4>';
             	         	echo '</div>'; /*modal body end */
