@@ -1238,7 +1238,7 @@ if(isset($_POST['login'])){
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header" align="center">
-          <img class="img-rounded" id="img_logo" src="../images/GMlogo.png">
+          <img class="img-rounded" id="img_logo" src="../newdeal/images/fundatm_logo.png">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <i class="fa fa-times-circle" aria-hidden="true"></i>
           </button>

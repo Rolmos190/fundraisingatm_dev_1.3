@@ -229,6 +229,7 @@
 
           <h1><center>Add Sales Coordinator</center></h1>
 		  <br>
+		
  		<div id="border">
 		<form class="" style="width:100%" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 			<!-- <div class="tablerow">

@@ -219,187 +219,192 @@ include '../includes/autoload.php';
 ?>
 <!DOCTYPE html>
 <head>
-	<title>GreatMoods | Vice President</title>
-		<style>
-    	    .form-control{
-    	        margin-bottom:1rem;
-    	    }
-    	    label{
-    	        margin-top:1rem;
-    	    }
-    	    .interim-header{
-    	        margin: 4rem 0 -2rem 0;
-    	    }
-    	    #border{
-background-color:#f8f8f8;
-box-shadow: 0px 0px 15px #888888;
-padding:15px 35px 40px 35px; 
-}
+	<title>FundraisingATM | Add Rep</title>
+	<link rel="shortcut icon" href="../images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
+  	<link href="../css/allforms_styles.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
+	<style>
+		.form-control{
+			margin-bottom:1rem;
+		}
+		/* label{
+			margin-top:1rem;
+		}
+		.interim-header{
+			margin: 4rem 0 -2rem 0;
+		} */
+		/* #border{
+			background-color:#f8f8f8;
+			box-shadow: 0px 0px 15px #888888;
+			padding:15px 35px 40px 35px; 
+		} */
 	</style>
 </head>
 <!-- unsure if some form areas are for markup only, or if they have significance for the overall submission form with php.... -->
 <body>
-      <?php include 'header.inc.php' ; ?>
-      <?php include 'sidenav.php' ; ?>
-      
-<div class="container" id="addRep" >
-    <div class="row-fluid row-flex">
-            
-        <!-- row / full width column -->        
-        <div class="page-header col-md-12">
+	<?php include 'header.inc.php' ; ?>
+	<?php include 'sidenav.php' ; ?>
+
+	<div class="container" id="addRep" >
+    	<div class="row-fluid row-flex">
+			<!-- row / full width column -->        
+			<div class="page-header col-md-12">
               <h2 align="center">Add Representative</h2>
-        </div>
-        <div class=" col-md-10 col-md-push-1" id="AddPersonFormWrap">
-<div style="margin-top:35px;" id="border">
-		<form class="" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
+        	</div>
+        	<div class=" col-md-10 col-md-push-1" id="AddPersonFormWrap">
+				<div style="" id="border">
+					<form style="width:100%" class="" action="addRep.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
+						
+						<!-- INFORMATION TABLE -->
+						<section class="interim-form" id="contactInformationSection-form" style="width:49%">
+							<div class="interim-header">
+								<h2>Contact Information</h2>
+							</div>
+
+								<!--<span>Friend or Family Type: </span>
+								<select name="">
+									<option value="">Select Type</option>
+									<option value="">Mom</option>
+									<option value="" selected>Dad</option>
+									<option value="">Brother</option>
+									<option value="">Sister</option>
+									<option value="">--etc--</option>
+								</select>-->
 			
-				<section class="interim-form" id="contactInformationSection-form">
-					<div class="interim-header"><h2>Information</h2></div>
-				
-						<!--<span>Friend or Family Type: </span>
-						<select name="">
-							<option value="">Select Type</option>
-							<option value="">Mom</option>
-							<option value="" selected>Dad</option>
-							<option value="">Brother</option>
-							<option value="">Sister</option>
-							<option value="">--etc--</option>
-						</select>-->
-						
-
-    				<div class="row"> <!-- INOFRMATION SECTION ROW ONE --><hr>
-					    <div class="col-md-3 col-lg-2">
-							<label for="title" id="hd_title">Title</label>
-    						<select class="form-control" name="title">
-    							<option value="">---</option>
-    							<option value="Mr.">Mr.</option>
-    							<option value="Ms.">Ms.</option>
-    							<option value="Mrs.">Mrs.</option>
-    							<option value="Miss">Miss</option>
-    							<option value="Dr.">Dr.</option>
-    							<option value="Rev.">Rev.</option>
-    						</select>
-    					</div>
-    					
-    					<div class="col-md-4 col-lg-4">
-    						<label for="fname" id="hd_fname">First</label>
-    						<input class="form-control" id="fname" type="text" name="fname" required>
-    					</div>
+							<div class="row"> <!-- INOFRMATION SECTION ROW ONE --><hr>
+								<div class="col-md-3 col-lg-2">
+									<label for="title" id="hd_title">Title</label>
+									<select class="" name="title">
+										<option value="">---</option>
+										<option value="Mr.">Mr.</option>
+										<option value="Ms.">Ms.</option>
+										<option value="Mrs.">Mrs.</option>
+										<option value="Miss">Miss</option>
+										<option value="Dr.">Dr.</option>
+										<option value="Rev.">Rev.</option>
+									</select>
+								</div>
+								
+								<div class="col-md-4 col-lg-4">
+									<label for="fname" id="hd_fname">First</label>
+									<input class="" id="fname" type="text" name="fname" required>
+								</div>
     						
-    					<div class="col-md-5 col-lg-4">
-    						<label for="lname" id="hd_lname">Last</label>
-        						<!--<input id="mname" type="text" name="mname">-->
-        						<input class="form-control" id="lname" type="text" name="lname" required>
-    						<!--<input id="pname" type="text" name="">-->
-                        </div>
+								<div class="col-md-5 col-lg-4">
+									<label for="lname" id="hd_lname">Last</label>
+									<!--<input id="mname" type="text" name="mname">-->
+									<input class="" id="lname" type="text" name="lname" required>
+									<!--<input id="pname" type="text" name="">-->
+								</div>
                         
-                        <div class="col-md-3 col-md-pull-3 col-lg-pull-0 col-lg-2">
-                            <label for="gender" id="hd_gender">Gender</label>
-    						<select class="form-control" name="gender"><!-- Is this not obvious from asking for title? What is the point... Why does it even matter? -->
-    							<option value="">---</option>
-    							<option value="Male">Male</option>
-    							<option value="Female">Female</option>
-    						</select>
-    				    </div>
-                    </div> <!-- end INFORMATION SECTION ROW ONE -->
+								<!--<div class="col-md-3 col-md-pull-3 col-lg-pull-0 col-lg-2">
+									<label for="gender" id="hd_gender">Gender</label>
+									<select class="" name="gender"><!-- Is this not obvious from asking for title? What is the point... Why does it even matter? 
+										<option value="">---</option>
+										<option value="Male">Male</option>
+										<option value="Female">Female</option>
+									</select>
+								</div>-->
+                    		</div> <!-- end INFORMATION SECTION ROW ONE -->
+							<br>
+							<div class="row"> <!-- INFORMATION ROW TWO -->
+								<div class="col-md-8">
+									<label for="address1" id="hd_address1">Address 1</label>
+									<input class="" id="address1" type="text" name="address1" required>
+								</div> 
+							</div><!-- end INFORMATION  row TWO -->
 
-                    <div class="row"> <!-- INFORMATION ROW TWO -->
-                        <div class="col-md-8">
-                            <label for="address1" id="hd_address1">Address 1</label>
-                            <input class="form-control" id="address1" type="text" name="address1" required>
-                        </div> 
-                    </div><!-- end INFORMATION  row TWO -->
-
-				    <div class="row"> <!-- INFORMATION ROW THREE -->
-    					<div class="col-md-8"> <!-- INFORMATION  row THREE -->
-    						<label for="address2" id="hd_address2">Address 2</label>
-    						<input class="form-control" id="address2" type="text" name="address2">
-    					</div> <!-- end col -->
-				    </div><!-- end INFORMATION  row THREE -->
-												
-				    <div class="row"> <!-- INFORMATION ROW FOUR -->
-    					<div class="col-md-12 col-lg-5">
-    						<label for="city" id="hd_city">City</label>
-    						<input class="form-control" id="city" type="text" name="city" required>
-    				    </div>
+							<div class="row"> <!-- INFORMATION ROW THREE -->
+								<div class="col-md-8"> <!-- INFORMATION  row THREE -->
+									<label for="address2" id="hd_address2">Address 2</label>
+									<input class="" id="address2" type="text" name="address2">
+								</div> <!-- end col -->
+							</div><!-- end INFORMATION  row THREE -->
+							<br>
+							<div class="row"> <!-- INFORMATION ROW FOUR -->
+								<div class="col-md-12 col-lg-5">
+									<label for="city" id="hd_city">City</label>
+									<input class="" id="city" type="text" name="city" required>
+								</div>
 									
-						<div class="col-md-3">
-							<label for="state" id="hd_state">State</label>
-							<select class="form-control" id="state" name="state" required>
-								<option value="" selected="selected">--</option>
-								<option value="AL">AL</option>
-								<option value="AK">AK</option>
-								<option value="AZ">AZ</option>
-								<option value="AR">AR</option>
-								<option value="CA">CA</option>
-								<option value="CO">CO</option>
-								<option value="CT">CT</option>
-								<option value="DE">DE</option>
-								<option value="DC">DC</option>
-								<option value="FL">FL</option>
-								<option value="GA">GA</option>
-								<option value="HI">HI</option>
-								<option value="ID">ID</option>
-								<option value="IL">IL</option>
-								<option value="IN">IN</option>
-								<option value="IA">IA</option>
-								<option value="KS">KS</option>
-								<option value="KY">KY</option>
-								<option value="LA">LA</option>
-								<option value="ME">ME</option>
-								<option value="MD">MD</option>
-								<option value="MA">MA</option>
-								<option value="MI">MI</option>
-								<option value="MN">MN</option>
-								<option value="MS">MS</option>
-								<option value="MO">MO</option>
-								<option value="MT">MT</option>
-								<option value="NE">NE</option>
-								<option value="NV">NV</option>
-								<option value="NH">NH</option>
-								<option value="NJ">NJ</option>
-								<option value="NM">NM</option>
-								<option value="NY">NY</option>
-								<option value="NC">NC</option>
-								<option value="ND">ND</option>
-								<option value="OH">OH</option>
-								<option value="OK">OK</option>
-								<option value="OR">OR</option>
-								<option value="PA">PA</option>
-								<option value="RI">RI</option>
-								<option value="SC">SC</option>
-								<option value="SD">SD</option>
-								<option value="TN">TN</option>
-								<option value="TX">TX</option>
-								<option value="UT">UT</option>
-								<option value="VT">VT</option>
-								<option value="VA">VA</option>
-								<option value="WA">WA</option>
-								<option value="WV">WV</option>
-								<option value="WI">WI</option>
-								<option value="WY">WY</option>
-							</select>
-						</div>
+								<div class="col-md-3">
+									<label for="state" id="hd_state">State</label>
+									<select class="" id="state" name="state" required>
+										<option value="" selected="selected">--</option>
+										<option value="AL">AL</option>
+										<option value="AK">AK</option>
+										<option value="AZ">AZ</option>
+										<option value="AR">AR</option>
+										<option value="CA">CA</option>
+										<option value="CO">CO</option>
+										<option value="CT">CT</option>
+										<option value="DE">DE</option>
+										<option value="DC">DC</option>
+										<option value="FL">FL</option>
+										<option value="GA">GA</option>
+										<option value="HI">HI</option>
+										<option value="ID">ID</option>
+										<option value="IL">IL</option>
+										<option value="IN">IN</option>
+										<option value="IA">IA</option>
+										<option value="KS">KS</option>
+										<option value="KY">KY</option>
+										<option value="LA">LA</option>
+										<option value="ME">ME</option>
+										<option value="MD">MD</option>
+										<option value="MA">MA</option>
+										<option value="MI">MI</option>
+										<option value="MN">MN</option>
+										<option value="MS">MS</option>
+										<option value="MO">MO</option>
+										<option value="MT">MT</option>
+										<option value="NE">NE</option>
+										<option value="NV">NV</option>
+										<option value="NH">NH</option>
+										<option value="NJ">NJ</option>
+										<option value="NM">NM</option>
+										<option value="NY">NY</option>
+										<option value="NC">NC</option>
+										<option value="ND">ND</option>
+										<option value="OH">OH</option>
+										<option value="OK">OK</option>
+										<option value="OR">OR</option>
+										<option value="PA">PA</option>
+										<option value="RI">RI</option>
+										<option value="SC">SC</option>
+										<option value="SD">SD</option>
+										<option value="TN">TN</option>
+										<option value="TX">TX</option>
+										<option value="UT">UT</option>
+										<option value="VT">VT</option>
+										<option value="VA">VA</option>
+										<option value="WA">WA</option>
+										<option value="WV">WV</option>
+										<option value="WI">WI</option>
+										<option value="WY">WY</option>
+									</select>
+								</div>
     									
-    					<div class="col-md-4">
-    						<label for="zip" id="hd_zip">Zip</label>
-    						<input class="form-control" id="zip" type="text" name="zip" maxlength="5" required>
-    					</div>
-				    </div> <!-- end INFORMATION row FOUR -->
-							    
-					<div class="row"><!--  INFORMATION ROW FIVE -->
-					    <div class="col-md-8">
-							<label for="phone" id="hd_wphone">Primary Phone</label>
-							<input class="form-control" id="phone" type="text" name="phone" maxlength="14"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
-						</div>
-						
-					    <div class="col-md-4">
-							<label for="ext" id="hd_ext">Ext</label>
-							<input class="form-control" id="ext" type="text" name="ext" maxlength="5">
-						</div>
-					</div> <!-- END INFORMATION  row FIVE -->
-				</section>
-				<!-- END INFORMATION SECTION FORM -->
+								<div class="col-md-4">
+									<label for="zip" id="hd_zip">Zip</label>
+									<input class="" id="zip" type="text" name="zip" maxlength="5" required>
+								</div>
+				    		</div> <!-- end INFORMATION row FOUR -->
+							<br>
+							<div class="row"><!--  INFORMATION ROW FIVE -->
+								<div class="col-md-8">
+									<label for="phone" id="hd_wphone">Primary Phone</label>
+									<input class="form-control" id="phone" type="text" name="phone" maxlength="14"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
+								</div>
+								
+								<div class="col-md-4">
+									<label for="ext" id="hd_ext">Ext</label>
+									<input class="" id="ext" type="text" name="ext" maxlength="5">
+								</div>
+							</div> <!-- END INFORMATION  row FIVE -->
+						</section>
+						<!-- END INFORMATION SECTION FORM -->
 										
 						<!--<div class="row">--> <!-- titles -->
 							<!--<span id="hd_bday">Birthday</span>
@@ -565,107 +570,106 @@ padding:15px 35px 40px 35px;
 								<option value="male">Male</option>
 							</select>
 						</div>--> <!-- end row -->			
-				<!--	</div> <!-- end tab1 content (information) -->
+						<!--	</div> <!-- end tab1 content (information) -->
 						
-                    <section class="interim-form" id="createAccountSection-form">
-    					<div class="interim-header"><h2>Account Login</h2></div>
-						<div class="row"> <!-- EMAIL INPUT --><hr>
-							<div class="col-md-8">
-    							<label for="loginemail" id="hd_loginemail">Email Address</label>
-    							<input class="form-control" id="loginemail" type="email" name="email" required>
+						<!--ACCOUNT LOGIN TABLE-->
+                    	<section class="interim-form" id="createAccountSection-form" style="width:49%">
+    						<div class="interim-header">
+								<h2>Account Login</h2>
 							</div>
-						</div> <!-- end row -->
+							<div class="row"> <!-- EMAIL INPUT --><hr>
+								<div class="col-md-8">
+									<label for="loginemail" id="hd_loginemail">Email Address</label>
+									<input class="" id="loginemail" type="email" name="email" required>
+								</div>
+							</div> <!-- end row -->
+							<br>
+							<div class="row"> <!-- PASSWORD INPUT AND CONFIRMATION -->
+								<div class="col-md-5">
+									<label for="pass1" id="hd_password">Password</label>
+									<input class="" id="pass1" type="password" name="password" required> 
+								</div>
+								<div class="col-md-5">
+									<label for="pass2" id="hd_cpassword">Confirm Password</label>
+									<input class="" id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required>	
+									<label class="redText" id="error"></label>
+								</div>   
+							</div> <!-- end row -->
+						</section> <!-- end create account -->
+					
+						<!--PROFILE PHOTO TABLE-->
+						<section class="interim-form" style="width:49%; height:300px"> <!-- profile pic tab5 -->
+							<div class="interim-header">
+								<h2>Profile Photo</h2>
+							</div><hr>
+							<div class="row"> 
+								<label fpr="uploaded_file" id="">Upload Profile Photo:</label>
+								<input type="file" id="" name="uploaded_file">
+								<br><br><br>
+							</div> <!-- end row -->
+						</section> <!-- end profile pic -->
 						
-						<div class="row"> <!-- PASSWORD INPUT AND CONFIRMATION -->
-							<div class="col-md-4">
-    							<label for="pass1" id="hd_password">Password</label>
-    							<input class="form-control" id="pass1" type="password" name="password" required> 
+						<!--PAYMENT TABLE-->
+					 	<section class="interim-form" id="stepForPaymentSection-form" style="width:100%"> <!-- Paypal Section -->
+							<div class="interim-header">
+								<h2>3 Simple Steps for Payment</h2>
 							</div>
-							<div class="col-md-4">
-    							<label for="pass2" id="hd_cpassword">Confirm Password</label>
-    							<input class="form-control" id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required>	
-    							<label class="redText" id="error"></label>
-				            </div>
-				            
-						</div> <!-- end row -->
-					</section> <!-- end create account -->
-						
-					 <section class="interim-form" id="stepForPaymentSection-form"> <!-- Paypal Section -->
-						<div class="interim-header"><h2>3 Simple Steps for Payment</h2></div>
-    						<div class="row" style="margin-left:15px;"><hr>
-        						<h3>1. PayPal Information</h3>
-        						<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
-        				    </div>	
-        				    
-    						<div class="row" style="margin-left:15px;"> <!-- title -->
-    						    <div class="col-md-8">
-        							<label for="paypalemail" id="hd_ppemail">PayPal Email</label>
-        							<input class="form-control" id="paypalemail" type="email" name="paypalemail" >
-        						</div>
-    						</div> <!-- end row -->
-    						
-
-
-    						
+							<div class="row" style="margin-left:15px;"><hr>
+								<h3>1. PayPal Information</h3>
+								<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
+							</div>	
+								
+							<div class="row" style="margin-left:15px;"> <!-- title -->
+								<div class="col-md-8">
+									<label for="paypalemail" id="hd_ppemail">PayPal Email</label>
+									<input class="form-control" id="paypalemail" type="email" name="paypalemail" >
+								</div>
+							</div> <!-- end row -->
+    					
         					<div class="row" style="margin-left:15px;"> <!-- THIS BETTER BE SECURE. I WOULD NEVER GIVE MY FULL SSN OUT ONLINE..... -->
-    						<h3>2. Fund Distribution and Tax Information</h3>
-    						<p>One of the following numbers is required for distribution of funds and also for tax purposes.</p>
-    						
-    							<div class="col-md-3">
-        							<label for="ssn1" id="hd_ssn">SSN</label>
-        							<input class="form-control" id="ssn1" type="text" name="ssn1"><!--<input id="ssn2" type="text" name="ssn2"><input id="ssn3" type="text" name="ssn3">-->
-        						</div>
-    							<div class="col-md-3">
-        							<label for="ftin1" id="hd_ftin">Fed-TIN</label>
-        							<input class="form-control" id="ftin1" type="text" name="ftin1"><!--<input id="ftin2" type="text" name="ftin2">-->
-          						</div>
-    							<div class="col-md-3">
-          							<label for="stin1" id="hd_stin">State-TIN</label>
-        							<input class="form-control" id="stin1" type="text" name="stin1"><!--<input id="stin2" type="text" name="stin2">-->
-        						</div>
-    							<div class="col-md-3">
-        							<label for="nonp1" id="hd_nonp">501(c)(3)</label>
-        							<input class="form-control" id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
-        						</div>
-    						</div> <!-- end row -->
+								<h3>2. Fund Distribution and Tax Information</h3>
+								<p>One of the following numbers is required for distribution of funds and also for tax purposes.</p>
+								<div class="col-md-3">
+									<label for="ssn1" id="hd_ssn">SSN</label>
+									<input class="form-control" id="ssn1" type="text" name="ssn1"><!--<input id="ssn2" type="text" name="ssn2"><input id="ssn3" type="text" name="ssn3">-->
+								</div>
+								<div class="col-md-3">
+									<label for="ftin1" id="hd_ftin">Fed-TIN</label>
+									<input class="form-control" id="ftin1" type="text" name="ftin1"><!--<input id="ftin2" type="text" name="ftin2">-->
+								</div>
+								<div class="col-md-3">
+									<label for="stin1" id="hd_stin">State-TIN</label>
+									<input class="form-control" id="stin1" type="text" name="stin1"><!--<input id="stin2" type="text" name="stin2">-->
+								</div>
+								<div class="col-md-3">
+									<label for="nonp1" id="hd_nonp">501(c)(3)</label>
+									<input class="form-control" id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
+								</div>
+							</div> <!-- end row -->
 
                             <div class="row" style="margin-left:15px;">
-                            <div class="col-md-10">
-        						<h3>3. 1099 Form</h3>
-        						<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
-        						Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p><br>
-        					    
-        						<blockquote>Representative Total Commission: 6%</blockquote>
-        					</div>
+								<div class="col-md-10">
+									<h3>3. 1099 Form</h3>
+									<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
+									Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p><br>
+									<blockquote>Representative Total Commission: 6%</blockquote>
+								</div>
     					    </div>
-					</section> <!-- end PAYPAL SECTION -->
+						</section> <!-- end PAYMENT SECTION -->
 						
-				
-					<section class="interim-form"> <!-- profile pic tab5 -->
-						<div class="interim-header"><h2>Profile Photo</h2></div><hr>
-						<div class="row"> 
-							<label fpr="uploaded_file" id="">Upload Profile Photo:</label>
-							<input type="file" id="" name="uploaded_file">
-		
-							
-						</div> <!-- end row -->
-					</section> <!-- end profile pic -->
-					
-					<section class="row row-flex" style="margin-top:4rem" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-        				<div class="col-lg-3 col-lg-push-9">
-                			<input type="hidden" name="vpid" value="<? echo $salesPerson; ?>">
-            				<input style="width:15rem" type="submit" name="submit" class="redbutton btn btn-md btn-danger redbutton" value="Save & Exit">
-        				</div>
-				    </section> <!-- end SUBMIT BUTTON SECTION ROW -->
-		    </form><br>
-
-	    </div><!-- end AddPerson wrap col width -->	
-    </div><!-- end row wrap -->
-</div> <!--end container-->
-  </div>
-<br>
-<?php include '../footer.php' ; ?>   
-
+						<section class="row row-flex" style="margin-top:4rem" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+							<div class="col-lg-3 col-lg-push-9">
+								<input type="hidden" name="vpid" value="<? echo $salesPerson; ?>">
+								<input style="width:15rem" type="submit" name="submit" class="redbutton btn btn-md btn-danger redbutton" value="Save & Exit">
+							</div>
+						</section> <!-- end SUBMIT BUTTON SECTION ROW -->
+		   			</form><br>
+	    		</div><!-- end border -->	
+    		</div><!-- end wrap -->
+		</div> <!--end row-->
+  	</div> <!--end container-->
+	<br>
+	<?php include 'footer.php' ; ?>   
 </body>
 </html>
 
