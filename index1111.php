@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>Greatmoods</title>
+    <title>FundraisingATM</title>
     <!-- Bootstrap core CSS -->    
     <link href="nd/css/bootstrap.css" rel="stylesheet">       
 
@@ -25,9 +25,38 @@
 	<link rel="stylesheet" type="text/css" href="nd/css/jquery.fancybox.css" media="screen" /> 
 	<link rel="stylesheet" type="text/css" href="nd/css/jPushMenu.css" /> 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
-	
 	<link href="nd/css/menu-style.css" rel="stylesheet">
+
+	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <link rel="preload" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'" crossorigin="anonymous"> <!-- asynch css load -->
+  <noscript> <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></noscript> <!-- load styles for browsers with JS disabled -->
+  <!--sidebar navigation dropdown plugin -->  
+  <link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
+  <noscript><link  rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css"></noscript><!-- load styles for browsers with JS disabled -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="preload" href="css2/global_styles.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
+  <noscript><link rel="stylesheet" href="css2/global_styles.css"></noscript><!-- load styles for browsers with JS disabled -->
+  <!-- bootstrap file, avoid editing if possible, find the classes you need and then override them in global styles -->
+  <link rel="preload" href="css2/bootstrap.css"  as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
+  <noscript><link rel="stylesheet" href="css2/bootstrap.css"></noscript><!-- load styles for browsers with JS disabled -->
+  
+  <link rel="preload" href="css2/content_styles.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
+  <noscript><linkrel="stylesheet" href="css2/content_styles.css"></noscript><!-- load styles for browsers with JS disabled -->
+  <!-- top navigation styles -->
+  <link rel="preload" href="css2/main_nav.css" as="style" onload="this.rel='stylesheet'"> <!-- asynch css load -->
+  <noscript><link rel="stylesheet" href="css2/main_nav.css"></noscript><!-- load styles for browsers with JS disabled -->
+  
+	<!-- jQuery (required) 
+	**ALL OTHER CDNS LOCATED IN FOOTER, AS FOOTERS ARE ALWAYS LOCATED BEFORE BODY CLOSING TAG - the ideal spot of JS/jQuery**
+	*For some reason jasny needs jquery listed in header as well to allow for sidenav dropdowns to collapse correctly ? -->
+    
+    <!--lightbox code-->
+    <link href="../lity/dist/lity.css" rel="stylesheet">
+    <script src="../lity/vendor/jquery.js"></script>
+    <script src="../lity/dist/lity.js"></script>
+    
+    <!--Search Bar JS-->
+    <script type="text/javascript" src="../js/script.js"></script>
 	
 	
 </head>
