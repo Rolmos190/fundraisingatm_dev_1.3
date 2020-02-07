@@ -236,6 +236,7 @@ label{
   border-radius: 25px;
 }
 
+
 </style>
 </head>
 
@@ -252,11 +253,11 @@ label{
      		<div class="table">
 			<form class="graybackground" action="addVP.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return validate();">
 			<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black">Account Login</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black">Payment</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black">Social Media</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Profile Photo</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black; font-weight:bold">Information</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black; font-weight:bold">Account Login</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black; font-weight:bold">Payment</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black; font-weight:bold">Social Media</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black; font-weight:bold">Profile Photo</a></li>
 			</ul>
 
 			<div id="Single" class="tabcontent">
@@ -613,7 +614,7 @@ label{
 			</div> <!-- end simple tabs -->
 			<div class="btn-group" >
 				<span></span>
-				<button type="button" class="btn" id="nexttab">Next</button>
+				<button type="button" class="btn" id="nexttab" onclick="openCity(event, 'Multiple')">Next </button>
 			</div>
 
 			</div> <!-- end row -->
@@ -649,9 +650,9 @@ label{
               </div> <!-- end row -->
               <br><br>
 							<div class="btn-group" >
-					      <button type="button" class="btn" id="prevtab">Prev</button>
+					      <button type="button" class="btn" id="prevtab" onclick="openCity(event, 'Single')">Prev</button>
 					      <span></span>
-					      <button type="button" class="btn" id="nexttab">Next</button>
+					      <button type="button" class="btn" id="nexttab" onclick="openCity(event, 'Five')">Next</button>
 					    </div>
 
             </div> <!-- end tab 2 -->
@@ -705,9 +706,9 @@ label{
 
 					<br><br>
 					<div class="btn-group" >
-						<button type="button" class="btn" id="prevtab">Prev</button>
+						<button type="button" class="btn" id="prevtab" onclick="openCity(event, 'Multiple')">Prev</button>
 						<span></span>
-						<button type="button" class="btn" id="nexttab">Next</button>
+						<button type="button" class="btn" id="nexttab" onclick="openCity(event, 'Triple')">Next</button>
 					</div>
 
 
@@ -750,9 +751,9 @@ label{
 
 							<br><br>
 							<div class="btn-group" >
-					      <button type="button" class="btn" id="prevtab">Prev</button>
+					      <button type="button" class="btn" id="prevtab" onclick="openCity(event, 'Five')">Prev</button>
 					      <span></span>
-					      <button type="button" class="btn" id="nexttab">Next</button>
+					      <button type="button" class="btn" id="nexttab" onclick="openCity(event, 'Four')">Next</button>
 					    </div>
 
               <!-- end row -->

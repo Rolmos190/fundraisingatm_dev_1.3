@@ -393,7 +393,7 @@ label{
 						<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
 
 
-
+						
 					<div class="tablerow"> <!-- titles -->
 						<span id="hd_fname">First</span>
 		  <span></span>
@@ -511,7 +511,8 @@ label{
 
 
 								<div class="tablerow"> <!-- titles -->
-                  <br>
+                  <br>			
+								
 									<span id="hd_mphone">Mobile Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
