@@ -207,37 +207,94 @@
    $pic = $row['picPath'];
 ?>
 
-
 <!DOCTYPE html>
 <head>
-	<meta charset="UTF-8" />
-	<title>FundraisingATM | Add SC</title>
-	<link rel="shortcut icon" href="../images/favicon.ico">
+<title>FundraisingATM | Executive</title>
+  <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
+  <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
 
-	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
-  	<link href="../css/allforms_styles.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
+	<style>
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #FFF;
+    background-color: #cc0000;
+}
 
+/* Float the list items side by side */
+ul.tab li {float: left;}
 
-	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    width: 100%;
+    padding: 2px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    box-shadow: 0px 0px 15px #888888;
+}
+.tabcontent{
+padding-right:1em;
+padding-left:1em;
+}
+#newLeader{
+    margin-top:2em;
+}
+.form-control{
+    margin-bottom:1rem;
+}
+label{
+    margin-top:1rem;
+}
+.interim-header{
+    margin: -2rem 0 -2rem 0;
+}
+.files {
+  border-radius: 25px;
+}
+
+</style>
 </head>
 
 <body>
 <div id="container">
-  <?php include 'header.inc.php' ; ?>
-  <?php include 'sidenav.php' ; ?>
-      <div id="content">
+      <?php include 'header.inc.php' ; ?>
+      <?php include 'sidenav.php' ; ?>
 
-          <h1><center>Add Sales Coordinator</center></h1>
-		  <br>
-		
- 		<div id="border">
-		<form class="" style="width:100%" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
-			<!-- <div class="tablerow">
+      <div id="content" style="margin-left:15px">
+          <h1>Add New Sales Coordinator</h1> 
+		<div class="table">
+		<form class="graybackground" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
+			<div>
 				<span id="hd_vp2">Vice President:</span>
 			</div> <!-- end row -->
 
-			<!-- <div class="tablerow">
-				<select name="vpid">
+			<div class="tablerow" >
+				<select name="vpid" id="vpid" class="role2">
 					<option>Select VP Account</option>
 					<?php
 					$query = "Select * FROM distributors  WHERE setupID='$id' and role='VP'";
@@ -251,48 +308,69 @@
 					?>
 				</select>
 			</div> <!-- end row -->
+<br>
+			<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black">Account Login</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black">Payment</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black">Social Media</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Profile Photo</a></li>
+			</ul>
 
-			<div class="simpleTabs">
+			<div id="Single" class="tabcontent">
+
+
+	<!-- <form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data"> -->
+
+
+  <div class="table" style="width:100%">
+
+
+			<div class="simpleTabs" style="margin-left:20px">
 				<!--<ul class="simpleTabsNavigation">
 					<li><a href="#">Information</a></li>
 					<li><a href="#">Account Login</a></li>
-					<li><a href="#">Payment</a></li>
 					<li><a href="#">Social Media</a></li>
 					<li><a href="#">Profile Photo</a></li>
-				</ul>-->
+				</ul> -->
 
-				<div class="interim-form" style="width:49%">
-					<div class="interim-header"><h2>Contact Information</h2></div>
+		  <div>
+						<h2 style="color: #cc0000"> Contact Information</h2>
+						<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
+
+
+						
 					<div class="tablerow"> <!-- titles -->
 						<span id="hd_fname">First</span>
-						<span></span>
+		  <span></span>
 						<span id="hd_mname">Middle</span>
+                        <span></span>
 						<span id="hd_lname">Last</span>
-						<!--<span id="hd_pname" title="Preferred First Name">Preferred</span>
-						<span id="hd_title">Title</span>-->
+		  <span></span>
+						<span id="hd_pname" title="Preferred First Name">Preferred</span>
+						<span id="hd_title">Title</span>
+						<span id="hd_cname">Company</span>
 					</div> <!-- end row -->
-
 					<div class="tablerow"> <!-- inputs -->
 						<input id="fname" type="text" name="fname">
 						<input id="mname" type="text" name="mname">
 						<input id="lname" type="text" name="lname">
-						<!--<input id="pname" type="text" name="pname">
-						<select name="title">
-							<option value="" selected>---</option>
-							<option value="Mr.">Mr.</option>
-							<option value="Ms.">Ms.</option>
-							<option value="Mrs.">Mrs.</option>
-							<option value="Miss">Miss</option>
-							<option value="Dr.">Dr.</option>
-						</select>-->
+						<input id="pname" type="text" name="pname">
+						<select name="title" style="border-radius:15px; outline:none;>
+							<option value="">---</option>
+							<option value="">Mr.</option>
+							<option value="">Ms.</option>
+							<option value="">Mrs.</option>
+							<option value="">Miss</option>
+							<option value="">Dr.</option>
+						</select>
+            <input id="cname" type="text" name="cname">
+
 					</div> <!-- end row -->
-					<div class="tablerow"> <!-- titles -->
-						<span id="hd_cname" title="If you’re a member of a Group/Company being a Sales Coordinator together, please enter that Company Name">Company</span>
-					</div>
-					<div class="tablerow"> <!-- titles -->
-						<input id="cname" type="text" name="cname">
-					</div>
-					<hr>
+
+					<table>
+						<tr>
+							<td id="td_1">
 
 								<div class="tablerow"> <!-- title -->
 									<span id="hd_address1">Address 1</span>
@@ -309,14 +387,14 @@
 								</div> <!-- end row -->
 
 								<div class="tablerow"> <!-- titles -->
-									<span id="hd_city">City</span>
-									<span></span>
-									<span id="hd_state">State</span>
-									<span id="hd_zip">Zip</span>
-								</div> <!-- end row -->
+                  <span id="hd_city">City</span>
+                  <span></span>
+				    <span id="hd_state">State</span>
+                    <span></span>
+                  <span id="hd_zip">Zip</span>
 								<div class="tablerow"> <!-- inputs -->
 									<input id="city" type="text" name="city">
-									<select id="state" name="state">
+									<select id="state" name="state" style="border-radius:15px; outline:none;>
 										<option value="" selected="selected">--</option>
 										<option value="AL">AL</option>
 										<option value="AK">AK</option>
@@ -370,17 +448,22 @@
 										<option value="WI">WI</option>
 										<option value="WY">WY</option>
 									</select>
-									<input id="zip" type="text" name="zip" maxlength="5">
+									<span></span>
+									<input id="zip" type="text" name="zip" maxlength="5" required>
 								</div> <!-- end row -->
 
+                            </td>
+                            <td id="td_2">
 
-
-								<!--<div class="tablerow"> <!-- titles -->
-									<!--<span id="hd_mphone">Mobile Phone</span>
-								</div>--> <!-- end row -->
-								<!--<div class="tablerow">--> <!-- inputs -->
-									<!--<input id="mphone1" type="text" name="mphone"><input id="mphone2" type="text" name=""><input id="mphone3" type="text" name="">
-									<select id="mcarrier" title="Needed To Receive Texts From Computer">
+								<div class="tablerow"> <!-- titles -->
+                  <br>			
+								
+									<span id="hd_mphone1">Mobile Phone</span>
+								</div> <!-- end row -->
+								<div class="tablerow"> <!-- inputs -->
+									<input id="mphone1" type="text" name="mphone">
+                  
+									<select id="mcarrier" title="Needed To Receive Texts From Computer" style="border-radius:15px; outline:none;">
 										<option>Select Carrier</option>
 										<option>Verizon</option>
 										<option>AT&T</option>
@@ -389,30 +472,35 @@
 										<option>U.S. Cellular</option>
 										<option>Other</option>
 									</select>
-								</div>--> <!-- end row -->
-								<!--<div class="tablerow">
+								</div> <!-- end row -->
+								<div class="tablerow">
 									<span id="hd_hphone">Home Phone</span>
-								</div>--> <!-- end row -->
-								<!--<div class="tablerow">
-									<input id="hphone1" type="text" name="hphone"><input id="hphone2" type="text" name=""><input id="hphone3" type="text" name="">
-								</div>--> <!-- end row -->
-								<div class="row"> <!-- titles -->
-									<span id="hd_wphone">Primary Phone</span>
-									<span></span>
-									<span id="ext">Ext</span>
 								</div> <!-- end row -->
 								<div class="row">
-									<input id="phone" type="text" name="wphone" maxlength="12"><!--<input id="wphone2" type="text" name=""><input id="wphone3" type="text" name="">-->
-									<input id="ext" type="text" name="ext" maxlength="5">
+									<input id="hphone1" type="text" name="hPhone">
 								</div> <!-- end row -->
+								<div class="tablerow">
+									<span id="hd_wphone">Work Phone</span>
+                                    <span></span>
+									<span id="ext">Ext</span>
+								</div>
+								<div class="row">
+									<input id="wphone1" type="text" name="wphone" maxlength="12">
+								
+									<input id="ext" type="text" name="ext" maxlength="5">
+								</div>
+							</td>
+						</tr>
+					</table>
 
-
-					<!--<div class="tablerow">--> <!-- titles -->
-						<!--<span id="hd_bday">Birthday</span>
+					<div class="tablerow"> <!-- titles -->
+						<span id="hd_bday">Birthday</span>
+		          <span id="hd_gender"></span>
+              <span></span>
 						<span id="hd_gender">Gender</span>
-					</div>--> <!-- end row -->
-					<!--<div class="tablerow">--> <!-- inputs -->
-						<!--<select id="month" name="month">
+					</div> <!-- end row -->
+					<div class="tablerow"> <!-- inputs -->
+						<select id="month" name="month">
 							<option value="na">Month</option>
 							<option value="1">January</option>
 							<option value="2">February</option>
@@ -570,95 +658,86 @@
 							<option value="female">Female</option>
 							<option value="male">Male</option>
 						</select>
-					</div>--> <!-- end row -->
-					<br>
-				</div> <!-- end tab1 content (information) -->
+					</div> <!-- end row -->
+		<br><br>
+				</div> <!-- end tab 1 -->
+			</div> <!-- end simple tabs -->
 
-				<div class="interim-form"> <!-- account login tab -->
-					<div class="interim-header"><h2>Create Account Login</h2></div>
-					<div class="tablerow"> <!-- title -->
-						<span id="hd_loginemail">Email Address</span>
-					</div> <!-- end row -->
-					<div class="tablerow"> <!-- input -->
-						<input id="loginemail" type="text" name="email">
-					</div> <!-- end row -->
-					<br>
-          <div class="row"> <!-- titles -->
-					<span id="hd_password">Password</span>
-					<span id="hd_cpassword">Confirm Password</span>
-					</div> <!-- end row -->
-					<div class="row"> <!-- inputs -->
-						<input id="pass1" type="password" name="password" required>
-						<input id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required>
-						<span id="error"></span>
-					</div> <!-- end row -->
-				</div> <!-- end tab2 content (account login) -->
+      <div class="btn-group" >
+        <span></span>
+        <button type="button" class="btn" id="nexttab">Next</button>
+      </div>
+			</div> <!-- end row -->
+		</div> <!-- end table -->
 
 
-				<div class="interim-form" style="width:49%"> <!-- social media tab4 -->
-					<div class="interim-header"><h2>Social Media Connections</h2></div>
-					<div class="tablerow">
-								<span id="hd_fb" title="Facebook Name or Profile URL">Facebook</span>
-							</div> <!-- end row -->
-							<div class="tablerow">
-								<input type="url" id="fb"  name="fb" placeholder="www.facebook.com">
-							</div>
-							<br>
-							<div class="tablerow">
-								<span id="hd_tw" title="Twitter Username or Profile URL">Twitter</span>
-							</div> <!-- end row -->
-							<div class="tablerow">
-								<input type="url" id="tw" name="twitter" placeholder="www.twitter.com">
-							</div>
-							<br>
-							<div class="tablerow">
-								<span id="hd_li" title="LinkedIn Username or Profile URL">LinkedIn</span>
-							</div> <!-- end row -->
-							<div class="tablerow">
-								<input type="url" id="li" name="lindkedin" placeholder="www.linkedin.com">
-							</div>
-					<!--<div class="tablerow">
-						<span id="hd_pn" title="Pintrest Username or Profile URL">Pintrest</span>
-						<input type="url" id="pn" name="printrest">
-					</div>--> <!-- end row -->
-					<!--<div class="tablerow">
-						<span id="hd_gp" title="Google+ Username or Profile URL">Google+</span>
-						<input type="url" id="gp" name="googleplus">
-					</div>--> <!-- end row -->
-					<br>
-				</div> <!-- end tab4 content (social media) -->
 
-				<div class="interim-form"> <!-- profile pic tab5 -->
-					<div class="interim-header"><h2>Profile Photo</h2></div>
-					<div class="tablerow">
-						<span id="">Upload Profile Photo:</span>
-						<input type="file" id="" name="uploaded_file">
-						<input type="submit" class="redbutton" value="Upload Photo">
-						<br><br><br>
-						<span id="">Preview Photo:</span>
-						<img src="" alt="uploaded profile photo">
-					</div> <!-- end row -->
-					<br><br><br><br>
-				</div> <!-- end tab5 content (profile pic) -->
+  <div id="Multiple" class="tabcontent">
+    <div class="table" style="width:100%">
 
-				<div class="interim-form" style="width:95%"> <!-- payment tab -->
-					<div class="interim-header"><h2>3 Simple Steps for Payment</h2></div>
-					<h3>1. PayPal Information</h3>
-					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account. If you prefer, we can set up your PayPal account for you.</p>
+
+            <div class="simpleTabs">
+            <div>
+              <br>
+              <h2 style="color: #cc0000">Create Your Account Login</h2>
+               <!-- titles -->
+                <span id="hd_loginemail">Email Address</span>
+               <!-- end row -->
+              <div id="row"> <!-- inputs -->
+                <input id="email" type="email" name="email">
+              </div> <!-- end row -->
+
+              <div id="row"> <!-- titles -->
+              <span id="hd_password">Password</span>
+              <span></span><span></span>
+              <span></span><span></span>
+			  <span></span><span></span>
+              <span id="hd_cpassword">Confirm Password</span>
+              </div> <!-- end row -->
+              <div id="row"> <!-- inputs -->
+                <input id="password" type="password" name="password" >
+                <input id="password" type="password" name="cpassword" >
+                <span id="error"></span>
+              </div> <!-- end row -->
+              <br>
+            </div> <!-- end tab 2 -->
+            <br>
+            <div class="btn-group" >
+              <button type="button" class="btn" id="prevtab">Prev</button>
+              <span></span>
+              <button type="button" class="btn" id="nexttab">Next</button>
+            </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="Five" class="tabcontent">
+  <div class="table" style="width:100%">
+
+
+            <div class="simpleTabs">
+            <div>
+              <br>
+			<h2 style="color: #cc0000">3 Simple Steps for Payment</h2></div>
+					<h3 style="color: black"><b>1. PayPal Information</b></h3>
+					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account.<br> If you prefer, we can set up your PayPal account for you.</p>
 					<div class="tablerow"> <!-- title -->
 						<span id="hd_ppemail">PayPal Email</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- input -->
-						<input id="ppemail" type="text" name="paypalemail">
+						<input id="paypalemail" type="email" name="paypalemail">
 					</div> <!-- end row -->
-
-					<h3>2. Fund Distribution and Tax Information</h3>
+					<br>
+					<h3 style="color: black"><b>2. Fund Distribution and Tax Information</b></h3>
 					<p>One of the following numbers is required for distribution of funds and also for tax purposes.</p>
 					<div class="tablerow"> <!-- titles -->
 						<span id="hd_ssn">SSN</span>
 						<span></span>
 						<span id="hd_ftin">Fed-TIN</span>
+						<span></span>
 						<span id="hd_stin">State-TIN</span>
+						<span></span>
 						<span id="hd_nonp">501(c)(3)</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
@@ -667,28 +746,143 @@
 						<input id="stin1" type="text" name="stin1"><!--<input id="stin2" type="text" name="stin2">-->
 						<input id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
 					</div> <!-- end row -->
-
-					<h3>3. 1099 Form</h3>
+					<br>
+					<h3 style="color: black"><strong>3. 1099 Form</strong></h3>
 					<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
 					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
 					<br>
-					<h3>Sales Coordinator Total Commission Override: 1%</h3>
-				</div> <!-- end tab3 content (payment) -->
+					<h3>Sales Coordinator Total Commission Override: 0.5%</h3>
 
-			</div> <!-- end simple tabs -->
+          <br>
+          <div class="btn-group" >
+            <button type="button" class="btn" id="prevtab">Prev</button>
+            <span></span>
+            <button type="button" class="btn" id="nexttab">Next</button>
+          </div>
+            </div> <!-- end tab 2 -->
 
-			<input type="submit" name="submit" class="redbutton" value="Save & Exit">
-			<input type="submit" name="submit" class="redbutton" value="Save & Add Another">
-    </div> <!-- end table -->
-    <br><br>
-		</form>
+    </div>
+
+</div>
 
 
-  </div> <!--end content -->
+<div id="Triple" class="tabcontent">
+  <div class="table" style="width:100%">
 
-      <?php include 'footer.php' ; ?>
+
+            <div class="simpleTabs">
+            <div>
+              <br>
+  						<h2 style="color: #cc0000">Social Media Connections</h2>
+  						<div id="row">
+  							<span id="hd_fb">Facebook</span>
+  							<input id="fb" type="text" name="fb" value="www.facebook.com">
+  						</div> <!-- end row -->
+  						<div id="row">
+  							<span id="hd_tw">Twitter</span>
+  							<input id="tw" type="text" name="twitter" value="www.twitter.com">
+  						</div> <!-- end row -->
+  						<div id="row">
+  							<span id="hd_li">LinkedIn</span>
+  							<input id="li" type="text" name="linkedin" value="www.linkedin.com">
+  						</div> <!-- end row -->
+  						<div id="row">
+  							<span id="hd_pn">Pinterest</span>
+  							<input id="pn" type="text" name="printrest" value="www.pinterest.com">
+  						</div> <!-- end row -->
+  						<div id="row">
+  							<span id="hd_gp">Google+</span>
+  							<input id="gp" type="text" name="googleplus" value="plus.google.com">
+  						</div>
+              <br>
+              <br>
+              <div class="btn-group" >
+                <button type="button" class="btn" id="prevtab">Prev</button>
+                <span></span>
+                <button type="button" class="btn" id="nexttab">Next</button>
+              </div>
+              <!-- end row -->
+              </div>
+              </div>
+  					</div> <!-- end tab 3 -->
+
+
+
+    </div>
+
+<div id="Four" class="tabcontent">
+  <div class="table" style="width:100%">
+
+
+            <div class="simpleTabs">
+            <div>
+              <br>
+  						<h2 style="color: #cc0000">Profile Photo</h2>
+            </div>
+              <div class="tablerow">
+  							<span id="">Upload Profile Photo:</span><br><br>
+  							<input type="file" id="" name="uploaded_file">
+  							<input type="submit" class="redbutton" value="Upload Photo">
+  							<br><br>
+  							<h3 id="">Preview Photo:</h3>
+  							<img src="" alt="uploaded profile photo">
+  						</div>
+              <br><br>
+
+
+               <!-- end row -->
+            </div>
+  					</div> <!-- end tab 3 -->
+
+
+
+
+
+			<!--<form class="graybackground">
+				<h3>--Option 2: Add Multiple Business Associates--</h3>
+				<h2>How To Add Multiple Business Associates</h2><br>
+				<ol>
+					<li><a href="">Download</a> Our Business Associate Setup Spreadsheet</li>
+					<li>Input the Data for Each Associate You want to Add</li>
+					<li>Upload the Completed Spreadsheet...</li>
+				</ol>
+				<input type="file" name="">
+				<input class="redbutton" type="submit" name="" value="Upload File">-->
+        <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+          <div class="tablerow">
+            <input type="submit" name="submit" class="redbutton" value="Save & Exit">
+            <input type="submit" class="redbutton" value="Save & Add Another">
+          </div> <!-- end row -->
+        </section>
+
+
+
+      </form>
+		</div> <!-- end table -->
+   <!--end content -->
+
+  <script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
 </div> <!--end container-->
-
+</div>
+<?php include 'footer.php' ; ?>
+</div>
 </body>
 </html>
 

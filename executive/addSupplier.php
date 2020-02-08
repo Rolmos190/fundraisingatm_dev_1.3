@@ -17,7 +17,7 @@
     <div id="content">
 
       <br>
-      <div class="table">
+      <div class="table" style="margin-left: 30px">
         <form class="" action="supplierNew.php" method="post">
           <div class="interim-form" style="width:50%">
             <div class="interim-header"><h2>Add Product Supplier</h2></div>
