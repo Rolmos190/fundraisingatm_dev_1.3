@@ -500,7 +500,7 @@ label{
 						<span id="hd_gender">Gender</span>
 					</div> <!-- end row -->
 					<div class="tablerow"> <!-- inputs -->
-						<select id="month" name="month">
+						<select id="month" name="month" style="border-radius:15px; outline:none;">
 							<option value="na">Month</option>
 							<option value="1">January</option>
 							<option value="2">February</option>
@@ -515,7 +515,7 @@ label{
 							<option value="11">November</option>
 							<option value="12">December</option>
 						</select>
-						<select id="day" name="day">
+						<select id="day" name="day" style="border-radius:15px; outline:none;">
 							<option value="na">Day</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -549,7 +549,7 @@ label{
 							<option value="30">30</option>
 							<option value="31">31</option>
 						</select>
-						<select id="year" name="year">
+						<select id="year" name="year" style="border-radius:15px; outline:none;">
 							<option value="na">Year</option>
 							<option value="2014">2014</option>
 							<option value="2013">2013</option>
@@ -653,7 +653,7 @@ label{
 							<option value="1915">1915</option>
 							<option value="1914">1914</option>
 						</select>
-						<select id="gender" name="gender">
+						<select id="gender" name="gender" style="border-radius:15px; outline:none;">
 							<option value="na">Gender</option>
 							<option value="female">Female</option>
 							<option value="male">Male</option>
@@ -665,7 +665,7 @@ label{
 
       <div class="btn-group" >
         <span></span>
-        <button type="button" class="btn" id="nexttab">Next</button>
+        <button type="button" class="redbutton" id="nexttab">Next</button>
       </div>
 			</div> <!-- end row -->
 		</div> <!-- end table -->
@@ -676,7 +676,7 @@ label{
     <div class="table" style="width:100%">
 
 
-            <div class="simpleTabs">
+            <div class="simpleTabs" style="margin-left:20px">
             <div>
               <br>
               <h2 style="color: #cc0000">Create Your Account Login</h2>
@@ -703,9 +703,9 @@ label{
             </div> <!-- end tab 2 -->
             <br>
             <div class="btn-group" >
-              <button type="button" class="btn" id="prevtab">Prev</button>
+              <button type="button" class="redbutton" id="prevtab">Prev</button>
               <span></span>
-              <button type="button" class="btn" id="nexttab">Next</button>
+              <button type="button" class="redbutton" id="nexttab">Next</button>
             </div>
     </div>
   </div>
@@ -755,9 +755,9 @@ label{
 
           <br>
           <div class="btn-group" >
-            <button type="button" class="btn" id="prevtab">Prev</button>
+            <button type="button" class="redbutton" id="prevtab">Prev</button>
             <span></span>
-            <button type="button" class="btn" id="nexttab">Next</button>
+            <button type="button" class="redbutton" id="nexttab">Next</button>
           </div>
             </div> <!-- end tab 2 -->
 
@@ -797,9 +797,9 @@ label{
               <br>
               <br>
               <div class="btn-group" >
-                <button type="button" class="btn" id="prevtab">Prev</button>
+                <button type="button" class="redbutton" id="prevtab">Prev</button>
                 <span></span>
-                <button type="button" class="btn" id="nexttab">Next</button>
+                <button type="button" class="redbutton" id="nexttab">Next</button>
               </div>
               <!-- end row -->
               </div>
