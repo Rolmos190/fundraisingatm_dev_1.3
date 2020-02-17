@@ -281,33 +281,33 @@ label{
 </head>
 
 <body>
-<div id="container">
-      <?php include 'header.inc.php' ; ?>
-      <?php include 'sidenav.php' ; ?>
+	<div id="container">
+    	<?php include 'header.inc.php' ; ?>
+      	<?php include 'sidenav.php' ; ?>
+      	
+		<div id="content" style="margin-left:15px">
+        	<h1>Add New Sales Coordinator</h1> 
+			<div class="table">
+				<form class="graybackground" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
+				<div>
+					<span id="hd_vp2">Vice President:</span>
+				</div> <!-- end row -->
 
-      <div id="content" style="margin-left:15px">
-          <h1>Add New Sales Coordinator</h1> 
-		<div class="table">
-		<form class="graybackground" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
-			<div>
-				<span id="hd_vp2">Vice President:</span>
-			</div> <!-- end row -->
-
-			<div class="tablerow" >
-				<select name="vpid" id="vpid" class="role2">
-					<option>Select VP Account</option>
-					<?php
-					$query = "Select * FROM distributors  WHERE setupID='$id' and role='VP'";
-                                        $result = mysqli_query($link, $query)or die("MySQL ERROR om query 2: ".mysqli_error($link));
+				<div class="tablerow" >
+					<select name="vpid" id="vpid" class="role2">
+						<option>Select VP Account</option>
+						<?php
+						$query = "Select * FROM distributors  WHERE setupID='$id' and role='VP'";
+											$result = mysqli_query($link, $query)or die("MySQL ERROR om query 2: ".mysqli_error($link));
 
 
-                                        while($row = mysqli_fetch_assoc($result))
-                                        {
-					   echo '<option value="'.$row['loginid'].'">'.$row[FName].' '.$row[LName].' '.$row[loginid].'</option>';
-					}
-					?>
-				</select>
-			</div> <!-- end row -->
+											while($row = mysqli_fetch_assoc($result))
+											{
+						echo '<option value="'.$row['loginid'].'">'.$row[FName].' '.$row[LName].' '.$row[loginid].'</option>';
+						}
+						?>
+					</select>
+				</div> <!-- end row -->
 <br>
 			<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
 			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
@@ -335,7 +335,7 @@ label{
 				</ul> -->
 
 		  <div>
-						<h2 style="color: #cc0000"> Contact Information</h2>
+						<h1 style="color: #cc0000"> Contact Information</h1>
 						<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
 
 
@@ -662,7 +662,6 @@ label{
 		<br><br>
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
-
       <div class="btn-group" >
         <span></span>
         <button type="button" class="redbutton" id="nexttab">Next</button>
@@ -678,30 +677,26 @@ label{
 
             <div class="simpleTabs" style="margin-left:20px">
             <div>
-              <br>
-              <h2 style="color: #cc0000">Create Your Account Login</h2>
+              <h1 style="color: #cc0000">Create Your Account Login</h1>
                <!-- titles -->
                 <span id="hd_loginemail">Email Address</span>
                <!-- end row -->
               <div id="row"> <!-- inputs -->
                 <input id="email" type="email" name="email">
               </div> <!-- end row -->
-
+					<br>
               <div id="row"> <!-- titles -->
               <span id="hd_password">Password</span>
-              <span></span><span></span>
-              <span></span><span></span>
-			  <span></span><span></span>
+			  <span></span><span></span><span></span><span></span>
               <span id="hd_cpassword">Confirm Password</span>
               </div> <!-- end row -->
               <div id="row"> <!-- inputs -->
-                <input id="password" type="password" name="password" >
-                <input id="password" type="password" name="cpassword" >
-                <span id="error"></span>
+                <input id="pass1" type="password" name="password" required >
+                <input id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required > <!-- checks passwords to be the same -->
+                
               </div> <!-- end row -->
-              <br>
-            </div> <!-- end tab 2 -->
-            <br>
+	          </div> <!-- end tab 2 -->
+            <br><br>
             <div class="btn-group" >
               <button type="button" class="redbutton" id="prevtab">Prev</button>
               <span></span>
@@ -716,10 +711,9 @@ label{
   <div class="table" style="width:100%">
 
 
-            <div class="simpleTabs">
+            <div class="simpleTabs" style="margin-left:20px">
             <div>
-              <br>
-			<h2 style="color: #cc0000">3 Simple Steps for Payment</h2></div>
+			<h1 style="color: #cc0000">3 Simple Steps for Payment</h1></div>
 					<h3 style="color: black"><b>1. PayPal Information</b></h3>
 					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account.<br> If you prefer, we can set up your PayPal account for you.</p>
 					<div class="tablerow"> <!-- title -->
@@ -751,7 +745,7 @@ label{
 					<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
 					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
 					<br>
-					<h3>Sales Coordinator Total Commission Override: 0.5%</h3>
+					<h3>Sales Coordinator Total Commission Override: <a style="color:#cc0000;">0.5%</a></h3>
 
           <br>
           <div class="btn-group" >
@@ -770,10 +764,9 @@ label{
   <div class="table" style="width:100%">
 
 
-            <div class="simpleTabs">
+            <div class="simpleTabs" style="margin-left:20px">
             <div>
-              <br>
-  						<h2 style="color: #cc0000">Social Media Connections</h2>
+  						<h1 style="color: #cc0000">Social Media Connections</h1>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
   							<input id="fb" type="text" name="fb" value="www.facebook.com">
@@ -814,10 +807,9 @@ label{
   <div class="table" style="width:100%">
 
 
-            <div class="simpleTabs">
+            <div class="simpleTabs" style="margin-left:20px">
             <div>
-              <br>
-  						<h2 style="color: #cc0000">Profile Photo</h2>
+  			<h1 style="color: #cc0000">Profile Photo</h1>
             </div>
               <div class="tablerow">
   							<span id="">Upload Profile Photo:</span><br><br>
@@ -832,6 +824,13 @@ label{
 
                <!-- end row -->
             </div>
+
+			<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+          <div class="tablerow">
+            <input type="submit" name="submit" class="redbutton" value="Save & Exit">
+            <input type="submit" class="redbutton" value="Save & Add Another">
+          </div> <!-- end row -->
+        </section>
   					</div> <!-- end tab 3 -->
 
 
@@ -848,12 +847,7 @@ label{
 				</ol>
 				<input type="file" name="">
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
-        <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-          <div class="tablerow">
-            <input type="submit" name="submit" class="redbutton" value="Save & Exit">
-            <input type="submit" class="redbutton" value="Save & Add Another">
-          </div> <!-- end row -->
-        </section>
+        
 
 
 

@@ -14,7 +14,6 @@ include '../includes/autoload.php';
    
 	$id = $_SESSION['userId'];
 	
-	
 	$table1 = "user_info";
 	$table2 = "users";
 	$table3 = "distributors";
