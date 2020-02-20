@@ -212,7 +212,7 @@
 <title>FundraisingATM | Executive</title>
   <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
   <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
-
+	
   <script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
 	<style>
 ul.tab {
@@ -285,8 +285,8 @@ label{
     	<?php include 'header.inc.php' ; ?>
       	<?php include 'sidenav.php' ; ?>
       	
-		<div id="content" style="margin-left:15px">
-        	<h1>Add New Sales Coordinator</h1> 
+		<div id="content" style="margin-left:35px">
+        	<h1 align="center">Add New Sales Coordinator</h1> 
 			<div class="table">
 				<form class="graybackground" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
 				<div>
@@ -308,374 +308,362 @@ label{
 						?>
 					</select>
 				</div> <!-- end row -->
-<br>
-			<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black">Account Login</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black">Payment</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black">Social Media</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Profile Photo</a></li>
-			</ul>
+				<br>
+				<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black">Account Login</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black">Payment</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black">Social Media</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Profile Photo</a></li>
+				</ul>
 
-			<div id="Single" class="tabcontent">
+				<div id="Single" class="tabcontent">
+					<!-- <form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data"> -->
+  					<div class="table" style="width:100%; height:400px">
+						<div class="simpleTabs" style="margin-left:30px">
+							<!--<ul class="simpleTabsNavigation">
+								<li><a href="#">Information</a></li>
+								<li><a href="#">Account Login</a></li>
+								<li><a href="#">Social Media</a></li>
+								<li><a href="#">Profile Photo</a></li>
+							</ul> -->
 
-
-	<!-- <form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data"> -->
-
-
-  <div class="table" style="width:100%">
-
-
-			<div class="simpleTabs" style="margin-left:20px">
-				<!--<ul class="simpleTabsNavigation">
-					<li><a href="#">Information</a></li>
-					<li><a href="#">Account Login</a></li>
-					<li><a href="#">Social Media</a></li>
-					<li><a href="#">Profile Photo</a></li>
-				</ul> -->
-
-		  <div>
-						<h1 style="color: #cc0000"> Contact Information</h1>
-						<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
-
-
-						
-					<div class="tablerow"> <!-- titles -->
-						<span id="hd_fname">First</span>
-		  <span></span>
-						<span id="hd_mname">Middle</span>
-                        <span></span>
-						<span id="hd_lname">Last</span>
-		  <span></span>
-						<span id="hd_pname" title="Preferred First Name">Preferred</span>
-						<span id="hd_title">Title</span>
-						<span id="hd_cname">Company</span>
-					</div> <!-- end row -->
-					<div class="tablerow"> <!-- inputs -->
-						<input id="fname" type="text" name="fname">
-						<input id="mname" type="text" name="mname">
-						<input id="lname" type="text" name="lname">
-						<input id="pname" type="text" name="pname">
-						<select name="title" style="border-radius:15px; outline:none;>
-							<option value="">---</option>
-							<option value="">Mr.</option>
-							<option value="">Ms.</option>
-							<option value="">Mrs.</option>
-							<option value="">Miss</option>
-							<option value="">Dr.</option>
-						</select>
-            <input id="cname" type="text" name="cname">
-
-					</div> <!-- end row -->
-
-					<table>
-						<tr>
-							<td id="td_1">
-
-								<div class="tablerow"> <!-- title -->
-									<span id="hd_address1">Address 1</span>
-								</div> <!-- end row -->
-								<div class="tablerow"> <!-- input -->
-									<input id="address1" type="text" name="address1">
-								</div> <!-- end row -->
-
-								<div class="tablerow"> <!-- title -->
-									<span id="hd_address2">Address 2</span>
-								</div> <!-- end row -->
-								<div class="tablerow"> <!-- input -->
-									<input id="address2" type="text" name="address2">
-								</div> <!-- end row -->
-
+		  					<div>
+								<h1 style="color: #cc0000"> Contact Information</h1>
+								<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
+	
 								<div class="tablerow"> <!-- titles -->
-                  <span id="hd_city">City</span>
-                  <span></span>
-				    <span id="hd_state">State</span>
-                    <span></span>
-                  <span id="hd_zip">Zip</span>
-								<div class="tablerow"> <!-- inputs -->
-									<input id="city" type="text" name="city">
-									<select id="state" name="state" style="border-radius:15px; outline:none;>
-										<option value="" selected="selected">--</option>
-										<option value="AL">AL</option>
-										<option value="AK">AK</option>
-										<option value="AZ">AZ</option>
-										<option value="AR">AR</option>
-										<option value="CA">CA</option>
-										<option value="CO">CO</option>
-										<option value="CT">CT</option>
-										<option value="DE">DE</option>
-										<option value="DC">DC</option>
-										<option value="FL">FL</option>
-										<option value="GA">GA</option>
-										<option value="HI">HI</option>
-										<option value="ID">ID</option>
-										<option value="IL">IL</option>
-										<option value="IN">IN</option>
-										<option value="IA">IA</option>
-										<option value="KS">KS</option>
-										<option value="KY">KY</option>
-										<option value="LA">LA</option>
-										<option value="ME">ME</option>
-										<option value="MD">MD</option>
-										<option value="MA">MA</option>
-										<option value="MI">MI</option>
-										<option value="MN">MN</option>
-										<option value="MS">MS</option>
-										<option value="MO">MO</option>
-										<option value="MT">MT</option>
-										<option value="NE">NE</option>
-										<option value="NV">NV</option>
-										<option value="NH">NH</option>
-										<option value="NJ">NJ</option>
-										<option value="NM">NM</option>
-										<option value="NY">NY</option>
-										<option value="NC">NC</option>
-										<option value="ND">ND</option>
-										<option value="OH">OH</option>
-										<option value="OK">OK</option>
-										<option value="OR">OR</option>
-										<option value="PA">PA</option>
-										<option value="RI">RI</option>
-										<option value="SC">SC</option>
-										<option value="SD">SD</option>
-										<option value="TN">TN</option>
-										<option value="TX">TX</option>
-										<option value="UT">UT</option>
-										<option value="VT">VT</option>
-										<option value="VA">VA</option>
-										<option value="WA">WA</option>
-										<option value="WV">WV</option>
-										<option value="WI">WI</option>
-										<option value="WY">WY</option>
-									</select>
+									<span id="hd_fname">First</span>
 									<span></span>
-									<input id="zip" type="text" name="zip" maxlength="5" required>
-								</div> <!-- end row -->
-
-                            </td>
-                            <td id="td_2">
-
-								<div class="tablerow"> <!-- titles -->
-                  <br>			
-								
-									<span id="hd_mphone1">Mobile Phone</span>
+									<span id="hd_mname">Middle</span>
+									<span></span>
+									<span id="hd_lname">Last</span>
+									<span></span>
+									<span id="hd_pname" title="Preferred First Name">Preferred</span>
+									<span id="hd_title">Title</span>
+									<span id="hd_cname">Company</span>
 								</div> <!-- end row -->
 								<div class="tablerow"> <!-- inputs -->
-									<input id="mphone1" type="text" name="mphone">
-                  
-									<select id="mcarrier" title="Needed To Receive Texts From Computer" style="border-radius:15px; outline:none;">
-										<option>Select Carrier</option>
-										<option>Verizon</option>
-										<option>AT&T</option>
-										<option>Sprint</option>
-										<option>T-Mobile</option>
-										<option>U.S. Cellular</option>
-										<option>Other</option>
+									<input id="fname" type="text" name="fname">
+									<input id="mname" type="text" name="mname">
+									<input id="lname" type="text" name="lname">
+									<input id="pname" type="text" name="pname">
+									<select name="title" style="border-radius:15px; outline:none;>
+										<option value="">---</option>
+										<option value="">Mr.</option>
+										<option value="">Ms.</option>
+										<option value="">Mrs.</option>
+										<option value="">Miss</option>
+										<option value="">Dr.</option>
+									</select>
+            						<input id="cname" type="text" name="cname">
+								</div> <!-- end row -->
+
+								<table>
+									<tr>
+										<td id="td_1">
+											<div class="tablerow"> <!-- title -->
+												<span id="hd_address1">Address 1</span>
+											</div> <!-- end row -->
+											<div class="tablerow"> <!-- input -->
+												<input id="address1" type="text" name="address1">
+											</div> <!-- end row -->
+
+											<div class="tablerow"> <!-- title -->
+												<span id="hd_address2">Address 2</span>
+											</div> <!-- end row -->
+											<div class="tablerow"> <!-- input -->
+												<input id="address2" type="text" name="address2">
+											</div> <!-- end row -->
+
+											<div class="tablerow"> <!-- titles -->
+												<span id="hd_city">City</span>
+												<span></span>
+												<span id="hd_state">State</span>
+												<span></span>
+												<span id="hd_zip">Zip</span>
+											</div>
+											<div class="tablerow"> <!-- inputs -->
+												<input id="city" type="text" name="city">
+												<select id="state" name="state" style="border-radius:15px; outline:none;>
+													<option value="" selected="selected">--</option>
+													<option value="AL">AL</option>
+													<option value="AK">AK</option>
+													<option value="AZ">AZ</option>
+													<option value="AR">AR</option>
+													<option value="CA">CA</option>
+													<option value="CO">CO</option>
+													<option value="CT">CT</option>
+													<option value="DE">DE</option>
+													<option value="DC">DC</option>
+													<option value="FL">FL</option>
+													<option value="GA">GA</option>
+													<option value="HI">HI</option>
+													<option value="ID">ID</option>
+													<option value="IL">IL</option>
+													<option value="IN">IN</option>
+													<option value="IA">IA</option>
+													<option value="KS">KS</option>
+													<option value="KY">KY</option>
+													<option value="LA">LA</option>
+													<option value="ME">ME</option>
+													<option value="MD">MD</option>
+													<option value="MA">MA</option>
+													<option value="MI">MI</option>
+													<option value="MN">MN</option>
+													<option value="MS">MS</option>
+													<option value="MO">MO</option>
+													<option value="MT">MT</option>
+													<option value="NE">NE</option>
+													<option value="NV">NV</option>
+													<option value="NH">NH</option>
+													<option value="NJ">NJ</option>
+													<option value="NM">NM</option>
+													<option value="NY">NY</option>
+													<option value="NC">NC</option>
+													<option value="ND">ND</option>
+													<option value="OH">OH</option>
+													<option value="OK">OK</option>
+													<option value="OR">OR</option>
+													<option value="PA">PA</option>
+													<option value="RI">RI</option>
+													<option value="SC">SC</option>
+													<option value="SD">SD</option>
+													<option value="TN">TN</option>
+													<option value="TX">TX</option>
+													<option value="UT">UT</option>
+													<option value="VT">VT</option>
+													<option value="VA">VA</option>
+													<option value="WA">WA</option>
+													<option value="WV">WV</option>
+													<option value="WI">WI</option>
+													<option value="WY">WY</option>
+												</select>
+												<span></span>
+												<input id="zip" type="text" name="zip" maxlength="5" required>
+											</div> <!-- end row -->
+										</td>
+									
+                           				<td id="td_2">
+
+											<div class="tablerow"> <!-- titles -->
+                  								<br>			
+												<span id="hd_mphone1">Mobile Phone</span>
+											</div> <!-- end row -->
+											<div class="tablerow"> <!-- inputs -->
+												<input id="mphone1" type="text" name="mphone">
+							
+												<select id="mcarrier" title="Needed To Receive Texts From Computer" style="border-radius:15px; outline:none;">
+													<option>Select Carrier</option>
+													<option>Verizon</option>
+													<option>AT&T</option>
+													<option>Sprint</option>
+													<option>T-Mobile</option>
+													<option>U.S. Cellular</option>
+													<option>Other</option>
+												</select>
+											</div> <!-- end row -->
+											<div class="tablerow">
+												<span id="hd_hphone">Home Phone</span>
+											</div> <!-- end row -->
+											<div class="row">
+												<input id="hphone1" type="text" name="hPhone">
+											</div> <!-- end row -->
+											<div class="tablerow">
+												<span id="hd_wphone">Work Phone</span>
+												<span></span>
+												<span id="ext">Ext</span>
+											</div>
+											<div class="row">
+												<input id="wphone1" type="text" name="wphone" maxlength="12">
+												<input id="ext" type="text" name="ext" maxlength="5">
+											</div>
+										</td>
+									</tr>
+								</table>
+
+								<div class="tablerow"> <!-- titles -->
+									<span id="hd_bday">Birthday</span>
+									<span id="hd_gender"></span>
+									<span id="hd_gender">Gender</span>
+								</div> <!-- end row -->
+								<div class="tablerow"> <!-- inputs -->
+									<select id="month" name="month" style="border-radius:15px; outline:none;">
+										<option value="na">Month</option>
+										<option value="1">January</option>
+										<option value="2">February</option>
+										<option value="3">March</option>
+										<option value="4">April</option>
+										<option value="5">May</option>
+										<option value="6">June</option>
+										<option value="7">July</option>
+										<option value="8">August</option>
+										<option value="9">September</option>
+										<option value="10">October</option>
+										<option value="11">November</option>
+										<option value="12">December</option>
+									</select>
+									<select id="day" name="day" style="border-radius:15px; outline:none;">
+										<option value="na">Day</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+										<option value="24">24</option>
+										<option value="25">25</option>
+										<option value="26">26</option>
+										<option value="27">27</option>
+										<option value="28">28</option>
+										<option value="29">29</option>
+										<option value="30">30</option>
+										<option value="31">31</option>
+									</select>
+									<select id="year" name="year" style="border-radius:15px; outline:none;">
+										<option value="na">Year</option>
+										<option value="2014">2014</option>
+										<option value="2013">2013</option>
+										<option value="2012">2012</option>
+										<option value="2011">2011</option>
+										<option value="2010">2010</option>
+										<option value="2009">2009</option>
+										<option value="2008">2008</option>
+										<option value="2007">2007</option>
+										<option value="2006">2006</option>
+										<option value="2005">2005</option>
+										<option value="2004">2004</option>
+										<option value="2003">2003</option>
+										<option value="2002">2002</option>
+										<option value="2001">2001</option>
+										<option value="2000">2000</option>
+										<option value="1999">1999</option>
+										<option value="1998">1998</option>
+										<option value="1997">1997</option>
+										<option value="1996">1996</option>
+										<option value="1995">1995</option>
+										<option value="1994">1994</option>
+										<option value="1993">1993</option>
+										<option value="1992">1992</option>
+										<option value="1991">1991</option>
+										<option value="1990">1990</option>
+										<option value="1989">1989</option>
+										<option value="1988">1988</option>
+										<option value="1987">1987</option>
+										<option value="1986">1986</option>
+										<option value="1985">1985</option>
+										<option value="1984">1984</option>
+										<option value="1983">1983</option>
+										<option value="1982">1982</option>
+										<option value="1981">1981</option>
+										<option value="1980">1980</option>
+										<option value="1979">1979</option>
+										<option value="1978">1978</option>
+										<option value="1977">1977</option>
+										<option value="1976">1976</option>
+										<option value="1975">1975</option>
+										<option value="1974">1974</option>
+										<option value="1973">1973</option>
+										<option value="1972">1972</option>
+										<option value="1971">1971</option>
+										<option value="1970">1970</option>
+										<option value="1969">1969</option>
+										<option value="1968">1968</option>
+										<option value="1967">1967</option>
+										<option value="1966">1966</option>
+										<option value="1965">1965</option>
+										<option value="1964">1964</option>
+										<option value="1963">1963</option>
+										<option value="1962">1962</option>
+										<option value="1961">1961</option>
+										<option value="1960">1960</option>
+										<option value="1959">1959</option>
+										<option value="1958">1958</option>
+										<option value="1957">1957</option>
+										<option value="1956">1956</option>
+										<option value="1955">1955</option>
+										<option value="1954">1954</option>
+										<option value="1953">1953</option>
+										<option value="1952">1952</option>
+										<option value="1951">1951</option>
+										<option value="1950">1950</option>
+										<option value="1949">1949</option>
+										<option value="1948">1948</option>
+										<option value="1947">1947</option>
+										<option value="1946">1946</option>
+										<option value="1945">1945</option>
+										<option value="1944">1944</option>
+										<option value="1943">1943</option>
+										<option value="1942">1942</option>
+										<option value="1941">1941</option>
+										<option value="1940">1940</option>
+										<option value="1939">1939</option>
+										<option value="1938">1938</option>
+										<option value="1937">1937</option>
+										<option value="1936">1936</option>
+										<option value="1935">1935</option>
+										<option value="1934">1934</option>
+										<option value="1933">1933</option>
+										<option value="1932">1932</option>
+										<option value="1931">1931</option>
+										<option value="1930">1930</option>
+										<option value="1929">1929</option>
+										<option value="1928">1928</option>
+										<option value="1927">1927</option>
+										<option value="1926">1926</option>
+										<option value="1925">1925</option>
+										<option value="1924">1924</option>
+										<option value="1923">1923</option>
+										<option value="1922">1922</option>
+										<option value="1921">1921</option>
+										<option value="1920">1920</option>
+										<option value="1919">1919</option>
+										<option value="1918">1918</option>
+										<option value="1917">1917</option>
+										<option value="1916">1916</option>
+										<option value="1915">1915</option>
+										<option value="1914">1914</option>
+									</select>
+									<select id="gender" name="gender" style="border-radius:15px; outline:none;">
+										<option value="na">Gender</option>
+										<option value="female">Female</option>
+										<option value="male">Male</option>
 									</select>
 								</div> <!-- end row -->
-								<div class="tablerow">
-									<span id="hd_hphone">Home Phone</span>
-								</div> <!-- end row -->
-								<div class="row">
-									<input id="hphone1" type="text" name="hPhone">
-								</div> <!-- end row -->
-								<div class="tablerow">
-									<span id="hd_wphone">Work Phone</span>
-                                    <span></span>
-									<span id="ext">Ext</span>
-								</div>
-								<div class="row">
-									<input id="wphone1" type="text" name="wphone" maxlength="12">
-								
-									<input id="ext" type="text" name="ext" maxlength="5">
-								</div>
-							</td>
-						</tr>
-					</table>
-
-					<div class="tablerow"> <!-- titles -->
-						<span id="hd_bday">Birthday</span>
-		          <span id="hd_gender"></span>
-              <span></span>
-						<span id="hd_gender">Gender</span>
-					</div> <!-- end row -->
-					<div class="tablerow"> <!-- inputs -->
-						<select id="month" name="month" style="border-radius:15px; outline:none;">
-							<option value="na">Month</option>
-							<option value="1">January</option>
-							<option value="2">February</option>
-							<option value="3">March</option>
-							<option value="4">April</option>
-							<option value="5">May</option>
-							<option value="6">June</option>
-							<option value="7">July</option>
-							<option value="8">August</option>
-							<option value="9">September</option>
-							<option value="10">October</option>
-							<option value="11">November</option>
-							<option value="12">December</option>
-						</select>
-						<select id="day" name="day" style="border-radius:15px; outline:none;">
-							<option value="na">Day</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
-							<option value="13">13</option>
-							<option value="14">14</option>
-							<option value="15">15</option>
-							<option value="16">16</option>
-							<option value="17">17</option>
-							<option value="18">18</option>
-							<option value="19">19</option>
-							<option value="20">20</option>
-							<option value="21">21</option>
-							<option value="22">22</option>
-							<option value="23">23</option>
-							<option value="24">24</option>
-							<option value="25">25</option>
-							<option value="26">26</option>
-							<option value="27">27</option>
-							<option value="28">28</option>
-							<option value="29">29</option>
-							<option value="30">30</option>
-							<option value="31">31</option>
-						</select>
-						<select id="year" name="year" style="border-radius:15px; outline:none;">
-							<option value="na">Year</option>
-							<option value="2014">2014</option>
-							<option value="2013">2013</option>
-							<option value="2012">2012</option>
-							<option value="2011">2011</option>
-							<option value="2010">2010</option>
-							<option value="2009">2009</option>
-							<option value="2008">2008</option>
-							<option value="2007">2007</option>
-							<option value="2006">2006</option>
-							<option value="2005">2005</option>
-							<option value="2004">2004</option>
-							<option value="2003">2003</option>
-							<option value="2002">2002</option>
-							<option value="2001">2001</option>
-							<option value="2000">2000</option>
-							<option value="1999">1999</option>
-							<option value="1998">1998</option>
-							<option value="1997">1997</option>
-							<option value="1996">1996</option>
-							<option value="1995">1995</option>
-							<option value="1994">1994</option>
-							<option value="1993">1993</option>
-							<option value="1992">1992</option>
-							<option value="1991">1991</option>
-							<option value="1990">1990</option>
-							<option value="1989">1989</option>
-							<option value="1988">1988</option>
-							<option value="1987">1987</option>
-							<option value="1986">1986</option>
-							<option value="1985">1985</option>
-							<option value="1984">1984</option>
-							<option value="1983">1983</option>
-							<option value="1982">1982</option>
-							<option value="1981">1981</option>
-							<option value="1980">1980</option>
-							<option value="1979">1979</option>
-							<option value="1978">1978</option>
-							<option value="1977">1977</option>
-							<option value="1976">1976</option>
-							<option value="1975">1975</option>
-							<option value="1974">1974</option>
-							<option value="1973">1973</option>
-							<option value="1972">1972</option>
-							<option value="1971">1971</option>
-							<option value="1970">1970</option>
-							<option value="1969">1969</option>
-							<option value="1968">1968</option>
-							<option value="1967">1967</option>
-							<option value="1966">1966</option>
-							<option value="1965">1965</option>
-							<option value="1964">1964</option>
-							<option value="1963">1963</option>
-							<option value="1962">1962</option>
-							<option value="1961">1961</option>
-							<option value="1960">1960</option>
-							<option value="1959">1959</option>
-							<option value="1958">1958</option>
-							<option value="1957">1957</option>
-							<option value="1956">1956</option>
-							<option value="1955">1955</option>
-							<option value="1954">1954</option>
-							<option value="1953">1953</option>
-							<option value="1952">1952</option>
-							<option value="1951">1951</option>
-							<option value="1950">1950</option>
-							<option value="1949">1949</option>
-							<option value="1948">1948</option>
-							<option value="1947">1947</option>
-							<option value="1946">1946</option>
-							<option value="1945">1945</option>
-							<option value="1944">1944</option>
-							<option value="1943">1943</option>
-							<option value="1942">1942</option>
-							<option value="1941">1941</option>
-							<option value="1940">1940</option>
-							<option value="1939">1939</option>
-							<option value="1938">1938</option>
-							<option value="1937">1937</option>
-							<option value="1936">1936</option>
-							<option value="1935">1935</option>
-							<option value="1934">1934</option>
-							<option value="1933">1933</option>
-							<option value="1932">1932</option>
-							<option value="1931">1931</option>
-							<option value="1930">1930</option>
-							<option value="1929">1929</option>
-							<option value="1928">1928</option>
-							<option value="1927">1927</option>
-							<option value="1926">1926</option>
-							<option value="1925">1925</option>
-							<option value="1924">1924</option>
-							<option value="1923">1923</option>
-							<option value="1922">1922</option>
-							<option value="1921">1921</option>
-							<option value="1920">1920</option>
-							<option value="1919">1919</option>
-							<option value="1918">1918</option>
-							<option value="1917">1917</option>
-							<option value="1916">1916</option>
-							<option value="1915">1915</option>
-							<option value="1914">1914</option>
-						</select>
-						<select id="gender" name="gender" style="border-radius:15px; outline:none;">
-							<option value="na">Gender</option>
-							<option value="female">Female</option>
-							<option value="male">Male</option>
-						</select>
-					</div> <!-- end row -->
-		<br><br>
-				</div> <!-- end tab 1 -->
-			</div> <!-- end simple tabs -->
-      <div class="btn-group" >
-        <span></span>
-        <button type="button" class="redbutton" id="nexttab">Next</button>
-      </div>
+								<br><br>
+							</div> <!-- end tab 1 -->
+							<div class="btn-group" >
+								<button type="button" class="redbutton" id="nexttab">Next</button>
+							</div>
+							<br>
+						</div> <!-- end simple tabs -->
 			</div> <!-- end row -->
 		</div> <!-- end table -->
 
 
 
   <div id="Multiple" class="tabcontent">
-    <div class="table" style="width:100%">
+    <div class="table" style="width:100%; height:400px">
 
 
-            <div class="simpleTabs" style="margin-left:20px">
+            <div class="simpleTabs" style="margin-left:30px">
             <div>
               <h1 style="color: #cc0000">Create Your Account Login</h1>
                <!-- titles -->
@@ -695,13 +683,13 @@ label{
                 <input id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required > <!-- checks passwords to be the same -->
                 
               </div> <!-- end row -->
-	          </div> <!-- end tab 2 -->
-            <br><br>
+			<br><br><br><br><br><br><br><br>
             <div class="btn-group" >
               <button type="button" class="redbutton" id="prevtab">Prev</button>
               <span></span>
               <button type="button" class="redbutton" id="nexttab">Next</button>
             </div>
+	          </div> <!-- end tab 2 -->
     </div>
   </div>
 </div>
@@ -711,7 +699,7 @@ label{
   <div class="table" style="width:100%">
 
 
-            <div class="simpleTabs" style="margin-left:20px">
+            <div class="simpleTabs" style="margin-left:30px">
             <div>
 			<h1 style="color: #cc0000">3 Simple Steps for Payment</h1></div>
 					<h3 style="color: black"><b>1. PayPal Information</b></h3>
@@ -747,24 +735,23 @@ label{
 					<br>
 					<h3>Sales Coordinator Total Commission Override: <a style="color:#cc0000;">0.5%</a></h3>
 
-          <br>
           <div class="btn-group" >
             <button type="button" class="redbutton" id="prevtab">Prev</button>
             <span></span>
             <button type="button" class="redbutton" id="nexttab">Next</button>
           </div>
             </div> <!-- end tab 2 -->
-
+			<br>
     </div>
 
 </div>
 
 
 <div id="Triple" class="tabcontent">
-  <div class="table" style="width:100%">
+  <div class="table" style="width:100%; height:400px">
 
 
-            <div class="simpleTabs" style="margin-left:20px">
+            <div class="simpleTabs" style="margin-left:30px">
             <div>
   						<h1 style="color: #cc0000">Social Media Connections</h1>
   						<div id="row">
@@ -789,12 +776,14 @@ label{
   						</div>
               <br>
               <br>
+              <!-- end row -->
+              </div>
+			  <br><br><br><br><br><br>
+
               <div class="btn-group" >
                 <button type="button" class="redbutton" id="prevtab">Prev</button>
                 <span></span>
                 <button type="button" class="redbutton" id="nexttab">Next</button>
-              </div>
-              <!-- end row -->
               </div>
               </div>
   					</div> <!-- end tab 3 -->
@@ -804,10 +793,10 @@ label{
     </div>
 
 <div id="Four" class="tabcontent">
-  <div class="table" style="width:100%">
+  <div class="table" style="width:100%; height:400px">
 
 
-            <div class="simpleTabs" style="margin-left:20px">
+            <div class="simpleTabs" style="margin-left:30px">
             <div>
   			<h1 style="color: #cc0000">Profile Photo</h1>
             </div>
@@ -819,18 +808,18 @@ label{
   							<h3 id="">Preview Photo:</h3>
   							<img src="" alt="uploaded profile photo">
   						</div>
-              <br><br>
+              <br><br><br>
 
 
                <!-- end row -->
-            </div>
-
 			<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
           <div class="tablerow">
             <input type="submit" name="submit" class="redbutton" value="Save & Exit">
             <input type="submit" class="redbutton" value="Save & Add Another">
           </div> <!-- end row -->
         </section>
+            </div>
+
   					</div> <!-- end tab 3 -->
 
 
