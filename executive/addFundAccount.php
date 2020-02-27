@@ -180,6 +180,7 @@ session_start();
 		<div id="content">
 			<br>
 			<h1>Add New Fundraiser Account</h1>
+			<br>
 			<div class="table">
 				<form class="graybackground" action="addFundAccount.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
 					<h2><b>--Option 1: Add One Account--</b></h2>
@@ -211,9 +212,9 @@ session_start();
 					</div> <!-- end tablerow -->
 					<br>
 					<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
-						<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
-						<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Banner</a></li>
-						<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black">Social Media</a></li>
+						<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black; font-weight:bold">Information</a></li>
+						<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black; font-weight:bold">Banner</a></li>
+						<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black; font-weight:bold">Social Media</a></li>
 					</ul>
 
 					<div id="Single" class="tabcontent">
@@ -385,10 +386,14 @@ session_start();
 								</table> <!-- end table -->
 								<br><br>
 								
-								<div class="btn-group" >
-									<span></span>
-									<button type="button" class="btn" id="nexttab">Next</button>
-								</div> <!-- end SUBMIT BUTTON SECTION ROW -->
+								<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+										<div class="tablerow">
+											<br><br>
+											<input type="submit" class="redbutton" value="Save & Exit">
+											<input type="submit" class="redbutton" value="Save & Add Another">
+											<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
+										</div> <!-- end row -->
+									</section> <!-- end SUBMIT BUTTON SECTION ROW -->
 							</div> <!-- end simple tabs -->
 						</div> <!-- end table -->
 					</div> <!-- end single tab -->
@@ -397,8 +402,9 @@ session_start();
 						<div class="table" style="width:100%">
 							<div class="simpleTabs">
 								<div>
+									
+									<h1 style="color: #cc0000">Social Media Connections</h1>
 									<br>
-									<h2 style="color: #cc0000">Social Media Connections</h2>
 									<div id="row">
 										<span id="hd_fb">Facebook</span>
 										<input id="fb" type="text" name="fb" value="www.facebook.com">
@@ -437,8 +443,7 @@ session_start();
 						<div class="table" style="width:100%">
 							<div class="simpleTabs">
 								<div>
-									<br>
-									<h2 style="color: #cc0000">Website Banner</h2>
+									<h1 style="color: #cc0000">Website Banner</h1>
 								</div>
 								<div class="tablerow">
 									<span id="">Upload Banner:</span><br><br>
@@ -449,11 +454,14 @@ session_start();
 									<img src="" alt="uploaded profile photo">
 								</div>
 								<br><br>
-								<div class="btn-group" >
-									<button type="button" class="btn" id="prevtab">Prev</button>
-									<span></span>
-									<button type="button" class="btn" id="nexttab">Next</button>
-								</div>
+								<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+										<div class="tablerow">
+											<br><br>
+											<input type="submit" class="redbutton" value="Save & Exit">
+											<input type="submit" class="redbutton" value="Save & Add Another">
+											<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
+										</div> <!-- end row -->
+									</section>
 							</div> <!-- end simpleTabs -->
 						</div> <!-- end table -->
 						<!--<form class="graybackground">

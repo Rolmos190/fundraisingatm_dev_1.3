@@ -363,11 +363,11 @@ label{
 			</div> <!-- end row -->
 <br>
 			<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black">Account Login</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black">Payment</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black">Social Media</a></li>
-			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Profile Photo</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black; font-weight:bold">Information</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black; font-weight:bold">Account Login</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black; font-weight:bold">Payment</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black; font-weight:bold">Social Media</a></li>
+			<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black; font-weight:bold">Profile Photo</a></li>
 			</ul>
 
 			<div id="Single" class="tabcontent">
@@ -388,8 +388,8 @@ label{
 				</ul> -->
 
 		  <div>
-        <br>
-						<h2 style="color: #cc0000"> Contact Information</h2>
+						<h1 style="color: #cc0000"> Contact Information</h1>
+						<br>
 						<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
 
 
@@ -718,11 +718,19 @@ label{
 				</div> <!-- end tab 1 -->
 			</div> <!-- end simple tabs -->
 
-      <div class="btn-group" >
+      <!-- <div class="btn-group" >
         <span></span>
         <button type="button" class="btn" id="nexttab">Next</button>
-      </div>
-			</div> <!-- end row -->
+      </div> -->
+	  <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+<div class="tablerow">
+  <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+  <input type="submit" class="redbutton" value="Save & Add Another">
+</div> <!-- end row -->
+</section>		
+	
+	</div> <!-- end row -->
 		</div> <!-- end table -->
 
 
@@ -733,8 +741,8 @@ label{
 
             <div class="simpleTabs">
             <div>
-              <br>
-              <h2 style="color: #cc0000">Create Your Account Login</h2>
+			  <h1 style="color: #cc0000">Create Your Account Login</h1>
+			  <br>
                <!-- titles -->
                 <span id="hd_loginemail">Email Address</span>
                <!-- end row -->
@@ -757,12 +765,21 @@ label{
               <br>
             </div> <!-- end tab 2 -->
             <br>
-            <div class="btn-group" >
+            <!-- <div class="btn-group" >
               <button type="button" class="btn" id="prevtab">Prev</button>
               <span></span>
               <button type="button" class="btn" id="nexttab">Next</button>
-            </div>
-    </div>
+            </div> -->
+			<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+			 				  <div class="tablerow">
+			 					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+			 					<input type="submit" class="redbutton" value="Save & Add Another">
+			 				  </div> <!-- end row -->
+			 				</section>
+	
+		</div>
+	
   </div>
 </div>
 
@@ -773,8 +790,8 @@ label{
 
             <div class="simpleTabs">
             <div>
-              <br>
-			<h2 style="color: #cc0000">3 Simple Steps for Payment</h2></div>
+			<h1 style="color: #cc0000">3 Simple Steps for Payment</h1></div>
+			<br>
 					<h3 style="color: black"><b>1. PayPal Information</b></h3>
 					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account.<br> If you prefer, we can set up your PayPal account for you.</p>
 					<div class="tablerow"> <!-- title -->
@@ -809,11 +826,18 @@ label{
 					<h3>Sales Coordinator Total Commission Override: 0.5%</h3>
 
           <br>
-          <div class="btn-group" >
+          <!-- <div class="btn-group" >
             <button type="button" class="btn" id="prevtab">Prev</button>
             <span></span>
             <button type="button" class="btn" id="nexttab">Next</button>
-          </div>
+		  </div> -->
+		  <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+			 				  <div class="tablerow">
+			 					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+			 					<input type="submit" class="redbutton" value="Save & Add Another">
+			 				  </div> <!-- end row -->
+			 				</section>
             </div> <!-- end tab 2 -->
 
     </div>
@@ -827,8 +851,8 @@ label{
 
             <div class="simpleTabs">
             <div>
-              <br>
-  						<h2 style="color: #cc0000">Social Media Connections</h2>
+						  <h1 style="color: #cc0000">Social Media Connections</h1>
+						  <br>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
   							<input id="fb" type="text" name="fb" value="www.facebook.com">
@@ -851,11 +875,18 @@ label{
   						</div>
               <br>
               <br>
-              <div class="btn-group" >
+              <!-- <div class="btn-group" >
                 <button type="button" class="btn" id="prevtab">Prev</button>
                 <span></span>
                 <button type="button" class="btn" id="nexttab">Next</button>
-              </div>
+			  </div> -->
+			  <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+			 				  <div class="tablerow">
+			 					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+			 					<input type="submit" class="redbutton" value="Save & Add Another">
+			 				  </div> <!-- end row -->
+			 				</section>
               <!-- end row -->
               </div>
               </div>
@@ -871,8 +902,9 @@ label{
 
             <div class="simpleTabs">
             <div>
-              <br>
-  						<h2 style="color: #cc0000">Profile Photo</h2>
+              
+						  <h1 style="color: #cc0000">Profile Photo</h1>
+						  <br>
             </div>
               <div class="tablerow">
   							<span id="">Upload Profile Photo:</span><br><br>
