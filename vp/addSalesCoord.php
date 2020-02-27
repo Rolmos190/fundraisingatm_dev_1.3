@@ -324,7 +324,7 @@ label{
 			<div class="table">
 				<form class="graybackground" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
 				<div>
-					<span id="hd_vp2">Vice President:</span>
+					<span id="hd_vp2" style="font-size: 1.2em">Vice President:</span>
 				</div> <!-- end row -->
 
 				<div class="tablerow" >
@@ -353,7 +353,7 @@ label{
 
 				<div id="Single" class="tabcontent">
 					<!-- <form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data"> -->
-  					<div class="table" style="width:100%; height:400px">
+  					<div class="table" style="width:100%; height:350px">
 						<div class="simpleTabs" style="margin-left:30px">
 							<!--<ul class="simpleTabsNavigation">
 								<li><a href="#">Information</a></li>
@@ -419,7 +419,7 @@ label{
 											</div>
 											<div class="tablerow"> <!-- inputs -->
 												<input id="city" type="text" name="city">
-												<select id="state" name="state" style="border-radius:15px; outline:none;>
+												<select id="state" name="state" style="border-radius:15px; outline:none;">
 													<option value="" selected="selected">--</option>
 													<option value="AL">AL</option>
 													<option value="AK">AK</option>
@@ -681,23 +681,23 @@ label{
 										<option value="male">Male</option>
 									</select>
 								</div> <!-- end row -->
-								<br><br>
 							</div> <!-- end tab 1 -->
-							<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-
-			 				  <div class="tablerow">
-			 					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
-			 					<input type="submit" class="redbutton" value="Save & Add Another">
-			 				  </div> <!-- end row -->
-			 				</section>
 						</div> <!-- end simple tabs -->
-			</div> <!-- end row -->
+					</div> <!-- end row -->
+					<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+					   <div class="tablerow">
+						 <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+						 <input type="submit" class="redbutton" value="Save & Add Another">
+					   </div> <!-- end row -->
+					 </section>
+					 <br>
 		</div> <!-- end table -->
 
 
 
   <div id="Multiple" class="tabcontent">
-    <div class="table" style="width:100%; height:400px">
+    <div class="table" style="width:100%; height:350px">
 
 
             <div class="simpleTabs" style="margin-left:30px">
@@ -720,17 +720,17 @@ label{
                 <input id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required > <!-- checks passwords to be the same -->
                 
               </div> <!-- end row -->
-			<br><br><br><br><br><br><br><br>
-            <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-
-			 				  <div class="tablerow">
-			 					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
-			 					<input type="submit" class="redbutton" value="Save & Add Another">
-			 				  </div> <!-- end row -->
-			 				</section>
-	          </div> <!-- end tab 2 -->
+		</div> <!-- end tab 2 -->
     </div>
-  </div>
+</div>
+<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+				   <div class="tablerow">
+					 <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+					 <input type="submit" class="redbutton" value="Save & Add Another">
+				   </div> <!-- end row -->
+				 </section>
+				 <br>
 </div>
 
 
@@ -772,22 +772,23 @@ label{
 					
 					<h3>Sales Coordinator Total Commission Override: <a style="color:#cc0000;">0.5%</a></h3>
 
-					<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+				</div> <!-- end tab 2 -->
+				<br>
+			</div>
+			<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 
 <div class="tablerow">
-  <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
-  <input type="submit" class="redbutton" value="Save & Add Another">
+<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+<input type="submit" class="redbutton" value="Save & Add Another">
 </div> <!-- end row -->
 </section>
-            </div> <!-- end tab 2 -->
-			<br>
-    </div>
+<br>
 
 </div>
 
 
 <div id="Triple" class="tabcontent">
-  <div class="table" style="width:100%; height:400px">
+  <div class="table" style="width:100%; height:350px">
 
 
             <div class="simpleTabs" style="margin-left:30px">
@@ -817,24 +818,23 @@ label{
               <br>
               <!-- end row -->
               </div>
-			  <br><br><br><br><br><br>
 
-              <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+			</div>
+		</div> <!-- end tab 3 -->
+		
+		
+		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 
-			 				  <div class="tablerow">
-			 					<input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
-			 					<input type="submit" class="redbutton" value="Save & Add Another">
-			 				  </div> <!-- end row -->
-			 				</section>
-              </div>
-  					</div> <!-- end tab 3 -->
-
-
-
+						 <div class="tablerow">
+						   <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+						   <input type="submit" class="redbutton" value="Save & Add Another">
+						 </div> <!-- end row -->
+					   </section>
+<br>
     </div>
 
 <div id="Four" class="tabcontent">
-  <div class="table" style="width:100%; height:400px">
+  <div class="table" style="width:100%; height:350px">
 
 
             <div class="simpleTabs" style="margin-left:30px">
@@ -854,16 +854,17 @@ label{
 
 
                <!-- end row -->
-			<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
-          <div class="tablerow">
-            <input type="submit" name="submit" class="redbutton" value="Save & Exit">
-            <input type="submit" class="redbutton" value="Save & Add Another">
-          </div> <!-- end row -->
-        </section>
             </div>
-
-  					</div> <!-- end tab 3 -->
-
+			
+		</div> <!-- end tab 3 -->
+		
+		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+	  <div class="tablerow">
+		<input type="submit" name="submit" class="redbutton" value="Save & Exit">
+		<input type="submit" class="redbutton" value="Save & Add Another">
+	  </div> <!-- end row -->
+	</section>
+	<br>
 
 
 
