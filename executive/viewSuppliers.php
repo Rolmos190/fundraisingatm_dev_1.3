@@ -45,19 +45,19 @@
     	while($row = mysqli_fetch_assoc($result))
     	{
     	   echo "<tr>
-    	    <td>".$row[userName]."</td>
-    	    <td>".$row[userEmail]."</td>
-    	    <td>".$row[supplyCode]."</td>
-    	    <td>".$row[phone]."</td>
-    	    <td>".$row[address]."</td>
-    	    <td>".$row[city]."</td>
-    	    <td>".$row[state]."</td>
-    	    <td>".$row[zip]."</td>
-    	    <td>".$row[rawPass]."</td>
+    	    <td>".$row['userEmail']."</td>
+          <td>".$row['userName']."</td>
+    	    <td>".$row['supplyCode']."</td>
+    	    <td>".$row['phone']."</td>
+    	    <td>".$row['address']."</td>
+    	    <td>".$row['city']."</td>
+    	    <td>".$row['state']."</td>
+    	    <td>".$row['zip']."</td>
+    	    <td>".$row['rawPass']."</td>
     	    <td>";
     	    echo'
-    	    <button type="button" name="edit" value="Edit" id="'.$row[userId].'" class="btn btn-info  btn-xs view_data" /><img src="../images/edit2.png" /></button></td><td>
-    	    <button type="button" name="edit" value="Edit" id="'.$row[userId].'" class="btn btn-info" /><img src="../images/3trash.png" /></button>
+    	    <button type="button" name="edit" value="Edit" id="'.$row['userId'].'" class="btn btn-info  btn-xs view_data" /><img src="../images/edit2.png" /></button></td><td>
+    	    <button type="button" name="edit" value="Edit" id="'.$row['userId'].'" class="btn btn-info" /><img src="../images/3trash.png" /></button>
     	    </td></tr>';
     	}
       ?>
