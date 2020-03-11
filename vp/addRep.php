@@ -215,14 +215,46 @@ include '../includes/autoload.php';
 	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
 	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
+	
 	<style>
+
+form input[type=submit], form input[type=reset], form input#redbutton{
+	border:thin solid #777;	
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border-radius: 7px 7px 7px 7px;
+	border-radius: 7px 7px 7px 7px;
+	-moz-box-shadow: 3px 3px 3px #777;
+	-webkit-box-shadow: 3px 3px 3px #777;
+	box-shadow: 3px 3px 3px #777;
+	background-color: #CC0000;
+	color: white;
+	font-size: .75em;
+	cursor: pointer;
+}
+#redbutton a{
+	border:thin solid #777;	
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: 3px 3px 3px #777;
+	-webkit-box-shadow: 3px 3px 3px #777;
+	box-shadow: 3px 3px 3px #777;
+	height: 1.5em;
+	background-color: #CC0000;
+	color: white;
+	font-size: .75em;
+	text-decoration: none;
+	padding: .2em;
+}
+.redbutton:hover{color: #cc0000; background: #fff; }
+
 ul.tab {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     border: 1px solid #FFF;
-    background-color: #cc0000;
+    background-color: #ccc;
 }
 
 /* Float the list items side by side */
@@ -241,12 +273,12 @@ ul.tab li a {
 
 /* Change background color of links on hover */
 ul.tab li a:hover {
-    background-color: #ddd;
+    background-color: white;
 }
 
 /* Create an active/current tablink class */
 ul.tab li a:focus, .active {
-    background-color: #ccc;
+    background-color: #cc0000;
 }
 
 /* Style the tab content */
@@ -287,11 +319,11 @@ label{
       	<?php include 'sidenav.php' ; ?>
       	
 		<div id="content" style="margin-left:35px">
-        	<h1 align="center">Add New Sales Coordinator</h1> 
+        	<h1 align="center"><b>Add New Representative</b></h1> 
 			<div class="table">
 				<form class="graybackground" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return checkForm(this);">
 				<div>
-					<span id="hd_vp2">Vice President:</span>
+					<span id="hd_vp2" style="font-size: 1.2em">Vice President:</span>
 				</div> <!-- end row -->
 
 				<div class="tablerow" >
@@ -311,16 +343,16 @@ label{
 				</div> <!-- end row -->
 				<br>
 				<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black">Information</a></li>
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black">Account Login</a></li>
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black">Payment</a></li>
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black">Social Media</a></li>
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black">Profile Photo</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black; font-weight:bold">Information</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black; font-weight:bold">Account Login</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black; font-weight:bold">Payment</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black; font-weight:bold">Social Media</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black; font-weight:bold">Profile Photo</a></li>
 				</ul>
 
 				<div id="Single" class="tabcontent">
 					<!-- <form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data"> -->
-  					<div class="table" style="width:100%; height:400px">
+  					<div class="table" style="width:100%; height:350px">
 						<div class="simpleTabs" style="margin-left:30px">
 							<!--<ul class="simpleTabsNavigation">
 								<li><a href="#">Information</a></li>
@@ -386,7 +418,7 @@ label{
 											</div>
 											<div class="tablerow"> <!-- inputs -->
 												<input id="city" type="text" name="city">
-												<select id="state" name="state" style="border-radius:15px; outline:none;>
+												<select id="state" name="state" style="border-radius:15px; outline:none;">
 													<option value="" selected="selected">--</option>
 													<option value="AL">AL</option>
 													<option value="AK">AK</option>
@@ -649,20 +681,23 @@ label{
 										<option value="male">Male</option>
 									</select>
 								</div> <!-- end row -->
-								<br><br>
 							</div> <!-- end tab 1 -->
-							<div class="btn-group" >
-								<button type="button" class="redbutton" id="nexttab">Next</button>
-							</div>
-							<br>
 						</div> <!-- end simple tabs -->
-			</div> <!-- end row -->
+					</div> <!-- end row -->
+					<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+					   <div class="tablerow">
+						 <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+						 <input type="submit" class="redbutton" value="Save & Add Another">
+					   </div> <!-- end row -->
+					 </section>
+					 <br>
 		</div> <!-- end table -->
 
 
 
   <div id="Multiple" class="tabcontent">
-    <div class="table" style="width:100%; height:400px">
+    <div class="table" style="width:100%; height:350px">
 
 
             <div class="simpleTabs" style="margin-left:30px">
@@ -683,17 +718,21 @@ label{
               <div id="row"> <!-- inputs -->
                 <input id="pass1" type="password" name="password" required >
                 <input id="pass2" type="password" name="cpassword" onkeyup="checkPass(); return false;" required > <!-- checks passwords to be the same -->
-                
               </div> <!-- end row -->
-			<br><br><br><br><br><br><br><br>
-            <div class="btn-group" >
-              <button type="button" class="redbutton" id="prevtab">Prev</button>
-              <span></span>
-              <button type="button" class="redbutton" id="nexttab">Next</button>
-            </div>
+            
 	          </div> <!-- end tab 2 -->
     </div>
   </div>
+  <section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+
+<div class="tablerow">
+  <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+  <input type="submit" class="redbutton" value="Save & Add Another">
+</div> <!-- end row -->
+</section>
+<br>
+
+
 </div>
 
 
@@ -712,7 +751,6 @@ label{
 					<div class="tablerow"> <!-- input -->
 						<input id="paypalemail" type="email" name="paypalemail">
 					</div> <!-- end row -->
-					<br>
 					<h3 style="color: black"><b>2. Fund Distribution and Tax Information</b></h3>
 					<p>One of the following numbers is required for distribution of funds and also for tax purposes.</p>
 					<div class="tablerow"> <!-- titles -->
@@ -730,27 +768,27 @@ label{
 						<input id="stin1" type="text" name="stin1"><!--<input id="stin2" type="text" name="stin2">-->
 						<input id="nonp1" type="text" name="nonp1"><!--<input id="nonp2" type="text" name="nonp2">-->
 					</div> <!-- end row -->
-					<br>
 					<h3 style="color: black"><strong>3. 1099 Form</strong></h3>
 					<p>Explanation about 1099 Form <a href="https://turbotax.intuit.com/tax-tools/tax-tips/Self-Employment-Taxes/What-is-an-IRS-1099-Form-/INF14810.html">here</a>.<br>
 					Go here to get your official copy of a 1099 form:  <a href="">http://www.irs.gov/Forms-&-Pubs</a></p>
-					<br>
 					<h3>Sales Coordinator Total Commission Override: <a style="color:#cc0000;">0.5%</a></h3>
 
-          <div class="btn-group" >
-            <button type="button" class="redbutton" id="prevtab">Prev</button>
-            <span></span>
-            <button type="button" class="redbutton" id="nexttab">Next</button>
-          </div>
             </div> <!-- end tab 2 -->
 			<br>
     </div>
+	<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 
+					   <div class="tablerow">
+						 <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+						 <input type="submit" class="redbutton" value="Save & Add Another">
+					   </div> <!-- end row -->
+					 </section>
+					 <br>
 </div>
 
 
 <div id="Triple" class="tabcontent">
-  <div class="table" style="width:100%; height:400px">
+  <div class="table" style="width:100%; height:350px">
 
 
             <div class="simpleTabs" style="margin-left:30px">
@@ -780,22 +818,24 @@ label{
               <br>
               <!-- end row -->
               </div>
-			  <br><br><br><br><br><br>
 
-              <div class="btn-group" >
-                <button type="button" class="redbutton" id="prevtab">Prev</button>
-                <span></span>
-                <button type="button" class="redbutton" id="nexttab">Next</button>
               </div>
-              </div>
-  					</div> <!-- end tab 3 -->
+  			
+		</div> <!-- end tab 3 -->
+		
+		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 
-
+						 <div class="tablerow">
+						   <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+						   <input type="submit" class="redbutton" value="Save & Add Another">
+						 </div> <!-- end row -->
+					   </section>
+						<br>
 
     </div>
 
 <div id="Four" class="tabcontent">
-  <div class="table" style="width:100%; height:400px">
+  <div class="table" style="width:100%; height:350px">
 
 
             <div class="simpleTabs" style="margin-left:30px">
@@ -803,28 +843,30 @@ label{
   			<h1 style="color: #cc0000">Profile Photo</h1>
             </div>
               <div class="tablerow">
-  							<span id="">Upload Profile Photo:</span><br><br>
+  							<h3 id="">Upload Profile Photo:</h3>
   							<input type="file" id="" name="uploaded_file">
+							  <br>
   							<input type="submit" class="redbutton" value="Upload Photo">
-  							<br><br>
+  							<br>
   							<h3 id="">Preview Photo:</h3>
   							<img src="" alt="uploaded profile photo">
   						</div>
-              <br><br><br>
+              <br><br>
 
-
+			
                <!-- end row -->
+            </div>
+
+  					</div> <!-- end tab 3 -->
+
+
 			<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
           <div class="tablerow">
             <input type="submit" name="submit" class="redbutton" value="Save & Exit">
             <input type="submit" class="redbutton" value="Save & Add Another">
           </div> <!-- end row -->
         </section>
-            </div>
-
-  					</div> <!-- end tab 3 -->
-
-
+		<br>
 
 
 

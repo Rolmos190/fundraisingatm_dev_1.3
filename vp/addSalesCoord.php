@@ -209,7 +209,8 @@
 
 <!DOCTYPE html>
 <head>
-<title>FundraisingATM | Executive</title>
+<title>FundraisingATM | Add Sales Coordinator</title>
+<link rel="shortcut icon" href="../images/favicon.ico">
   <link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
   <link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
 
@@ -269,6 +270,7 @@ ul.tab li a {
     transition: 0.3s;
     font-size: 17px;
 }
+
 
 /* Change background color of links on hover */
 ul.tab li a:hover {

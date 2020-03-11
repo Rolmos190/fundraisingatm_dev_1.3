@@ -95,7 +95,7 @@
                         <li><a href="memberReports.php" title="Account Home"><i class="fa fa-line-chart" aria-hidden="true"></i>Member Sales Reports</a></li>
                         <li><a href="addSalesCoord.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i>Add Sales Coordinator</a></li>
                         <li><a href="addRep.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i>Add Representative</a></li>
-                        <li><a href="selectFundraiser.php" title=""><i class="fa fa-plus-square navicon"></i> Add Fundraiser Account</a></li>
+                        <li><a href=".php" title=""><i class="fa fa-plus-square navicon"></i> Add Fundraiser Account</a></li>
                         <li><a href="addNewGroup.php" title=""><i class="fa fa-plus-square navicon"></i>Add Fundraiser Group</a></li>
                         <li><a href="newLeaders.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i>Add Fundraiser Leader</a></li>
                         <!-- <li><a href="uploadLeaders.php" title="">Upload Fundraiser Leaders</a></li>  -->
