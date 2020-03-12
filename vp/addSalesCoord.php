@@ -253,17 +253,19 @@ ul.tab {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #FFF;
     background-color: #ccc;
 }
 
 /* Float the list items side by side */
-ul.tab li {float: left;}
+ul.tab li {
+	float: left;
+	border: 0.5px solid #FFF;
+	}
 
 /* Style the links inside the list items */
 ul.tab li a {
     display: inline-block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -279,6 +281,7 @@ ul.tab li a:hover {
 
 /* Create an active/current tablink class */
 ul.tab li a:focus, .active {
+	color: white;
     background-color: #cc0000;
 }
 
@@ -346,11 +349,11 @@ label{
 				</div> <!-- end row -->
 				<br>
 				<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black; font-weight:bold">Information</a></li>
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="color:black; font-weight:bold">Account Login</a></li>
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="color:black; font-weight:bold">Payment</a></li>
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black; font-weight:bold">Social Media</a></li>
-					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black; font-weight:bold">Profile Photo</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="font-weight:bold">Information</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Multiple')" style="font-weight:bold">Account Login</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Five')" style="font-weight:bold">Payment</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="font-weight:bold">Social Media</a></li>
+					<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="font-weight:bold">Profile Photo</a></li>
 				</ul>
 
 				<div id="Single" class="tabcontent">
@@ -365,7 +368,7 @@ label{
 							</ul> -->
 
 		  					<div>
-								<h1 style="color: #cc0000"> Contact Information</h1>
+								<h1 style="color: #cc0000"><b> Contact Information</b></h1>
 								<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
 	
 								<div class="tablerow"> <!-- titles -->
@@ -690,6 +693,7 @@ label{
 
 					   <div class="tablerow">
 						 <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+						 <span></span>
 						 <input type="submit" class="redbutton" value="Save & Add Another">
 					   </div> <!-- end row -->
 					 </section>
@@ -704,7 +708,7 @@ label{
 
             <div class="simpleTabs" style="margin-left:30px">
             <div>
-              <h1 style="color: #cc0000">Create Your Account Login</h1>
+              <h1 style="color: #cc0000"><b>Create Your Account Login</b></h1>
                <!-- titles -->
                 <span id="hd_loginemail">Email Address</span>
                <!-- end row -->
@@ -729,6 +733,7 @@ label{
 
 				   <div class="tablerow">
 					 <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+					 <span></span>
 					 <input type="submit" class="redbutton" value="Save & Add Another">
 				   </div> <!-- end row -->
 				 </section>
@@ -742,7 +747,7 @@ label{
 
             <div class="simpleTabs" style="margin-left:30px">
             <div>
-			<h1 style="color: #cc0000">3 Simple Steps for Payment</h1></div>
+			<h1 style="color: #cc0000"><b>3 Simple Steps for Payment</b></h1></div>
 					<h3 style="color: black"><b>1. PayPal Information</b></h3>
 					<p>Please enter your new or existing PayPal information. All commissions are paid next day into your PayPal account.<br> If you prefer, we can set up your PayPal account for you.</p>
 					<div class="tablerow"> <!-- title -->
@@ -781,6 +786,7 @@ label{
 
 <div class="tablerow">
 <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+<span></span>
 <input type="submit" class="redbutton" value="Save & Add Another">
 </div> <!-- end row -->
 </section>
@@ -795,7 +801,7 @@ label{
 
             <div class="simpleTabs" style="margin-left:30px">
             <div>
-  						<h1 style="color: #cc0000">Social Media Connections</h1>
+  						<h1 style="color: #cc0000"><b>Social Media Connections</b></h1>
   						<div id="row">
   							<span id="hd_fb">Facebook</span>
   							<input id="fb" type="text" name="fb" value="www.facebook.com">
@@ -829,6 +835,7 @@ label{
 
 						 <div class="tablerow">
 						   <input type="submit" name="submit" class="redbutton" value="Save & Exit" onsubmit="return validate()">
+						   <span></span>
 						   <input type="submit" class="redbutton" value="Save & Add Another">
 						 </div> <!-- end row -->
 					   </section>
@@ -836,20 +843,20 @@ label{
     </div>
 
 <div id="Four" class="tabcontent">
-  <div class="table" style="width:100%; height:350px">
+  <div class="table" style="width:100%;">
 
 
             <div class="simpleTabs" style="margin-left:30px">
             <div>
-  			<h1 style="color: #cc0000">Profile Photo</h1>
+  			<h1 style="color: #cc0000"><b>Profile Photo</b></h1>
             </div>
               <div class="tablerow">
-  							<h3 id="">Upload Profile Photo:</h3>
+  							<span style="font-size:15px">Upload Profile Photo:</span>
 							  <input type="file" id="" name="uploaded_file">
 							  <br>
   							<input type="submit" class="redbutton" value="Upload Photo">
-							<br>
-							  <h3 id="">Preview Photo:</h3>
+							<br><br>
+							  <span style="font-size:15px">Preview Photo:</span>
   							<img src="" alt="uploaded profile photo">
   						</div>
               <br><br>
@@ -863,6 +870,7 @@ label{
 		<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
 	  <div class="tablerow">
 		<input type="submit" name="submit" class="redbutton" value="Save & Exit">
+		<span></span>
 		<input type="submit" class="redbutton" value="Save & Add Another">
 	  </div> <!-- end row -->
 	</section>

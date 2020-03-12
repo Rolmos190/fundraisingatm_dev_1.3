@@ -95,11 +95,11 @@
                         <li><a href="memberReports.php" title="Account Home"><i class="fa fa-line-chart" aria-hidden="true"></i>Member Sales Reports</a></li>
                         <li><a href="addSalesCoord.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i>Add Sales Coordinator</a></li>
                         <li><a href="addRep.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i>Add Representative</a></li>
-                        <li><a href=".php" title=""><i class="fa fa-plus-square navicon"></i> Add Fundraiser Account</a></li>
+                        <li><a href="addFundAccount.php" title=""><i class="fa fa-plus-square navicon"></i> Add Fundraiser Account</a></li>
                         <li><a href="addNewGroup.php" title=""><i class="fa fa-plus-square navicon"></i>Add Fundraiser Group</a></li>
-                        <li><a href="newLeaders.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i>Add Fundraiser Leader</a></li>
+                        <li><a href="addFundLeader.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i>Add Fundraiser Leader</a></li>
                         <!-- <li><a href="uploadLeaders.php" title="">Upload Fundraiser Leaders</a></li>  -->
-                        <li><a href="newMembers.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i> Add Fundraiser Member</a></li>
+                        <li><a href="addFundMember.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i> Add Fundraiser Member</a></li>
                         <!--<li><a href="uploadMembers.php" title="">Upload Fundraiser Members</a></li>-->
                         <li><a href="addContact.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i>Add Contacts</a></li>
                        <!-- <li><a href="addBusinessSupporter.php" title=""><i class="fa fa-user-plus" aria-hidden="true"></i>Add Business Supporter</a></li>
