@@ -2,25 +2,23 @@
    session_start();
    ob_start();
    include '../includes/functions.php';
-
-  //  if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "EX")
-  //   {
-  //           header('Location: ../index.php');
-  //           exit;
-  //   }
-   include "../includes/connection.inc.php";
-   include "../includes/connection.inc2.php";
-   //include('../samplewebsites/imageFunctions.inc.php');
-   $id = $_SESSION['userId'];
-   $link = connectTo2();
-  //  $link2 = connectTo2();
+  
+  /* if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "EX") {
+  header('Location: ../index.php');
+  exit;
+}
+  */
+  include "../includes/connection.inc.php";
+  include "../includes/connection.inc2.php";
+  //include ('../samplewebsites/imageFunctions.inc.php');
+  $id = $_SESSION['userId'];
+  $link = connectTo();
+  $link2 = connectTo2();
 
 ?>
- <body>
-
+<body>
 <div id="container">
       <?php include 'header.inc.php' ; ?>
-
       <?php include 'sidenav.php' ; ?>
 
       <div id="content">
@@ -29,7 +27,7 @@
       <h3>View Suppliers</h3>
 
       <table class="table table-bordered">
-        <th>Supplier Name</th>
+      <th>Supplier Name</th>
     	<th>Email</th>
     	<th>Supplier Code</th>
     	<th>Phone</th>
@@ -39,8 +37,11 @@
     	<th>Zip Code</th>
     	<th>Password</th>
     	<th colspan="2">Edit</th>
-      <?php
-        $query = "SELECT * FROM users";
+
+  <!-- Using a connection to the db to fetch associated information and display 
+  This MySQLi format needs to be changed to PDO for security purposes against SQL Injection -->
+    <?php
+      $query = "SELECT * FROM users";
     	$result = mysqli_query($link, $query)or die("MYSQL ERROR query 2: ".mysqli_error($link));
     	while($row = mysqli_fetch_assoc($result))
     	{
@@ -59,8 +60,28 @@
     	    <button type="button" name="edit" value="Edit" id="'.$row['userId'].'" class="btn btn-info  btn-xs view_data" /><img src="../images/edit2.png" /></button></td><td>
     	    <button type="button" name="edit" value="Edit" id="'.$row['userId'].'" class="btn btn-info" /><img src="../images/3trash.png" /></button>
     	    </td></tr>';
-    	}
-      ?>
+      }
+
+      /* PDO Construction Start
+      try{
+        $dbh = new PDO ('mysql:localhost;dbname=gogrea6_amoodf5_gm2012', $username, $password);
+        foreach($dbh->query('SELECT * FROM users') as $row) 
+        {
+        print_r($row);
+        //Use Tables here by echoing HTML snippet above.
+        }
+        
+        //$dbh = null; Not sure where this null came from - unecessary
+      
+        } catch (PDOException $e) {
+        print "Erorr!: " . $e->getMessage() . "<br/>";
+        die();
+      }
+
+      */
+    ?>
+
+
       </table>
       <input type="button" class="btn btn-info" value="Add Supplier" onclick="location.href = 'addSupplier.php';">
      <br>

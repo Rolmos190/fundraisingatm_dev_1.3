@@ -1,12 +1,16 @@
+<!-- View Accounts PHP Version 2.4
+	PHP connects to executive\connectTo.php 
+	*Currently has a session start but lists the Session ID and Tables. This could be a security issue. -->
 <?php
      session_start();
     /* if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "Executive")
        {
-            header('Location: ../../index.php');
-            exit;
+        header('Location: ../../index.php');
+        exit;
        }
-       */
-       ob_start();
+	*/
+	ob_start();
+	
 	include "connectTo.php";
 
 	$id = $_SESSION['userId'];
@@ -16,8 +20,9 @@
 	$table1 = "user_info";
 	$table2 = "users";
 	$table3 = "distributors";
-
 ?>
+
+
 <!DOCTYPE html>
 <head>
 	<title>FundraisingATM | Executive</title>
