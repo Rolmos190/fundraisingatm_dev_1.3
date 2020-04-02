@@ -8,19 +8,21 @@
 	   }
 	   */
 
-	include("../includes/connection.inc.php");
+	    include("../includes/connection.inc.php");
 	include("../samplewebsites/imageFunctions.inc.php");
-       $link = connectTo();
-       $userID = $_SESSION['userId'];
-       $table1 = "user_info";
-       $table2 = "users";
-       $table3 = "distributors";
+    $link = connectTo();
+    $userID = $_SESSION['userId'];
+    $table1 = "user_info";
+    $table2 = "users";
+    $table3 = "distributors";
 
 
 	$upload_msg = "Message: <br />";
 	function isUniqueEmail($link, $table1, $email) {
 		$query = "SELECT * FROM $table1 WHERE email='$email'";
-		$result = mysqli_query($link, $query)or die("MySQL ERROR on query c: ".mysqli_error($link));
+        $result = mysqli_query($link, $query)
+        or die("MySQL ERROR on query c: ".mysqli_error($link));
+
 		if(mysqli_num_rows($result) >= 1) {
 			echo "I'm sorry, that email address is already being used, please use another one.";
 			return false;
@@ -31,7 +33,7 @@
 
 	// check if form has been submitted
 	if(isset($_POST['submit'])){
-
+        //upladed VP image to database
 	$vpPhoto = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/vp/';
 	$vpPicPath = "";
@@ -69,8 +71,10 @@
 	$landingPage = "vp/vpLanding.php";
 	$who = "VP";
 	$percent = 0.5;
-	$salt = time(); 			// create salt using the current timestamp
-	$loginPass = sha1($loginPass.$salt); 	// encrypt the password and salt with SHA1
+    $salt = time();
+    // create salt using the current timestamp
+    $loginPass = sha1($loginPass.$salt);
+    // encrypt the password and salt with SHA1
 	//$distPic = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/vp/';
 	$imagePath = "";
@@ -313,7 +317,7 @@ label{
 						<input id="company" type="text" name="cname">
 
 					</div> <!-- end row -->
-
+                    <form>
 					<table>
 						<tr>
 							<td id="td_1">
@@ -419,14 +423,15 @@ label{
 										<option>U.S. Cellular</option>
 										<option>Other</option>
 									</select>
-								</div> <!-- end row -->
+                                </div> <!-- end row -->
+                                <!-- Table Row Phone -->
 								<div class="tablerow">
 									<span id="hd_hphone">Home Phone</span>
 								</div> <!-- end row -->
 								<div class="tablerow">
 									<input id="hphone1" type="text" name="hphone1" maxlength="12">
 								</div> <!-- end row -->
-
+                                <!-- Work Phone -->
 								<div class="tablerow">
 									<span id="hd_wphone">Work Phone</span>
 									<span id="ext">Ext</span>
@@ -623,7 +628,8 @@ label{
 			 				  </div> <!-- end row -->
 			 				</section>
 			</div> <!-- end row -->
-		</div> <!-- end table -->
+        </div> <!-- end table -->
+</form>
 
 
 
@@ -828,8 +834,8 @@ label{
 				<input type="file" name="">
 				<input class="redbutton" type="submit" name="" value="Upload File">-->
 				 <!-- end SUBMIT BUTTON SECTION ROW -->
-			</form>
-		</div> <!-- end table -->
+			<!-- </form>
+		</div>  end table -->
    <!--end content -->
 </div>
   <script>
