@@ -9,21 +9,28 @@
     <div  class="container-fluid"  style="    padding-top: 4em !important;">
         <div class="row-centered" id="imageAndInfo">
             <div class ="col-lg-1 col-md-4 col-sm-12 col-xs-12">
-              <a href="#"><img id="footerLogo" class="" src="../newdeal/images/fundatm_logo.png" alt="FundraisingATM Logo" width="auto" height="150"/></a>
+              <a href="../index.php">
+              <img id="footerLogo" class="" src="../newdeal/images/fundatm_logo.png" alt="FundraisingATM Logo" width="auto" height="150"/></a>
+              
              </div>
                 <ul id="infoList" class="row-centered col-lg-push-3 col-lg-8 col-md-7 col-md-push-1 col-sm-12 col-xs-12 list-inline">
                     		 <?php
 		     if(isset($_SESSION['authenticated']))
 		     {
 		        echo'
-                        <li class="btn btn-md btn-link"><a href="vpLanding.php">Account Homepage</a></li><span class="divider-vertical hidden-xs"></span>
+                        <li class="btn btn-md btn-link"><a href="viewReps.php">Account Homepage</a></li><span class="divider-vertical hidden-xs"></span>
                         ';
                      }
                   ?>
-                        <li id="homelink" class="btn btn-md btn-link"><a href="../index.php<?php echo $groupID;?>">Fundraiser Homepage</a></li><span class="divider-vertical hidden-xs"></span>
-                        <li class="btn btn-md btn-link"><a href="fundgettingstarted11.php?group=<?php echo $groupID;?>">FundraisingATM Program Overview</a></li><span class="divider-vertical hidden-xs"></span>
-                        <li id="getstarted" class="btn btn-md btn-link"><a href="../gettingstarted_sendemail.php?group=<?php echo $groupID;?>">Getting Started</li><span class="divider-vertical hidden-xs"></span>
-                        <!--<li class="btn btn-md btn-link"><a href="">Privacy &amp; Warranties</a></li>-->
+                        <li id="homelink" class="btn btn-md btn-link">
+                          <a href="../index.php<?php echo $groupID;?>">FundraisingATM Homepage</a>
+                        </li><span class="divider-vertical hidden-xs"></span>
+                        <li class="btn btn-md btn-link">
+                          <a href="fundgettingstarted11.php?group=<?php echo $groupID;?>">FundraisingATM Program Overview</a>
+                        </li><span class="divider-vertical hidden-xs"></span>
+                        <li id="getstarted" class="btn btn-md btn-link">
+                          <a href="../gettingstarted_sendemail.php?group=<?php echo $groupID;?>">Getting Started</li>
+                        <!-- <li class="btn btn-md btn-link"><a href="">Privacy &amp; Warranties</a></li> -->
 
                 </ul>
             </div><!--end row-->
