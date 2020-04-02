@@ -1,8 +1,11 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
     
 <head>
-    <link rel="stylesheet" type="text/css" href="../suppliergrid.css">
+    <link rel="stylesheet" type="text/css" href="suppliergrid.css">
     <link rel="stylesheet" type="text/css" href="calc1.css">
     <link rel="stylesheet" type="text/css" href="slide.css">
     <link href="bootstrap.min.css" rel="stylesheet">
@@ -17,7 +20,7 @@
         
         <header class="header">
         
-            <a href="supplier_grid.html"><img class="img-responsive" src="fundlogo.png" alt="GMlogo" class="img-responsive" style="margin-left: 15px;"></img></a>
+            <a href="supplier_grid.html"><img class="img-responsive" src="../newdeal/images/FundraisingATM120519white.png" alt="FUNDlogo" class="img-responsive" style="margin-left: 15px;"></img></a>
             <a href="#MallStore" class="categories">
                 <span style="font-size: 18px">Mall Store</span>
             </a>
@@ -890,5 +893,16 @@ function openCity(evt, cityName) {
 }
 document.getElementById("defaultOpen").click();
 </script>
-   
+
+
+<?php
+		include 'supplier_footer.php' ;
+	?>
+
 </body>
+</html>
+
+
+<?php
+	ob_end_flush();
+?>
