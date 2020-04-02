@@ -1,18 +1,14 @@
 <?php
 	session_start();
 	ob_start();
-	/*if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "Executive")
-       {
-            header('Location: ../../index.php');
-            exit;
-	   }
-	   */
 
-	    include("../includes/connection.inc.php");
+	include("../includes/connection.inc.php");
 	include("../samplewebsites/imageFunctions.inc.php");
-    $link = connectTo();
-    $userID = $_SESSION['userId'];
-    $table1 = "user_info";
+
+	$link = connectTo();
+	$userID = $_SESSION['userId'];
+
+	$table1 = "user_info";
     $table2 = "users";
     $table3 = "distributors";
 
@@ -33,7 +29,7 @@
 
 	// check if form has been submitted
 	if(isset($_POST['submit'])){
-        //upladed VP image to database
+    //upladed VP image to database
 	$vpPhoto = $_FILES['uploaded_file']['tmp_name'];
 	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/vp/';
 	$vpPicPath = "";
@@ -265,43 +261,24 @@ label{
 			</ul>
 
 			<div id="Single" class="tabcontent">
-
-<!--<div class="page-header col-md-12">
-	<h1>Add Fundraiser Leader</h1>
-</div>-->
-
-	<!-- <form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data"> -->
-
-
-  <div class="table" style="width:100%; height:400px">
-
-
-			<div class="simpleTabs">
-				<!--<ul class="simpleTabsNavigation">
-					<li><a href="#">Information</a></li>
-					<li><a href="#">Account Login</a></li>
-					<li><a href="#">Social Media</a></li>
-					<li><a href="#">Profile Photo</a></li>
-				</ul> -->
-
-		  <div>
+				<div class="table" style="width:100%; height:400px">
+				<div class="simpleTabs">
+					<div> <!-- Contact Information Div -->
 						<h1 style="color: #cc0000"> Contact Information</h1>
-						<!--<span>[Group] Leader Type: </span> [Group] = same as the selected group above -->
-
-					<br>
-					<div class="tablerow"> <!-- titles -->
+						<br>
+						<div class="tablerow"> <!-- titles -->
 						<span id="hd_fname">First</span>
-		  <span></span>
+						<span></span>
 						<span id="hd_mname">Middle</span>
-
 						<span id="hd_lname">Last</span>
 						<span></span>
 						<span id="hd_pname" title="Preferred First Name">Preferred</span>
 						<span id="hd_title">Title</span>
 						<span></span>
 						<span id="hd_fname">Company</span>
-					</div> <!-- end row -->
-					<div class="tablerow"> <!-- inputs -->
+					</div> 
+					<!-- end row -->
+					<div class="tablerow"> <!-- input First,Middle,Last Name, Pname -->
 						<input id="fname" type="text" name="fname">
 						<input id="mname" type="text" name="mname">
 						<input id="lname" type="text" name="lname">
@@ -316,22 +293,23 @@ label{
 						</select>
 						<input id="company" type="text" name="cname">
 
-					</div> <!-- end row -->
-                    <form>
+					</div>
+					<!-- end row -->
 					<table>
 						<tr>
 							<td id="td_1">
-
 								<div class="tablerow"> <!-- title -->
 									<span id="hd_address1">Address 1</span>
-								</div> <!-- end row -->
-								<div class="tablerow"> <!-- input -->
+								</div>
+								 <!-- end row -->
+								<div class="tablerow"><!-- input -->
 									<input id="address1" type="text" name="address1">
-								</div> <!-- end row -->
-
+								</div>
+								<!-- end row -->
 								<div class="tablerow"> <!-- title -->
 									<span id="hd_address2">Address 2</span>
-								</div> <!-- end row -->
+								</div>
+								<!-- end row -->
 								<div class="tablerow"> <!-- input -->
 									<input id="address2" type="text" name="address2">
 								</div> <!-- end row -->
