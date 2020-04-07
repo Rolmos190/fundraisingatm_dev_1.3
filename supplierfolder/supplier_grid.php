@@ -32,9 +32,11 @@
 			 <form class="searchInput" method="get" action="/s">
 				<input type="search" id="search" name="searchTerm" autocorrect="off" autocapitalize="off" autocomplete="off" value="" placeholder="Search" aria-label="Search: suggestions appear below">
 			 </form>
-		  </div>
+			</div>
+			
         </header>
         <div class="sub-header">
+			
             <div class="fundex"> Fundraiser Examples </div>
         </div>
         
