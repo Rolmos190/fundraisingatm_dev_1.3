@@ -139,7 +139,7 @@ header {
 }
 
 .categories {
-    margin-left: 12px;
+    margin-left: 20px;
     position: relative;
     display: inline-flex;
     font-size: 18px;
@@ -244,7 +244,11 @@ footer{
     border-image: initial;
 }
 
+#accountIcon {
+	margin-top: 8px;
+	margin-right: 8px;
 
+}
 
 
 

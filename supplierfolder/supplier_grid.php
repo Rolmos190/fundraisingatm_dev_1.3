@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="slide.css">
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="allforms_styles.css" rel="stylesheet" type="text/css">
+	
+	
 
     <script type="text/javascript" src="calculator.js"></script>
 </head> 
@@ -34,10 +36,13 @@
 			 </form>
 			</div>
 			
+			<a href="#"  id="accountIcon" class="pull-right  hidden-sm hidden-xs" role="button" data-toggle="modal" data-target="#login-modal"><img src="../nd/images/log_icon.png" alt="" />Sign In</a>
+			
+			
         </header>
         <div class="sub-header">
-			
             <div class="fundex"> Fundraiser Examples </div>
+			
         </div>
         
           
