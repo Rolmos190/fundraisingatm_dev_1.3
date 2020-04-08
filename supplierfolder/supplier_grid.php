@@ -36,7 +36,7 @@
 			 </form>
 			</div>
 			
-			<a href="#"  id="accountIcon" class="pull-right  hidden-sm hidden-xs" role="button" data-toggle="modal" data-target="#login-modal"><img src="../nd/images/log_icon.png" alt="" />Sign In</a>
+			<a href="#"  id="accountIcon" class="pull-right  hidden-sm hidden-xs" role="button" data-toggle="modal" data-target="#login-modal"><img style="height:50px;" src="../nd/images/log_icon.png" alt="" />Sign In</a>
 			
 			
         </header>
@@ -64,7 +64,7 @@
             <button class="tablinks" onclick="openCity(event,'Sign Up')">Sign Up</button>
         </div>
 
-<div id="Welcome" class="tabcontent" >
+<div id="Welcome" class="tabcontent">
   <h3 align="center">Welcome to FundraisingATM!</h3>
   
   <p>
