@@ -2,16 +2,11 @@
 	session_start();
 ?>
 <!DOCTYPE html>
-<html>
     
 <head>
     <link rel="stylesheet" type="text/css" href="suppliergrid.css">
-    <link rel="stylesheet" type="text/css" href="calc1.css">
     <link rel="stylesheet" type="text/css" href="slide.css">
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="allforms_styles.css" rel="stylesheet" type="text/css">
-	
-	
+    <link rel="stylesheet" type="text/css" href="calc1.css">
 
     <script type="text/javascript" src="calculator.js"></script>
 </head> 
@@ -442,7 +437,7 @@ and success for you as a supplier.</p>
     <p>From door to door sales of cookies and ice cream. To doing everything from the click of
         a mouse in your own home. You don&#39;t even have to get up and answer the door. The best
         way to check your income is to check your bank account, no other steps necessary. Your
-        income is given weekly on every order, which goes directly into your own <b><a href="https://www.paypal.com/us/signin" target="_blank">PayPal</a></b>
+        income is given weekly on every order, which goes directly into your own <b><a href="https://www.paypal.com/us/signin" target="_blank" style="color:#cc0000">PayPal</a></b>
         account, every day, 365 days a year.</p>
     
     <a href="Product%20Setup%20Example%202_1%20v1.6.xlsx" download><b>Spreadsheet of Product Setup Template Download</b></a>
