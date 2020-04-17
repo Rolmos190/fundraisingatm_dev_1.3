@@ -18,9 +18,21 @@
         <header class="header">
         
             <a href="supplier_grid.html"><img class="img-responsive" src="../newdeal/images/FundraisingATM120519white.png" alt="FUNDlogo" class="img-responsive" style="margin-left: 15px;"></img></a>
-            <a href="#MallStore" class="categories">
-                <span style="font-size: 18px">Mall Store</span>
-            </a>
+            <nav>
+            <ul class="menu" id="otis">
+                <li style="list-style-type:none;">
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle categories">Mall Store</label>
+                    <ul>
+                        <li><a href="#">Themes</a></li>
+                        <li><a href="#">Plugins</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                    </ul> 
+
+                </li>
+              </ul>
+            </nav>
+            
             <a href="#FundraisingProgram" class="categories">
                 <span style="font-size: 18px;">Fundraising Program</span>
             </a>
