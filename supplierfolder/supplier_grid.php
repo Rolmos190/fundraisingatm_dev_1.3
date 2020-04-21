@@ -18,17 +18,31 @@
         <header class="header">
         
             <a href="supplier_grid.html"><img class="img-responsive" src="../newdeal/images/FundraisingATM120519white.png" alt="FUNDlogo" class="img-responsive" style="margin-left: 15px;"></img></a>
+            
+            <!-- NAVIGATION --> 
             <nav>
-            <ul class="menu" id="otis">
-                <li style="list-style-type:none;">
-                    <!-- First Tier Drop Down -->
-                    <label for="drop-1" class="toggle categories">Mall Store</label>
-                    <ul>
-                        <li><a href="#">Themes</a></li>
-                        <li><a href="#">Plugins</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                    </ul> 
+              <ul class="menu">
+                <li>
+                  <!-- First Tier Drop Down -->
+                  <label for="drop-2" class="toggle">Web Design +</label>
+                  <a href="#">Web Design</a>
+                  <input type="checkbox" id="drop-2"/>
+                  <ul>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Links</a></li>
+                    <li>
+                      <!-- Second Tier Drop Down -->        
+                      <label for="drop-3" class="toggle">Tutorials +</label>
+                      <a href="#">Tutorials</a>         
+                      <input type="checkbox" id="drop-3"/>
 
+                      <ul>
+                          <li><a href="#">HTML/CSS</a></li>
+                          <li><a href="#">jQuery</a></li>
+                          <li><a href="#">Other</a></li>
+                      </ul>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </nav>
@@ -890,6 +904,7 @@ and success for you as a supplier.</p>
     
 </div>
     
+
 
 <script>
 function openCity(evt, cityName) {
