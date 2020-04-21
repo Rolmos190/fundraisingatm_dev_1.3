@@ -20,19 +20,27 @@
             <a href="supplier_grid.html"><img class="img-responsive" src="../newdeal/images/FundraisingATM120519white.png" alt="FUNDlogo" class="img-responsive" style="margin-left: 15px;"></img></a>
             
             <!-- NAVIGATION --> 
-            <nav>
+            <nav class="categories">
               <ul class="menu">
                 <li>
                   <!-- First Tier Drop Down -->
-                  <label for="drop-2" class="toggle">Web Design +</label>
-                  <a href="#">Web Design</a>
+                  <label for="drop-2" class="toggle" >Mall Store</label>
+                  <a href="#" style="color:white; background-color:#cc0000">Mall Store</a>
                   <input type="checkbox" id="drop-2"/>
                   <ul>
-                    <li><a href="#">Resources</a></li>
-                    <li><a href="#">Links</a></li>
+                    <li><a href="#">Women</a>
+                      <ul>
+                          <li><a href="#">HTML/CSS</a></li>
+                          <li><a href="#">jQuery</a></li>
+                          <li><a href="#">Other</a></li>
+                      </ul>
+                    
+                    
+                    </li>
+                    <li><a href="#">Accessories</a></li>
                     <li>
                       <!-- Second Tier Drop Down -->        
-                      <label for="drop-3" class="toggle">Tutorials +</label>
+                      <label for="drop-3" class="toggle">Men</label>
                       <a href="#">Tutorials</a>         
                       <input type="checkbox" id="drop-3"/>
 
@@ -42,6 +50,16 @@
                           <li><a href="#">Other</a></li>
                       </ul>
                     </li>
+                    <li><a href="#">Juniors</a></li>
+                    <li><a href="#">Kids</a></li>
+                    <li><a href="#">Fitness</a></li>
+                    <li><a href="#">Gifts</a></li>
+                    <li><a href="#">Entertainment</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Health</a></li>
+                    <li><a href="#">Inspirational</a></li>
+                    <li><a href="#">Holiday</a></li>
+                    <li><a href="#">Business</a></li>
                   </ul>
                 </li>
               </ul>
@@ -62,11 +80,11 @@
 			
         </header>
         <div class="sub-header">
-            <div class="fundex"> Fundraiser Examples </div>
-			
-        </div>
         
-          
+            <div class="fundex"> Fundraiser Examples </div>
+            
+        </div>
+
         <div class="tab">
           <button class="tablinks active" onClick="openCity(event, 'Welcome')" id="defaultOpen">Welcome</button>
           <button class="tablinks" onClick="openCity(event, 'FundraisingATMs Program Overview')">FundraisingATMs Program Overview</button>
