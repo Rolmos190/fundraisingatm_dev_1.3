@@ -14,15 +14,11 @@
   $id = $_SESSION['userId'];
   $link = connectTo();
   $link2 = connectTo2();
-
 ?>
 <body>
 <div id="container">
-      <?php //include 'header.inc.php' ;
-            //include 'sidenav.php' ; 
-            include 'header.inc.php';
-      
-      ?>
+      <?php include 'header.inc.php' ; ?>
+      <?php include 'sidenav.php' ; ?>
 
       <div id="content">
       <br>
@@ -40,10 +36,10 @@
     	<th>Zip Code</th>
     	<th>Password</th>
     	<th colspan="2">Edit</th>
-
+ 
   <!-- Using a connection to the db to fetch associated information and display 
   This MySQLi format needs to be changed to PDO for security purposes against SQL Injection -->
-    <?php
+  <?php
       $offset = 0;
       $rec_limit = 10;
       // $rec_limit will be used to parse items from the database at increments of 10.
@@ -140,8 +136,7 @@ Currently this is not working correctly and needs to be addressed.
       */
     ?>
 
-
-      </table>
+</table>
       <input type="button" class="btn btn-info" value="Add Supplier" onclick="location.href = 'addSupplier.php';">
      <br>
      <br>

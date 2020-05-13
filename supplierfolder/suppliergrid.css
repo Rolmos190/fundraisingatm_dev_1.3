@@ -1,0 +1,362 @@
+* {box-sizing: border-box}
+
+body {
+	font-size:20px;
+	line-height: 32px;
+	margin: 0;
+	padding: 0;
+	word-wrap:break-word !important;
+	font-family: 'Open Sans', sans-serif;
+	}
+
+/* Style the tab */
+.tab {
+  /* border: 1px solid #ccc; */
+  background-color: rgb(204, 0, 0);
+  border-radius: 15px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: white;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 17px;
+    border-bottom: 2px solid red;
+    border-radius: 15px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ff0000;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: white;
+  color: #cc0000;
+    font-weight: bold;
+    border-left: 1px solid red;
+    border-top: 2px solid red;
+}
+
+/* Style the tab content */
+.tabcontent {
+    border-left: none;
+    margin-left:35px;
+/*  float: left;*/
+/*  padding: 0px 12px;*/
+/*  width: 70%;*/
+/*  height: 300px;*/
+/*  display: none;*/
+/*    margin-left: 16%;*/
+    
+}
+
+/*
+.tablinks:hover  { 
+    border-bottom: 2px solid white;
+}
+*/
+
+
+
+h3 {
+    font-weight: bold;
+    color: #cc0000;
+    font-size: 29px;
+    margin-top: 0px;
+}
+
+a:link { 
+    text-decoration: none;
+    color: #cc0000;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color: blue;
+}
+
+#vid {
+    text-align: center;
+}
+
+/* Clear floats after the tab */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* CSS GRID */
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+    column-gap: 8px;
+    row-gap: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+
+/*
+#grid div {
+    background: #3bbced;
+    padding: 30px;
+}
+*/
+
+
+
+header {
+    grid-column: 1 / 9;
+    grid-row: auto;
+    height: 80px;
+    width: 100%;
+    background-color: #cc0000;
+    align-items: center;
+    position: relative;
+    display: flex;
+}
+
+.sub-header {
+    grid-column: 1 / 9;
+    grid-row: 2 / auto;
+    height: 45px;
+    padding: 0px 20px 0px 20px;
+    border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+
+.fundex {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    height: 40px;
+    align-items: center;
+
+}
+
+.categories {
+    margin-left: 60px;
+    position: relative;
+    display: inline-flex;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(255,255,255);
+    height: 85%;
+    flex: 0 0 auto;
+    align-items: center;
+    text-decoration: none;    
+}
+
+.:hover {
+    text-decoration: underline;
+}
+.tab {
+    grid-column: 2 / 3;
+    grid-row: 3 / auto;
+}
+
+.tabcontent {
+    grid-column: 3 / 8;
+    grid-row: 3 / 4;
+}
+
+footer{
+    grid-column: 1 / 5;
+    grid-row: 9;
+}
+
+/* 
+    SEARCH BAR 
+*/  
+
+.img-responsive {
+    height: 70px;
+    width: 240px;
+    
+}
+
+.eIGSYk {
+	display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin: 0px 50px 0px 15px;
+	min-width: 40px;
+    -webkit-box-align: center;
+    align-items: center;
+	flex: 1 1 100%;
+	
+}
+.searchInput {
+    display: block;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    max-width: 640px;
+    width: 100%;
+    height: 40px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 25px;
+	border: 1px solid red;
+	
+	
+}
+
+.searchInput::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: rgb(247, 247, 247);
+    height: 34px;
+    width: 40px;
+    opacity: 1;
+    background-image:url(data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20viewBox%3D%220%200%2032%2032%22%20enable-background%3D%22new%200%200%2032%2032%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M29.9%2C27.6l-5-5.8c-0.3-0.4-0.4-1.1-0.1-1.6c0.1-0.2%2C2.3-3.8%2C2.3-7c0-7.1-5.8-12.8-12.8-12.8S1.5%2C6%2C1.5%2C13.1%20s5.8%2C12.8%2C12.8%2C12.8c2.4%2C0%2C5.1-1.2%2C5.2-1.2c0.4-0.2%2C1.2%2C0%2C1.5%2C0.3l5%2C5.9c0.4%2C0.5%2C1.1%2C0.8%2C1.8%2C0.8c0.6%2C0%2C1.1-0.2%2C1.5-0.5l0.4-0.3%20c0.5-0.4%2C0.8-1%2C0.8-1.6C30.5%2C28.6%2C30.3%2C28%2C29.9%2C27.6%20M23.2%2C13.1c0%2C4.9-4%2C8.9-8.9%2C8.9s-8.9-4-8.9-8.9s4-8.9%2C8.9-8.9%20C19.2%2C4.2%2C23.2%2C8.2%2C23.2%2C13.1%22%2F%3E%3C%2Fsvg%3E);
+    background-size: 14px;
+    transition: opacity 200ms ease-in 0s;
+    border-radius: 0px 25px 25px 0px;
+    background-repeat: no-repeat;
+    background-position: 42% 50%;
+}
+
+.searchInput input {
+    display: block;
+    width: 100%;
+    cursor: text;
+    resize: none;
+    position: relative;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 1.35em;
+    box-sizing: border-box !important;
+    outline: none;
+    padding: 7px 72px 7px 20px;
+    margin: 0px;
+    border-radius: 10px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+}
+
+/* .pull-right {
+	margin-top: 2px;
+    margin-right: 25px; 
+    text-decoration: none;   
+}
+
+.pull-right, a:link, a:visited {
+    color:white;
+}
+
+.pull-right, a:hover {
+    color:white;
+}
+
+.pull-right, a:active {
+    color:red;
+} */
+
+
+
+.toggle,
+[id^=drop] {
+	display: none;
+}
+
+
+nav ul {
+	padding:0;
+	margin:0;
+	list-style: none;
+    position: relative;
+    
+	}
+	
+/* Positioning the navigation items inline */
+nav ul li {
+	margin: 0px;
+	display:inline-block;
+	float: left;
+    background-color:white;
+
+    
+	}
+
+/* Styling the links */
+nav a {
+	display:block;
+	padding:14px 20px;	
+	color: black;
+	font-size:17px;
+    text-decoration:none;
+    
+}
+
+
+
+/* Background color change on Hover */
+nav a:hover { 
+    background-color: #cc0000; 
+    color: white;
+    
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+    top: 60px; 
+    
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+    display:inherit;
+
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+    position: relative;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	/* has to be the same number as the "width" of "nav ul ul li" */ 
+	left:170px; 
+}
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' '; }
+li > a:only-child:after { content: ''; }
+

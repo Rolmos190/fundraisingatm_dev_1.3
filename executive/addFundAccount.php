@@ -1,884 +1,520 @@
 <?php
 session_start();
 
-/*if(!isset($_SESSION['authenticated']))
+     /*if(!isset($_SESSION['authenticated']) || $_SESSION['role'] != "Executive")
        {
-            header('Location: ../index.php');
+            header('Location: ../../index.php');
             exit;
-       }*/
+       }
+       */
 
+  ob_start();
+	include "connectTo.php";
+	include('../samplewebsites/imageFunctions.inc.php');
+	$id = $_SESSION['userId'];
+	$link = connectTo();
+
+	$table1 = "user_info";
+	$table2 = "users";
+	$table3 = "distributors";
+
+
+	$upload_msg = "Message: <br />";
+	function isUniqueEmail($link, $table1, $email) {
+		$query = "SELECT * FROM $table1 WHERE email='$email'";
+		$result = mysqli_query($link, $query)or die("MySQL ERROR on query c: ".mysqli_error($link));
+		if(mysqli_num_rows($result) >= 1) {
+			echo "I'm sorry, that email address is already being used, please use another one.";
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	// check if form has been submitted
+	if(isset($_POST['submit'])){
+
+	$rpPhoto = $_FILES['uploaded_file']['tmp_name'];
+	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/sc/';
+	$vpPicPath = "";
+
+	//grab all form fileds
+	$vpid = mysqli_real_escape_string($link, $_POST['vpid']);
+	$scid = mysqli_real_escape_string($link, $_POST['scid']);
+	$company = mysqli_real_escape_string($link, $_POST['cname']);
+	$fname = mysqli_real_escape_string($link, $_POST['fname']);
+	$mname = mysqli_real_escape_string($link, $_POST['mname']);
+	$lname = mysqli_real_escape_string($link, $_POST['lname']);
+	$title = mysqli_real_escape_string($link, $_POST['title']);
+	$gender = mysqli_real_escape_string($link, $_POST['gender']);
+	$ssn = mysqli_real_escape_string($link, $_POST['ssn1']);
+	$address1 = mysqli_real_escape_string($link, $_POST['address1']);
+	$address2 = mysqli_real_escape_string($link, $_POST['address2']);
+	$city = mysqli_real_escape_string($link, $_POST['city']);
+	$state = mysqli_real_escape_string($link, $_POST['state']);
+	$zip = mysqli_real_escape_string($link, $_POST['zip']);
+	$email = mysqli_real_escape_string($link, $_POST['email']);
+	$hPhone1 = mysqli_real_escape_string($link, $_POST['wphone1']);
+	$hPhone2 = mysqli_real_escape_string($link, $_POST['hphone2']);
+	$wPhone3 = mysqli_real_escape_string($link, $_POST['hphone3']);
+	$mPhone = mysqli_real_escape_string($link, $_POST['mphone']);
+	$ext = mysqli_real_escape_string($link, $_POST['ext']);
+	$fbPage = mysqli_real_escape_string($link, $_POST['fb']);
+	$twitter = mysqli_real_escape_string($link, $_POST['twitter']);
+	$linkedin = mysqli_real_escape_string($link, $_POST['lindkedin']);
+	$loginPass = mysqli_real_escape_string($link, $_POST['loginpass']);
+	$salesMan = $_POST['sales'];
+	$ftin = mysqli_real_escape_string($link, $_POST['ftin1']);
+	$stin = mysqli_real_escape_string($link, $_POST['stin1']);
+	$nonp = mysqli_real_escape_string($link, $_POST['nonp1']);
+	//$cellPhone = $_POST['cellphone'];
+	//$workPhone = $_POST['workphone'];
+	$extPhone = mysqli_real_escape_string($link, $_POST['ext']);
+	$paypal = mysqli_real_escape_string($link, $_POST['paypalemail']);
+	$landingPage = "setupEditWebsite/accountEdit.php";
+	$who = "RP";
+	$percent = 6;
+	$salt = time(); 			// create salt using the current timestamp
+	$loginPass = sha1($loginPass.$salt); 	// encrypt the password and salt with SHA1
+	//$distPic = $_FILES['uploaded_file']['tmp_name'];
+	$imageDirPath = $_SERVER['DOCUMENT_ROOT'].'/images/rp/';
+	$imagePath = "";
+
+
+	  function process_image($name, $id, $tmpPic, $baseDirPath){
+
+		$cleanedPic = checkName($_FILES["$name"]["name"]);
+		if(!is_image($tmpPic)) {
+    			// is not an image
+    			$upload_msg .= $cleanedPic . " is not an image file. <br />";
+    		} else {
+    			if($_FILES['$name']['error'] > 0) {
+				$upload_msg .= $_FILES['$name']['error'] . "<br />";
+			} else {
+
+				if (file_exists($baseDirPath.$id."/".$cleanedPic)){
+					$imagePath = "images/rp/".$id."/".$cleanedPic;
+				} else {
+					$picDirectory = $baseDirPath;
+
+
+					if (!is_dir($picDirectory.$id)){
+						mkdir($picDirectory.$id);
+
+					}
+					$picDirectory = $picDirectory.$id."/";
+					move_uploaded_file($tmpPic, $picDirectory . $cleanedPic);
+					$upload_msg .= "$cleanedPic uploaded.<br />";
+					$imagePath = "images/rp/".$id."/".$cleanedPic;
+
+
+				}// end third inner else
+				return $imagePath;
+			} // end first inner else
+		      } // end else
+	     }// end process_image
+
+		//if good email insert data
+	    if(isUniqueEmail($link, $table1, $email)) {
+		$query1 = "INSERT INTO $table2 (username, password, Security, landingPage, salt, created, lastLogin, role)";
+		$query1 .= "VALUES('$email','$loginPass','1','$landingPage','$salt', now(), now(), '$who')";
+		$query2 = "INSERT INTO $table1 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, cellPhone, workPhone, userPaypal,role,title,gender, userBaseCommPct, fedtin, statetin, threec)";
+		$query2 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$id','$mPhone', '$wPhone', '$paypal','$who', '$title', '$gender', '$percent', '$ftin', '$stin', '$nonp')";
+        $query3 = "INSERT INTO $table3 (companyName, FName, MName, LName, ssn, address1, address2, city, state, zip, email, homePhone, fbPage, twitter, linkedin, salesPerson, workPhoneExt,  distPicPath,setupID, role,paypal)";
+		$query3 .= " VALUES('$company','$fname','$mname','$lname','$ssn','$address1','$address2','$city','$state','$zip','$email','$hPhone1','$fbPage','$twitter','$linkedin', '$salesMan','$extPhone', '$imagePath','$scid', '$who','$paypal')";
+
+
+		mysqli_query($link, "start transaction;");
+		// insert data into users table
+		$res1 = mysqli_query($link, $query1)or die ("couldn't execute query 1.".mysql_error());
+		// insert data into distributors table
+		$res2 = mysqli_query($link, $query2)or die ("couldn't execute query 2.".mysql_error());
+
+		$res3 = mysqli_query($link, $query3)or die ("couldn't execute query 3.".mysql_error());
+
+		if($res1 && $res2 && $res3){
+			mysqli_query($link, "commit;");
+			$query9 = "SELECT * FROM user_info WHERE email='$email'";
+			$res4 = mysqli_query($link, $query9)or die ("couldn't execute query 9.".mysql_error());
+			$row = mysqli_fetch_assoc($res4);
+			$newUserID = $row['userInfoID'];
+
+			$queryx = "UPDATE distributors SET loginid = '$newUserID ', distPicPath='$imagePath' WHERE email = '$email'";
+			mysqli_query($link, $queryx)or die ("couldn't execute query x.".mysql_error());
+
+			if($rpPhoto != ''){
+		    $personalPicPath = process_image('uploaded_file',$newUserID, $rpPhoto, $imageDirPath);
+		    if($personalPicPath !=''){
+			$query10 = "UPDATE $table1 SET picPath = '$personalPicPath' WHERE userInfoID = '$newUserID'";
+			mysqli_query($link, $query10);
+						}
+		    }
+			echo "Your account has been successfuly created.\n\n";
+			//newDistributorEmail($email,$FName,$LName,$cellPhone);
+			 header( 'Location: viewAccounts.php' );
+
+		}
+	}
+
+		else
+		{
+            mysqli_query($link, "rollback;");
+			echo "I'm sorry, there was a problem creating your account.";
+			}
+
+
+	}// end if
 ?>
 <!DOCTYPE html>
 <head>
-	<meta charset="UTF-8" />
 	<title>FundraisingATM | Executive</title>
-	<link rel="shortcut icon" href="../images/favicon.ico">
-	
-	<link href="../css/layout_styles.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" type="text/css" href="../css/addnew_form_styles.css" />
-	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
-	
-	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
-	<style>
-		.scrollable-ul { overflow-y: auto; height: 120px; background: white;}
-	</style>
+ 	<link rel="stylesheet" type="text/css" href="../css/old/addnew_form_styles.css" />
+  	<link rel="stylesheet" type="text/css" href="../css/simpletabs_styles.css" />
+  	<script type="text/javascript" src="../js/simpletabs_1.3.js"></script>
 </head>
 
 <body>
-<div id="container">
-      <?php include 'header.inc.php' ; ?>
-      <?php include 'sidenav.php' ; ?>
-
-      <div id="content">
-          <h1>Add Fundraiser Account</h1>
-		<br>
-		<div class="table">
-			<form class="graybackground" style="width:100%" action="addSalesCoord.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
-			<!--<h3>--Option 1: Add One Account--</h3>-->
-				<div class="tablerow">
+	<div id="container">
+    	<?php include 'header.inc.php' ; ?>
+    	<?php include 'sidenav.php' ; ?>
+		<div id="content">
+			<br>
+			<h1>Add New Fundraiser Account</h1>
+			<br>
+			<div class="table">
+				<form class="graybackground" action="addFundAccount.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+					<h2><b>--Option 1: Add One Account--</b></h2>
+					<div class="tablerow">
 						<span id="hd_vp2">Vice President:</span>
 						<span id="hd_sc2">Sales Coordinator:</span>
-						<span id="hd_rp2">Representative:</span>
-					</div> <!-- end row -->
-					
-					<div class="tablerow">
-						<select class="role2">
+						<span id="hd_rp2">Representative</span>
+					</div> <!-- end tablerow -->
+
+					<div class="tablerow" >
+						<select name="vpid" id="vpid" class="role2">
 							<option>Select VP Account</option>
-							// <?php
-								//	$query = "Select * FROM distributors  WHERE setupID='$id' and role='VP'";
-                                //        $result = mysqli_query($link, $query)or die("MySQL ERROR om query 2: ".mysqli_error($link));
-                                        
-                          
-                                //        while($row = mysqli_fetch_assoc($result))
-                                //        {
-					  			//		 echo '<option value="'.$row['loginid'].'">'.$row[FName].' '.$row[LName].' '.$row[loginid].'</option>';}
-								//	?>
+							<?php
+								$query = "Select * FROM distributors  WHERE setupID='$id' and role='VP'";
+								$result = mysqli_query($link, $query)or die("MySQL ERROR om query 2: ".mysqli_error($link));
+								while($row = mysqli_fetch_assoc($result)) {
+									echo '<option value="'.$row['loginid'].'">'.$row[FName].' '.$row[LName].' '.$row[loginid].'</option>';
+								}
+							?>
 						</select>
-						<select class="role2">
+						
+						<select name="vpid" id="vpid" class="role2">
 							<option>Select SC Account</option>
-							<option></option>
-							<option></option>
-							<option></option>
-							<option></option>
 						</select>
-						<select class="role2">
+						
+						<select name="vpid" id="vpid" class="role2">
 							<option>Select RP Account</option>
-							<option></option>
-							<option></option>
-							<option></option>
-							<option></option>
 						</select>
-					</div> <!-- end row -->
-			
-				<div class="simpleTabs">
-					<!--<ul class="simpleTabsNavigation">
-						<li><a href="#">Information</a></li>
-						<li><a href="#">Banner</a></li>
-						<li><a href="#">Social Media</a></li>
-					</ul>-->
-					
-					<div class="interim-form" style="width:49%">
-						<div class="interim-header"><h2>Contact Information</h2></div> <!-- Category is based off selected value above -->
-						<div class="tablerow"> <!-- titles -->
-							<span id="hd_frname">Name</span> 
-						</div> <!-- end row -->
-						<div class="tablerow"> <!-- inputs -->
-							<input id="frname" type="text" name="frname" value="">
-							
-						</div> <!-- end row -->
+					</div> <!-- end tablerow -->
+					<br>
+					<ul class="tab" style="box-shadow: 0px 0px 15px #888888;">
+						<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Single')" id="defaultOpen" style="color:black; font-weight:bold">Information</a></li>
+						<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Four')" style="color:black; font-weight:bold">Banner</a></li>
+						<li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Triple')" style="color:black; font-weight:bold">Social Media</a></li>
+					</ul>
 
-						<div class="tablerow"> <!-- titles -->
-							<span id="hd_address1">Address 1</span>
-							<span></span><span></span><span></span>
-							<span id="hd_wphone">Work Phone</span>
-							<span id="ext">Ext</span>
-							
-						</div> <!-- end row -->
-						<div class="tablerow"> <!-- inputs -->
-							<input id="address1" type="text" name="address1" value="">
-							<input id="wphone1" type="text" name="wphone1" maxlength="12"><!--<input id="wphone2" type="text" name="wphone2"><input id="wphone3" type="text" name="wphone3">-->
-							<input id="ext" type="text" name="ext" maxlength="5">
-						</div> <!-- end row -->
-								<div class="tablerow">
-										<span id="hd_address2">Address 2</span>
-								</div><!-- end row -->
-								<div class="tablerow">
-									<input id="address2" type="text" name="address2" value="">
-								</div><!-- end row -->
-						
-						<div class="tablerow"> <!-- titles -->
-							<span id="hd_city">City</span>
-							<span></span>
-							<span id="hd_state" >State</span>
-							<span id="hd_zip1">Zip</span>
-						</div> <!-- end row -->
-						<div class="tablerow"> <!-- inputs -->
-							<input id="city" type="text" name="city" value="">
-							<select id="state" name="state">
-							<option value="" selected="selected">--</option>
-							<option value="AL">AL</option>
-							<option value="AK">AK</option>
-							<option value="AZ">AZ</option>
-							<option value="AR">AR</option>
-							<option value="CA">CA</option>
-							<option value="CO">CO</option>
-							<option value="CT">CT</option>
-							<option value="DE">DE</option>
-							<option value="DC">DC</option>
-							<option value="FL">FL</option>
-							<option value="GA">GA</option>
-							<option value="HI">HI</option>
-							<option value="ID">ID</option>
-							<option value="IL">IL</option>
-							<option value="IN">IN</option>
-							<option value="IA">IA</option>
-							<option value="KS">KS</option>
-							<option value="KY">KY</option>
-							<option value="LA">LA</option>
-							<option value="ME">ME</option>
-							<option value="MD">MD</option>
-							<option value="MA">MA</option>
-							<option value="MI">MI</option>
-							<option value="MN">MN</option>
-							<option value="MS">MS</option>
-							<option value="MO">MO</option>
-							<option value="MT">MT</option>
-							<option value="NE">NE</option>
-							<option value="NV">NV</option>
-							<option value="NH">NH</option>
-							<option value="NJ">NJ</option>
-							<option value="NM">NM</option>
-							<option value="NY">NY</option>
-							<option value="NC">NC</option>
-							<option value="ND">ND</option>
-							<option value="OH">OH</option>
-							<option value="OK">OK</option>
-							<option value="OR">OR</option>
-							<option value="PA">PA</option>
-							<option value="RI">RI</option>
-							<option value="SC">SC</option>
-							<option value="SD">SD</option>
-							<option value="TN">TN</option>
-							<option value="TX">TX</option>
-							<option value="UT">UT</option>
-							<option value="VT">VT</option>
-							<option value="VA">VA</option>
-							<option value="WA">WA</option>
-							<option value="WV">WV</option>
-							<option value="WI">WI</option>
-							<option value="WY">WY</option>
-							</select>
-							<input id="zip" type="text" name="zip" value="" maxlength="5">
-						</div> <!-- end row -->
-						<br>
-					</div> <!-- end tab 1 -->
+					<div id="Single" class="tabcontent">
+					<!-- <form class="" action="addFundMember.php" method="Post" id="myForm" name="myForm" onsubmit="return checkForm(this);" enctype="multipart/form-data"> -->
+						<div class="table" style="width:100%">
+							<div class="simpleTabs">
+								<!--<ul class="simpleTabsNavigation">
+									<li><a href="#">Information</a></li>
+									<li><a href="#">Account Login</a></li>
+									<li><a href="#">Social Media</a></li>
+									<li><a href="#">Profile Photo</a></li>
+								</ul> -->
 
-					<div class="interim-form">
-						<div class="tablerow">
-							<div class="interim-header"><h2>Specify Account Type</h2></div>
-							<div class="row">
-							<br>
-							<select id="category" name="category">
-								<option selected>Select Organization</option>
-								<option value="All Categories">All Categories</option>
-								<option value="Educational Organizations">Educational Organizations</option>
-								<option value="Faith Groups">Faith Groups</option>
-								<option value="Community Organizations">Community Organizations</option>
-								<option value="Youth & Sports Organizations">Youth & Sports Organizations</option>
-								<option value="Local & National Charities">Local & National Charities</option>
-								<option value="National Organizations">National Organizations</option>
-								<option value="Individual Charity">Individual Charity</option>
-								<option value="Other">Other</option>
-							</select>
-							</div>
-							<br>
-							<div class="row">
-							<select id="type" name="type">
-								<option selected>Select Category</option>
-								<option value="All Educational Types">All Educational Types</option>
-								<option value="4yr College">4yr College</option>
-								<option value="2yr College">2yr College</option>
-								<option value="High School">High School</option>
-								<option value="Middle School">Middle School</option>
-								<option value="Elementary School">Elementary School</option>
-								<option value="Home School">Home School</option>
-								<option value="Preschool School">Preschool School</option>
-								<option value="Other">Other</option>
-							</select>
-							</div>
-							<br>
-							<div class="row">
-							<select id="subtype" name="subtype">
-								<option selected>Select Sub-Category</option>
-								<option value="All Sub-Types">All Sub-Types</option>
-								<option value="Public" >Public</option>
-								<option value="Private">Private</option>
-								<option value="Christian">Christian</option>
-								<option value="Charter">Charter</option>
-							</select>
-							</div>
-						</div> <!-- end row -->
-						<br><br><br><br>
-					</div>
+								<table>
+									<tr>
+										<td id="td_1">
+											<div class="tablerow">
+												<h1 style="color: #cc0000"> <b>Specify Account Type</b></h1>
+												<br>
 
-						
-					
-					
-					<div class="interim-form" style="width:49%">
-						<div class="interim-header"><h2>Website Banner</h2></div> <!-- this part will be replaced with banner creator -->
-						<div id="tablerow"> 
-							<span id="hd_url">Existing Website URL</span>
-							<input id="url" type="text" name="url">
-						</div> <!-- end row -->
-						<br><br>
-						<div id="tablerow"> 
-							<span id="hd_banner">Upload Banner</span>
-							<input id="" type="file" name="uploaded_file">
-						</div> <!-- end row -->
-						<br><br><br><br>
-					</div> <!-- end tab 2 -->
-					
-					
-					<div class="interim-form" >
-						<div class="interim-header"><h2>Social Media Connections</h2></div>
-						<div class="tablerow"> 
-								<span id="hd_fb" title="Facebook Name or Profile URL">Facebook</span>
-							</div> <!-- end row -->
-							<div class="tablerow"> 
-								<input type="url" id="fb"  name="fb" placeholder="www.facebook.com">
-							</div>
-							<br>
-							<div class="tablerow"> 
-								<span id="hd_tw" title="Twitter Username or Profile URL">Twitter</span>
-							</div> <!-- end row -->
-							<div class="tablerow"> 
-								<input type="url" id="tw" name="twitter" placeholder="www.twitter.com">
-							</div>
-							<br>
-							<div class="tablerow"> 
-								<span id="hd_li" title="LinkedIn Username or Profile URL">LinkedIn</span>
-							</div> <!-- end row -->
-							<div class="tablerow">
-								<input type="url" id="li" name="lindkedin" placeholder="www.linkedin.com">
-							</div>
-						<!--<div class="tablerow"> 
-							<span id="hd_pn">Pinterest</span>
-							<input id="pn" type="text" name="pn" value="www.pinterest.com">
-						</div>--> <!-- end row -->
-						<!--<div class="tablerow">
-							<span id="hd_gp">Google+</span>
-							<input id="gp" type="text" name="gp" value="plus.google.com">
-						</div>--> <!-- end row -->
-						<br>
+												<select id="vpid" name="category">
+													<option selected>Select Organization</option>
+													<option value="All Categories">All Categories</option>
+													<option value="Educational Organizations">Educational Organizations</option>
+													<option value="Faith Groups">Faith Groups</option>
+													<option value="Community Organizations">Community Organizations</option>
+													<option value="Youth & Sports Organizations">Youth & Sports Organizations</option>
+													<option value="Local & National Charities">Local & National Charities</option>
+													<option value="National Organizations">National Organizations</option>
+													<option value="Individual Charity">Individual Charity</option>
+													<option value="Other">Other</option>
+												</select>
+												<select id="vpid" name="type">
+													<option selected>Select Category</option>
+													<option value="All Educational Types">All Educational Types</option>
+													<option value="4yr College">4yr College</option>
+													<option value="2yr College">2yr College</option>
+													<option value="High School">High School</option>
+													<option value="Middle School">Middle School</option>
+													<option value="Elementary School">Elementary School</option>
+													<option value="Home School">Home School</option>
+													<option value="Preschool School">Preschool School</option>
+													<option value="Other">Other</option>
+												</select>
+												<select id="vpid" name="subtype">
+													<option selected>Select Sub-Category</option>
+													<option value="All Sub-Types">All Sub-Types</option>
+													<option value="Public" >Public</option>
+													<option value="Private">Private</option>
+													<option value="Christian">Christian</option>
+													<option value="Charter">Charter</option>
+												</select>
+												<br>
+												<br>
+												<h1 style="color: #cc0000"> <b>[Category] Contact Information</b></h1>
+											</div> <!-- end tablerow -->
+											<br>
+											
+											<div class="tablerow"> <!-- title -->
+												<span id="hd_address1">[Category] Name </span>
+											</div> <!-- end tablerow -->
+											<div class="tablerow"> <!-- input -->
+												<br>
+												<input id="address1" type="text" name="">
+											</div>
+											<div class="tablerow"> <!-- title -->
+												<br>
+												<span id="hd_address1">Address 1</span>
+											</div> <!-- end tablerow -->
+											<div class="tablerow"> <!-- input -->
+												<input id="address1" type="text" name="address1">
+											</div> <!-- end row -->
+											<div class="tablerow"> <!-- title -->
+												<br>
+												<span id="hd_address2">Address 2</span>
+											</div> <!-- end row -->
+											<div class="tablerow"> <!-- input -->
+												<input id="address2" type="text" name="address2">
+											</div> <!-- end row -->
+											<div class="tablerow"> <!-- titles -->
+												<br>
+												<span>City</span>
+												<span id="hd_zip"></span>
+												<span>State</span>
+												<span></span><span></span><span></span>
+												<span>Zip</span>
+											</div> <!-- end tablerow -->
+											<div class="tablerow"> <!-- inputs -->
+												<input id="city" type="text" name="city">
+												<select id="state" name="state">
+													<option value="" selected="selected">--</option>
+													<option value="AL">AL</option>
+													<option value="AK">AK</option>
+													<option value="AZ">AZ</option>
+													<option value="AR">AR</option>
+													<option value="CA">CA</option>
+													<option value="CO">CO</option>
+													<option value="CT">CT</option>
+													<option value="DE">DE</option>
+													<option value="DC">DC</option>
+													<option value="FL">FL</option>
+													<option value="GA">GA</option>
+													<option value="HI">HI</option>
+													<option value="ID">ID</option>
+													<option value="IL">IL</option>
+													<option value="IN">IN</option>
+													<option value="IA">IA</option>
+													<option value="KS">KS</option>
+													<option value="KY">KY</option>
+													<option value="LA">LA</option>
+													<option value="ME">ME</option>
+													<option value="MD">MD</option>
+													<option value="MA">MA</option>
+													<option value="MI">MI</option>
+													<option value="MN">MN</option>
+													<option value="MS">MS</option>
+													<option value="MO">MO</option>
+													<option value="MT">MT</option>
+													<option value="NE">NE</option>
+													<option value="NV">NV</option>
+													<option value="NH">NH</option>
+													<option value="NJ">NJ</option>
+													<option value="NM">NM</option>
+													<option value="NY">NY</option>
+													<option value="NC">NC</option>
+													<option value="ND">ND</option>
+													<option value="OH">OH</option>
+													<option value="OK">OK</option>
+													<option value="OR">OR</option>
+													<option value="PA">PA</option>
+													<option value="RI">RI</option>
+													<option value="SC">SC</option>
+													<option value="SD">SD</option>
+													<option value="TN">TN</option>
+													<option value="TX">TX</option>
+													<option value="UT">UT</option>
+													<option value="VT">VT</option>
+													<option value="VA">VA</option>
+													<option value="WA">WA</option>
+													<option value="WV">WV</option>
+													<option value="WI">WI</option>
+													<option value="WY">WY</option>
+												</select>
+												<span></span><span></span>
+												<input id="zip" type="text" name="zip" maxlength="5">
+											</div> <!-- end tablerow -->
+
+											<div class="tablerow">
+												<br>
+												<span id="hd_hphone">Work Phone</span>
+												<span id="ext">Ext</span>
+											</div> <!-- end tablerow -->
+											<div class="row">
+												<input id="hphone1" type="text" name="hphone1" maxlength="12">
+												<span></span><span></span><span></span>
+												<span id="ext"></span>
+												<input id="ext" type="text" name="ext" maxlength="5">
+											</div> <!-- end row -->
+											<!-- <div class="tablerow">
+												<span id="hd_wphone">Primary Phone</span>
+												<span id="ext">Ext</span>
+											</div>
+											<div class="tablerow">
+												<input id="wphone1" type="text" name="">
+												<input id="ext" type="text" name="">
+											</div>  -->
+										</td>
+									</tr>
+								</table> <!-- end table -->
+								<br><br>
+								
+								<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+										<div class="tablerow">
+											<br><br>
+											<input type="submit" class="redbutton" value="Save & Exit">
+											<input type="submit" class="redbutton" value="Save & Add Another">
+											<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
+										</div> <!-- end row -->
+									</section> <!-- end SUBMIT BUTTON SECTION ROW -->
+							</div> <!-- end simple tabs -->
+						</div> <!-- end table -->
+					</div> <!-- end single tab -->
+
+					<div id="Triple" class="tabcontent">
+						<div class="table" style="width:100%">
+							<div class="simpleTabs">
+								<div>
+									
+									<h1 style="color: #cc0000">Social Media Connections</h1>
+									<br>
+									<div id="row">
+										<span id="hd_fb">Facebook</span>
+										<input id="fb" type="text" name="fb" value="www.facebook.com">
+									</div> <!-- end row -->
+									<div id="row">
+										<span id="hd_tw">Twitter</span>
+										<input id="tw" type="text" name="twitter" value="www.twitter.com">
+									</div> <!-- end row -->
+									<div id="row">
+										<span id="hd_li">LinkedIn</span>
+										<input id="li" type="text" name="linkedin" value="www.linkedin.com">
+									</div> <!-- end row -->
+									<div id="row">
+										<span id="hd_pn">Pinterest</span>
+										<input id="pn" type="text" name="printrest" value="www.pinterest.com">
+									</div> <!-- end row -->
+									<div id="row">
+										<span id="hd_gp">Google+</span>
+										<input id="gp" type="text" name="googleplus" value="plus.google.com">
+									</div>
+									<br>
+									<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+										<div class="tablerow">
+											<br><br>
+											<input type="submit" class="redbutton" value="Save & Exit">
+											<input type="submit" class="redbutton" value="Save & Add Another">
+											<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
+										</div> <!-- end row -->
+									</section>
+								</div>
+							</div> <!-- end simpletabs -->
+						</div> <!-- end table -->
 					</div> <!-- end tab 3 -->
-					<div class="interim-form" style="width:95%">
-						<div class="interim-header"><h2>Add Fundraiser Group(s)</h2></div>
-						<div class="groupcolumn1">
-						<center><h5>Education</h5></center>
-							<h7 style="text-decoration: underline;"><strong>Elementary School</strong></h7><br>
-							<span id=""style="color: #cc0000">Clubs & Organizations</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>4-H</label> <br>
-								<input type="checkbox" name="" value=""><label>Art Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Band</label> <br>
-								<input type="checkbox" name="" value=""><label>Booster Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Carnival</label> <br>
-								<input type="checkbox" name="" value=""><label>Choir</label> <br>
-								<input type="checkbox" name="" value=""><label>Math Club</label> <br>
-								<input type="checkbox" name="" value=""><label>PTA/PTO/PTC</label> <br>
-								<input type="checkbox" name="" value=""><label>Science Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Technology/Robotics</label> <br>
-								<input type="checkbox" name="" value=""><label>Thetre & Drama</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
 
-						<div class="groupsection">
-							<span id=""style="color: #cc0000">General</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>General</label> <br>
-								<input type="checkbox" name="" value=""><label>Graduation</label> <br>
-								<input type="checkbox" name="" value=""><label>After-School Program</label> <br>
-								<input type="checkbox" name="" value=""><label>Athletic Equipment</label> <br>
-								<input type="checkbox" name="" value=""><label>Electronic Projection & A/V</label> <br>
-								<input type="checkbox" name="" value=""><label>Field Trips & Travel</label> <br>
-								<input type="checkbox" name="" value=""><label>Library & Technology</label> <br>
-								<input type="checkbox" name="" value=""><label>Playground Equipment</label> <br>
-								<input type="checkbox" name="" value=""><label>Tablets,PCs & Internet</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
+					<div id="Four" class="tabcontent">
+						<div class="table" style="width:100%">
+							<div class="simpleTabs">
+								<div>
+									<h1 style="color: #cc0000">Website Banner</h1>
+								</div>
+								<div class="tablerow">
+									<span id="">Upload Banner:</span><br><br>
+									<input type="file" id="" name="uploaded_file">
+									<input type="submit" class="redbutton" value="Upload">
+									<br><br>
+									<h3 id="">Preview Banner:</h3>
+									<img src="" alt="uploaded profile photo">
+								</div>
+								<br><br>
+								<section class="row" style="margin:4rem 0" id="submitButtonSection-form"><!-- SUBMIT BUTTON SECTION ROW -->
+										<div class="tablerow">
+											<br><br>
+											<input type="submit" class="redbutton" value="Save & Exit">
+											<input type="submit" class="redbutton" value="Save & Add Another">
+											<input type="submit" class="redbutton" value="Save Account & Add Fundraising Group">
+										</div> <!-- end row -->
+									</section>
+							</div> <!-- end simpleTabs -->
+						</div> <!-- end table -->
+						<!--<form class="graybackground">
+							<h3>--Option 2: Add Multiple Business Associates--</h3>
+							<h2>How To Add Multiple Business Associates</h2><br>
+							<ol>
+								<li><a href="">Download</a> Our Business Associate Setup Spreadsheet</li>
+								<li>Input the Data for Each Associate You want to Add</li>
+								<li>Upload the Completed Spreadsheet...</li>
+							</ol>
+							<input type="file" name="">
+						<input class="redbutton" type="submit" name="" value="Upload File">-->
+					</div> <!-- end tab 4 -->
+				</form>
+			</div><!--end table content -->
 
-						<div class="groupsection">
-							<span id=""style="color: #cc0000">Athletics</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Baseball</label> <br>
-								<input type="checkbox" name="" value=""><label>Basketball, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Basketball, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Biking</label> <br>
-								<input type="checkbox" name="" value=""><label>Football</label> <br>
-								<input type="checkbox" name="" value=""><label>Gymnastics, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Gymnastics, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Ice Hockey, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Ice Hockey, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Lacrosse, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Lacrosse, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Soccer, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Soccer, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Softball</label> <br>
-								<input type="checkbox" name="" value=""><label>Swimming, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Swimming, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>T-Ball</label> <br>
-								<input type="checkbox" name="" value=""><label>Track & Filed, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Track & Field, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Volleyball, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Volleyball, Girls</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-						<div class="groupsection">
-							<br><br>
-							<h7 style="text-decoration: underline;"><strong>Middle School</strong></h7><br>
-							<span id=""style="color: #cc0000">Clubs & Organizations</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>4-H</label> <br>
-								<input type="checkbox" name="" value=""><label>Band</label> <br>
-								<input type="checkbox" name="" value=""><label>Booster Club</label> <br>
-								<input type="checkbox" name="" value=""><label>BPA</label> <br>
-								<input type="checkbox" name="" value=""><label>Chess Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Choir</label> <br>
-								<input type="checkbox" name="" value=""><label>Debate</label> <br>
-								<input type="checkbox" name="" value=""><label>FFA</label> <br>
-								<input type="checkbox" name="" value=""><label>Jazz Band</label> <br>
-								<input type="checkbox" name="" value=""><label>Language Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Math Club</label> <br>
-								<input type="checkbox" name="" value=""><label>National Honor Society</label> <br>
-								<input type="checkbox" name="" value=""><label>Orchestra</label> <br>
-								<input type="checkbox" name="" value=""><label>PTA/PTO/PTC</label> <br>
-								<input type="checkbox" name="" value=""><label>Science Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Scripture Study</label> <br>
-								<input type="checkbox" name="" value=""><label>Student Study</label> <br>
-								<input type="checkbox" name="" value=""><label>Student Council</label> <br>
-								<input type="checkbox" name="" value=""><label>Technology/Robotics Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Theatre & Drama</label> <br>
-								<input type="checkbox" name="" value=""><label>Yearbook</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
+			<div class="table">
+				<form class="graybackground" action="addFundAccount.php" method="POST" enctype="multipart/form-data" id="myForm" name="myForm" onsubmit="return(validate());">
+					<h2><b>--Option 2: Add Multiple Accounts--</b></h2>
+					<br>
+					<h2 style="color: #cc0000">How To Add Multiple Accounts</h2>
+					<ol>
+						<li><a href="">Download</a> Our Fundraiser Setup Spreadsheet</li>
+						<li>Input the Data for Each Fundraiser Account You Want to Add</li>
+						<li>Upload the Completed Spreadsheet Below...</li>
+					</ol>
+					<br>
+					<input class="files" type="file" name="">
+					<input class="redbutton" type="submit" name="" value="Upload File">
+					<br><br>
+				</form>
+			</div> <!-- end table -->
 
-						<div class="groupsection">
-							<span id=""style="color: #cc0000">General</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>General</label> <br>
-								<input type="checkbox" name="" value=""><label>Graduation</label> <br>
-								<input type="checkbox" name="" value=""><label>After-School Program</label> <br>
-								<input type="checkbox" name="" value=""><label>Athletic Equipment</label> <br>
-								<input type="checkbox" name="" value=""><label>Electronic Projection & A/V</label> <br>
-								<input type="checkbox" name="" value=""><label>Field Trips & Travel</label> <br>
-								<input type="checkbox" name="" value=""><label>Library & Technology</label> <br>
-								<input type="checkbox" name="" value=""><label>Playground Equipment</label> <br>
-								<input type="checkbox" name="" value=""><label>Tablets,PCs & Internet</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<span id=""style="color: #cc0000">Athletics</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Archery</label> <br>
-								<input type="checkbox" name="" value=""><label>Badminton</label> <br>
-								<input type="checkbox" name="" value=""><label>Baseball</label> <br>
-								<input type="checkbox" name="" value=""><label>Basketball, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Basketball, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Bowling</label> <br>
-								<input type="checkbox" name="" value=""><label>cheerleading</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Running, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Running, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Skiing, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Skiing, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Cycling</label> <br>
-								<input type="checkbox" name="" value=""><label>Danceline</label> <br>
-								<input type="checkbox" name="" value=""><label>Diving, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Diving, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Field Hockey</label> <br>
-								<input type="checkbox" name="" value=""><label>Figure Skating</label> <br>
-								<input type="checkbox" name="" value=""><label>Football</label> <br>
-								<input type="checkbox" name="" value=""><label>Golf, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Golf, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Gymnastics, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Gymnastics, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Ice Hockey, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Ice Hockey, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Lacrosse, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Lacrosse, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Mountaineering</label> <br>
-								<input type="checkbox" name="" value=""><label>Racquet</label> <br>
-								<input type="checkbox" name="" value=""><label>Rodeo</label> <br>
-								<input type="checkbox" name="" value=""><label>Rowing</label> <br>
-								<input type="checkbox" name="" value=""><label>Rugby, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Rugby, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Sailing</label> <br>
-								<input type="checkbox" name="" value=""><label>Ski & Snowboard, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Ski & Snowboard, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Soccer, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Soccer, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Softball</label> <br>
-								<input type="checkbox" name="" value=""><label>Swimming, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Swimming, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Table Tennis</label> <br>
-								<input type="checkbox" name="" value=""><label>Tennis, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Track & Field, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Track & Filed, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Ultimate Frisbee, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Ultimate Frisbee, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Volleyball, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Volleyball, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Water Polo</label> <br>
-								<input type="checkbox" name="" value=""><label>Wrestling</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br><br>
-							<h7 style="text-decoration: underline;"><strong>High School</strong></h7><br>
-							<span id=""style="color: #cc0000">Clubs & Organizations</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>4-H</label> <br>
-								<input type="checkbox" name="" value=""><label>Band</label> <br>
-								<input type="checkbox" name="" value=""><label>Booster Club</label> <br>
-								<input type="checkbox" name="" value=""><label>BPA</label> <br>
-								<input type="checkbox" name="" value=""><label>Chess Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Choir</label> <br>
-								<input type="checkbox" name="" value=""><label>Debate</label> <br>
-								<input type="checkbox" name="" value=""><label>DECA</label> <br>
-								<input type="checkbox" name="" value=""><label>FBLA</label> <br>
-								<input type="checkbox" name="" value=""><label>FFA</label> <br>
-								<input type="checkbox" name="" value=""><label>Jazz Band</label> <br>
-								<input type="checkbox" name="" value=""><label>JROTC</label> <br>
-								<input type="checkbox" name="" value=""><label>Key Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Language Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Math Club</label> <br>
-								<input type="checkbox" name="" value=""><label>National Honor Society</label> <br>
-								<input type="checkbox" name="" value=""><label>Orchestra</label> <br>
-								<input type="checkbox" name="" value=""><label>Prom Committe</label> <br>
-								<input type="checkbox" name="" value=""><label>PTA/PTO/PTC</label> <br>
-								<input type="checkbox" name="" value=""><label>Science Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Scripture Study</label> <br>
-								<input type="checkbox" name="" value=""><label>Student Council</label> <br>
-								<input type="checkbox" name="" value=""><label>Technology/Robotics</label> <br>
-								<input type="checkbox" name="" value=""><label>Theatre & Drama</label> <br>
-								<input type="checkbox" name="" value=""><label>Yearbook</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<span id=""style="color: #cc0000">General</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>General</label> <br>
-								<input type="checkbox" name="" value=""><label>Graduation</label> <br>
-								<input type="checkbox" name="" value=""><label>Senior Class</label> <br>
-								<input type="checkbox" name="" value=""><label>Junior Class</label> <br>
-								<input type="checkbox" name="" value=""><label>Sophmore Class</label> <br>
-								<input type="checkbox" name="" value=""><label>Freshman Class</label> <br>
-								<input type="checkbox" name="" value=""><label>After-School Program</label> <br>
-								<input type="checkbox" name="" value=""><label>Athletic Equipment</label> <br>
-								<input type="checkbox" name="" value=""><label>Electronic Projection & A/V</label> <br>
-								<input type="checkbox" name="" value=""><label>Field Trips & Travel</label> <br>
-								<input type="checkbox" name="" value=""><label>Library & Technology</label> <br>
-								<input type="checkbox" name="" value=""><label>Playground Equipment</label> <br>
-								<input type="checkbox" name="" value=""><label>Tablets, PCs & Internet</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<span id=""style="color: #cc0000">Athletics</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Archery</label> <br>
-								<input type="checkbox" name="" value=""><label>Badminton</label> <br>
-								<input type="checkbox" name="" value=""><label>Basketball, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Basketball, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Bowling, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Bowling, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Cheerleading</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Running, Boys</label><br>
-								<input type="checkbox" name="" value=""><label>Cross Country Running, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Skiing, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Skiing, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Cycling</label> <br>
-								<input type="checkbox" name="" value=""><label>Danceline</label> <br>
-								<input type="checkbox" name="" value=""><label>Diving, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Diving, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Field Hockey</label> <br>
-								<input type="checkbox" name="" value=""><label>Figure Skating</label> <br>
-								<input type="checkbox" name="" value=""><label>Football</label> <br>
-								<input type="checkbox" name="" value=""><label>Golf, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Golf, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Gymnastics, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Gymnastics, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Ice Hockey, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Lacrosse, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Lacrosse, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Mountaineering</label> <br>
-								<input type="checkbox" name="" value=""><label>Power Lifting</label> <br>
-								<input type="checkbox" name="" value=""><label>Racquetball</label> <br>
-								<input type="checkbox" name="" value=""><label>Rodeo</label> <br>
-								<input type="checkbox" name="" value=""><label>Rowing, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Rowing, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Rugby, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Rugby, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Sailing</label> <br>
-								<input type="checkbox" name="" value=""><label>Ski & Snowboard, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Ski & Snowboard, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Soccer, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Soccer, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Softball</label> <br>
-								<input type="checkbox" name="" value=""><label>Swimming, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Swimming, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Table Tennis</label> <br>
-								<input type="checkbox" name="" value=""><label>Tennis, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Tennis, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Track & Field, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Track & Field, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Ultimate Frisbee, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Ultimate Frisbee, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Volleyball, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Volleyball, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Water Polo</label> <br>
-								<input type="checkbox" name="" value=""><label>Wrestling</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-
-						<div class="groupsection">
-							<br><br>
-							<h7 style="text-decoration: underline;"><strong>College</strong></h7><br>
-							<span id=""style="color: #cc0000">Clubs & Organizations</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>4-H</label> <br>
-								<input type="checkbox" name="" value=""><label>Alumni Association</label> <br>
-								<input type="checkbox" name="" value=""><label>Band</label> <br>
-								<input type="checkbox" name="" value="">BPA<label></label> <br>
-								<input type="checkbox" name="" value=""><label>Chess Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Choir</label> <br>
-								<input type="checkbox" name="" value=""><label>Debate</label> <br>
-								<input type="checkbox" name="" value=""><label>DECA</label> <br>
-								<input type="checkbox" name="" value=""><label>Drumline</label> <br>
-								<input type="checkbox" name="" value=""><label>FBLA</label> <br>
-								<input type="checkbox" name="" value=""><label>FFA</label> <br>
-								<input type="checkbox" name="" value=""><label>Greeks</label> <br>
-								<input type="checkbox" name="" value=""><label>Jazz Band</label> <br>
-								<input type="checkbox" name="" value=""><label>Key Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Language Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Math Club</label> <br>
-								<input type="checkbox" name="" value=""><label>National Honor Society</label> <br>
-								<input type="checkbox" name="" value=""><label>Orchestra</label> <br>
-								<input type="checkbox" name="" value=""><label>ROTC</label> <br>
-								<input type="checkbox" name="" value=""><label>Science Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Scripture Study</label> <br>
-								<input type="checkbox" name="" value=""><label>Student Council</label> <br>
-								<input type="checkbox" name="" value=""><label>Technology/Robotics</label> <br>
-								<input type="checkbox" name="" value=""><label>Theatre & Drama</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<span id=""style="color: #cc0000">General</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>After-School Program</label> <br>
-								<input type="checkbox" name="" value=""><label>Athletic Equipment</label> <br>
-								<input type="checkbox" name="" value=""><label>Electronic Projection & A/V</label> <br>
-								<input type="checkbox" name="" value=""><label>Field Trips & Travel</label> <br>
-								<input type="checkbox" name="" value=""><label>Library & Technology</label> <br>
-								<input type="checkbox" name="" value=""><label>Tablets, PCs & Internet</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<span id=""style="color: #cc0000">Athletics</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Archery</label> <br>
-								<input type="checkbox" name="" value=""><label>Badminton</label> <br>
-								<input type="checkbox" name="" value=""><label>Baseball</label> <br>
-								<input type="checkbox" name="" value=""><label>Basketball, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Basketball, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Bowling, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Bowling, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Cheerleading</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Running, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Running, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Skiing, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Cross Country Skiing, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Cycling</label> <br>
-								<input type="checkbox" name="" value=""><label>Danceline</label> <br>
-								<input type="checkbox" name="" value=""><label>Diving, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Diving, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Field  Hockey</label> <br>
-								<input type="checkbox" name="" value=""><label>Figure Skating</label> <br>
-								<input type="checkbox" name="" value=""><label>Football</label> <br>
-								<input type="checkbox" name="" value=""><label>Golf, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Golf, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Gymnastics, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Gymnastics, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Ice Hockey, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Ice Hockey, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Lacrosse, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Lacrosse, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Mountaineering</label> <br>
-								<input type="checkbox" name="" value=""><label>Power Lifting</label> <br>
-								<input type="checkbox" name="" value=""><label>Racquetball</label> <br>
-								<input type="checkbox" name="" value=""><label>Rodeo</label> <br>
-								<input type="checkbox" name="" value=""><label>Rowing, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Rowing, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Rugby, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Rugby, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Sailing</label> <br>
-								<input type="checkbox" name="" value=""><label>Ski & Snowboard, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Ski & Snowboard, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Soccer, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Soccer, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Softball</label> <br>
-								<input type="checkbox" name="" value=""><label>Swimming, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Swimming, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Symchronized Swimming</label> <br>
-								<input type="checkbox" name="" value=""><label>Table Tennis</label> <br>
-								<input type="checkbox" name="" value=""><label>Tennis, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Tennis, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Track & Field, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Track & Field, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Ultimate Frisbee, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Ultimate Frisbee, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Volleyball, Boys</label> <br>
-								<input type="checkbox" name="" value=""><label>Volleyball, Girls</label> <br>
-								<input type="checkbox" name="" value=""><label>Water Polo</label> <br>
-								<input type="checkbox" name="" value=""><label>Wrestling</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br><br>
-							<h7 style="text-decoration: underline; "><strong>Trade, Vocational & Tech School</strong></h7><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Field Trips & Travel</label> <br>
-								<input type="checkbox" name="" value=""><label>General Equipment</label> <br>
-								<input type="checkbox" name="" value=""><label>Trade Supplies</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br>
-							<h7 style="text-decoration: underline;"><strong>Preschool</strong></h7><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Electronic Projection & A/V</label> <br>
-								<input type="checkbox" name="" value=""><label>Equipment & Supplies</label> <br>
-								<input type="checkbox" name="" value=""><label>Field Trips & Travel</label> <br>
-								<input type="checkbox" name="" value=""><label>Playground Equipment</label> <br>
-								<input type="checkbox" name="" value=""><label>Tablets, PCs, & Internet</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br>
-							<h7 style="text-decoration: underline;"><strong>Home School</strong></h7><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Electronic Projection & A/V</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br>
-							<h7 style="text-decoration: underline;"><strong>Camp</strong></h7><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Bible Camps</label> <br>
-								<input type="checkbox" name="" value=""><label>Dance Camps</label> <br>
-								<input type="checkbox" name="" value=""><label>Education Camps</label> <br>
-								<input type="checkbox" name="" value=""><label>Family Camps</label> <br>
-								<input type="checkbox" name="" value=""><label>General Camps</label> <br>
-								<input type="checkbox" name="" value=""><label>Music Camps</label> <br>
-								<input type="checkbox" name="" value=""><label>Scouting Camps</label> <br>
-								<input type="checkbox" name="" value=""><label>Sports Camps</label> <br>
-								<input type="checkbox" name="" value=""><label>Youth Camps</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<br>
-
-						<div class="groupsection">
-							<br>
-							<center><h5>Organizations</h5></center>
-							<h7 style="text-decoration: underline"><strong>Faith Based Organizations</strong></h7><br>
-							<span id="" style="color: #cc0000">Christianity</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Baptist</label> <br>
-								<input type="checkbox" name="" value=""><label>Catholic</label> <br>
-								<input type="checkbox" name="" value=""><label>Christian Other</label> <br>
-								<input type="checkbox" name="" value=""><label>Episcopal</label> <br>
-								<input type="checkbox" name="" value=""><label>Lutheran</label> <br>
-								<input type="checkbox" name="" value=""><label>Methodist</label> <br>
-								<input type="checkbox" name="" value=""><label>Mormon</label> <br>
-								<input type="checkbox" name="" value=""><label>Orthodox</label> <br>
-								<input type="checkbox" name="" value=""><label>Presbyterian</label> <br>
-								<input type="checkbox" name="" value=""><label>Reformed</label> <br>
-								<input type="checkbox" name="" value=""><label>Spirit-Filled</label> <br>
-							</div> <!-- end checkboxes -->
-
-							<span id="" style="color: #cc0000">Judaism</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Jewish Conservative</label> <br>
-								<input type="checkbox" name="" value=""><label>Jewish Orthodox</label> <br>
-								<input type="checkbox" name="" value=""><label>Jewish Reformed</label> <br>
-							</div> <!-- end checkboxes -->
-
-							<span id="" style="color: #cc0000">Other Faiths</span><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Buddhist</label> <br>
-								<input type="checkbox" name="" value=""><label>Hindu</label> <br>
-								<input type="checkbox" name="" value=""><label>Muslim</label> <br>
-								<input type="checkbox" name="" value=""><label>Other Faiths</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br>
-							<h7 style="text-decoration: underline;"><strong>Local & National Organizations</strong></h7><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Jaycees</label> <br>
-								<input type="checkbox" name="" value=""><label>Junior League</label> <br>
-								<input type="checkbox" name="" value=""><label>Kiwanis</label> <br>
-								<input type="checkbox" name="" value=""><label>Knights of Columbus</label> <br>
-								<input type="checkbox" name="" value=""><label>Lions Club International (LCI)</label> <br>
-								<input type="checkbox" name="" value=""><label>Masonic Service Association</label> <br>
-								<input type="checkbox" name="" value=""><label>Optimist International</label> <br>
-								<input type="checkbox" name="" value=""><label>Rotary Club</label> <br>
-								<input type="checkbox" name="" value=""><label>Shriners International</label> <br>
-								<input type="checkbox" name="" value=""><label>The American Legion</label> <br>
-								<input type="checkbox" name="" value=""><label>Veterans of Foreign Wars (VFW)</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br>
-							<h7 style="text-decoration: underline"><strong>Local & National Charities</strong></h7><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Alzheimer Foundation of American</label> <br>
-								<input type="checkbox" name="" value=""><label>American Cancer Society</label> <br>
-								<input type="checkbox" name="" value=""><label>American Diabetes Association</label> <br>
-								<input type="checkbox" name="" value=""><label>American Heart Association</label> <br>
-								<input type="checkbox" name="" value=""><label>American Red Cross</label> <br>
-								<input type="checkbox" name="" value=""><label>Boys & Girls Clubs of America</label> <br>
-								<input type="checkbox" name="" value=""><label>Cancer Research Institute</label> <br>
-								<input type="checkbox" name="" value=""><label>Cerebral Palsy</label> <br>
-								<input type="checkbox" name="" value=""><label>Goodwill Industries International</label> <br>
-								<input type="checkbox" name="" value=""><label>Habitat for Humanity</label> <br>
-								<input type="checkbox" name="" value=""><label>Leukemia & Lymphoma Society</label> <br>
-								<input type="checkbox" name="" value=""><label>Lymphoma Association</label> <br>
-								<input type="checkbox" name="" value=""><label>Make-A-Wish Foundaion of America</label> <br>
-								<input type="checkbox" name="" value=""><label>March of Dimes</label> <br>
-								<input type="checkbox" name="" value=""><label>Muscular Dytrophy Association (MDA)</label> <br>
-								<input type="checkbox" name="" value=""><label>Shriners International</label> <br>
-								<input type="checkbox" name="" value=""><label>Special Olympics</label> <br>
-								<input type="checkbox" name="" value=""><label>St. Jude Childrens's Research Hospital</label> <br>
-								<input type="checkbox" name="" value=""><label>Susan G. Komen</label> <br>
-								<input type="checkbox" name="" value=""><label>The Salvation Army</label> <br>
-								<input type="checkbox" name="" value=""><label>The Simon Wiesenthal Foundation</label> <br>
-								<input type="checkbox" name="" value=""><label>United Way</label> <br>
-								<input type="checkbox" name="" value=""><label>Wounded Warrior Project</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br>
-							<h7 style="text-decoration: underline;"><strong>Community Organizations</strong></h7><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value="">Animal Shelters<label></label> <br>
-								<input type="checkbox" name="" value=""><label>ASPCA</label> <br>
-								<input type="checkbox" name="" value=""><label>Community Food Bank</label> <br>
-								<input type="checkbox" name="" value=""><label>Fire Department</label> <br>
-								<input type="checkbox" name="" value=""><label>Local Food Shelves</label> <br>
-								<input type="checkbox" name="" value=""><label>Local Homeless Shelters</label> <br>
-								<input type="checkbox" name="" value=""><label>Local Women's Shelters</label> <br>
-								<input type="checkbox" name="" value=""><label>Police Department</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br>
-							<h7 style="text-decoration: underline;"><strong>Youth & Sports</strong></h7><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Athletic Associations</label> <br>
-								<input type="checkbox" name="" value=""><label>Big Brothers/Big Sisters of America</label> <br>
-								<input type="checkbox" name="" value=""><label>Boy Scouts</label> <br>
-								<input type="checkbox" name="" value=""><label>Girl Scouts</label> <br>
-								<input type="checkbox" name="" value=""><label>Summer Leagues</label> <br>
-								<input type="checkbox" name="" value=""><label>YMCA</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<div class="groupsection">
-							<br>
-							<h7 style="text-decoration: underline"><strong>Sports League</strong></h7><br>
-							<div class="checkboxes scrollable-ul">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-								<input type="checkbox" name="" value=""><label>Summer Leagues</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-
-						<br>
-
-						<div class="groupsection">
-							<h6 style="text-decoration: underline"><strong>General</strong></h6>
-							<div class="checkboxes">
-								<input type="checkbox" name="" value=""><label>Select All Groups</label> <br>
-							</div> <!-- end checkboxes -->
-						</div> <!-- end groupsection -->
-						<div class="clear"></div>
-					</div> <!-- end tab -->
-				</div> <!-- end simple tabs -->
-			
-				<div class="tablerow">
-					<input type="submit" name="submit" class="redbutton" value="Save & Exit">
-					<input type="submit" name="submit" class="redbutton" value="Save & Add Another">
-					<!--<input type="submit" name="submit" class="redbutton" value="Save Account & Add Fundraising Group">-->
-				</div> <!-- end row -->
-			</form>
-
-			<!--<br>
-			
-			<form id="graybackground">
-				<h3>--Option 2: Add Multiple Accounts--</h3>
-				<h2>How To Add Multiple Accounts</h2><br>
-				<ol>
-					<li><a href="">Download</a> Our Fundraiser Setup Spreadsheet</li>
-					<li>Input the Data for Each Fundraiser Account You want to Add</li>
-					<li>Upload the Completed Spreadsheet...</li>
-				</ol>
-				<input type="file" name="">
-				<input class="redbutton" type="submit" name="" value="Upload File">
-			</form>-->
-		</div> <!-- end table -->
-
-  </div> <!--end content -->
-  
-      <?php include 'footer.php' ; ?>   
-</div> <!--end container-->
-
+			<script>
+				function openCity(evt, cityName) {
+					var i, tabcontent, tablinks;
+					tabcontent = document.getElementsByClassName("tabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+					tablinks = document.getElementsByClassName("tablinks");
+					for (i = 0; i < tablinks.length; i++) {
+						tablinks[i].className = tablinks[i].className.replace(" active", "");
+					}
+					document.getElementById(cityName).style.display = "block";
+					evt.currentTarget.className += " active";
+				}
+				// Get the element with id="defaultOpen" and click on it
+				document.getElementById("defaultOpen").click();
+			</script>
+		</div>
+		<?php include 'footer.php' ; ?>
+	</div>
 </body>
 </html>
 
