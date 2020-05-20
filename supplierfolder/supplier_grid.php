@@ -164,17 +164,17 @@ help you get set up!</p>
 
 <div class="mySlides fade">
   <div class="numbertext">1</div>
-  <img src="images/presentation/1.jpg" style="width:100%">
+  <img src="../images/presentation/1.jpg" style="width:100%">
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2</div>
-  <img src="images/presentation/2.jpg" style="width:100%">
+  <img src="../images/presentation/2.jpg" style="width:100%">
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3</div>
-  <img src="images/presentation/3.jpg" style="width:100%">
+  <img src="../images/presentation/3.jpg" style="width:100%">
 </div>
 <div class="mySlides fade">
   <div class="numbertext">4</div>
